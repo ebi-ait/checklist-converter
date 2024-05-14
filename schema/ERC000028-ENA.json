@@ -1,8 +1,8 @@
 {
   "$schema" : "https://json-schema.org/draft/2019-09/schema",
-  "$id" : "https://www.ebi.ac.uk/biosamples/schemas/ENA-ENA_default_sample_checklist/1.0.0",
-  "title" : "ENA default sample checklist",
-  "description" : "Minimum information required for the sample",
+  "$id" : "https://www.ebi.ac.uk/biosamples/schemas/ENA-ENA_prokaryotic_pathogen_minimal_sample_checklist/1.0.0",
+  "title" : "ENA prokaryotic pathogen minimal sample checklist",
+  "description" : "Minimum information required for a prokaryotic pathogen sample",
   "definitions" : {
     "externalAccession" : {
       "type" : "object",
@@ -129,111 +129,6 @@
       "allOf" : [ {
         "contains" : {
           "type" : "object",
-          "description" : "cell type from which the sample was obtained",
-          "properties" : {
-            "tag" : {
-              "type" : "string",
-              "const" : "cell_type"
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "if the sample was obtained from an organism in a specific developmental stage, it is specified with this qualifier",
-          "properties" : {
-            "tag" : {
-              "type" : "string",
-              "const" : "dev_stage"
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "the sample described presented in the entry has not undergone somatic genomic rearrangement as part of an adaptive immune response; it is the unrearranged molecule that was inherited from the parental germline",
-          "properties" : {
-            "tag" : {
-              "type" : "string",
-              "const" : "germline"
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "tissue library from which sample was obtained",
-          "properties" : {
-            "tag" : {
-              "type" : "string",
-              "const" : "tissue_lib"
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "tissue type from which the sample was obtained",
-          "properties" : {
-            "tag" : {
-              "type" : "string",
-              "const" : "tissue_type"
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
           "description" : "describes the physical, environmental and/or local geographical source of the biological sample from which the sample was derived",
           "properties" : {
             "tag" : {
@@ -249,9 +144,9 @@
           },
           "required" : [ "tag", "value" ]
         },
-        "minContains" : 0,
+        "minContains" : 1,
         "maxContains" : 1,
-        "recommended" : false
+        "recommended" : true
       }, {
         "contains" : {
           "type" : "object",
@@ -272,7 +167,7 @@
         },
         "minContains" : 0,
         "maxContains" : 1,
-        "recommended" : false
+        "recommended" : true
       }, {
         "contains" : {
           "type" : "object",
@@ -424,14 +319,14 @@
       }, {
         "contains" : {
           "type" : "object",
-          "description" : "sex of the organism from which the sample was obtained",
+          "description" : "Health status of the host at the time of sample collection.",
           "properties" : {
             "tag" : {
               "type" : "string",
-              "const" : "sex"
+              "const" : "host health state"
             },
             "value" : {
-              "type" : "string"
+              "enum" : [ "diseased", "healthy", "missing: control sample", "missing: data agreement established pre-2023", "missing: endangered species", "missing: human-identifiable", "missing: lab stock", "missing: sample group", "missing: synthetic construct", "missing: third party data", "not applicable", "not collected", "not provided", "restricted access" ]
             },
             "unit" : {
               "type" : "string"
@@ -439,9 +334,9 @@
           },
           "required" : [ "tag", "value" ]
         },
-        "minContains" : 0,
+        "minContains" : 1,
         "maxContains" : 1,
-        "recommended" : false
+        "recommended" : true
       }, {
         "contains" : {
           "type" : "object",
@@ -481,9 +376,9 @@
           },
           "required" : [ "tag", "value" ]
         },
-        "minContains" : 0,
+        "minContains" : 1,
         "maxContains" : 1,
-        "recommended" : false
+        "recommended" : true
       }, {
         "contains" : {
           "type" : "object",
@@ -550,48 +445,6 @@
       }, {
         "contains" : {
           "type" : "object",
-          "description" : "cultivar (cultivated variety) of plant from which sample was obtained",
-          "properties" : {
-            "tag" : {
-              "type" : "string",
-              "const" : "cultivar"
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "a population within a given species displaying genetically based, phenotypic traits that reflect adaptation to a local habitat.",
-          "properties" : {
-            "tag" : {
-              "type" : "string",
-              "const" : "ecotype"
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
           "description" : "individual isolate from which the sample was obtained",
           "properties" : {
             "tag" : {
@@ -607,9 +460,9 @@
           },
           "required" : [ "tag", "value" ]
         },
-        "minContains" : 0,
+        "minContains" : 1,
         "maxContains" : 1,
-        "recommended" : false
+        "recommended" : true
       }, {
         "contains" : {
           "type" : "object",
@@ -618,27 +471,6 @@
             "tag" : {
               "type" : "string",
               "const" : "sub_species"
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "variety (= varietas, a formal Linnaean rank) of organism from which sample was derived.",
-          "properties" : {
-            "tag" : {
-              "type" : "string",
-              "const" : "variety"
             },
             "value" : {
               "type" : "string"
@@ -676,48 +508,6 @@
       }, {
         "contains" : {
           "type" : "object",
-          "description" : "cell line from which the sample was obtained",
-          "properties" : {
-            "tag" : {
-              "type" : "string",
-              "const" : "cell_line"
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "serological variety of a species characterized by its antigenic properties",
-          "properties" : {
-            "tag" : {
-              "type" : "string",
-              "const" : "serotype"
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
           "description" : "serological variety of a species (usually a prokaryote) characterized by its antigenic properties",
           "properties" : {
             "tag" : {
@@ -735,7 +525,7 @@
         },
         "minContains" : 0,
         "maxContains" : 1,
-        "recommended" : false
+        "recommended" : true
       }, {
         "contains" : {
           "type" : "object",
@@ -756,7 +546,7 @@
         },
         "minContains" : 0,
         "maxContains" : 1,
-        "recommended" : false
+        "recommended" : true
       } ]
     },
     "links" : {

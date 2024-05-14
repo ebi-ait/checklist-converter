@@ -1,8 +1,8 @@
 {
   "$schema" : "https://json-schema.org/draft/2019-09/schema",
-  "$id" : "https://www.ebi.ac.uk/biosamples/schemas/ENA-ENA_default_sample_checklist/1.0.0",
-  "title" : "ENA default sample checklist",
-  "description" : "Minimum information required for the sample",
+  "$id" : "https://www.ebi.ac.uk/biosamples/schemas/ENA-PDX_Checklist/1.0.0",
+  "title" : "PDX Checklist",
+  "description" : "Minimum information required for reporting samples associated with patient-derived xenograft (PDX) models or patient samples",
   "definitions" : {
     "externalAccession" : {
       "type" : "object",
@@ -129,14 +129,14 @@
       "allOf" : [ {
         "contains" : {
           "type" : "object",
-          "description" : "cell type from which the sample was obtained",
+          "description" : "Sample origin from which data deposited was generated, e.g. Engrafted tumor",
           "properties" : {
             "tag" : {
               "type" : "string",
-              "const" : "cell_type"
+              "const" : "sample origin"
             },
             "value" : {
-              "type" : "string"
+              "enum" : [ "Engrafted tumor", "Patient derived cell culture", "Patient tumor", "Xenograft derived cell culture", "Xenograft derived cell line", "Xenograft derived organoid", "not provided" ]
             },
             "unit" : {
               "type" : "string"
@@ -144,20 +144,20 @@
           },
           "required" : [ "tag", "value" ]
         },
-        "minContains" : 0,
+        "minContains" : 1,
         "maxContains" : 1,
-        "recommended" : false
+        "recommended" : true
       }, {
         "contains" : {
           "type" : "object",
-          "description" : "if the sample was obtained from an organism in a specific developmental stage, it is specified with this qualifier",
+          "description" : "Sample material from which data deposited was generated, e.g. tissue fragment. If unknown please select 'not provided'.",
           "properties" : {
             "tag" : {
               "type" : "string",
-              "const" : "dev_stage"
+              "const" : "sample material"
             },
             "value" : {
-              "type" : "string"
+              "enum" : [ "bone marrow aspirate", "cell suspension", "malignant effusion", "not provided", "organoid", "peripheral blood", "tissue fragment" ]
             },
             "unit" : {
               "type" : "string"
@@ -165,20 +165,20 @@
           },
           "required" : [ "tag", "value" ]
         },
-        "minContains" : 0,
+        "minContains" : 1,
         "maxContains" : 1,
-        "recommended" : false
+        "recommended" : true
       }, {
         "contains" : {
           "type" : "object",
-          "description" : "the sample described presented in the entry has not undergone somatic genomic rearrangement as part of an adaptive immune response; it is the unrearranged molecule that was inherited from the parental germline",
+          "description" : "This field indicates if a sample is derived from a patient or xenograft. The following two options are available: Homo sapiens/Mus musculus xenograft (sample is from a Xenograft derived tumor/cell culture) or Homo sapiens (sample is from a patient tumor/cell culture). Please ensure the selected value here is identical to the value in the 'scientific name' column/field.",
           "properties" : {
             "tag" : {
               "type" : "string",
-              "const" : "germline"
+              "const" : "sample taxon name"
             },
             "value" : {
-              "type" : "string"
+              "enum" : [ "Homo sapiens", "Homo sapiens/Mus musculus xenograft" ]
             },
             "unit" : {
               "type" : "string"
@@ -186,17 +186,17 @@
           },
           "required" : [ "tag", "value" ]
         },
-        "minContains" : 0,
+        "minContains" : 1,
         "maxContains" : 1,
-        "recommended" : false
+        "recommended" : true
       }, {
         "contains" : {
           "type" : "object",
-          "description" : "tissue library from which sample was obtained",
+          "description" : "Unique identifier of the PDX or tumor sample, e.g. CRC00003",
           "properties" : {
             "tag" : {
               "type" : "string",
-              "const" : "tissue_lib"
+              "const" : "sample unique ID"
             },
             "value" : {
               "type" : "string"
@@ -207,20 +207,20 @@
           },
           "required" : [ "tag", "value" ]
         },
-        "minContains" : 0,
+        "minContains" : 1,
         "maxContains" : 1,
-        "recommended" : false
+        "recommended" : true
       }, {
         "contains" : {
           "type" : "object",
-          "description" : "tissue type from which the sample was obtained",
+          "description" : "For a primary sample (a tumor at the original site of origin), please select “Primary Neoplasm” . For a metastatic sample (a tumor that has spread from its original (primary) site of growth to another site, close to or distant from the primary site), please select “Metastatic Neoplasm” . For a recurring neoplasm sample (neoplasm returning after a period of remission at the same location), please select “Recurrent Neoplasm” . If unknown tumor type, please select “not provided”.",
           "properties" : {
             "tag" : {
               "type" : "string",
-              "const" : "tissue_type"
+              "const" : "patient tumor type"
             },
             "value" : {
-              "type" : "string"
+              "enum" : [ "Metastatic Neoplasm", "Primary Neoplasm", "Recurrent Neoplasm", "not provided" ]
             },
             "unit" : {
               "type" : "string"
@@ -228,72 +228,9 @@
           },
           "required" : [ "tag", "value" ]
         },
-        "minContains" : 0,
+        "minContains" : 1,
         "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "describes the physical, environmental and/or local geographical source of the biological sample from which the sample was derived",
-          "properties" : {
-            "tag" : {
-              "type" : "string",
-              "const" : "isolation_source"
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "geographical coordinates of the location where the specimen was collected",
-          "properties" : {
-            "tag" : {
-              "type" : "string",
-              "const" : "lat_lon"
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "name of persons or institute who collected the specimen",
-          "properties" : {
-            "tag" : {
-              "type" : "string",
-              "const" : "collected_by"
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
+        "recommended" : true
       }, {
         "contains" : {
           "type" : "object",
@@ -340,11 +277,11 @@
       }, {
         "contains" : {
           "type" : "object",
-          "description" : "The geographical origin of the sample as defined by the specific region name followed by the locality name.",
+          "description" : "If engrafted tumor sample, please indicate the passage from which the engrafted tumor sample was harvested (passage 0 must be the first engraftment in the mouse). Please ensure you add a non-negative number greater than 0. If the sample origin is “patient tumor” please enter 'not applicable'. If passage number is unknown please enter 'not provided”.",
           "properties" : {
             "tag" : {
               "type" : "string",
-              "const" : "geographic location (region and locality)"
+              "const" : "engrafted tumor sample passage"
             },
             "value" : {
               "type" : "string"
@@ -355,17 +292,17 @@
           },
           "required" : [ "tag", "value" ]
         },
-        "minContains" : 0,
+        "minContains" : 1,
         "maxContains" : 1,
-        "recommended" : false
+        "recommended" : true
       }, {
         "contains" : {
           "type" : "object",
-          "description" : "name of the expert who identified the specimen taxonomically",
+          "description" : "If the sample origin is “engrafted tumor”, please indicate the collection site from which the engrafted tumor sample was extracted (e.g. Liver). Please use terminology from NCIT ontology: https://www.ebi.ac.uk/ols/ontologies/ncit. If unknown please select NCIT term: “Not Available” ( http://purl.obolibrary.org/obo/NCIT_C126101)”. If the sample origin is “patient tumor” please do not use this attribute.",
           "properties" : {
             "tag" : {
               "type" : "string",
-              "const" : "identified_by"
+              "const" : "engrafted tumor collection site"
             },
             "value" : {
               "type" : "string"
@@ -378,18 +315,18 @@
         },
         "minContains" : 0,
         "maxContains" : 1,
-        "recommended" : false
+        "recommended" : true
       }, {
         "contains" : {
           "type" : "object",
-          "description" : "identifies sequences derived by direct molecular isolation from a bulk environmental DNA sample (by PCR with or without subsequent cloning of the product, DGGE, or other anonymous methods) with no reliable identification of the source organism",
+          "description" : "Site of collection of the patient tissue sample which was extracted (can be different to primary site if it is a metastatic sample). Please use NCIT ontology, e.g. Liver (http://purl.obolibrary.org/obo/NCIT_C12392). If unknown please select NCIT term: “Not Available” (http://purl.obolibrary.org/obo/NCIT_C126101)",
           "properties" : {
             "tag" : {
               "type" : "string",
-              "const" : "environmental_sample"
+              "const" : "patient tumor site of collection"
             },
             "value" : {
-              "enum" : [ "No", "Yes" ]
+              "type" : "string"
             },
             "unit" : {
               "type" : "string"
@@ -397,17 +334,17 @@
           },
           "required" : [ "tag", "value" ]
         },
-        "minContains" : 0,
+        "minContains" : 1,
         "maxContains" : 1,
-        "recommended" : false
+        "recommended" : true
       }, {
         "contains" : {
           "type" : "object",
-          "description" : "mating type of the organism from which the sequence was obtained; mating type is used for prokaryotes, and for eukaryotes that undergo meiosis without sexually dimorphic gametes",
+          "description" : "If the sample origin is “engrafted tumor”, please indicate the host mouse strain name from which the engrafted tumor sample was extracted (e.g. NOD.Cg-Prkdcscid Il2rgtm1Wjl/SzJ). Please use the following guidelines for the correct nomenclature format: http://www.informatics.jax.org/mgihome/nomen/strains.shtml#mice. If the sample origin is “patient tumor” please add 'not applicable' and if unknown please add 'not provided'.",
           "properties" : {
             "tag" : {
               "type" : "string",
-              "const" : "mating_type"
+              "const" : "engraftment host strain name"
             },
             "value" : {
               "type" : "string"
@@ -420,18 +357,19 @@
         },
         "minContains" : 0,
         "maxContains" : 1,
-        "recommended" : false
+        "recommended" : true
       }, {
         "contains" : {
           "type" : "object",
-          "description" : "sex of the organism from which the sample was obtained",
+          "description" : "Age in years of the patient when the tumor was extracted. Please note this must be a whole number, e.g. 45",
           "properties" : {
             "tag" : {
               "type" : "string",
-              "const" : "sex"
+              "const" : "patient age at collection of tumor"
             },
             "value" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^150|1[0-4][0-9]|[1-9][0-9]|[0-9]|not provided$"
             },
             "unit" : {
               "type" : "string"
@@ -439,17 +377,17 @@
           },
           "required" : [ "tag", "value" ]
         },
-        "minContains" : 0,
+        "minContains" : 1,
         "maxContains" : 1,
-        "recommended" : false
+        "recommended" : true
       }, {
         "contains" : {
           "type" : "object",
-          "description" : "scientific name of the laboratory host used to propagate the source organism from which the sample was obtained",
+          "description" : "Patient tumor diagnosis at time of collection for engraftment in PDX model or organoid/cell derivation. Please use terminology from NCIT ontology: https://www.ebi.ac.uk/ols/ontologies/ncit - Please note in NCIT ontology, usually the “cancer” concept is represented with “malignant neoplasm”example: “lung cancer” is “Malignant Lung Neoplasm” (http://purl.obolibrary.org/obo/NCIT_C7377). If precise diagnosis is unknown, please use 'Neoplasm' (http://purl.obolibrary.org/obo/NCIT_C3262)",
           "properties" : {
             "tag" : {
               "type" : "string",
-              "const" : "lab_host"
+              "const" : "patient tumor diagnosis at time of collection"
             },
             "value" : {
               "type" : "string"
@@ -460,17 +398,17 @@
           },
           "required" : [ "tag", "value" ]
         },
-        "minContains" : 0,
+        "minContains" : 1,
         "maxContains" : 1,
-        "recommended" : false
+        "recommended" : true
       }, {
         "contains" : {
           "type" : "object",
-          "description" : "Scientific name of the natural (as opposed to laboratory) host to the organism from which sample was obtained.",
+          "description" : "Site of the primary tumor where cancer originates (may not correspond to the site of the collected tissue sample). Please use NCIT ontology, e.g. Colon (http://purl.obolibrary.org/obo/NCIT_C12382). If unknown please select NCIT term: “Not Available” ( http://purl.obolibrary.org/obo/NCIT_C126101)",
           "properties" : {
             "tag" : {
               "type" : "string",
-              "const" : "host scientific name"
+              "const" : "patient tumor primary site"
             },
             "value" : {
               "type" : "string"
@@ -481,20 +419,20 @@
           },
           "required" : [ "tag", "value" ]
         },
-        "minContains" : 0,
+        "minContains" : 1,
         "maxContains" : 1,
-        "recommended" : false
+        "recommended" : true
       }, {
         "contains" : {
           "type" : "object",
-          "description" : "Unique identifier that references the biological material from which the sample was obtained and that ideally exists in a curated collection (e.g. stock centres, seed banks, DNA banks). The ID should have the following structure: name of the institution (institution code) followed by the collection code (if available) and the voucher id (institution_code:collection_code:voucher_id). Please note institution codes and collection codes are taken from a controlled vocabulary maintained by the INSDC: https://ftp.ncbi.nih.gov/pub/taxonomy/biocollections/",
+          "description" : "If the sample origin is “engrafted tumor”, please indicate if the host strain, from which the sample was extracted, has undergone human immune system reconstitution, using “Yes” (model humanised) or “No” (model not humanised). If the sample origin is “patient tumor” please select 'not applicable'.",
           "properties" : {
             "tag" : {
               "type" : "string",
-              "const" : "bio_material"
+              "const" : "was the PDX model humanised?"
             },
             "value" : {
-              "type" : "string"
+              "enum" : [ "No", "Yes", "not applicable" ]
             },
             "unit" : {
               "type" : "string"
@@ -504,18 +442,18 @@
         },
         "minContains" : 0,
         "maxContains" : 1,
-        "recommended" : false
+        "recommended" : true
       }, {
         "contains" : {
           "type" : "object",
-          "description" : "Unique identifier that references the culture (e.g. live microbial and viral cultures and cell lines) from which the sample has been obtained and that have been deposited in curated culture collections. The ID needs to provide an institution code and the culture id, with optional collection code, in the following structure: (-institution_code:(collection_code):voucher_id. Please note institution codes (and optional collection codes) are taken from a controlled vocabulary maintained by the INSDC: https://ftp.ncbi.nih.gov/pub/taxonomy/biocollections/",
+          "description" : "Sex of the patient from which the tumor was extracted. If sex is unknown please select “not available”",
           "properties" : {
             "tag" : {
               "type" : "string",
-              "const" : "culture_collection"
+              "const" : "patient sex"
             },
             "value" : {
-              "type" : "string"
+              "enum" : [ "Female", "Male", "not available" ]
             },
             "unit" : {
               "type" : "string"
@@ -523,240 +461,9 @@
           },
           "required" : [ "tag", "value" ]
         },
-        "minContains" : 0,
+        "minContains" : 1,
         "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Unique identifier that references the physical specimen that remains after the sequence has been obtained and that ideally exists in a curated collection. The ID should have the following structure: name of the institution (institution code) followed by the collection code (if available) and the voucher id (institution_code:collection_code:voucher_id). Please note institution codes and collection codes are taken from a controlled vocabulary maintained by the INSDC: https://ftp.ncbi.nih.gov/pub/taxonomy/biocollections/",
-          "properties" : {
-            "tag" : {
-              "type" : "string",
-              "const" : "specimen_voucher"
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "cultivar (cultivated variety) of plant from which sample was obtained",
-          "properties" : {
-            "tag" : {
-              "type" : "string",
-              "const" : "cultivar"
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "a population within a given species displaying genetically based, phenotypic traits that reflect adaptation to a local habitat.",
-          "properties" : {
-            "tag" : {
-              "type" : "string",
-              "const" : "ecotype"
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "individual isolate from which the sample was obtained",
-          "properties" : {
-            "tag" : {
-              "type" : "string",
-              "const" : "isolate"
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "name of sub-species of organism from which sample was obtained",
-          "properties" : {
-            "tag" : {
-              "type" : "string",
-              "const" : "sub_species"
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "variety (= varietas, a formal Linnaean rank) of organism from which sample was derived.",
-          "properties" : {
-            "tag" : {
-              "type" : "string",
-              "const" : "variety"
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "name or identifier of a genetically or otherwise modified strain from which sample was obtained, derived from a parental strain (which should be annotated in the strain field; sub_strain from which sample was obtained",
-          "properties" : {
-            "tag" : {
-              "type" : "string",
-              "const" : "sub_strain"
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "cell line from which the sample was obtained",
-          "properties" : {
-            "tag" : {
-              "type" : "string",
-              "const" : "cell_line"
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "serological variety of a species characterized by its antigenic properties",
-          "properties" : {
-            "tag" : {
-              "type" : "string",
-              "const" : "serotype"
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "serological variety of a species (usually a prokaryote) characterized by its antigenic properties",
-          "properties" : {
-            "tag" : {
-              "type" : "string",
-              "const" : "serovar"
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Name of the strain from which the sample was obtained.",
-          "properties" : {
-            "tag" : {
-              "type" : "string",
-              "const" : "strain"
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
+        "recommended" : true
       } ]
     },
     "links" : {

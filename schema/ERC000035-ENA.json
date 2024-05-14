@@ -1,0 +1,897 @@
+{
+  "$schema" : "https://json-schema.org/draft/2019-09/schema",
+  "$id" : "https://www.ebi.ac.uk/biosamples/schemas/ENA-ENA_Crop_Plant_sample_enhanced_annotation_checklist/1.0.0",
+  "title" : "ENA Crop Plant sample enhanced annotation checklist",
+  "description" : "The ENA Crop sample enhanced checklist has been developed in collaboration with a number of EMBL-EBI teams to capture enriched annotation of published crop plant samples that lack sufficient reported metadata and are typically associated with systematic transcriptomic realignment-based analyses.",
+  "definitions" : {
+    "externalAccession" : {
+      "type" : "object",
+      "properties" : {
+        "db" : {
+          "type" : "string"
+        },
+        "id" : {
+          "type" : "string"
+        }
+      }
+    },
+    "xrefLink" : {
+      "type" : "object",
+      "properties" : {
+        "db" : {
+          "type" : "string"
+        },
+        "id" : {
+          "type" : "string"
+        }
+      }
+    },
+    "urlLink" : {
+      "type" : "object",
+      "properties" : {
+        "label" : {
+          "type" : "string"
+        },
+        "url" : {
+          "type" : "string"
+        }
+      }
+    },
+    "identifiers" : {
+      "type" : "object",
+      "properties" : {
+        "externalAccessions" : {
+          "type" : "array",
+          "$ref" : "#/definitions/externalAccession"
+        },
+        "secondaryAccessions" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "organism" : {
+      "type" : "object",
+      "properties" : {
+        "taxonId" : {
+          "type" : "string"
+        },
+        "commonName" : {
+          "type" : "string"
+        },
+        "scientificName" : {
+          "type" : "string"
+        },
+        "anonymizedName" : {
+          "type" : "string"
+        },
+        "individualName" : {
+          "type" : "string"
+        }
+      }
+    },
+    "attribute" : {
+      "type" : "object",
+      "properties" : {
+        "tag" : {
+          "type" : "string"
+        },
+        "value" : {
+          "type" : "string"
+        },
+        "unit" : {
+          "type" : "string"
+        }
+      }
+    },
+    "link" : {
+      "type" : "object",
+      "properties" : {
+        "xrefLink" : {
+          "$ref" : "#/definitions/xrefLink"
+        },
+        "urlLink" : {
+          "$ref" : "#/definitions/urlLink"
+        }
+      }
+    }
+  },
+  "type" : "object",
+  "properties" : {
+    "alias" : {
+      "type" : "string"
+    },
+    "accession" : {
+      "type" : "string"
+    },
+    "identifiers" : {
+      "$ref" : "#/definitions/identifiers"
+    },
+    "centerName" : {
+      "type" : "string"
+    },
+    "brokerName" : {
+      "type" : "string"
+    },
+    "title" : {
+      "type" : "string"
+    },
+    "description" : {
+      "type" : "string"
+    },
+    "organism" : {
+      "$ref" : "#/definitions/organism"
+    },
+    "attributes" : {
+      "type" : "array",
+      "allOf" : [ {
+        "contains" : {
+          "type" : "object",
+          "description" : "cell type from which the sample was obtained",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "cell_type"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "if the sample was obtained from an organism in a specific developmental stage, it is specified with this qualifier",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "dev_stage"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "The part of organism's anatomy or substance arising from an organism from which the biomaterial was derived, excludes cells.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "organism part"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "The ploidy level of the genome (e.g. allopolyploid, haploid, diploid, triploid, tetraploid). It has implications for the downstream study of duplicated gene and regions of the genomes (and perhaps for difficulties in assembly). For terms, please select terms listed under class ploidy (PATO:001374) of Phenotypic Quality Ontology (PATO), and for a browser of PATO (v 2018-03-27) please refer to http://purl.bioontology.org/ontology/PATO",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "ploidy"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "The name of the disease causing/contaminating organism; the value can also be ‘control’.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "infect"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "The date the sample was collected with the intention of sequencing, either as an instance (single point in time) or interval. In case no exact time is available, the date/time can be right truncated i.e. all of these are valid ISO8601 compliant times: 2008-01-23T19:23:10+00:00; 2008-01-23T19:23:10; 2008-01-23; 2008-01; 2008.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "collection date"
+            },
+            "value" : {
+              "type" : "string",
+              "pattern" : "(^[12][0-9]{3}(-(0[1-9]|1[0-2])(-(0[1-9]|[12][0-9]|3[01])(T[0-9]{2}:[0-9]{2}(:[0-9]{2})?Z?([+-][0-9]{1,2})?)?)?)?(/[0-9]{4}(-[0-9]{2}(-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2})?Z?([+-][0-9]{1,2})?)?)?)?)?$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 1,
+        "maxContains" : 1,
+        "recommended" : true
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "The geographical origin of where the sample was collected from, with the intention of sequencing, as defined by the country or sea name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html).",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "geographic location (country and/or sea)"
+            },
+            "value" : {
+              "enum" : [ "Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Arctic Ocean", "Argentina", "Armenia", "Aruba", "Ashmore and Cartier Islands", "Atlantic Ocean", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Baker Island", "Baltic Sea", "Bangladesh", "Barbados", "Bassas da India", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Borneo", "Bosnia and Herzegovina", "Botswana", "Bouvet Island", "Brazil", "British Virgin Islands", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Clipperton Island", "Cocos Islands", "Colombia", "Comoros", "Cook Islands", "Coral Sea Islands", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Curacao", "Cyprus", "Czechia", "Democratic Republic of the Congo", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "East Timor", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Europa Island", "Falkland Islands (Islas Malvinas)", "Faroe Islands", "Fiji", "Finland", "France", "French Guiana", "French Polynesia", "French Southern and Antarctic Lands", "Gabon", "Gambia", "Gaza Strip", "Georgia", "Germany", "Ghana", "Gibraltar", "Glorioso Islands", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard Island and McDonald Islands", "Honduras", "Hong Kong", "Howland Island", "Hungary", "Iceland", "India", "Indian Ocean", "Indonesia", "Iran", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Jan Mayen", "Japan", "Jarvis Island", "Jersey", "Johnston Atoll", "Jordan", "Juan de Nova Island", "Kazakhstan", "Kenya", "Kerguelen Archipelago", "Kingman Reef", "Kiribati", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mediterranean Sea", "Mexico", "Micronesia", "Midway Islands", "Moldova", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Navassa Island", "Nepal", "Netherlands", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "North Korea", "North Sea", "Northern Mariana Islands", "Norway", "Oman", "Pacific Ocean", "Pakistan", "Palau", "Palmyra Atoll", "Panama", "Papua New Guinea", "Paracel Islands", "Paraguay", "Peru", "Philippines", "Pitcairn Islands", "Poland", "Portugal", "Puerto Rico", "Qatar", "Republic of the Congo", "Reunion", "Romania", "Ross Sea", "Russia", "Rwanda", "Saint Helena", "Saint Kitts and Nevis", "Saint Lucia", "Saint Pierre and Miquelon", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Sint Maarten", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "South Korea", "Southern Ocean", "Spain", "Spratly Islands", "Sri Lanka", "Sudan", "Suriname", "Svalbard", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Tasman Sea", "Thailand", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tromelin Island", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "USA", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Viet Nam", "Virgin Islands", "Wake Island", "Wallis and Futuna", "West Bank", "Western Sahara", "Yemen", "Zambia", "Zimbabwe", "missing: control sample", "missing: data agreement established pre-2023", "missing: endangered species", "missing: human-identifiable", "missing: lab stock", "missing: sample group", "missing: synthetic construct", "missing: third party data", "not applicable", "not collected", "not provided", "restricted access" ]
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 1,
+        "maxContains" : 1,
+        "recommended" : true
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Time point at which a sample or observation is made or taken from a biomaterial as measured from some reference point. Indicate the timepoint written in ISO 8601 format.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "sampling time point"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "The first time point measured at the start of some process.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "initial time point"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "sex of the organism from which the sample was obtained",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "sex"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Age of the organism the sample was derived from.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "age"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : true
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Where possible, please use the Experimental Factor Ontology (EFO) to describe your phenotypes.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "phenotype"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "The part of a cell or its extracellular environment in which a gene product is located.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "cellular component"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "An individual used a specimen in an experiment, from which a material sample was derived.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "individual"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "The stage or progression of a disease in an organism. Includes pathological staging of cancers and other disease progression. E.g. Dukes C stage describing colon cancer (EFO_0000410).",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "disease staging"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "The precipitate antibody bound target molecules generated when precipitating an antigen out of a solution during the process of immunoprecipitation.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "immunoprecipitate"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "A role played by a biological sample in the context of an experiment where the intent is that biological or technical variation is measured.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "replicate"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "cultivar (cultivated variety) of plant from which sample was obtained",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "cultivar"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "a population within a given species displaying genetically based, phenotypic traits that reflect adaptation to a local habitat.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "ecotype"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "cell line from which the sample was obtained",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "cell_line"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Name of the strain from which the sample was obtained.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "strain"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "The duration in which the treatment has occurred.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "time"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "The total quantity or strength of a substance administered at one time.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "dose"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "A drug, solvent, chemical, etc., with a property that can be measured such as concentration (http://purl.obolibrary.org/obo/CHEBI_37577).",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "chemical compound"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "A variable that the experiment is based on.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "experimental factor 1"
+            },
+            "value" : {
+              "enum" : [ "RNA", "age", "block", "cell line", "cell type", "chemical compound", "cultivar", "dev_stage", "disease staging", "dose", "ecotype", "environmental history", "environmental stress", "genotype", "growth condition", "immunoprecipitate", "individual", "infect", "initial time point", "organism", "organism part", "phenotype", "ploidy", "protein-bound", "protocol", "replicate", "rnase", "sample type", "sampling site", "sampling time point", "sex", "strain", "temperature", "time", "transgene" ]
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "A variable that the experiment is based on.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "experimental factor 2"
+            },
+            "value" : {
+              "enum" : [ "RNA", "age", "block", "cell line", "cell type", "chemical compound", "cultivar", "dev_stage", "disease staging", "dose", "ecotype", "environmental history", "environmental stress", "genotype", "growth condition", "immunoprecipitate", "individual", "infect", "initial time point", "organism", "organism part", "phenotype", "ploidy", "protein-bound", "protocol", "replicate", "rnase", "sample type", "sampling site", "sampling time point", "sex", "strain", "temperature", "time", "transgene" ]
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "A variable that the experiment is based on.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "experimental factor 3"
+            },
+            "value" : {
+              "enum" : [ "RNA", "age", "block", "cell line", "cell type", "chemical compound", "cultivar", "dev_stage", "disease staging", "dose", "ecotype", "environmental history", "environmental stress", "genotype", "growth condition", "immunoprecipitate", "individual", "infect", "initial time point", "organism", "organism part", "phenotype", "ploidy", "protein-bound", "protocol", "replicate", "rnase", "sample type", "sampling site", "sampling time point", "sex", "strain", "temperature", "time", "transgene" ]
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "A variable that the experiment is based on.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "experimental factor 4"
+            },
+            "value" : {
+              "enum" : [ "RNA", "age", "block", "cell line", "cell type", "chemical compound", "cultivar", "dev_stage", "disease staging", "dose", "ecotype", "environmental history", "environmental stress", "genotype", "growth condition", "immunoprecipitate", "individual", "infect", "initial time point", "organism", "organism part", "phenotype", "ploidy", "protein-bound", "protocol", "replicate", "rnase", "sample type", "sampling site", "sampling time point", "sex", "strain", "temperature", "time", "transgene" ]
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "A variable that the experiment is based on.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "experimental factor 5"
+            },
+            "value" : {
+              "enum" : [ "RNA", "age", "block", "cell line", "cell type", "chemical compound", "cultivar", "dev_stage", "disease staging", "dose", "ecotype", "environmental history", "environmental stress", "genotype", "growth condition", "immunoprecipitate", "individual", "infect", "initial time point", "organism", "organism part", "phenotype", "ploidy", "protein-bound", "protocol", "replicate", "rnase", "sample type", "sampling site", "sampling time point", "sex", "strain", "temperature", "time", "transgene" ]
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "A block or batch is an experimental unit arrangement into a group which is similar to one another. Typically, a blocking factor is a source of variability that is not of primary interest to the experimenter. An example of a blocking factor might be the sex of a patient; by blocking on sex, this source of variability is controlled for, thus leading to greater accuracy (EFO_0005067).",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "block"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "name or code for genotype of organism",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "genotype"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : true
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "A genetic modification of the genome of an organism which may occur naturally by spontaneous mutation, or be introduced by some experimental means. Examples of genetic modification include specification of a transgene or the gene knocked-out or details of transient transfection.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "genetic modification"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "The laboratory method used to reveal the presence of the sample sequenced in the experiment.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "protocol"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Environmental stress is a treatment where some aspect of the environment is perturbed in order to stress the organism or culture, e.g. change in temperature, change in watering regime.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "environmental stress"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Information concerning the envinonrment a material entity has been exposed to, such as an organism from a lake.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "environmental history"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "A role that a material entity can play which enables particular conditions used to grow organisms or parts of the organism. This includes isolated environments such as cultures and open environments such as field studies.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "growth condition"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      } ]
+    },
+    "links" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/definitions/link"
+      }
+    }
+  },
+  "additionalProperties" : false,
+  "required" : [ "alias", "accession", "organism", "attributes" ]
+}

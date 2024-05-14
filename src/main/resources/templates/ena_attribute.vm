@@ -1,19 +1,23 @@
-
     {
-      "type": "object",
-      "description": "${description}",
-      "properties": {
-        "tag": {
-          "type": "string",
-          "const": "${attribute_name}"
+      "contains": {
+        "type": "object",
+        "description": "${description}",
+        "properties": {
+          "tag": {
+            "type": "string",
+            "const": "${attribute_name}"
+          },
+          "value": ${attribute_type},
+          "unit": {
+            "type": "string"
+          }
         },
-        "value": ${attribute_type},
-        "unit": {
-          "type": "string"
-        }
+        "required": [
+          "tag",
+          "value"
+        ]
       },
-      "required": [
-        "tag",
-        "value"
-      ]
+      "minContains": ${required},
+      "maxContains": 1,
+      "recommended": ${recommended}
     }

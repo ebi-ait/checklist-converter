@@ -1,0 +1,2324 @@
+{
+  "$schema" : "https://json-schema.org/draft/2019-09/schema",
+  "$id" : "https://www.ebi.ac.uk/biosamples/schemas/ENA-GSC_MIxS_human_associated/1.0.0",
+  "title" : "GSC MIxS human associated",
+  "description" : "Genomic Standards Consortium package extension for reporting of measurements and observations obtained from the environment where the sample was obtained. By choosing the environmental package, a selection of fields can be made from a relevant subsets of the GSC terms.",
+  "definitions" : {
+    "externalAccession" : {
+      "type" : "object",
+      "properties" : {
+        "db" : {
+          "type" : "string"
+        },
+        "id" : {
+          "type" : "string"
+        }
+      }
+    },
+    "xrefLink" : {
+      "type" : "object",
+      "properties" : {
+        "db" : {
+          "type" : "string"
+        },
+        "id" : {
+          "type" : "string"
+        }
+      }
+    },
+    "urlLink" : {
+      "type" : "object",
+      "properties" : {
+        "label" : {
+          "type" : "string"
+        },
+        "url" : {
+          "type" : "string"
+        }
+      }
+    },
+    "identifiers" : {
+      "type" : "object",
+      "properties" : {
+        "externalAccessions" : {
+          "type" : "array",
+          "$ref" : "#/definitions/externalAccession"
+        },
+        "secondaryAccessions" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "organism" : {
+      "type" : "object",
+      "properties" : {
+        "taxonId" : {
+          "type" : "string"
+        },
+        "commonName" : {
+          "type" : "string"
+        },
+        "scientificName" : {
+          "type" : "string"
+        },
+        "anonymizedName" : {
+          "type" : "string"
+        },
+        "individualName" : {
+          "type" : "string"
+        }
+      }
+    },
+    "attribute" : {
+      "type" : "object",
+      "properties" : {
+        "tag" : {
+          "type" : "string"
+        },
+        "value" : {
+          "type" : "string"
+        },
+        "unit" : {
+          "type" : "string"
+        }
+      }
+    },
+    "link" : {
+      "type" : "object",
+      "properties" : {
+        "xrefLink" : {
+          "$ref" : "#/definitions/xrefLink"
+        },
+        "urlLink" : {
+          "$ref" : "#/definitions/urlLink"
+        }
+      }
+    }
+  },
+  "type" : "object",
+  "properties" : {
+    "alias" : {
+      "type" : "string"
+    },
+    "accession" : {
+      "type" : "string"
+    },
+    "identifiers" : {
+      "$ref" : "#/definitions/identifiers"
+    },
+    "centerName" : {
+      "type" : "string"
+    },
+    "brokerName" : {
+      "type" : "string"
+    },
+    "title" : {
+      "type" : "string"
+    },
+    "description" : {
+      "type" : "string"
+    },
+    "organism" : {
+      "$ref" : "#/definitions/organism"
+    },
+    "attributes" : {
+      "type" : "array",
+      "allOf" : [ {
+        "contains" : {
+          "type" : "object",
+          "description" : "Trophic levels are the feeding position in a food chain. Microbes can be a range of producers (e.g. chemolithotroph)",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "trophic level"
+            },
+            "value" : {
+              "enum" : [ "autotroph", "carboxydotroph", "chemoautotroph", "chemoheterotroph", "chemolithoautotroph", "chemolithotroph", "chemoorganoheterotroph", "chemoorganotroph", "chemosynthetic", "chemotroph", "copiotroph", "diazotroph", "facultative autotroph", "heterotroph", "lithoautotroph", "lithoheterotroph", "lithotroph", "methanotroph", "methylotroph", "mixotroph", "obligate chemoautolithotroph", "oligotroph", "organoheterotroph", "organotroph", "photoautotroph", "photoheterotroph", "photolithoautotroph", "photolithotroph", "photosynthetic", "phototroph" ]
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Description of relationship(s) between the subject organism and other organism(s) it is associated with. E.g., parasite on species X; mutualist with species Y. The target organism is the subject of the relationship, and the other organism(s) is the object.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "observed biotic relationship"
+            },
+            "value" : {
+              "enum" : [ "commensal", "free living", "mutualism", "parasite", "symbiont" ]
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "To what is the entity pathogenic, for instance plant, fungi, bacteria",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "known pathogenicity"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "relationship to oxygen"
+            },
+            "value" : {
+              "enum" : [ "aerobe", "anaerobe", "facultative", "microaerophilic", "microanaerobe", "obligate aerobe", "obligate anaerobe" ]
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "The type of reproduction from the parent stock. Values for this field is specific to different taxa. For phage or virus: lytic/lysogenic/temperate/obligately lytic. For plasmids: incompatibility group. For eukaryotes: sexual/asexual. Mandatory for MIGs of eukayotes, plasmids and viruses.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "propagation"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "The taxonomic name of the organism(s) found living in mutualistic, commensalistic, or parasitic symbiosis with the specific host.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "observed host symbionts"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "The device used to collect an environmental sample. It is recommended to use terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO) and/or terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094).",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "sample collection device"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "The method employed for collecting the sample. Can be provided in the form of a PMID, DOI, url or text.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "sample collection method"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "specification of urine collection method",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "urine/collection method"
+            },
+            "value" : {
+              "enum" : [ "catheter", "clean catch" ]
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "temperature at which sample was stored, e.g. -80",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "sample storage temperature"
+            },
+            "value" : {
+              "type" : "string",
+              "pattern" : "[+-]?(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Location at which sample was stored, usually name of a specific freezer/room. Indicate the location name.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "sample storage location"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "oxygenation status of sample",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "oxygenation status of sample"
+            },
+            "value" : {
+              "enum" : [ "aerobic", "anaerobic" ]
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "whether full medical history was collected",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "medical history performed"
+            },
+            "value" : {
+              "enum" : [ "No", "Yes" ]
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "specification of study completion status, if no the reason should be specified",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "study completion status"
+            },
+            "value" : {
+              "enum" : [ "No - adverse event", "No - lost to follow up", "No - non-compliance", "No - other", "Yes" ]
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Name of the project within which the sequencing was organized",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "project name"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 1,
+        "maxContains" : 1,
+        "recommended" : true
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "The ploidy level of the genome (e.g. allopolyploid, haploid, diploid, triploid, tetraploid). It has implications for the downstream study of duplicated gene and regions of the genomes (and perhaps for difficulties in assembly). For terms, please select terms listed under class ploidy (PATO:001374) of Phenotypic Quality Ontology (PATO), and for a browser of PATO (v 2018-03-27) please refer to http://purl.bioontology.org/ontology/PATO",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "ploidy"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Reports the number of replicons in a nuclear genome of eukaryotes, in the genome of a bacterium or archaea or the number of segments in a segmented virus. Always applied to the haploid chromosome count of a eukaryote. Mandatory for MIGS of eukaryotes, bacteria, archaea and segmented virus.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "number of replicons"
+            },
+            "value" : {
+              "type" : "string",
+              "pattern" : "[+-]?[0-9]+"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Do plasmids exist of significant phenotypic consequence (e.g. ones that determine virulence or antibiotic resistance). Megaplasmids? Other plasmids (borrelia has 15+ plasmids).",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "extrachromosomal elements"
+            },
+            "value" : {
+              "type" : "string",
+              "pattern" : "[+-]?[0-9]+"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "The estimated size of the genome (in bp) prior to sequencing. Of particular importance in the sequencing of (eukaryotic) genome which could remain in draft form for a long or unspecified period. Mandatory for MIGS of eukaryotes.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "estimated size"
+            },
+            "value" : {
+              "type" : "string",
+              "pattern" : "[+-]?[0-9]+"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Targeted gene or locus name for marker gene studies",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "target gene"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Name of subfragment of a gene or locus. Important to e.g. identify special regions on marker genes like V6 on 16S rRNA",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "target subfragment"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Molecular barcodes, called Multiplex Identifiers (MIDs), that are used to specifically tag unique samples in a sequencing run. Sequence should be reported in uppercase letters",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "multiplex identifiers"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Indicate if the sequence has been called by automatic systems (none) or undergone a manual editing procedure (e.g. by inspecting the raw data or chromatograms). Applied only for sequences that are not submitted to SRA or DRA",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "sequence quality check"
+            },
+            "value" : {
+              "enum" : [ "manual", "none", "software" ]
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Tool(s) used for chimera checking, including version number and parameters, to discover and remove chimeric sequences. A chimeric sequence is comprised of two or more phylogenetically distinct parent sequences.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "chimera check software"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "A related resource that is referenced, cited, or otherwise associated to the sequence in the format of a PMID, DOI or URL",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "relevant electronic resources"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Standard operating procedures used in assembly and/or annotation of genomes, metagenomes or environmental sequences in the format of a PMID, DOI or URL",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "relevant standard operating procedures"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "The date the sample was collected with the intention of sequencing, either as an instance (single point in time) or interval. In case no exact time is available, the date/time can be right truncated i.e. all of these are valid ISO8601 compliant times: 2008-01-23T19:23:10+00:00; 2008-01-23T19:23:10; 2008-01-23; 2008-01; 2008.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "collection date"
+            },
+            "value" : {
+              "type" : "string",
+              "pattern" : "(^[12][0-9]{3}(-(0[1-9]|1[0-2])(-(0[1-9]|[12][0-9]|3[01])(T[0-9]{2}:[0-9]{2}(:[0-9]{2})?Z?([+-][0-9]{1,2})?)?)?)?(/[0-9]{4}(-[0-9]{2}(-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2})?Z?([+-][0-9]{1,2})?)?)?)?)?$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 1,
+        "maxContains" : 1,
+        "recommended" : true
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "The altitude of the sample is the vertical distance between Earth's surface above Sea Level and the sampled position in the air.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "altitude"
+            },
+            "value" : {
+              "type" : "string",
+              "pattern" : "((0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?)|((^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$))"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "The geographical origin of where the sample was collected from, with the intention of sequencing, as defined by the country or sea name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html).",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "geographic location (country and/or sea)"
+            },
+            "value" : {
+              "enum" : [ "Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Arctic Ocean", "Argentina", "Armenia", "Aruba", "Ashmore and Cartier Islands", "Atlantic Ocean", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Baker Island", "Baltic Sea", "Bangladesh", "Barbados", "Bassas da India", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Borneo", "Bosnia and Herzegovina", "Botswana", "Bouvet Island", "Brazil", "British Virgin Islands", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Clipperton Island", "Cocos Islands", "Colombia", "Comoros", "Cook Islands", "Coral Sea Islands", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Curacao", "Cyprus", "Czechia", "Democratic Republic of the Congo", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "East Timor", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Europa Island", "Falkland Islands (Islas Malvinas)", "Faroe Islands", "Fiji", "Finland", "France", "French Guiana", "French Polynesia", "French Southern and Antarctic Lands", "Gabon", "Gambia", "Gaza Strip", "Georgia", "Germany", "Ghana", "Gibraltar", "Glorioso Islands", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard Island and McDonald Islands", "Honduras", "Hong Kong", "Howland Island", "Hungary", "Iceland", "India", "Indian Ocean", "Indonesia", "Iran", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Jan Mayen", "Japan", "Jarvis Island", "Jersey", "Johnston Atoll", "Jordan", "Juan de Nova Island", "Kazakhstan", "Kenya", "Kerguelen Archipelago", "Kingman Reef", "Kiribati", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mediterranean Sea", "Mexico", "Micronesia", "Midway Islands", "Moldova", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Navassa Island", "Nepal", "Netherlands", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "North Korea", "North Sea", "Northern Mariana Islands", "Norway", "Oman", "Pacific Ocean", "Pakistan", "Palau", "Palmyra Atoll", "Panama", "Papua New Guinea", "Paracel Islands", "Paraguay", "Peru", "Philippines", "Pitcairn Islands", "Poland", "Portugal", "Puerto Rico", "Qatar", "Republic of the Congo", "Reunion", "Romania", "Ross Sea", "Russia", "Rwanda", "Saint Helena", "Saint Kitts and Nevis", "Saint Lucia", "Saint Pierre and Miquelon", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Sint Maarten", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "South Korea", "Southern Ocean", "Spain", "Spratly Islands", "Sri Lanka", "Sudan", "Suriname", "Svalbard", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Tasman Sea", "Thailand", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tromelin Island", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "USA", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Viet Nam", "Virgin Islands", "Wake Island", "Wallis and Futuna", "West Bank", "Western Sahara", "Yemen", "Zambia", "Zimbabwe", "missing: control sample", "missing: data agreement established pre-2023", "missing: endangered species", "missing: human-identifiable", "missing: lab stock", "missing: sample group", "missing: synthetic construct", "missing: third party data", "not applicable", "not collected", "not provided", "restricted access" ]
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 1,
+        "maxContains" : 1,
+        "recommended" : true
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "The geographical origin of the sample as defined by latitude. The values should be reported in decimal degrees and in WGS84 system",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "geographic location (latitude)"
+            },
+            "value" : {
+              "type" : "string",
+              "pattern" : "(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 1,
+        "maxContains" : 1,
+        "recommended" : true
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "The geographical origin of the sample as defined by longitude. The values should be reported in decimal degrees and in WGS84 system",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "geographic location (longitude)"
+            },
+            "value" : {
+              "type" : "string",
+              "pattern" : "(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 1,
+        "maxContains" : 1,
+        "recommended" : true
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "The geographical origin of the sample as defined by the specific region name followed by the locality name.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "geographic location (region and locality)"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Report the major environmental system the sample or specimen came from. The system(s) identified should have a coarse spatial grain, to provide the general environmental context of where the sampling was done (e.g. in the desert or a rainforest). We recommend using subclasses of EnvO’s biome class: http://purl.obolibrary.org/obo/ENVO_00000428. EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "broad-scale environmental context"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 1,
+        "maxContains" : 1,
+        "recommended" : true
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Report the entity or entities which are in the sample or specimen’s local vicinity and which you believe have significant causal influences on your sample or specimen. We recommend using EnvO terms which are of smaller spatial grain than your entry for 'broad-scale environmental context'. Terms, such as anatomical sites, from other OBO Library ontologies which interoperate with EnvO (e.g. UBERON) are accepted in this field. EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "local environmental context"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 1,
+        "maxContains" : 1,
+        "recommended" : true
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Report the environmental material(s) immediately surrounding the sample or specimen at the time of sampling. We recommend using subclasses of 'environmental material' (http://purl.obolibrary.org/obo/ENVO_00010483). EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS . Terms from other OBO ontologies are permissible as long as they reference mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities (e.g. a tree, a leaf, a table top).",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "environmental medium"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 1,
+        "maxContains" : 1,
+        "recommended" : true
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "The elevation of the sampling site as measured by the vertical distance from mean sea level.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "elevation"
+            },
+            "value" : {
+              "type" : "string",
+              "pattern" : "([+-]?(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?)|((^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$))"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "The total amount or size (volume (ml), mass (g) or area (m2) ) of sample collected.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "amount or size of sample collected"
+            },
+            "value" : {
+              "type" : "string",
+              "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Total cell count of any organism (or group of organisms) per gram, volume or area of sample, should include name of organism followed by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "organism count"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Duration for which the sample was stored. Indicate the duration for which the sample was stored written in ISO 8601 format.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "sample storage duration"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "History of nose/mouth/teeth/throat disorders; can include multiple disorders. The terms should be chosen from the DO (Human Disease Ontology) at http://www.disease-ontology.org, nose disease (https://disease-ontology.org/?id=DOID:2825), mouth disease (https://disease-ontology.org/?id=DOID:403), tooth disease (https://disease-ontology.org/?id=DOID:1091), or upper respiratory tract disease (https://disease-ontology.org/?id=DOID:974).",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "nose/mouth/teeth/throat disorder"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "HIV status of subject, if yes HAART initiation status should also be indicated as [YES or NO]",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "host HIV status"
+            },
+            "value" : {
+              "enum" : [ "No", "Yes" ]
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "list of diseases with which the host has been diagnosed; can include multiple diagnoses. The value of the field depends on host; for humans the terms should be chosen from DO (Disease Ontology) at http://www.disease-ontology.org, other hosts are free text",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "host disease status"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "History of pulmonary disorders; can include multiple disorders. The terms should be chosen from the DO (Human Disease Ontology) at http://www.disease-ontology.org, lung disease (https://disease-ontology.org/?id=DOID:850).",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "lung/pulmonary disorder"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "History of nose-throat disorders; can include multiple disorders, The terms should be chosen from the DO (Human Disease Ontology) at http://www.disease-ontology.org, lung disease (https://disease-ontology.org/?id=DOID:850), upper respiratory tract disease (https://disease-ontology.org/?id=DOID:974).",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "lung/nose-throat disorder"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "History of blood disorders; can include multiple disorders. The terms should be chosen from the DO (Human Disease Ontology) at http://www.disease-ontology.org, hematopoietic system disease (https://disease-ontology.org/?id=DOID:74).",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "blood/blood disorder"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "History of kidney disorders; can include multiple disorders. The terms should be chosen from the DO (Human Disease Ontology) at http://www.disease-ontology.org, kidney disease (https://disease-ontology.org/?id=DOID:557).",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "urine/kidney disorder"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "History of urogenital tract disorders; can include multiple disorders. The terms should be chosen from the DO (Human Disease Ontology) at http://www.disease-ontology.org, urinary system disease (https://disease-ontology.org/?id=DOID:18).",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "urine/urogenital tract disorder"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "a unique identifier by which each subject can be referred to, de-identified, e.g. #131",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "host subject id"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "can include multiple medication codes",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "IHMC medication code"
+            },
+            "value" : {
+              "enum" : [ "01=1=Analgesics/NSAIDS", "02=2=Anesthetics", "03=3=Antacids/H2 antagonists", "04=4=Anti-acne", "05=5=Anti-asthma/bronchodilators", "06=6=Anti-cholesterol/Anti-hyperlipidemic", "07=7=Anti-coagulants", "08=8=Antibiotics/(anti)-infectives, parasitics, microbials", "09=9=Antidepressants/mood-altering drugs", "10=10=Antihistamines/ Decongestants", "11=11=Antihypertensives", "12=12=Cardiovascular, other than hyperlipidemic/HTN", "13=13=Contraceptives (oral, implant, injectable)", "14=14=Emergency/support medications", "15=15=Endocrine/Metabolic agents", "16=16=GI meds (anti-diarrheal, emetic, spasmodics)", "17=17=Herbal/homeopathic products", "18=18=Hormones/steroids", "19=19=OTC cold & flu", "20=20=Vaccine prophylaxis", "21=21=Vitamins, minerals, food supplements", "99=99=Other" ]
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "age of host at the time of sampling; relevant scale depends on species and study, e.g. could be seconds for amoebae or centuries for trees",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "host age"
+            },
+            "value" : {
+              "type" : "string",
+              "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "name of body site where the sample was obtained from, such as a specific organ or tissue (tongue, lung etc...). For Foundational Model of Anatomy Ontology (FMA) (v 3.1) terms, please see http://purl.bioontology.org/ontology/FMA",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "host body site"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "any drug used by subject and the frequency of usage; can include multiple drugs used",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "drug usage"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "the height of subject",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "host height"
+            },
+            "value" : {
+              "type" : "string",
+              "pattern" : "((0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?)|((^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$))"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "body mass index, calculated as weight/(height)squared",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "host body-mass index"
+            },
+            "value" : {
+              "type" : "string",
+              "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "A category of people who identify with each other, usually on the basis of presumed similarities such as a common language, ancestry, history, society, culture, nation or social treatment within their residing area. https://en.wikipedia.org/wiki/List_of_contemporary_ethnic_groups",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "ethnicity"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "most frequent job performed by subject",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "host occupation"
+            },
+            "value" : {
+              "enum" : [ "01=01 Accounting/Finance", "02=02 Advertising/Public Relations", "03=03 Arts/Entertainment/Publishing", "04=04 Automotive", "05=05 Banking/ Mortgage", "06=06 Biotech", "07=07 Broadcast/Journalism", "08=08 Business Development", "09=09 Clerical/Administrative", "10=10 Construction/Trades", "11=11 Consultant", "12=12 Customer Services", "13=13 Design", "14=14 Education", "15=15 Engineering", "16=16 Entry Level", "17=17 Executive", "18=18 Food Service", "19=19 Government", "20=20 Grocery", "21=21 Healthcare", "22=22 Hospitality", "23=23 Human Resources", "24=24 Information Technology", "25=25 Insurance", "26=26 Law/Legal", "27=27 Management", "28=28 Manufacturing", "29=29 Marketing", "30=30 Pharmaceutical", "31=31 Professional Services", "32=32 Purchasing", "33=33 Quality Assurance (QA)", "34=34 Research", "35=35 Restaurant", "36=36 Retail", "37=37 Sales", "38=38 Science", "39=39 Security/Law Enforcement", "40=40 Shipping/Distribution", "41=41 Strategy", "42=42 Student", "43=43 Telecommunications", "44=44 Training", "45=45 Transportation", "46=46 Warehouse", "47=47 Other", "99=99 Unknown/Refused" ]
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "total mass of the host at collection, the unit depends on host",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "host total mass"
+            },
+            "value" : {
+              "type" : "string",
+              "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "phenotype of host. For Phenotypic quality Ontology (PATO) (v 2013-10-28) terms, please see http://purl.bioontology.org/ontology/PATO",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "host phenotype"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "core body temperature of the host when sample was collected",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "host body temperature"
+            },
+            "value" : {
+              "type" : "string",
+              "pattern" : "[+-]?(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Gender or sex of the host.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "host sex"
+            },
+            "value" : {
+              "enum" : [ "female", "hermaphrodite", "male", "missing: control sample", "missing: data agreement established pre-2023", "missing: endangered species", "missing: human-identifiable", "missing: lab stock", "missing: sample group", "missing: synthetic construct", "missing: third party data", "neuter", "not applicable", "not collected", "not provided", "other", "restricted access" ]
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Scientific name of the natural (as opposed to laboratory) host to the organism from which sample was obtained.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "host scientific name"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "The type and number of animals or insects present in the sampling space.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "presence of pets, animals, or insects"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "temperature of the sample at time of sampling",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "temperature"
+            },
+            "value" : {
+              "type" : "string",
+              "pattern" : "[+-]?(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "The total concentration of all dissolved salts in a liquid or solid sample. While salinity can be measured by a complete chemical analysis, this method is difficult and time consuming. More often, it is instead derived from the conductivity measurement. This is known as practical salinity. These derivations compare the specific conductance of the sample to a salinity standard such as seawater.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "salinity"
+            },
+            "value" : {
+              "type" : "string",
+              "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "A unique identifier assigned to a material sample (as defined by http://rs.tdwg.org/dwc/terms/materialSampleID, and as opposed to a particular digital record of a material sample) used for extracting nucleic acids, and subsequent sequencing. The identifier can refer either to the original material collected or to any derived sub-samples. The INSDC qualifiers /specimen_voucher, /bio_material, or /culture_collection may or may not share the same value as the source_mat_id field. For instance, the /specimen_voucher qualifier and source_mat_id may both contain 'UAM:Herps:14' , referring to both the specimen voucher and sampled tissue with the same identifier. However, the /culture_collection qualifier may refer to a value from an initial culture (e.g. ATCC:11775) while source_mat_id would refer to an identifier from some derived culture from which the nucleic acids were extracted (e.g. xatc123 or ark:/2154/R2).",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "source material identifiers"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "specification of smoking status",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "smoker"
+            },
+            "value" : {
+              "enum" : [ "ex-smoker", "non-smoker", "smoker" ]
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "specification of major diet changes in the last six months, if yes the change should be specified",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "major diet change in last six months"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "specification of weight loss in the last three months, if yes should be further specified to include amount of weight loss",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "weight loss in last three months"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "specification of the countries travelled in the last six months; can include multiple travels",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "travel outside the country in last six months"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "type of diet depending on the host, for animals omnivore, herbivore etc., for humans high-fat, Mediterranean etc.; can include multiple diet types",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "host diet"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "specification of twin sibling presence",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "twin sibling presence"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "content of last meal and time since feeding; can include multiple values",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "host last meal"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "specification of the gestation state",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "amniotic fluid/gestation state"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Familial relationships to other hosts in the same study; can include multiple relationships",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "host family relationship"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "specification of the maternal health status",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "amniotic fluid/maternal health status"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "observed genotype",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "host genotype"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "specification of foetal health status, should also include abortion",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "amniotic fluid/foetal health status"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "resting pulse, measured as beats per minute",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "host pulse"
+            },
+            "value" : {
+              "type" : "string",
+              "pattern" : "[+-]?[0-9]+"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "specification of the color of the amniotic fluid sample",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "amniotic fluid/color"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "substance produced by the body, e.g. stool, mucus, where the sample was obtained from. For Foundational Model of Anatomy Ontology (FMA) (v 3.1) terms, please see http://purl.bioontology.org/ontology/FMA",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "host body product"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "type of perturbation, e.g. chemical administration, physical disturbance, etc., coupled with time that perturbation occurred; can include multiple perturbation types",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "perturbation"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "The substance or equipment used as a negative control in an investigation",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "negative control type"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "The substance, mixture, product, or apparatus used to verify that a process which is part of an investigation delivers a true positive.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "positive control type"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Experimental factors are essentially the variable aspects of an experiment design which can be used to describe an experiment, or set of experiments, in an increasingly detailed manner. This field accepts ontology terms from Experimental Factor Ontology (EFO) and/or Ontology for Biomedical Investigations (OBI). For a browser of EFO (v 2.95) terms, please see http://purl.bioontology.org/ontology/EFO; for a browser of OBI (v 2018-02-12) terms please see http://purl.bioontology.org/ontology/OBI. E.g. time series design [EFO:EFO_0001779]",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "experimental factor"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Should include key traits like antibiotic resistance or xenobiotic degradation phenotypes for plasmids, converting genes for phage",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "encoded traits"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Information about the genetic distinctness of the sequenced organism below the subspecies level, e.g., serovar, serotype, biotype, ecotype, or any relevant genetic typing schemes like Group I plasmid. Subspecies should not be recorded in this term, but in the NCBI taxonomy. Supply both the lineage name and the lineage rank separated by a colon, e.g., biovar:abc123.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "subspecific genetic lineage"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Method used for taxonomic classification, along with reference database used, classification rank, and thresholds used to classify new genomes. Expected values are: classification method, database name, and other parameters e.g. vConTACT vContact2 (references from NCBI RefSeq v83, genus rank classification, default parameters)",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "taxonomic classification"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Publication reference in the form of pubmed ID (pmid), digital object identifier (doi) or url for isolation and growth condition specifications of the organism/material. Mandatory for MIGS and MIMARKS Specimen.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "isolation and growth condition"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "For cases where annotation was provided by a community jamboree or model organism database rather than by a specific submitter",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "annotation source"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Primary publication if isolated before genome publication; otherwise, primary genome report. Mandatory for MIGS of bacteria and archaea.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "reference for biomaterial"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "A brief description of any processing applied to the sample during or after retrieving the sample from environment, or a link to the relevant protocol(s) performed.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "sample material processing"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Volume (ml) or mass (g) of total collected sample processed for DNA extraction. Note: total sample collected should be entered under the term 'sample size'.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "sample volume or weight for DNA extraction"
+            },
+            "value" : {
+              "type" : "string",
+              "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "A link to a literature reference, electronic resource or a standard operating procedure (SOP), that describes the material separation to recover the nucleic acid fraction from a sample",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "nucleic acid extraction"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "A link to a literature reference, electronic resource or a standard operating procedure (SOP), that describes the enzymatic amplification (PCR, TMA, NASBA) of specific nucleic acids",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "nucleic acid amplification"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Total number of clones in the library prepared for the project",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "library size"
+            },
+            "value" : {
+              "type" : "string",
+              "pattern" : "[+-]?[0-9]+"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Total number of clones sequenced from the library",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "library reads sequenced"
+            },
+            "value" : {
+              "type" : "string",
+              "pattern" : "[+-]?[0-9]+"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Library construction method used for clone libraries",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "library construction method"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Cloning vector type(s) used in construction of libraries",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "library vector"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Specific enrichment or screening methods applied before and/or after creating clone libraries in order to select a specific group of sequences",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "library screening strategy"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Description of reaction conditions and components for PCR in the form of 'initial denaturation:94degC_1.5min; annealing=...'",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "pcr conditions"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "PCR primers that were used to amplify the sequence of the targeted gene, locus or subfragment. This field should contain all the primers used for a single PCR reaction if multiple forward or reverse primers are present in a single PCR reaction. The primer sequence should be reported in uppercase letters",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "pcr primers"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Adapters provide priming sequences for both amplification and sequencing of the sample-library fragments. Both adapters should be reported; in uppercase letters",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "adapters"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "list of chemical compounds administered to the host or site where sampling occurred, and when (e.g. antibiotics, N fertilizer, air filter); can include multiple compounds. For Chemical Entities of Biological Interest ontology (CHEBI) (v111), please see http://purl.bioontology.org/ontology/CHEBI",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "chemical administration"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      } ]
+    },
+    "links" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/definitions/link"
+      }
+    }
+  },
+  "additionalProperties" : false,
+  "required" : [ "alias", "accession", "organism", "attributes" ]
+}

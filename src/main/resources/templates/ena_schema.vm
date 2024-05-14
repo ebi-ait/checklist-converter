@@ -126,10 +126,7 @@
     },
     "attributes": {
       "type": "array",
-      "unevaluatedItems": [
-        ${attributes}
-      ],
-      "allof": [
+      "allOf": [
         ${required_attributes}
       ]
     },

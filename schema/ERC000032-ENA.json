@@ -1,0 +1,1387 @@
+{
+  "$schema" : "https://json-schema.org/draft/2019-09/schema",
+  "$id" : "https://www.ebi.ac.uk/biosamples/schemas/ENA-ENA_Influenza_virus_reporting_standard_checklist/1.0.0",
+  "title" : "ENA Influenza virus reporting standard checklist",
+  "description" : "Minimum information about an Influenza virus sample. A checklist for reporting metadata of Influenza virus samples associated with genomic data. This minimum metadata standard supports submission of avian, human and mammalian surveillance data as well as serology and viruse isolate information (where available). The ENA Influenza sample checklist is based on standards in use at the Influenza Research Database.",
+  "definitions" : {
+    "externalAccession" : {
+      "type" : "object",
+      "properties" : {
+        "db" : {
+          "type" : "string"
+        },
+        "id" : {
+          "type" : "string"
+        }
+      }
+    },
+    "xrefLink" : {
+      "type" : "object",
+      "properties" : {
+        "db" : {
+          "type" : "string"
+        },
+        "id" : {
+          "type" : "string"
+        }
+      }
+    },
+    "urlLink" : {
+      "type" : "object",
+      "properties" : {
+        "label" : {
+          "type" : "string"
+        },
+        "url" : {
+          "type" : "string"
+        }
+      }
+    },
+    "identifiers" : {
+      "type" : "object",
+      "properties" : {
+        "externalAccessions" : {
+          "type" : "array",
+          "$ref" : "#/definitions/externalAccession"
+        },
+        "secondaryAccessions" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "organism" : {
+      "type" : "object",
+      "properties" : {
+        "taxonId" : {
+          "type" : "string"
+        },
+        "commonName" : {
+          "type" : "string"
+        },
+        "scientificName" : {
+          "type" : "string"
+        },
+        "anonymizedName" : {
+          "type" : "string"
+        },
+        "individualName" : {
+          "type" : "string"
+        }
+      }
+    },
+    "attribute" : {
+      "type" : "object",
+      "properties" : {
+        "tag" : {
+          "type" : "string"
+        },
+        "value" : {
+          "type" : "string"
+        },
+        "unit" : {
+          "type" : "string"
+        }
+      }
+    },
+    "link" : {
+      "type" : "object",
+      "properties" : {
+        "xrefLink" : {
+          "$ref" : "#/definitions/xrefLink"
+        },
+        "urlLink" : {
+          "$ref" : "#/definitions/urlLink"
+        }
+      }
+    }
+  },
+  "type" : "object",
+  "properties" : {
+    "alias" : {
+      "type" : "string"
+    },
+    "accession" : {
+      "type" : "string"
+    },
+    "identifiers" : {
+      "$ref" : "#/definitions/identifiers"
+    },
+    "centerName" : {
+      "type" : "string"
+    },
+    "brokerName" : {
+      "type" : "string"
+    },
+    "title" : {
+      "type" : "string"
+    },
+    "description" : {
+      "type" : "string"
+    },
+    "organism" : {
+      "$ref" : "#/definitions/organism"
+    },
+    "attributes" : {
+      "type" : "array",
+      "allOf" : [ {
+        "contains" : {
+          "type" : "object",
+          "description" : "Number of host individuals inoculated for the experiment.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "number of inoculated individuals"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Brief description of the protocol inoculation route.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "inoculation route"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Dose used for the inoculoation experiment.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "inoculation dose"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Is the virus stock used for the inoculation available?",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "inoculation stock availability"
+            },
+            "value" : {
+              "enum" : [ "no", "yes" ]
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Conditions at which sample was stored, usually storage temperature, duration and location. In soil context: Explain how and for how long the soil sample was stored before DNA extraction (fresh/frozen/other).",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "sample storage conditions"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Exposure of the subject to infected human or animals, such as poultry, wild bird or swine. If multiple exposures are applicable, please state them separated by semicolon. Example: poultry; wild bird",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "subject exposure"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Setting within which the subject is exposed to animals, such as farm, slaughterhouse, food preparation. If multiple exposures are applicable, please state their type in the same order in which you reported the exposure in the field 'subject exposure'. Example: backyard flock; confined animal feeding operation",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "type exposure"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Use of personal protective equipment, such as gloves, gowns, during any type of exposure. Example: mask",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "personal protective equipment"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Was the subject confined to a hospital as a result of virus infection or problems occurring secondary to virus infection?",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "hospitalisation"
+            },
+            "value" : {
+              "enum" : [ "no", "yes" ]
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Antiviral treatment used for this subject, such as Zanamavir Oseltamivir, Amantadine. Example: Rimantadine",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "antiviral treatment"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Initiation of antiviral treatment after onset of clinical symptoms in days. Example: 2.5",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "antiviral treatment initiation"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Dosage of the treatment taken by the subject. Example: 0.05 mg",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "antiviral treatment dosage"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Duration of antiviral treatment after onset of clinical symptoms in days.Example: 5",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "antiviral treatment duration"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Influenza vaccinations that have been administered to the subject over the last year. Example: 2009 H1N1 Flumist",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "influenza vaccination type"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Date that the influenza vaccination was administered to the subject over the past year. Format: YYYY-MM-DD. Example: 2007-05-12",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "influenza vaccination date"
+            },
+            "value" : {
+              "type" : "string",
+              "pattern" : "^[0-9]{4}(-[0-9]{2}(-[0-9]{2})?)?$"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Designation of information related to vaccination history as self reported or documented.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "source of vaccination information"
+            },
+            "value" : {
+              "enum" : [ "documented", "self reported" ]
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Lot number of the vaccine.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "vaccine lot number"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Manufacturer of the vaccine.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "vaccine manufacturer"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Dosage of the vaccine taken by the subject. Example: 0.05 mL",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "vaccine dosage"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Is the subject at the time of sample collection considered to have influenza like illness?",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "influenza-like illness at the time of sample collection"
+            },
+            "value" : {
+              "enum" : [ "no", "yes" ]
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Date the subject showed an onset of symptoms. Format: YYYY-MM-DD. Example: 2011-10-20",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "illness onset date"
+            },
+            "value" : {
+              "type" : "string",
+              "pattern" : "^[0-9]{4}(-[0-9]{2}(-[0-9]{2})?)?$"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "The number of days the illness lasted. Example: 4",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "illness duration"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "The symptoms that have been reported in relation to the illness, such as cough, diarrhea, fever, headache, malaise, myalgia, nausea, runny_nose, shortness_of_breath, sore_throat. If multiple exposures are applicable, please state them separated by semicolon.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "illness symptoms"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "The date the sample was collected with the intention of sequencing, either as an instance (single point in time) or interval. In case no exact time is available, the date/time can be right truncated i.e. all of these are valid ISO8601 compliant times: 2008-01-23T19:23:10+00:00; 2008-01-23T19:23:10; 2008-01-23; 2008-01; 2008.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "collection date"
+            },
+            "value" : {
+              "type" : "string",
+              "pattern" : "(^[12][0-9]{3}(-(0[1-9]|1[0-2])(-(0[1-9]|[12][0-9]|3[01])(T[0-9]{2}:[0-9]{2}(:[0-9]{2})?Z?([+-][0-9]{1,2})?)?)?)?(/[0-9]{4}(-[0-9]{2}(-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2})?Z?([+-][0-9]{1,2})?)?)?)?)?$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 1,
+        "maxContains" : 1,
+        "recommended" : true
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "The geographical origin of where the sample was collected from, with the intention of sequencing, as defined by the country or sea name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html).",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "geographic location (country and/or sea)"
+            },
+            "value" : {
+              "enum" : [ "Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Arctic Ocean", "Argentina", "Armenia", "Aruba", "Ashmore and Cartier Islands", "Atlantic Ocean", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Baker Island", "Baltic Sea", "Bangladesh", "Barbados", "Bassas da India", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Borneo", "Bosnia and Herzegovina", "Botswana", "Bouvet Island", "Brazil", "British Virgin Islands", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Clipperton Island", "Cocos Islands", "Colombia", "Comoros", "Cook Islands", "Coral Sea Islands", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Curacao", "Cyprus", "Czechia", "Democratic Republic of the Congo", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "East Timor", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Europa Island", "Falkland Islands (Islas Malvinas)", "Faroe Islands", "Fiji", "Finland", "France", "French Guiana", "French Polynesia", "French Southern and Antarctic Lands", "Gabon", "Gambia", "Gaza Strip", "Georgia", "Germany", "Ghana", "Gibraltar", "Glorioso Islands", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard Island and McDonald Islands", "Honduras", "Hong Kong", "Howland Island", "Hungary", "Iceland", "India", "Indian Ocean", "Indonesia", "Iran", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Jan Mayen", "Japan", "Jarvis Island", "Jersey", "Johnston Atoll", "Jordan", "Juan de Nova Island", "Kazakhstan", "Kenya", "Kerguelen Archipelago", "Kingman Reef", "Kiribati", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mediterranean Sea", "Mexico", "Micronesia", "Midway Islands", "Moldova", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Navassa Island", "Nepal", "Netherlands", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "North Korea", "North Sea", "Northern Mariana Islands", "Norway", "Oman", "Pacific Ocean", "Pakistan", "Palau", "Palmyra Atoll", "Panama", "Papua New Guinea", "Paracel Islands", "Paraguay", "Peru", "Philippines", "Pitcairn Islands", "Poland", "Portugal", "Puerto Rico", "Qatar", "Republic of the Congo", "Reunion", "Romania", "Ross Sea", "Russia", "Rwanda", "Saint Helena", "Saint Kitts and Nevis", "Saint Lucia", "Saint Pierre and Miquelon", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Sint Maarten", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "South Korea", "Southern Ocean", "Spain", "Spratly Islands", "Sri Lanka", "Sudan", "Suriname", "Svalbard", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Tasman Sea", "Thailand", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tromelin Island", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "USA", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Viet Nam", "Virgin Islands", "Wake Island", "Wallis and Futuna", "West Bank", "Western Sahara", "Yemen", "Zambia", "Zimbabwe", "missing: control sample", "missing: data agreement established pre-2023", "missing: endangered species", "missing: human-identifiable", "missing: lab stock", "missing: sample group", "missing: synthetic construct", "missing: third party data", "not applicable", "not collected", "not provided", "restricted access" ]
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 1,
+        "maxContains" : 1,
+        "recommended" : true
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "The geographical origin of the sample as defined by latitude. The values should be reported in decimal degrees and in WGS84 system",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "geographic location (latitude)"
+            },
+            "value" : {
+              "type" : "string",
+              "pattern" : "(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : true
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "The geographical origin of the sample as defined by longitude. The values should be reported in decimal degrees and in WGS84 system",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "geographic location (longitude)"
+            },
+            "value" : {
+              "type" : "string",
+              "pattern" : "(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : true
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "The geographical origin of the sample as defined by the specific region name followed by the locality name.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "geographic location (region and locality)"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : true
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Duration of the exposure of the subject to an infected human or animal. If multiple exposures are applicable, please state their duration in the same order in which you reported the exposure in the field 'subject exposure'. Example: 1 day; 0.33 days",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "subject exposure duration"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Reason for the sample collection.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "sample capture status"
+            },
+            "value" : {
+              "enum" : [ "active surveillance in response to outbreak", "active surveillance not initiated by an outbreak", "farm sample", "market sample", "other", "pet sample", "zoo sample" ]
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : true
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Disease outcome in the host.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "host disease outcome"
+            },
+            "value" : {
+              "enum" : [ "dead", "recovered", "recovered with sequelae" ]
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : true
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "common name of the host, e.g. human",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "host common name"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 1,
+        "maxContains" : 1,
+        "recommended" : true
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "a unique identifier by which each subject can be referred to, de-identified, e.g. #131",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "host subject id"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 1,
+        "maxContains" : 1,
+        "recommended" : true
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "age of host at the time of sampling; relevant scale depends on species and study, e.g. could be seconds for amoebae or centuries for trees",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "host age"
+            },
+            "value" : {
+              "type" : "string",
+              "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : true
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Health status of the host at the time of sample collection.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "host health state"
+            },
+            "value" : {
+              "enum" : [ "diseased", "healthy", "missing: control sample", "missing: data agreement established pre-2023", "missing: endangered species", "missing: human-identifiable", "missing: lab stock", "missing: sample group", "missing: synthetic construct", "missing: third party data", "not applicable", "not collected", "not provided", "restricted access" ]
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 1,
+        "maxContains" : 1,
+        "recommended" : true
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Gender or sex of the host.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "host sex"
+            },
+            "value" : {
+              "enum" : [ "female", "hermaphrodite", "male", "missing: control sample", "missing: data agreement established pre-2023", "missing: endangered species", "missing: human-identifiable", "missing: lab stock", "missing: sample group", "missing: synthetic construct", "missing: third party data", "neuter", "not applicable", "not collected", "not provided", "other", "restricted access" ]
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 1,
+        "maxContains" : 1,
+        "recommended" : true
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Scientific name of the natural (as opposed to laboratory) host to the organism from which sample was obtained.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "host scientific name"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 1,
+        "maxContains" : 1,
+        "recommended" : true
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Method by which the current assessment of a sample as flu positive/negative is made. If multiple test were performed, please state them separated by semicolon. Example: RT-PCR; antigen ELISA",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "influenza test method"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 1,
+        "maxContains" : 1,
+        "recommended" : true
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Classification of a sample as flu positive or negative based on the test performed and reported. If multiple tests were performed, please state the results in the same order in which you reported the tests in the field 'influenza test method'. Format: P(ositive)/N(egative). Example: P; P",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "influenza test result"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 1,
+        "maxContains" : 1,
+        "recommended" : true
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Classification of pathogenic organisms other than influenza virus tested in the current assessment of a sample. If multiple tests were performed, please state them separated by semicolon. If no other pathogens test was performed, please state 'none'. Example: Newcastle",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "other pathogens tested"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 1,
+        "maxContains" : 1,
+        "recommended" : true
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Classification of a sample as positive or negative based on the test performed and reported. If tests for multiple pathogenic organisms were performed, please state the results in the same order in which you reported the tests in the field 'other pathogens tested'. Format: P(ositive)/N(egative)/not applicable. Example: N",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "other pathogens test result"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 1,
+        "maxContains" : 1,
+        "recommended" : true
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "One of the three influenza virus classification types.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "influenza virus type"
+            },
+            "value" : {
+              "enum" : [ "A", "B", "C" ]
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : true
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Unique laboratory identifier assigned to the virus by the investigator. Strain name is not sufficient since it might not be unique due to various passsages of the same virus. Format: up to 50 alphanumeric characters",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "virus identifier"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : true
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Unique number of the strain which is reported as a part of the influenza strain name, such as A/chicken/Fujian/411/2002(HxN1). Format: integer number, Example: 411",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "influenza strain unique number"
+            },
+            "value" : {
+              "type" : "string",
+              "pattern" : "[+-]?[0-9]+"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "WHO/OIE/FAO clade should be included for highly pathogenic H5N1 viruses. Example: 2.2",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "WHO/OIE/FAO clade (required for HPAI H5N1 viruses)"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Does the H1N1 influenza virus originate from a swine-like outbreak (as opposed to a seasonal flu)?",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "lineage:swl (required for H1N1 viruses)"
+            },
+            "value" : {
+              "enum" : [ "no", "yes" ]
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Name of the person who collected the specimen. Example: John Smith",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "collector name"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 1,
+        "maxContains" : 1,
+        "recommended" : true
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Name of the institution to which the person collecting the specimen belongs. Format: Institute Name, Institute Address",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "collecting institution"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 1,
+        "maxContains" : 1,
+        "recommended" : true
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Date on which the sample was received. Format:YYYY-MM-DD. Please provide the highest precision possible. If the sample was received by the institution and not collected, the 'receipt date' must be provided instead. Either the 'collection date' or 'receipt date' must be provided. If available, provide both dates.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "receipt date"
+            },
+            "value" : {
+              "type" : "string",
+              "pattern" : "^[0-9]{4}(-[0-9]{2}(-[0-9]{2})?)?$"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : true
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "The cut off value used by an investigatior in determining that a sample was seropositive.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "definition for seropositive sample"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : true
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Description helping to explain what the cut off value means.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "meaning of cut off value"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Serological variety of a species characterised by its antigenic properties. For Influenza, HA subtype should be the letter H followed by a number between 1-16 unless novel subtype is identified and the NA subtype should be the letter N followed by a number between 1-9 unless novel subtype is identified. If only one of the subtypes have been tested then use the format H5Nx or HxN1. Example: H1N1",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "serotype (required for a seropositive sample)"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : true
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Name of the strain from which the sample was obtained.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "strain"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Natural habitat of the avian or mammalian host.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "host habitat"
+            },
+            "value" : {
+              "enum" : [ "domestic:free-range farm", "domestic:indoor farm", "domestic:live market", "domestic:semi-enclosed housing", "other", "wild:migratory", "wild:resident" ]
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : true
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Name of host tissue or organ sampled for analysis. Example: tracheal tissue",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "isolation source host-associated"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : true
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Other descriptive information relating to the host.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "host description"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Whether or not the subject is gravid. If so, report date due or date post-conception and specify which of these two dates is being reported.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "gravidity"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : false
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Natural behaviour of the host.",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "host behaviour"
+            },
+            "value" : {
+              "enum" : [ "captive-wild (e.g. at zoo)", "domestic", "other", "wild" ]
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : true
+      }, {
+        "contains" : {
+          "type" : "object",
+          "description" : "Describes the physical, environmental and/or local geographical source of the biological sample from which the sample was derived. Example: soil",
+          "properties" : {
+            "tag" : {
+              "type" : "string",
+              "const" : "isolation source non-host-associated"
+            },
+            "value" : {
+              "type" : "string"
+            },
+            "unit" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "tag", "value" ]
+        },
+        "minContains" : 0,
+        "maxContains" : 1,
+        "recommended" : true
+      } ]
+    },
+    "links" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/definitions/link"
+      }
+    }
+  },
+  "additionalProperties" : false,
+  "required" : [ "alias", "accession", "organism", "attributes" ]
+}

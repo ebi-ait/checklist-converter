@@ -22,7 +22,7 @@
       ]
     }
   ],
-  "allof": [
+  "allOf": [
     {
       "contains": {
         "type": "object",
