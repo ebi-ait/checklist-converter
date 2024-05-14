@@ -2,15 +2,17 @@ package uk.ac.ebi.checklistconverter.ena;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.ResponseErrorHandler;
 import org.springframework.web.client.RestTemplate;
 import uk.ac.ebi.checklistconverter.exception.ApplicationStateException;
-import uk.ac.ebi.checklistconverter.model.JsonSchema;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,10 +24,8 @@ import java.util.stream.Collectors;
 @Service
 public class ChecklistConverterService {
   String enaChecklistBaseUrl = "https://www.ebi.ac.uk/ena/browser/api/xml/";
-
-
-  public ChecklistConverterService() {
-  }
+  @Value("${spring.application.name}")
+  String outputPath;
 
   private static String getTypedTemplate(Field field) {
     String fieldTypeTemplate;
@@ -45,6 +45,7 @@ public class ChecklistConverterService {
 
   public String getChecklist(String checklistId) {
     String jsonSchema;
+    String jsonSchemaEna;
     try {
       EnaChecklist enaChecklist = getEnaChecklist(checklistId);
       List<Map<String, String>> properties = listProperties(enaChecklist);
@@ -52,11 +53,15 @@ public class ChecklistConverterService {
       String title = enaChecklist.getChecklist().getDescriptor().getName();
       String description = enaChecklist.getChecklist().getDescriptor().getDescription();
       jsonSchema = SchemaTemplateGenerator.getBioSamplesSchema(schemaId, title, description, properties);
+      jsonSchemaEna = SchemaTemplateGenerator.getEnaSchema(schemaId, title, description, properties);
+
+      saveSchema(checklistId + "-ENA.json", jsonSchemaEna);
+      saveSchema(checklistId + "-BSD.json", jsonSchema);
     } catch (Exception e) {
       log.error("Could not GET checklist: " + checklistId, e);
       throw new ApplicationStateException("Could not retrieve checklist for " + checklistId);
     }
-    return jsonSchema;
+    return jsonSchemaEna;
   }
 
   public String getChecklists() {
@@ -68,29 +73,15 @@ public class ChecklistConverterService {
     return checklists.toString();
   }
 
-  public String saveSchema(String checklistId) {
-    String checklist = getChecklist(checklistId);
-    JsonNode schema = SchemaTemplateGenerator.getJson(checklist);
-
-    JsonSchema jsonSchema = new JsonSchema();
-    jsonSchema.setSchema(schema);
-    jsonSchema.setAuthority("ENA");
-    jsonSchema.setAccession(checklistId);
-    jsonSchema.setMetaSchema("https://schemablocks.org/metaschemas/json-schema-draft-07/1.0.1");
-
-//        populator.populateSchema(jsonSchema);
-//        schemaService.saveSchemaWithAccession(jsonSchema);
-
-    return checklist;
-  }
-
-  public List<String> getAndSaveAllSchema() {
-    List<String> enaChecklists = getEnaChecklists();
-    for (String checklist : enaChecklists) {
-      saveSchema(checklist);
+  public void saveSchema(String filename, String schema) {
+    String path = getClass().getClassLoader().getResource("schema").getPath() + "/";
+    path = "./schema/";
+    try (PrintWriter out = new PrintWriter(path + filename)) {
+      out.println(schema);
+    } catch (FileNotFoundException e) {
+      log.error("Failed to find the file ", e);
+      throw new RuntimeException(e);
     }
-
-    return enaChecklists;
   }
 
   private EnaChecklist getEnaChecklist(String checklistId) {

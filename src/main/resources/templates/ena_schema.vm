@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "${schema_id}",
+  "title": "${schema_title}",
+  "description": "${schema_description}",
+  "definitions": {
+    "externalAccession": {
+      "type": "object",
+      "properties": {
+        "db": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "xrefLink": {
+      "type": "object",
+      "properties": {
+        "db": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "urlLink": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      }
+    },
+    "identifiers": {
+      "type": "object",
+      "properties": {
+        "externalAccessions": {
+          "type": "array",
+          "$ref": "#/definitions/externalAccession"
+        },
+        "secondaryAccessions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "organism": {
+      "type": "object",
+      "properties": {
+        "taxonId": {
+          "type": "string"
+        },
+        "commonName": {
+          "type": "string"
+        },
+        "scientificName": {
+          "type": "string"
+        },
+        "anonymizedName": {
+          "type": "string"
+        },
+        "individualName": {
+          "type": "string"
+        }
+      }
+    },
+    "attribute": {
+      "type": "object",
+      "properties": {
+        "tag": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "unit": {
+          "type": "string"
+        }
+      }
+    },
+    "link": {
+      "type": "object",
+      "properties": {
+        "xrefLink": {
+          "$ref": "#/definitions/xrefLink"
+        },
+        "urlLink": {
+          "$ref": "#/definitions/urlLink"
+        }
+      }
+    }
+  },
+  "type": "object",
+  "properties": {
+    "alias": {
+      "type": "string"
+    },
+    "accession": {
+      "type": "string"
+    },
+    "identifiers": {
+      "$ref": "#/definitions/identifiers"
+    },
+    "centerName": {
+      "type": "string"
+    },
+    "brokerName": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "organism": {
+      "$ref": "#/definitions/organism"
+    },
+    "attributes": {
+      "type": "array",
+      "unevaluatedItems": [
+        ${attributes}
+      ],
+      "allof": [
+        ${required_attributes}
+      ]
+    },
+    "links": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/link"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "alias",
+    "accession",
+    "organism",
+    "attributes"
+  ]
+}

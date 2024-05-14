@@ -1,0 +1,33 @@
+{
+  "alias": "lodBeiA",
+  "accession": "ERS18415086",
+  "centerName": "Comenius University, Faculty of Mathematics, Physics and Informatics",
+  "title": "Lodderomyces beijingensis strain CBS 14171",
+  "description": "Lodderomyces beijingensis strain CBS 14171",
+  "organism": {
+    "taxonId": "1775926",
+    "scientificName": "Lodderomyces beijingensis"
+  },
+  "attributes": [
+    {
+      "tag": "collection date",
+      "value": "2015"
+    },
+    {
+      "tag": "geographic location (country and/or sea)",
+      "value": "China"
+    },
+    {
+      "tag": "isolation_source",
+      "value": "gut of a scarab beetle Anomala sieversi (Rutelidae) in Central China, Liu et al 2016"
+    },
+    {
+      "tag": "strain",
+      "value": "CBS 14171"
+    },
+    {
+      "tag": "ENA-CHECKLIST",
+      "value": "ERC000011"
+    }
+  ]
+}

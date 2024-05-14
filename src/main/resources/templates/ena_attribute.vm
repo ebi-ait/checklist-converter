@@ -1,0 +1,19 @@
+
+    {
+      "type": "object",
+      "description": "${description}",
+      "properties": {
+        "tag": {
+          "type": "string",
+          "const": "${attribute_name}"
+        },
+        "value": ${attribute_type},
+        "unit": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "tag",
+        "value"
+      ]
+    }

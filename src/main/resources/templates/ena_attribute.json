@@ -1,0 +1,53 @@
+{
+  "type": "array",
+  "unevaluatedItems":[
+    {
+      "type": "object",
+      "description": "",
+      "properties": {
+        "tag": {
+          "type": "string",
+          "const": "collection date"
+        },
+        "value": {
+          "type": "string"
+        },
+        "unit": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "tag",
+        "value"
+      ]
+    }
+  ],
+  "allof": [
+    {
+      "contains": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "tag": {
+            "type": "string",
+            "const": "collection date"
+          },
+          "value": {
+            "type": "string"
+          },
+          "unit": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "tag",
+          "value"
+        ]
+      },
+      "minContains": 1,
+      "maxContains": 1
+    },
+    {
+    }
+  ]
+}
