@@ -1,0 +1,67 @@
+{
+  "alias": "B1_16S",
+  "accession": "ERS2160164",
+  "centerName": "CBMSO",
+  "title": "Sampler selection for whole airborne biological community analysis using Next Generation Sequencing",
+  "organism": {
+    "taxonId": "408169",
+    "scientificName": "metagenomes"
+  },
+  "attributes": [
+    {
+      "tag": "air environmental package",
+      "value": "air"
+    },
+    {
+      "tag": "collection date",
+      "value": "2016-05"
+    },
+    {
+      "tag": "environment (biome)",
+      "value": "ENVO_00002005"
+    },
+    {
+      "tag": "environment (feature)",
+      "value": "ENVO_00002005"
+    },
+    {
+      "tag": "environment (material)",
+      "value": "ENVO_00002005"
+    },
+    {
+      "tag": "geographic location (altitude)",
+      "value": "ca 700",
+      "unit": "m"
+    },
+    {
+      "tag": "geographic location (country and/or sea)",
+      "value": "Spain"
+    },
+    {
+      "tag": "geographic location (latitude)",
+      "value": "40.439865",
+      "unit": "DD"
+    },
+    {
+      "tag": "geographic location (longitude)",
+      "value": "-3.689403",
+      "unit": "DD"
+    },
+    {
+      "tag": "investigation type",
+      "value": "metagenome"
+    },
+    {
+      "tag": "project name",
+      "value": "Sampler selection for whole airborne biological community analysis using Next Generation Sequencing"
+    },
+    {
+      "tag": "sequencing method",
+      "value": "Illumina"
+    },
+    {
+      "tag": "ENA-CHECKLIST",
+      "value": "ERC000012"
+    }
+  ]
+}

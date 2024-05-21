@@ -27,6 +27,7 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-actuator")
 //	implementation("org.springframework.cloud:spring-cloud-function-context")
 	implementation("org.springframework.cloud:spring-cloud-starter-function-web")
+	implementation("org.springframework.boot:spring-boot-starter-webflux")
 
 	implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.11.1")
 	implementation("com.google.guava:guava:29.0-jre")
@@ -34,6 +35,7 @@ dependencies {
 	implementation("org.apache.velocity:velocity:1.7")
 	implementation("org.apache.velocity:velocity-tools:2.0")
 	implementation("org.apache.velocity:velocity:1.7")
+	implementation("org.json:json:20240303")
 
 	annotationProcessor("org.projectlombok:lombok:1.18.30")
 

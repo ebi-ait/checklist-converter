@@ -1,0 +1,96 @@
+{
+  "alias": "M626.ST35",
+  "accession": "ERS797508",
+  "centerName": "INSTITUT de ciencies del mar",
+  "title": "deep ocean microbial eukaryote",
+  "description": "deep ocean microbial eukaryote",
+  "organism": {
+    "taxonId": "100272",
+    "scientificName": "uncultured eukaryote"
+  },
+  "attributes": [
+    {
+      "tag": "Sampling Campaign",
+      "value": "Malaspina"
+    },
+    {
+      "tag": "Sampling Site",
+      "value": "Atlantic Ocean"
+    },
+    {
+      "tag": "Sampling Platform",
+      "value": "R/V BIO Hesperides"
+    },
+    {
+      "tag": "Event Date/Time",
+      "value": "2011-01-27T05:07:00Z/2011-01-27T08:37:00Z"
+    },
+    {
+      "tag": "Longitude Start",
+      "value": "-11,803",
+      "unit": "DD"
+    },
+    {
+      "tag": "Longitude End",
+      "value": "-11,803",
+      "unit": "DD"
+    },
+    {
+      "tag": "Latitude Start",
+      "value": "-28,62495",
+      "unit": "DD"
+    },
+    {
+      "tag": "Latitude End",
+      "value": "-28,62495",
+      "unit": "DD"
+    },
+    {
+      "tag": "Depth",
+      "value": "3650",
+      "unit": "m"
+    },
+    {
+      "tag": "Protocol Label",
+      "value": "filtration"
+    },
+    {
+      "tag": "Marine Region",
+      "value": "Atlantic Ocean"
+    },
+    {
+      "tag": "environment (biome)",
+      "value": "Deep ocean"
+    },
+    {
+      "tag": "environment (feature)",
+      "value": "water column"
+    },
+    {
+      "tag": "environment (material)",
+      "value": "water"
+    },
+    {
+      "tag": "Temperature",
+      "value": "2.4",
+      "unit": "ºC"
+    },
+    {
+      "tag": "Salinity",
+      "value": "34.86",
+      "unit": "psu"
+    },
+    {
+      "tag": "environmental package",
+      "value": "water"
+    },
+    {
+      "tag": "project name",
+      "value": "Malaspina"
+    },
+    {
+      "tag": "ENA-CHECKLIST",
+      "value": "ERC000027"
+    }
+  ]
+}

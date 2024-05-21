@@ -1,0 +1,73 @@
+{
+  "alias": "fun.nac371",
+  "accession": "ERS6264623",
+  "centerName": "Barta",
+  "title": "fun_371",
+  "description": "fungal ITS1",
+  "organism": {
+    "taxonId": "256318",
+    "scientificName": "metagenome"
+  },
+  "attributes": [
+    {
+      "tag": "collection date",
+      "value": "2013"
+    },
+    {
+      "tag": "environment (biome)",
+      "value": "spruce biome"
+    },
+    {
+      "tag": "environment (feature)",
+      "value": "spruce forest"
+    },
+    {
+      "tag": "environment (material)",
+      "value": "soil"
+    },
+    {
+      "tag": "geographic location (country and/or sea)",
+      "value": "Czech Republic"
+    },
+    {
+      "tag": "geographic location (depth)",
+      "value": "0.1",
+      "unit": "m"
+    },
+    {
+      "tag": "geographic location (elevation)",
+      "value": "784",
+      "unit": "m"
+    },
+    {
+      "tag": "geographic location (latitude)",
+      "value": "50.590556",
+      "unit": "DD"
+    },
+    {
+      "tag": "geographic location (longitude)",
+      "value": "13.253889",
+      "unit": "DD"
+    },
+    {
+      "tag": "investigation type",
+      "value": "metagenome"
+    },
+    {
+      "tag": "project name",
+      "value": "Nacetin13"
+    },
+    {
+      "tag": "sequencing method",
+      "value": "Illumina MiSeq"
+    },
+    {
+      "tag": "soil environmental package",
+      "value": "soil"
+    },
+    {
+      "tag": "ENA-CHECKLIST",
+      "value": "ERC000022"
+    }
+  ]
+}
