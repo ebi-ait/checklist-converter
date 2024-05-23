@@ -5,12 +5,15 @@ import requests
 from os.path import join, isfile, isdir
 from typing import List
 from argparse import ArgumentParser
+from xml.etree import ElementTree
+from uuid import uuid4
+
 
 
 def str_or_file_path(value: str) -> List:
     if isfile(value):
         with open(value, 'r') as f:
-            values = f.readlines()
+            values = f.read().splitlines()
     else:
         values = value.split(',')
     return values
@@ -42,6 +45,23 @@ def get_document(accession):
     return response.text
 
 
+def clean_document(xml_document: str) -> str:
+    """
+    Remove accession identifiers from ENA XML document. They are not allowed for ENA validation.
+    :param xml_document:
+    :return:
+    """
+    root = ElementTree.XML(xml_document)
+    for parent in root.iter():
+        for child in list(parent):
+            if child.tag == 'SAMPLE':
+                del child.attrib['accession']
+                child.attrib['alias'] = str(uuid4())
+            if child.tag == 'IDENTIFIERS':
+                parent.remove(child)
+    return ElementTree.tostring(root).decode()
+
+
 def write_document(output_path, content):
     with open(output_path, 'w') as f:
         f.write(content)
@@ -50,7 +70,9 @@ def write_document(output_path, content):
 def main(accessions, output_path):
     documents = {}
     for accession in accessions:
-        documents[accession] = get_document(accession)
+        document = get_document(accession)
+        validation_ready_document = clean_document(document)
+        documents[accession] = validation_ready_document
 
     for accession, content in documents.items():
         output_file_path = join(output_path, f"{accession}.xml")
