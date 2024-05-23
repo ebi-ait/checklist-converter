@@ -1,9 +1,11 @@
 package uk.ac.ebi.checklistconverter.ena;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import org.junit.jupiter.api.Test;
+import org.opentest4j.TestAbortedException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.io.ClassPathResource;
@@ -17,6 +19,7 @@ import reactor.core.publisher.Mono;
 import java.io.File;
 import java.io.IOException;
 import java.net.URI;
+import java.util.concurrent.ExecutionException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -33,48 +36,94 @@ class ChecklistConverterServiceTest {
   WebClient webClient = WebClient.builder().baseUrl("http://localhost:3020/validate").build();
 
   @Test
-  void getChecklist() throws IOException {
-    String schema = checklistConverterService.getChecklist("ERC000011");
-    JsonNode schemaJson = objectMapper.readValue(schema, JsonNode.class);
-
-    File file = resourceLoader.getResource("classpath:samples/ERC000011/SAMEA115394517.json").getFile();
+  void valid_json_returns_empty_validation_results() {
+//    String schema = checklistConverterService.getChecklist("ERC000011");
+//    JsonNode schemaJson = objectMapper.readValue(schema, JsonNode.class);
+//
+////    File file = resourceLoader.getResource("classpath:samples/ERC000011/SAMEA115394517.json").getFile();
 //    File file = resourceLoader.getResource("classpath:samples/ERC000011/invalid.json").getFile();
-    JsonNode sampleJson = objectMapper.readValue(file, JsonNode.class);
+//    JsonNode sampleJson = objectMapper.readValue(file, JsonNode.class);
+//
+//    ObjectNode requestNode = objectMapper.createObjectNode();
+//    requestNode.set("data", sampleJson);
+//    requestNode.set("schema", schemaJson);
+//    String requestString = objectMapper.writeValueAsString(requestNode);
+//
+//    RestTemplate restTemplate = new RestTemplate();
+//    URI uri = URI.create("http://localhost:3020/validate");
+//
+//    HttpHeaders headers = new HttpHeaders();
+//    headers.setContentType(MediaType.APPLICATION_JSON);
+//    HttpEntity<String> request = new HttpEntity<>(requestString, headers);
+//
+//    ResponseEntity<String> responseEntity = restTemplate.postForEntity(uri, request, String.class);
+//    JsonNode root = objectMapper.readTree(responseEntity.getBody());
+//
+//    System.out.println(root);
+//
+//    assertEquals("[]", responseEntity.getBody());
 
-    ObjectNode requestNode = objectMapper.createObjectNode();
-    requestNode.set("data", sampleJson);
-    requestNode.set("schema", schemaJson);
-    String requestString = objectMapper.writeValueAsString(requestNode);
 
-    RestTemplate restTemplate = new RestTemplate();
-    URI uri = URI.create("http://localhost:3020/validate");
 
-    HttpHeaders headers = new HttpHeaders();
-    headers.setContentType(MediaType.APPLICATION_JSON);
-    HttpEntity<String> request =
-        new HttpEntity<String>("{\"schema\":{\"$schema\":\"http://json-schema.org/draft-07/schema#\",\"type\":\"object\",\"properties\":{\"alias\":{\"description\":\"A sample unique identifier in a submission.\",\"type\":\"string\"},\"taxonId\":{\"description\":\"The taxonomy id for the sample species.\",\"type\":\"integer\"},\"taxon\":{\"description\":\"The taxonomy name for the sample species.\",\"type\":\"string\"},\"releaseDate\":{\"description\":\"Date from which this sample is released publicly.\",\"type\":\"string\",\"format\":\"date\"},\"disease\":{\"description\":\"The disease for the sample species.\",\"type\":\"string\",\"graphRestriction\":{\"ontologies\":[\"obo:mondo\",\"obo:efo\"],\"classes\":[\"MONDO:0000001\",\"PATO:0000461\"],\"queryFields\":[\"obo_id\",\"label\"],\"includeSelf\":true}},\"disease_id\":{\"description\":\"The ontology id for the disease sample species.\",\"type\":\"string\",\"graphRestriction\":{\"ontologies\":[\"obo:mondo\",\"obo:efo\"],\"classes\":[\"MONDO:0000001\",\"PATO:0000461\"],\"includeSelf\":true}}},\"required\":[\"alias\",\"taxonId\"]},\"data\":{\"alias\":\"MA456\",\"taxonId\":9606,\"disease\":\"glioblastoma\",\"disease_id\":\"MONDO:0018177\"}}", headers);
-    request = new HttpEntity<>(requestString, headers);
+    ResponseEntity<JsonNode> response;
 
-    ResponseEntity<String> responseEntity = restTemplate.postForEntity(uri, request, String.class);
-    JsonNode root = objectMapper.readTree(responseEntity.getBody());
+    try {
+      ObjectNode requestNode;
+      String schema = checklistConverterService.getChecklist("ERC000011");
+      JsonNode schemaJson = objectMapper.readValue(schema, JsonNode.class);
+      File file = resourceLoader.getResource("classpath:samples/ERC000011/SAMEA115394517.json").getFile();
+      JsonNode sampleJson = objectMapper.readValue(file, JsonNode.class);
 
-    System.out.println(root);
+      requestNode = objectMapper.createObjectNode();
+      requestNode.set("data", sampleJson);
+      requestNode.set("schema", schemaJson);
 
-    assertEquals("[]", responseEntity.getBody());
+      response = webClient.post()
+          .uri("http://localhost:3020/validate")
+          .bodyValue(requestNode)
+          .retrieve()
+          .toEntity(JsonNode.class)
+          .toFuture()
+          .get();
+    } catch (IOException | InterruptedException | ExecutionException e) {
+      throw new RuntimeException(e);
+    }
 
-//    Mono<JsonNode> requestBody = new ObjectNode("", "");
-//    Mono<JsonNode> entityMono = webClient.post()
-//        .uri("")
-//        .contentType(MediaType.APPLICATION_JSON)
-//        .body()
-//        .exchangeToMono(response -> {
-//          if (response.statusCode().equals(HttpStatus.OK)) {
-//            return response.bodyToMono(JsonNode.class);
-//          }
-//          else {
-//            // Turn to error
-//            return response.createError();
-//          }
-//        });
+    if (response.getBody() == null) {
+      throw new TestAbortedException("Response body can not be empty");
+    }
+    assertEquals(0, response.getBody().size());
+  }
+
+  @Test
+  void invalid_checklist_should_output_schema_error() {
+    ResponseEntity<JsonNode> response;
+
+    try {
+      ObjectNode requestNode;
+      String schema = checklistConverterService.getChecklist("ERC000011");
+      JsonNode schemaJson = objectMapper.readValue(schema, JsonNode.class);
+      File file = resourceLoader.getResource("classpath:samples/ERC000011/invalid.json").getFile();
+      JsonNode sampleJson = objectMapper.readValue(file, JsonNode.class);
+
+      requestNode = objectMapper.createObjectNode();
+      requestNode.set("data", sampleJson);
+      requestNode.set("schema", schemaJson);
+
+      response = webClient.post()
+          .uri("http://localhost:3020/validate")
+          .bodyValue(requestNode)
+          .retrieve()
+          .toEntity(JsonNode.class)
+          .toFuture()
+          .get();
+    } catch (IOException | InterruptedException | ExecutionException e) {
+      throw new RuntimeException(e);
+    }
+
+    if (response.getBody() == null) {
+      throw new TestAbortedException("Response body can not be empty");
+    }
+    assertEquals("must be equal to constant", response.getBody().get(0).get("errors").get(0).asText());
   }
 }
