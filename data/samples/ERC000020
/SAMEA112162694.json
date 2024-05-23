@@ -1,0 +1,42 @@
+{
+  "alias" : "T0ROM121S2",
+  "accession" : "ERS14272491",
+  "centerName" : "UNIVERSITY OF BOLOGNA",
+  "title" : "T0ROM121S2",
+  "description" : "Root",
+  "organism" : {
+    "taxonId" : "29760",
+    "commonName" : "wine grape",
+    "scientificName" : "Vitis vinifera"
+  },
+  "attributes" : [ {
+    "tag" : "broad-scale environmental context",
+    "value" : "Vineyard"
+  }, {
+    "tag" : "collection date",
+    "value" : "not collected"
+  }, {
+    "tag" : "environmental medium",
+    "value" : "Soil"
+  }, {
+    "tag" : "geographic location (country and/or sea)",
+    "value" : "Italy"
+  }, {
+    "tag" : "geographic location (latitude)",
+    "value" : "44.82",
+    "unit" : "DD"
+  }, {
+    "tag" : "geographic location (longitude)",
+    "value" : "11.06",
+    "unit" : "DD"
+  }, {
+    "tag" : "local environmental context",
+    "value" : "Root"
+  }, {
+    "tag" : "project name",
+    "value" : "PRJEB57815"
+  }, {
+    "tag" : "ENA-CHECKLIST",
+    "value" : "ERC000020"
+  } ]
+}

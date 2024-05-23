@@ -1,0 +1,36 @@
+{
+  "alias" : "S19BD02824",
+  "accession" : "ERS6247835",
+  "centerName" : "Sciensano",
+  "title" : "clinical sample Shigella sonnei",
+  "description" : "faeces",
+  "organism" : {
+    "taxonId" : "624",
+    "scientificName" : "Shigella sonnei"
+  },
+  "attributes" : [ {
+    "tag" : "collected_by",
+    "value" : "NRCSS Belgium at Sciensano"
+  }, {
+    "tag" : "collection_date",
+    "value" : "2019-03-21"
+  }, {
+    "tag" : "geographic location (country and/or sea)",
+    "value" : "Belgium"
+  }, {
+    "tag" : "host scientific name",
+    "value" : "Home sapiens"
+  }, {
+    "tag" : "isolate",
+    "value" : "clinical"
+  }, {
+    "tag" : "patient gender",
+    "value" : "Male"
+  }, {
+    "tag" : "year",
+    "value" : "2019"
+  }, {
+    "tag" : "ENA-CHECKLIST",
+    "value" : "ERC000044"
+  } ]
+}

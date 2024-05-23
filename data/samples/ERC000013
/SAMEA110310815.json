@@ -1,0 +1,53 @@
+{
+  "alias" : "OV4",
+  "accession" : "ERS12408423",
+  "centerName" : "ADM Biopolis",
+  "title" : "OV4",
+  "description" : "Diet enriched with olive oil",
+  "organism" : {
+    "taxonId" : "410661",
+    "scientificName" : "mouse gut metagenome"
+  },
+  "attributes" : [ {
+    "tag" : "collection date",
+    "value" : "2014"
+  }, {
+    "tag" : "environment (biome)",
+    "value" : "animal house"
+  }, {
+    "tag" : "environment (feature)",
+    "value" : "animal cage"
+  }, {
+    "tag" : "environment (material)",
+    "value" : "feces"
+  }, {
+    "tag" : "geographic location (country and/or sea)",
+    "value" : "Spain"
+  }, {
+    "tag" : "geographic location (latitude)",
+    "value" : "37.788308",
+    "unit" : "DD"
+  }, {
+    "tag" : "geographic location (longitude)",
+    "value" : "-3.777796",
+    "unit" : "DD"
+  }, {
+    "tag" : "host taxid",
+    "value" : "10090"
+  }, {
+    "tag" : "host-associated environmental package",
+    "value" : "host-associated"
+  }, {
+    "tag" : "investigation type",
+    "value" : "metagenome"
+  }, {
+    "tag" : "project name",
+    "value" : "PRJEB54631"
+  }, {
+    "tag" : "sequencing method",
+    "value" : "454 pyrosequencing"
+  }, {
+    "tag" : "ENA-CHECKLIST",
+    "value" : "ERC000013"
+  } ]
+}

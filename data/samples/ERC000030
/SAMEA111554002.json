@@ -1,0 +1,68 @@
+{
+  "alias" : "8_S373_L001_R1_001",
+  "accession" : "ERS13664053",
+  "centerName" : "UNIVERSITY OF BERGEN/DEPT. OF BIOLOGY",
+  "title" : "JC1_2_P2_0180m",
+  "description" : "16S_amplicon_sequences_from_the_JC1_2_cruise_2018_Nansen_Legacy",
+  "organism" : {
+    "taxonId" : "1561972",
+    "scientificName" : "seawater metagenome"
+  },
+  "attributes" : [ {
+    "tag" : "broad-scale environmental context",
+    "value" : "Barent's_Sea"
+  }, {
+    "tag" : "Depth",
+    "value" : "180",
+    "unit" : "m"
+  }, {
+    "tag" : "environmental medium",
+    "value" : "water"
+  }, {
+    "tag" : "environmental package",
+    "value" : "water"
+  }, {
+    "tag" : "Event Date/Time Start",
+    "value" : "2018-08-10"
+  }, {
+    "tag" : "Latitude Start",
+    "value" : "77.5015",
+    "unit" : "DD"
+  }, {
+    "tag" : "local environmental context",
+    "value" : "Norwegian_Barent's_Sea_East_and_North_of_Svalbard"
+  }, {
+    "tag" : "Longitude Start",
+    "value" : "33.9962",
+    "unit" : "DD"
+  }, {
+    "tag" : "Marine Region",
+    "value" : "Norwegian_Barent's_Sea_East_and_North_of_Svalbard"
+  }, {
+    "tag" : "project name",
+    "value" : "Nansen_Legacy_Summer"
+  }, {
+    "tag" : "Protocol Label",
+    "value" : "UiB"
+  }, {
+    "tag" : "Salinity Sensor",
+    "value" : "34.89",
+    "unit" : "psu"
+  }, {
+    "tag" : "Sampling Campaign",
+    "value" : "The_Nansen_Legacy_JC1-2"
+  }, {
+    "tag" : "Sampling Platform",
+    "value" : "RV_Kronprins_Haakon"
+  }, {
+    "tag" : "Sampling Station",
+    "value" : "P2"
+  }, {
+    "tag" : "Temperature",
+    "value" : "0.72",
+    "unit" : "ºC"
+  }, {
+    "tag" : "ENA-CHECKLIST",
+    "value" : "ERC000030"
+  } ]
+}

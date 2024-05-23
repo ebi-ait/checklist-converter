@@ -1,0 +1,28 @@
+{
+  "alias" : "3342_28_14MCB135",
+  "accession" : "ERS1252244",
+  "centerName" : "NETHERLANDS CANCER INSTITUTE",
+  "title" : "3342_28_14MCB135",
+  "description" : "14MCB135 - exponential solid ILC",
+  "organism" : {
+    "taxonId" : "10090",
+    "commonName" : "house mouse",
+    "scientificName" : "Mus musculus"
+  },
+  "attributes" : [ {
+    "tag" : "diagnosis",
+    "value" : "solid invasive lobular carcinoma"
+  }, {
+    "tag" : "sex",
+    "value" : "female"
+  }, {
+    "tag" : "strain",
+    "value" : "Wcre;Cdh1F/F;PtenF/F (FVB)"
+  }, {
+    "tag" : "tissue_type",
+    "value" : "mammary tumor"
+  }, {
+    "tag" : "ENA-CHECKLIST",
+    "value" : "ERC000034"
+  } ]
+}

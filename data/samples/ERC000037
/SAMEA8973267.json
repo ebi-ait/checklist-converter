@@ -1,0 +1,68 @@
+{
+  "alias" : "K002000240_88555_1",
+  "accession" : "ERS6656003",
+  "centerName" : "UNIVERSITY OF COLOGNE",
+  "title" : "RNAseq",
+  "organism" : {
+    "taxonId" : "4577",
+    "commonName" : "maize",
+    "scientificName" : "Zea mays"
+  },
+  "attributes" : [ {
+    "tag" : "collection date",
+    "value" : "2017-07-03"
+  }, {
+    "tag" : "collection time",
+    "value" : "13-16"
+  }, {
+    "tag" : "estimated size",
+    "value" : "2.3 - 2.7 GB"
+  }, {
+    "tag" : "geographic location (country and/or sea)",
+    "value" : "Switzerland"
+  }, {
+    "tag" : "geographic location (latitude)",
+    "value" : "47.425705",
+    "unit" : "DD"
+  }, {
+    "tag" : "geographic location (longitude)",
+    "value" : "8.516464",
+    "unit" : "DD"
+  }, {
+    "tag" : "isolation and growth condition",
+    "value" : "Field"
+  }, {
+    "tag" : "number of replicons",
+    "value" : "10"
+  }, {
+    "tag" : "plant developmental stage",
+    "value" : "Vegetative (V6)"
+  }, {
+    "tag" : "plant growth medium",
+    "value" : "soil"
+  }, {
+    "tag" : "plant structure",
+    "value" : "Leaf"
+  }, {
+    "tag" : "plot",
+    "value" : "19"
+  }, {
+    "tag" : "protocol",
+    "value" : "TruSeq standard"
+  }, {
+    "tag" : "sample health state",
+    "value" : "healthy"
+  }, {
+    "tag" : "sequencing_method",
+    "value" : "HiSeq 2500 paired-end"
+  }, {
+    "tag" : "soil management",
+    "value" : "NK"
+  }, {
+    "tag" : "trial",
+    "value" : "DEMO"
+  }, {
+    "tag" : "ENA-CHECKLIST",
+    "value" : "ERC000037"
+  } ]
+}

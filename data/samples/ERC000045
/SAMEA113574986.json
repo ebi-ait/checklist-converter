@@ -1,0 +1,30 @@
+{
+  "alias" : "K.pneumoniae-25_P2_5",
+  "accession" : "ERS15569915",
+  "centerName" : "UCIBIO/REQUIMTE-UPorto",
+  "title" : "Klebsiella pneumoniae strain 25_P2_5",
+  "description" : "Illumina sequencing of Klebsiella pneumoniae strain 25_P2_5 from pre-slaughter chicken",
+  "organism" : {
+    "taxonId" : "573",
+    "scientificName" : "Klebsiella pneumoniae"
+  },
+  "attributes" : [ {
+    "tag" : "collection date",
+    "value" : "2022"
+  }, {
+    "tag" : "geographic location (country and/or sea)",
+    "value" : "Portugal"
+  }, {
+    "tag" : "isolate",
+    "value" : "25_P2_5"
+  }, {
+    "tag" : "isolation_source",
+    "value" : "Pre-slaughter chicken"
+  }, {
+    "tag" : "receipt date",
+    "value" : "2022"
+  }, {
+    "tag" : "ENA-CHECKLIST",
+    "value" : "ERC000045"
+  } ]
+}

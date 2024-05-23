@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SAMPLE_SET>
+<SAMPLE accession="SAMEA112290138" alias="UVM4" center_name="Department of Plant Sciences, University of Cambridge">
+     <IDENTIFIERS>
+          <PRIMARY_ID>SAMEA112290138</PRIMARY_ID>
+          <SECONDARY_ID>ERS14400964</SECONDARY_ID>
+          <EXTERNAL_ID namespace="BioSample">SAMEA112290138</EXTERNAL_ID>
+          <SUBMITTER_ID namespace="Department of Plant Sciences, University of Cambridge">UVM4</SUBMITTER_ID>
+     </IDENTIFIERS>
+     <TITLE>UVM4</TITLE>
+     <SAMPLE_NAME>
+          <TAXON_ID>3055</TAXON_ID>
+          <SCIENTIFIC_NAME>Chlamydomonas reinhardtii</SCIENTIFIC_NAME>
+     </SAMPLE_NAME>
+     <DESCRIPTION>Lab strain UVM4 obtained from Ralph Bock</DESCRIPTION>
+     <SAMPLE_LINKS>
+    <SAMPLE_LINK>
+        <XREF_LINK>
+            <DB>ENA-FASTQ-FILES</DB>
+            <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERS14400964&result=read_run&fields=run_accession,fastq_ftp,fastq_md5,fastq_bytes]]></ID>
+        </XREF_LINK>
+    </SAMPLE_LINK>
+    <SAMPLE_LINK>
+        <XREF_LINK>
+            <DB>ENA-SUBMITTED-FILES</DB>
+            <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERS14400964&result=read_run&fields=run_accession,submitted_ftp,submitted_md5,submitted_bytes,submitted_format]]></ID>
+        </XREF_LINK>
+    </SAMPLE_LINK>
+</SAMPLE_LINKS>
+<SAMPLE_ATTRIBUTES>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>Further Details</TAG>
+               <VALUE>Neupert et al., 2009</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>strain</TAG>
+               <VALUE>UVM4</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>ENA-CHECKLIST</TAG>
+               <VALUE>ERC000043</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>ENA-FIRST-PUBLIC</TAG>
+               <VALUE>2023-04-15T00:26:27Z</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>organism</TAG>
+               <VALUE>Chlamydomonas reinhardtii</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>ENA-LAST-UPDATE</TAG>
+               <VALUE>2023-04-15T00:26:27Z</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>growth condition</TAG>
+               <VALUE>Tris-acetate phosphate (TAP) medium with Kropat's trace elements (Kropat et al., 2011) but excluding selenium 25�C under a continuous or 16 h / 8 h light / dark cycle (shaking speed of 120 rpm, light intensity of 90 �E/(m^2*s^1)</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>scientific_name</TAG>
+               <VALUE>Chlamydomonas reinhardtii</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>culture_collection</TAG>
+               <VALUE/>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>sample storage conditions</TAG>
+               <VALUE>Under natural light at room temperature</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>ENA-FIRST-PUBLIC</TAG>
+               <VALUE>2023-04-15</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>ENA-LAST-UPDATE</TAG>
+               <VALUE>2023-04-15</VALUE>
+          </SAMPLE_ATTRIBUTE>
+     </SAMPLE_ATTRIBUTES>
+</SAMPLE>
+</SAMPLE_SET>

@@ -1,0 +1,28 @@
+{
+  "alias" : "2865_2_11SJK247-03",
+  "accession" : "ERS1252210",
+  "centerName" : "NETHERLANDS CANCER INSTITUTE",
+  "title" : "2865_2_11SJK247-03",
+  "description" : "11SJK247-03 - CLC tissue",
+  "organism" : {
+    "taxonId" : "10090",
+    "commonName" : "house mouse",
+    "scientificName" : "Mus musculus"
+  },
+  "attributes" : [ {
+    "tag" : "diagnosis",
+    "value" : "classic invasive lobular carcinoma"
+  }, {
+    "tag" : "sex",
+    "value" : "female"
+  }, {
+    "tag" : "strain",
+    "value" : "Wcre;Cdh1F/F;PtenF/F (FVB)"
+  }, {
+    "tag" : "tissue_type",
+    "value" : "mammary tumor"
+  }, {
+    "tag" : "ENA-CHECKLIST",
+    "value" : "ERC000034"
+  } ]
+}

@@ -1,0 +1,53 @@
+{
+  "alias" : "MockCloudQiaAmp.1",
+  "accession" : "ERS12389680",
+  "centerName" : "CNRS",
+  "title" : "MockCloudQiaAmp.1",
+  "organism" : {
+    "taxonId" : "256318",
+    "scientificName" : "metagenome"
+  },
+  "attributes" : [ {
+    "tag" : "air environmental package",
+    "value" : "air"
+  }, {
+    "tag" : "collection date",
+    "value" : "2021-07-19"
+  }, {
+    "tag" : "environment (biome)",
+    "value" : "mock sample"
+  }, {
+    "tag" : "environment (feature)",
+    "value" : "mock sample"
+  }, {
+    "tag" : "environment (material)",
+    "value" : "mock sample"
+  }, {
+    "tag" : "geographic location (altitude)",
+    "value" : "1465",
+    "unit" : "m"
+  }, {
+    "tag" : "geographic location (country and/or sea)",
+    "value" : "France"
+  }, {
+    "tag" : "geographic location (latitude)",
+    "value" : "45.772",
+    "unit" : "DD"
+  }, {
+    "tag" : "geographic location (longitude)",
+    "value" : "2.9655",
+    "unit" : "DD"
+  }, {
+    "tag" : "investigation type",
+    "value" : "metagenome"
+  }, {
+    "tag" : "project name",
+    "value" : "Cloud-Air-16S"
+  }, {
+    "tag" : "sequencing method",
+    "value" : "Illumina MiSeq"
+  }, {
+    "tag" : "ENA-CHECKLIST",
+    "value" : "ERC000012"
+  } ]
+}

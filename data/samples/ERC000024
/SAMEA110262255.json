@@ -1,0 +1,84 @@
+{
+  "alias" : "65812:740a55dc-9ca4-4daa-b5da-027174b81efb",
+  "accession" : "ERS12359872",
+  "centerName" : "Alfred Wegener Institute Helmholtz Centre for Polar and Marine Research",
+  "title" : "RAS_EGC_10_1819_2",
+  "description" : "FRAM mooring EGC-5: microbial annual cycle 2018-19",
+  "organism" : {
+    "taxonId" : "1561972",
+    "scientificName" : "seawater metagenome"
+  },
+  "attributes" : [ {
+    "tag" : "locus_tag",
+    "value" : "16S"
+  }, {
+    "tag" : "sample_description",
+    "value" : "FRAM mooring EGC-5: microbial annual cycle 2018-19"
+  }, {
+    "tag" : "collection date",
+    "value" : "2018-10-24"
+  }, {
+    "tag" : "geographic location (depth)",
+    "value" : "71.74",
+    "unit" : "m"
+  }, {
+    "tag" : "environmental package",
+    "value" : "water"
+  }, {
+    "tag" : "sample collection device or method",
+    "value" : "Remote Access Sampler"
+  }, {
+    "tag" : "sample material processing",
+    "value" : "Sterivex_0.2um"
+  }, {
+    "tag" : "geographic location (latitude)",
+    "value" : "78.99999",
+    "unit" : "DD"
+  }, {
+    "tag" : "geographic location (longitude)",
+    "value" : "-5.3952",
+    "unit" : "DD"
+  }, {
+    "tag" : "geographic location (country and/or sea)",
+    "value" : "Arctic Ocean"
+  }, {
+    "tag" : "geographic location (region and locality)",
+    "value" : "Fram Strait"
+  }, {
+    "tag" : "environment (biome)",
+    "value" : "marine biome [ENVO:00000447]"
+  }, {
+    "tag" : "environment (material)",
+    "value" : "sea water [ENVO:00002149]"
+  }, {
+    "tag" : "environment (feature)",
+    "value" : "microbial community [PCO:1000004]"
+  }, {
+    "tag" : "project name",
+    "value" : "FRAM"
+  }, {
+    "tag" : "nucleic acid extraction",
+    "value" : "PowerWater"
+  }, {
+    "tag" : "investigation type",
+    "value" : "mimarks-survey"
+  }, {
+    "tag" : "pcr primers",
+    "value" : "FWD:GTGYCAGCMGCCGCGGTAA REV:CCGYCAATTYMTTTRAGTTT; 515F-926R"
+  }, {
+    "tag" : "target subfragment",
+    "value" : "V4-V5"
+  }, {
+    "tag" : "submitted to insdc",
+    "value" : "true"
+  }, {
+    "tag" : "sequencing method",
+    "value" : "Illumina MiSeq"
+  }, {
+    "tag" : "water environmental package",
+    "value" : "water"
+  }, {
+    "tag" : "ENA-CHECKLIST",
+    "value" : "ERC000024"
+  } ]
+}

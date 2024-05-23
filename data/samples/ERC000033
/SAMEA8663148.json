@@ -1,0 +1,61 @@
+{
+  "alias" : "Run304_BC13",
+  "accession" : "ERS6347683",
+  "centerName" : "Dutch COVID-19 response team",
+  "title" : "Dutch COVID-19 response sample sequencing",
+  "description" : "A SARS-CoV-2 specific multiplex PCR for Nanopore sequencing was performed, similar to amplicon-based approaches as previously described. In short, primers for 86 overlapping amplicons spanning the entire genome were designed using primal. The amplicon length was set to 500bp with 75bp overlap between the different amplicons. The libraries were generated using the native barcode kits from Nanopore (EXP-NBD104 and EXP-NBD114 and SQK-LSK109) and sequenced on a R9.4 flow cell multiplexing up to 24 samples per sequence run. Raw data was demultiplexed, amplicon primers were trimmed and human data was removed by mapping against the human reference genome.",
+  "organism" : {
+    "taxonId" : "2697049",
+    "commonName" : "Human coronavirus 2019",
+    "scientificName" : "Severe acute respiratory syndrome coronavirus 2"
+  },
+  "attributes" : [ {
+    "tag" : "collecting institution",
+    "value" : "not provided"
+  }, {
+    "tag" : "collection date",
+    "value" : "2020-03-27"
+  }, {
+    "tag" : "collector name",
+    "value" : "Dutch COVID-19 response team"
+  }, {
+    "tag" : "geographic location (country and/or sea)",
+    "value" : "Netherlands"
+  }, {
+    "tag" : "geographic location (region and locality)",
+    "value" : "Zuid-Holland"
+  }, {
+    "tag" : "GISAID Accession ID",
+    "value" : "EPI_ISL_523604"
+  }, {
+    "tag" : "host common name",
+    "value" : "Human"
+  }, {
+    "tag" : "host health state",
+    "value" : "not collected"
+  }, {
+    "tag" : "host scientific name",
+    "value" : "Homo sapiens"
+  }, {
+    "tag" : "host sex",
+    "value" : "not provided"
+  }, {
+    "tag" : "host subject id",
+    "value" : "restricted access"
+  }, {
+    "tag" : "isolate",
+    "value" : "hCoV-19/Netherlands/ZH-EMC-262/2020"
+  }, {
+    "tag" : "isolation source host-associated",
+    "value" : "not collected"
+  }, {
+    "tag" : "sample capture status",
+    "value" : "active surveillance in response to outbreak"
+  }, {
+    "tag" : "ENA-CHECKLIST",
+    "value" : "ERC000033"
+  }, {
+    "tag" : "sample derived from",
+    "value" : "SAMEA12928770"
+  } ]
+}

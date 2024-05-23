@@ -1,0 +1,74 @@
+{
+  "alias" : "HRS-ES9-C82",
+  "accession" : "ERS14294419",
+  "centerName" : "BIOLOGY CENTRE ASCR, V.V.I., INSTITUTE OF HYDROBIO",
+  "title" : "HRS-ES9-C82",
+  "description" : "HRS-ES9-C82_uncultured_bacteriophage",
+  "organism" : {
+    "taxonId" : "2100421",
+    "scientificName" : "uncultured Caudovirales phage"
+  },
+  "attributes" : [ {
+    "tag" : "assembly software",
+    "value" : "MEGAHIT"
+  }, {
+    "tag" : "broad-scale environmental context",
+    "value" : "Freshwater lake"
+  }, {
+    "tag" : "collection date",
+    "value" : "2018-04-23"
+  }, {
+    "tag" : "detection type",
+    "value" : "independent sequence (UViG)"
+  }, {
+    "tag" : "environmental medium",
+    "value" : "environmental material"
+  }, {
+    "tag" : "geographic location (country and/or sea)",
+    "value" : "Czech Republic"
+  }, {
+    "tag" : "geographic location (latitude)",
+    "value" : "48.846361",
+    "unit" : "DD"
+  }, {
+    "tag" : "geographic location (longitude)",
+    "value" : "14.487639",
+    "unit" : "DD"
+  }, {
+    "tag" : "isolation_source",
+    "value" : "Freshwater lake"
+  }, {
+    "tag" : "local environmental context",
+    "value" : "Freshwater lake"
+  }, {
+    "tag" : "metagenomic source",
+    "value" : "freshwater metagenome"
+  }, {
+    "tag" : "predicted genome structure",
+    "value" : "undetermined"
+  }, {
+    "tag" : "predicted genome type",
+    "value" : "dsDNA"
+  }, {
+    "tag" : "project name",
+    "value" : "High resolution sampling of freshwater reservoir in Czech Republic (PRJEB52406)"
+  }, {
+    "tag" : "sample derived from",
+    "value" : "ERS11712861"
+  }, {
+    "tag" : "source of UViGs",
+    "value" : "metagenome (not viral targeted)"
+  }, {
+    "tag" : "UViG assembly quality",
+    "value" : "One or multiple fragments, totaling ≥ 90% of the expected genome or replicon sequence or predicted complete"
+  }, {
+    "tag" : "viral identification software",
+    "value" : "VIBRANT; default settings"
+  }, {
+    "tag" : "virus enrichment approach",
+    "value" : "none"
+  }, {
+    "tag" : "ENA-CHECKLIST",
+    "value" : "ERC000049"
+  } ]
+}

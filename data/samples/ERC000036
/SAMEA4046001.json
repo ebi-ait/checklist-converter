@@ -1,0 +1,37 @@
+{
+  "alias" : "DTU2016-1159-PRJ1066-RL-Sewage-57_S1_L001",
+  "accession" : "ERS1217111",
+  "centerName" : "DTU",
+  "title" : "Danish sewage",
+  "organism" : {
+    "taxonId" : "527639",
+    "scientificName" : "wastewater metagenome"
+  },
+  "attributes" : [ {
+    "tag" : "collection date",
+    "value" : "2016-03-10"
+  }, {
+    "tag" : "geographic location (country and/or sea)",
+    "value" : "Denmark"
+  }, {
+    "tag" : "geographic location (latitude)",
+    "value" : "55.694986",
+    "unit" : "DD"
+  }, {
+    "tag" : "geographic location (longitude)",
+    "value" : "12.615025999999943",
+    "unit" : "DD"
+  }, {
+    "tag" : "investigation type",
+    "value" : "metagenome"
+  }, {
+    "tag" : "name of the sampling site",
+    "value" : "Renseanlæg Lynetten"
+  }, {
+    "tag" : "sewage type",
+    "value" : "Waste water treatment plant"
+  }, {
+    "tag" : "ENA-CHECKLIST",
+    "value" : "ERC000036"
+  } ]
+}

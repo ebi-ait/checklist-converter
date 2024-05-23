@@ -1,0 +1,30 @@
+{
+  "alias" : "MT-2i ATAC-seq rep2",
+  "accession" : "ERS6235204",
+  "centerName" : "Tianjin Medical University",
+  "title" : "mESCs ATAC-seq",
+  "organism" : {
+    "taxonId" : "10090",
+    "commonName" : "house mouse",
+    "scientificName" : "Mus musculus"
+  },
+  "attributes" : [ {
+    "tag" : "geographic location (country and/or sea)",
+    "value" : "China"
+  }, {
+    "tag" : "geographic location (region and locality)",
+    "value" : "TianJin"
+  }, {
+    "tag" : "isolate",
+    "value" : "mESCs"
+  }, {
+    "tag" : "protocol",
+    "value" : "50,000 mES cells were used for ATAC-seq. After washed by PBS, the cells or epiblasts were resuspended in lysis buffer (10 mM Tris-HCl, pH 7.5, 10 mM NaCl, 3 mM MgCl2, 0.1%(v/v) igepal CA-630 and 1x PIC). After 10 min incubation on ice, cells were spinned down by centrifugation at 500g, 4～C. Then the pellets were resuspended in transposome mix (37 ml ddH2O, 10 ml 5℅TTBL, 3 ml TTE mixV50 (TD501, Vazyme)) and gently flicked. The reaction was incubated at 37～C for 0.5 h in a PCR cycler, before 1 ml 0.5M EDTA, 1 ml proteinase K (20 mg/ml) and 5 ml 10% SDS were added to stop the reaction. After another incubation at 50～C for 1 h, DNA was purified with PCI and resuspended with 30 ml ddH2O. 15 mL DNA were amplified with i5 and i7 primers (Vazyme, TD202) and KAPA 2℅PCR mix (KM2602) following the cycling program with heated lid, 72～C, 5min; 98～C, 30s; 10 cycles for 98～C, 10s; 60～C, 30s; 72～C,30s; and 72～C for 5min, hold at 4～C. Upon the program completed, 0.5 volume (25 mL) Ampure XP beads were added to remove fragments above 1 Kb and another 0.5 volume (25 mL) Ampure XP beads were added to collect the 200-1,000bp fragments for sequencing."
+  }, {
+    "tag" : "receipt date",
+    "value" : "2021-04-11"
+  }, {
+    "tag" : "ENA-CHECKLIST",
+    "value" : "ERC000041"
+  } ]
+}

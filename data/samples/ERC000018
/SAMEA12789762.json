@@ -1,0 +1,50 @@
+{
+  "alias" : "Sample_137",
+  "accession" : "ERS10395108",
+  "centerName" : "Perinatal laboratory at the Centre for Perinatal Medicine & Health",
+  "title" : "Sample137",
+  "description" : "Vaginal metatranscriptome term",
+  "organism" : {
+    "taxonId" : "1632839",
+    "scientificName" : "human vaginal metagenome"
+  },
+  "attributes" : [ {
+    "tag" : "collection date",
+    "value" : "not provided"
+  }, {
+    "tag" : "environment (biome)",
+    "value" : "human"
+  }, {
+    "tag" : "environment (feature)",
+    "value" : "vagina"
+  }, {
+    "tag" : "environment (material)",
+    "value" : "swab"
+  }, {
+    "tag" : "geographic location (country and/or sea)",
+    "value" : "Sweden"
+  }, {
+    "tag" : "geographic location (latitude)",
+    "value" : "55.60595",
+    "unit" : "DD"
+  }, {
+    "tag" : "geographic location (longitude)",
+    "value" : "13.00085",
+    "unit" : "DD"
+  }, {
+    "tag" : "human vaginal environmental package",
+    "value" : "human-vaginal"
+  }, {
+    "tag" : "investigation type",
+    "value" : "metatranscriptome"
+  }, {
+    "tag" : "project name",
+    "value" : "Microbial transcriptome in vaginal fluid at midgestation: association with spontaneous preterm delivery"
+  }, {
+    "tag" : "sequencing method",
+    "value" : "Illumina NovaSeq"
+  }, {
+    "tag" : "ENA-CHECKLIST",
+    "value" : "ERC000018"
+  } ]
+}

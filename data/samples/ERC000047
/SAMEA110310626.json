@@ -1,0 +1,83 @@
+{
+  "alias" : "SRR7188235_bin.20_metaWRAP_v1.3_MAG",
+  "accession" : "ERS12408234",
+  "centerName" : "EMG",
+  "title" : "Metagenome-assembled genome: SRR7188235_bin.20_metaWRAP_v1.3_MAG",
+  "description" : "This sample represents a Third Party Annotation (TPA) Metagenome-Assembled Genome (MAG) assembled from the metagenomic run SRR7188235 of study SRP148527.",
+  "organism" : {
+    "taxonId" : "159272",
+    "commonName" : "",
+    "scientificName" : "uncultured Prevotella sp."
+  },
+  "attributes" : [ {
+    "tag" : "project name",
+    "value" : "Exploring the correlation between gut microbiota and feed efficiency in pigs"
+  }, {
+    "tag" : "sequencing method",
+    "value" : "Illumina HiSeq 2500"
+  }, {
+    "tag" : "assembly software",
+    "value" : "metaSPAdes v3.15.3"
+  }, {
+    "tag" : "assembly quality",
+    "value" : "Many fragments with little to no review of assembly other than reporting of standard assembly statistics"
+  }, {
+    "tag" : "binning software",
+    "value" : "metaWRAP v1.3"
+  }, {
+    "tag" : "binning parameters",
+    "value" : "MaxBin2, MetaBat2, Concoct with default parameter of the metaWRAP pipeline. Bin refinement module used from metaWRAP with default parameters."
+  }, {
+    "tag" : "completeness software",
+    "value" : "CheckM"
+  }, {
+    "tag" : "completeness score",
+    "value" : "59.83",
+    "unit" : "%"
+  }, {
+    "tag" : "contamination score",
+    "value" : "0.0",
+    "unit" : "%"
+  }, {
+    "tag" : "isolation_source",
+    "value" : "pig gut metagenome"
+  }, {
+    "tag" : "collection date",
+    "value" : "2015-10-23"
+  }, {
+    "tag" : "geographic location (country and/or sea)",
+    "value" : "China"
+  }, {
+    "tag" : "geographic location (latitude)",
+    "value" : "22.42",
+    "unit" : "DD"
+  }, {
+    "tag" : "geographic location (longitude)",
+    "value" : "112.13",
+    "unit" : "DD"
+  }, {
+    "tag" : "environment (biome)",
+    "value" : "Pig digestive system"
+  }, {
+    "tag" : "environment (feature)",
+    "value" : "Colon"
+  }, {
+    "tag" : "environment (material)",
+    "value" : "Feces"
+  }, {
+    "tag" : "sample derived from",
+    "value" : "SAMN09223325"
+  }, {
+    "tag" : "metagenomic source",
+    "value" : "pig gut metagenome"
+  }, {
+    "tag" : "taxonomic identity marker",
+    "value" : "multi-marker approach"
+  }, {
+    "tag" : "investigation type",
+    "value" : "metagenome-assembled genome"
+  }, {
+    "tag" : "ENA-CHECKLIST",
+    "value" : "ERC000047"
+  } ]
+}

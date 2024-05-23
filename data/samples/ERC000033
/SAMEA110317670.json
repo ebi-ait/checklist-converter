@@ -1,0 +1,54 @@
+{
+  "alias" : "hCoV-19/Denmark/DCGC-527016/2022",
+  "accession" : "ERS12415278",
+  "centerName" : "Statens Serum Institut and the Danish Covid19 Genome Consortium (DCGC)",
+  "title" : "hCoV-19/Denmark/DCGC-527016/2022",
+  "description" : "Original",
+  "organism" : {
+    "taxonId" : "2697049",
+    "scientificName" : "Severe acute respiratory syndrome coronavirus 2"
+  },
+  "attributes" : [ {
+    "tag" : "collection date",
+    "value" : "2022-06-05"
+  }, {
+    "tag" : "geographic location (country and/or sea)",
+    "value" : "Denmark"
+  }, {
+    "tag" : "geographic location (region and locality)",
+    "value" : "Midtjylland"
+  }, {
+    "tag" : "sample capture status",
+    "value" : "active surveillance in response to outbreak"
+  }, {
+    "tag" : "host common name",
+    "value" : "Human"
+  }, {
+    "tag" : "host subject id",
+    "value" : "not provided"
+  }, {
+    "tag" : "host health state",
+    "value" : "not provided"
+  }, {
+    "tag" : "host sex",
+    "value" : "not provided"
+  }, {
+    "tag" : "host scientific name",
+    "value" : "Homo sapiens"
+  }, {
+    "tag" : "collector name",
+    "value" : "Danish Covid-19 Genome Consortium"
+  }, {
+    "tag" : "collecting institution",
+    "value" : "Department of Bacteria, Parasites and Fungi, Statens Serum Institut, Copenhagen, Denmark"
+  }, {
+    "tag" : "isolate",
+    "value" : "not provided"
+  }, {
+    "tag" : "host description",
+    "value" : "n_infections=1"
+  }, {
+    "tag" : "ENA-CHECKLIST",
+    "value" : "ERC000033"
+  } ]
+}

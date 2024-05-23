@@ -1,0 +1,28 @@
+{
+  "alias" : "3342_05_14MCB127",
+  "accession" : "ERS1252231",
+  "centerName" : "NETHERLANDS CANCER INSTITUTE",
+  "title" : "3342_05_14MCB127",
+  "description" : "14MCB127 - ILC EpCAM",
+  "organism" : {
+    "taxonId" : "10090",
+    "commonName" : "house mouse",
+    "scientificName" : "Mus musculus"
+  },
+  "attributes" : [ {
+    "tag" : "diagnosis",
+    "value" : "classic invasive lobular carcinoma"
+  }, {
+    "tag" : "sex",
+    "value" : "female"
+  }, {
+    "tag" : "strain",
+    "value" : "Wcre;Cdh1F/F;PtenF/F (FVB)"
+  }, {
+    "tag" : "tissue_type",
+    "value" : "mammary tumor"
+  }, {
+    "tag" : "ENA-CHECKLIST",
+    "value" : "ERC000034"
+  } ]
+}

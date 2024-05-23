@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SAMPLE_SET>
+<SAMPLE accession="SAMEA8550519" alias="WT E6.5 Epi H3K27me3" center_name="Tianjin Medical University">
+     <IDENTIFIERS>
+          <PRIMARY_ID>SAMEA8550519</PRIMARY_ID>
+          <SECONDARY_ID>ERS6235216</SECONDARY_ID>
+          <EXTERNAL_ID namespace="BioSample">SAMEA8550519</EXTERNAL_ID>
+          <SUBMITTER_ID namespace="Tianjin Medical University">WT E6.5 Epi H3K27me3</SUBMITTER_ID>
+     </IDENTIFIERS>
+     <TITLE>E6.5 epiblast Cut&amp;tag</TITLE>
+     <SAMPLE_NAME>
+          <TAXON_ID>10090</TAXON_ID>
+          <SCIENTIFIC_NAME>Mus musculus</SCIENTIFIC_NAME>
+          <COMMON_NAME>house mouse</COMMON_NAME>
+     </SAMPLE_NAME>
+     <SAMPLE_LINKS>
+    <SAMPLE_LINK>
+        <XREF_LINK>
+            <DB>ENA-FASTQ-FILES</DB>
+            <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERS6235216&result=read_run&fields=run_accession,fastq_ftp,fastq_md5,fastq_bytes]]></ID>
+        </XREF_LINK>
+    </SAMPLE_LINK>
+    <SAMPLE_LINK>
+        <XREF_LINK>
+            <DB>ENA-SUBMITTED-FILES</DB>
+            <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERS6235216&result=read_run&fields=run_accession,submitted_ftp,submitted_md5,submitted_bytes,submitted_format]]></ID>
+        </XREF_LINK>
+    </SAMPLE_LINK>
+</SAMPLE_LINKS>
+<SAMPLE_ATTRIBUTES>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>receipt date</TAG>
+               <VALUE>2021-04-11</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>ENA-CHECKLIST</TAG>
+               <VALUE>ERC000041</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>isolate</TAG>
+               <VALUE>E6.5 epiblast</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>protocol</TAG>
+               <VALUE>In brief, 10,000-50,000 cells were harvested and washed twice in 1 mL wash buffer (20 mM HEPES PH 7.5, 150 mM NaCl, 0.5 mM Spermidine, 1℅Protease Inhibitor Cocktail (PIC, Bimake), and then resuspended in 300 mL wash buffer. Concanavalin A coated beads were activated by washing twice in binding buffer (20 mM HEPES pH 7.5, 10 mM KCl, 1mM MnCl2, 1mM CaCl2). Then 10 mL activated beads were added to the resuspended cells and incubated for 30 min at room temperature (RT). The supernatant was removed and beads were resuspended in 50 mL antibody buffer (20 mM HEPES pH 7.5,150 mM NaCl, 0.5 mM Spermidine, 0.0125% Digitonin, 2 mM EDTA, 0.1% BSA, 1℅PIC). Then 0.5 mL primary antibody was added and incubated for 2 hours (hrs) at RT. After the supernatant was gently removed by placing the tubes on magnet, the beads were resuspended in 100 mL Dig wash buffer (20 mM HEPES pH 7.5,150 mM NaCl, 0.5 mM Spermidine, 0.0125% Digitonin, 1xPIC) which contains 1 mL Guinea Pig anti-Rabbit IgG antibody and incubated for 1 hr at RT. After being washed three times in 800 mL Dig wash buffer, the beads were resuspended in 100 mL Dig 300 wash buffer (20 mM HEPES pH 7.5, 300 mM NaCl, 0.5mM Spermidine, 0.0125% Digitonin, 1xPIC), and 0.04 mM pA-Tn5 adapter complex (Vazyme S603) was added and incubated for 1 hr at RT. Beads were washed three times in 800 mL Dig 300 wash buffer and resuspended in 300 mL tagmentation buffer (20 mM HEPES pH 7.5, 300 mM NaCl, 0.5 mM Spermidine, 0.0125% Digitonin, 10 mM MgCl2, 1xPIC) and incubated for 1 hr at 37～C. Then 10 mL of 0.5 M EDTA, 3 mL of 10% SDS and 1 mL of 20 mg/mL Proteinase K were added and incubated at 55～C for 1 hr to stop tagmentation before DNA extraction by PCI. The purified DNA was amplified with i5 and i7 primer, KAPA 2x PCR mix (KM2602), under the cycling program with heated lid, 72～C, 5min; 98～C, 30s; 17cycles for 98～C, 10s; 60～C, 30s; 72～C,30s; and 72～C for 5min, hold at 4～C. After the program was completed, 0.5 volume (25 mL) Ampure XP beads were added to remove fragments above 1 kb and another 0.5 volume (25 mL) Ampure XP beads were added to enrich the 200-1,000bp fragments for sequencing. The constructed libraries were sequenced with PE150 on NovaSeq platform.</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>ENA-FIRST-PUBLIC</TAG>
+               <VALUE>2022-02-22T00:26:34Z</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>organism</TAG>
+               <VALUE>Mus musculus</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>ENA-LAST-UPDATE</TAG>
+               <VALUE>2022-02-22T00:26:34Z</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>scientific_name</TAG>
+               <VALUE>Mus musculus</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>common name</TAG>
+               <VALUE>house mouse</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>geographic location (region and locality)</TAG>
+               <VALUE>TianJin</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>geographic location (country and/or sea)</TAG>
+               <VALUE>China</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>ENA-FIRST-PUBLIC</TAG>
+               <VALUE>2022-02-22</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>ENA-LAST-UPDATE</TAG>
+               <VALUE>2022-02-22</VALUE>
+          </SAMPLE_ATTRIBUTE>
+     </SAMPLE_ATTRIBUTES>
+</SAMPLE>
+</SAMPLE_SET>

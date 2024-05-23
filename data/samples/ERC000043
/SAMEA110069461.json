@@ -1,0 +1,78 @@
+{
+  "alias" : "sam_D.acuminata vigo 2",
+  "accession" : "ERS12167836",
+  "centerName" : "IFREMER_ODE_DYNECO_PELAGOS",
+  "title" : "Dinophysis acuminata strain",
+  "organism" : {
+    "taxonId" : "47934",
+    "commonName" : "Dinophysis acuminata",
+    "scientificName" : "Dinophysis acuminata"
+  },
+  "attributes" : [ {
+    "tag" : "sample_name",
+    "value" : "D.acuminata vigo 2"
+  }, {
+    "tag" : "project name",
+    "value" : "Dinophysis_strains_2021"
+  }, {
+    "tag" : "sample_description",
+    "value" : "Strain obtained following single cell isolation"
+  }, {
+    "tag" : "environmental_sample",
+    "value" : "no"
+  }, {
+    "tag" : "investigation type",
+    "value" : "eukaryote"
+  }, {
+    "tag" : "ENA-CHECKLIST",
+    "value" : "ERC000043"
+  }, {
+    "tag" : "environmental package",
+    "value" : "none"
+  }, {
+    "tag" : "collection date",
+    "value" : "2017-11"
+  }, {
+    "tag" : "isolation_source",
+    "value" : "sea water"
+  }, {
+    "tag" : "geographic location (country and/or sea)",
+    "value" : "Spain"
+  }, {
+    "tag" : "geographic location (region and locality)",
+    "value" : "Ria de Vigo"
+  }, {
+    "tag" : "geographic location (depth)",
+    "value" : "not collected"
+  }, {
+    "tag" : "geographic location (elevation)",
+    "value" : "not applicable"
+  }, {
+    "tag" : "environment (biome)",
+    "value" : "coastal environment"
+  }, {
+    "tag" : "environment (feature)",
+    "value" : "Ria"
+  }, {
+    "tag" : "environment (material)",
+    "value" : "water"
+  }, {
+    "tag" : "strain",
+    "value" : "D.acuminata vigo 2"
+  }, {
+    "tag" : "pcr primers",
+    "value" : "Illumina PCR Primer Cocktail"
+  }, {
+    "tag" : "multiplex identifiers",
+    "value" : "TAGCTT"
+  }, {
+    "tag" : "adapters",
+    "value" : "GATCGGAAGAGCACACGTCTGAACTCCAGTCAC[i]ATCTCGTATGCCGTCTTCTGCTTG/AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCT"
+  }, {
+    "tag" : "sequencing method",
+    "value" : "Sequencing by synthesis (Illumina)"
+  }, {
+    "tag" : "LIBRARY_CONSTRUCTION_PROTOCOL",
+    "value" : "Illumina mRNA TruSeq Stranded Kit"
+  } ]
+}

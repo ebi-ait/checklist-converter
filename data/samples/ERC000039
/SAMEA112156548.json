@@ -1,0 +1,58 @@
+{
+  "alias" : "mperst1",
+  "accession" : "ERS14266445",
+  "centerName" : "Institut of Tropical Medicine",
+  "organism" : {
+    "taxonId" : "42231",
+    "scientificName" : "Mansonella perstans"
+  },
+  "attributes" : [ {
+    "tag" : "collecting institution",
+    "value" : "Institute of Tropical Medicine, Tuebingen, Germany"
+  }, {
+    "tag" : "collection date",
+    "value" : "2019"
+  }, {
+    "tag" : "collector name",
+    "value" : "Jana Held"
+  }, {
+    "tag" : "dev_stage",
+    "value" : "Microfilaria"
+  }, {
+    "tag" : "diagnostic method",
+    "value" : "qPCR"
+  }, {
+    "tag" : "geographic location (country and/or sea)",
+    "value" : "Gabon"
+  }, {
+    "tag" : "geographic location (latitude)",
+    "value" : "-1.2179288",
+    "unit" : "DD"
+  }, {
+    "tag" : "geographic location (longitude)",
+    "value" : "10.5888058",
+    "unit" : "DD"
+  }, {
+    "tag" : "host age",
+    "value" : "71",
+    "unit" : "years"
+  }, {
+    "tag" : "host common name",
+    "value" : "human"
+  }, {
+    "tag" : "host scientific name",
+    "value" : "Homo sapiens"
+  }, {
+    "tag" : "host sex",
+    "value" : "female"
+  }, {
+    "tag" : "isolate",
+    "value" : "1"
+  }, {
+    "tag" : "isolation source host-associated",
+    "value" : "blood"
+  }, {
+    "tag" : "ENA-CHECKLIST",
+    "value" : "ERC000039"
+  } ]
+}

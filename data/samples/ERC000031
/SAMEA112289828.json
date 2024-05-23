@@ -1,0 +1,93 @@
+{
+  "alias" : "GY.P5.391",
+  "accession" : "ERS14400654",
+  "centerName" : "NORTHUMBRIA UNIVERSITY, NEWCASTLE",
+  "title" : "GY.P5.391",
+  "description" : "OME_exhibition_indoor.floor25",
+  "organism" : {
+    "taxonId" : "1256227",
+    "scientificName" : "indoor metagenome"
+  },
+  "attributes" : [ {
+    "tag" : "absolute air humidity",
+    "value" : "0",
+    "unit" : "kg"
+  }, {
+    "tag" : "air temperature",
+    "value" : "18.02272727",
+    "unit" : "ºC"
+  }, {
+    "tag" : "broad-scale environmental context",
+    "value" : "Built environment"
+  }, {
+    "tag" : "building occupancy type",
+    "value" : "educational"
+  }, {
+    "tag" : "building setting",
+    "value" : "urban"
+  }, {
+    "tag" : "carbon dioxide",
+    "value" : "417.9090909",
+    "unit" : "µmol/L"
+  }, {
+    "tag" : "collection date",
+    "value" : "2021"
+  }, {
+    "tag" : "environmental medium",
+    "value" : "concrete"
+  }, {
+    "tag" : "filter type",
+    "value" : "HEPA filter"
+  }, {
+    "tag" : "geographic location (country and/or sea)",
+    "value" : "United Kingdom"
+  }, {
+    "tag" : "geographic location (latitude)",
+    "value" : "51.7529",
+    "unit" : "DD"
+  }, {
+    "tag" : "geographic location (longitude)",
+    "value" : "0.2422",
+    "unit" : "DD"
+  }, {
+    "tag" : "heating and cooling system type",
+    "value" : "heat pump"
+  }, {
+    "tag" : "indoor space",
+    "value" : "foyer"
+  }, {
+    "tag" : "light type",
+    "value" : "electric light"
+  }, {
+    "tag" : "local environmental context",
+    "value" : "Indoor"
+  }, {
+    "tag" : "occupancy at sampling",
+    "value" : "2"
+  }, {
+    "tag" : "occupant density at sampling",
+    "value" : "1"
+  }, {
+    "tag" : "organism count",
+    "value" : "total DNA; 12.94246919 ng per mL; pico"
+  }, {
+    "tag" : "project name",
+    "value" : "PRJEB58762"
+  }, {
+    "tag" : "relative air humidity",
+    "value" : "52.79181818",
+    "unit" : "%"
+  }, {
+    "tag" : "space typical state",
+    "value" : "typically occupied"
+  }, {
+    "tag" : "typical occupant density",
+    "value" : "1"
+  }, {
+    "tag" : "ventilation type",
+    "value" : "mechanical ventilation"
+  }, {
+    "tag" : "ENA-CHECKLIST",
+    "value" : "ERC000031"
+  } ]
+}

@@ -1,0 +1,49 @@
+{
+  "alias" : "XHQ171006-6",
+  "accession" : "ERS3660109",
+  "centerName" : "AALBORG UNIVERSITY",
+  "title" : "AD-sludge-Fredericia",
+  "organism" : {
+    "taxonId" : "256318",
+    "scientificName" : "metagenome"
+  },
+  "attributes" : [ {
+    "tag" : "collection date",
+    "value" : "2017-05-01"
+  }, {
+    "tag" : "environment (biome)",
+    "value" : "anaerobic digester"
+  }, {
+    "tag" : "environment (feature)",
+    "value" : "anaerobic digester"
+  }, {
+    "tag" : "environment (material)",
+    "value" : "sludge"
+  }, {
+    "tag" : "geographic location (country and/or sea)",
+    "value" : "Denmark"
+  }, {
+    "tag" : "geographic location (latitude)",
+    "value" : "55.552344",
+    "unit" : "DD"
+  }, {
+    "tag" : "geographic location (longitude)",
+    "value" : "9.721907",
+    "unit" : "DD"
+  }, {
+    "tag" : "investigation type",
+    "value" : "metagenome"
+  }, {
+    "tag" : "project name",
+    "value" : "PRJEB34014"
+  }, {
+    "tag" : "sequencing method",
+    "value" : "illumina"
+  }, {
+    "tag" : "wastewater/sludge environmental package",
+    "value" : "wastewater/sludge"
+  }, {
+    "tag" : "ENA-CHECKLIST",
+    "value" : "ERC000023"
+  } ]
+}

@@ -1,0 +1,58 @@
+{
+  "alias" : "2834",
+  "accession" : "ERS12363874",
+  "centerName" : "CENTRE FOR ECOLOGY AND HYDROLOGY",
+  "title" : "metagenome",
+  "organism" : {
+    "taxonId" : "256318",
+    "commonName" : "metagenome",
+    "scientificName" : "metagenome"
+  },
+  "attributes" : [ {
+    "tag" : "project name",
+    "value" : "National survey of freshwater biofilm bacterial communities (UK)"
+  }, {
+    "tag" : "sequencing method",
+    "value" : "Illumina MiSeq"
+  }, {
+    "tag" : "investigation type",
+    "value" : "mimarks-survey"
+  }, {
+    "tag" : "collection date",
+    "value" : "2016"
+  }, {
+    "tag" : "geographic location (country and/or sea)",
+    "value" : "United Kingdom"
+  }, {
+    "tag" : "geographic location (latitude)",
+    "value" : "not provided",
+    "unit" : "DD"
+  }, {
+    "tag" : "geographic location (longitude)",
+    "value" : "not provided",
+    "unit" : "DD"
+  }, {
+    "tag" : "microbial mat/biofilm environmental package",
+    "value" : "microbial mat/biofilm"
+  }, {
+    "tag" : "geographic location (depth)",
+    "value" : "0",
+    "unit" : "m"
+  }, {
+    "tag" : "environment (biome)",
+    "value" : "freshwater biome"
+  }, {
+    "tag" : "environment (feature)",
+    "value" : "freshwater substrate biofilm"
+  }, {
+    "tag" : "environment (material)",
+    "value" : "substrate biofilm"
+  }, {
+    "tag" : "geographic location (elevation)",
+    "value" : "0",
+    "unit" : "m"
+  }, {
+    "tag" : "ENA-CHECKLIST",
+    "value" : "ERC000019"
+  } ]
+}

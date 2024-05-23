@@ -1,0 +1,76 @@
+{
+  "alias" : "27913",
+  "accession" : "ERS13666902",
+  "centerName" : "Tree of Life Programme",
+  "title" : "27913-tol",
+  "organism" : {
+    "taxonId" : "2991509",
+    "scientificName" : "Gordius sp. MW1"
+  },
+  "attributes" : [ {
+    "tag" : "ENA-CHECKLIST",
+    "value" : "ERC000053"
+  }, {
+    "tag" : "organism part",
+    "value" : "WHOLE ORGANISM"
+  }, {
+    "tag" : "lifestage",
+    "value" : "adult"
+  }, {
+    "tag" : "project name",
+    "value" : "ToL"
+  }, {
+    "tag" : "tolid",
+    "value" : "tfGorSpea3"
+  }, {
+    "tag" : "collected_by",
+    "value" : "LOUISE COATES | BEN MURCOTT"
+  }, {
+    "tag" : "collection date",
+    "value" : "2022-09-29"
+  }, {
+    "tag" : "geographic location (country and/or sea)",
+    "value" : "United Kingdom"
+  }, {
+    "tag" : "geographic location (latitude)",
+    "value" : "51.604",
+    "unit" : "DD"
+  }, {
+    "tag" : "geographic location (longitude)",
+    "value" : "-2.295",
+    "unit" : "DD"
+  }, {
+    "tag" : "geographic location (region and locality)",
+    "value" : "England | South West | Gloucestershire | Stroud | Midger Wood"
+  }, {
+    "tag" : "identified_by",
+    "value" : "LOUISE COATES | VICKY HUNT"
+  }, {
+    "tag" : "habitat",
+    "value" : "Shallow river surrounded by damp woodland"
+  }, {
+    "tag" : "identifier_affiliation",
+    "value" : "University of Bath | University of Bath"
+  }, {
+    "tag" : "sex",
+    "value" : "MALE"
+  }, {
+    "tag" : "symbiont",
+    "value" : "N"
+  }, {
+    "tag" : "collecting institution",
+    "value" : "University of Bath | University of Bath"
+  }, {
+    "tag" : "GAL",
+    "value" : "Sanger Institute"
+  }, {
+    "tag" : "specimen_voucher",
+    "value" : "NOT PROVIDED"
+  }, {
+    "tag" : "specimen_id",
+    "value" : "SAN00002644"
+  }, {
+    "tag" : "GAL_sample_id",
+    "value" : "NOT PROVIDED"
+  } ]
+}

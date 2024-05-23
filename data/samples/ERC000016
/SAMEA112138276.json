@@ -1,0 +1,42 @@
+{
+  "alias" : "DC-MH14",
+  "accession" : "ERS14247585",
+  "centerName" : "IAU CM",
+  "title" : "DC-MH14",
+  "description" : "Saliva",
+  "organism" : {
+    "taxonId" : "9606",
+    "commonName" : "human",
+    "scientificName" : "Homo sapiens"
+  },
+  "attributes" : [ {
+    "tag" : "broad-scale environmental context",
+    "value" : "biome"
+  }, {
+    "tag" : "collection date",
+    "value" : "2020"
+  }, {
+    "tag" : "environmental medium",
+    "value" : "Saliva"
+  }, {
+    "tag" : "geographic location (country and/or sea)",
+    "value" : "Saudi Arabia"
+  }, {
+    "tag" : "geographic location (latitude)",
+    "value" : "23.5681",
+    "unit" : "DD"
+  }, {
+    "tag" : "geographic location (longitude)",
+    "value" : "50.6794",
+    "unit" : "DD"
+  }, {
+    "tag" : "local environmental context",
+    "value" : "Oral"
+  }, {
+    "tag" : "project name",
+    "value" : "PRJEB57557"
+  }, {
+    "tag" : "ENA-CHECKLIST",
+    "value" : "ERC000016"
+  } ]
+}

@@ -1,0 +1,60 @@
+{
+  "alias" : "L277",
+  "accession" : "ERS2645442",
+  "centerName" : "UNIVERSITY OF KAISERSLAUTERN",
+  "title" : "La Selva Biological Station sample 277",
+  "description" : "La Selva Biological Station sample 277",
+  "organism" : {
+    "taxonId" : "100272",
+    "commonName" : "uncultured eukaryote",
+    "scientificName" : "uncultured eukaryote"
+  },
+  "attributes" : [ {
+    "tag" : "collection date",
+    "value" : "2015-10-18"
+  }, {
+    "tag" : "environment (biome)",
+    "value" : "forest"
+  }, {
+    "tag" : "environment (feature)",
+    "value" : "tropical lowland evergreen broadleaf rain forest"
+  }, {
+    "tag" : "environment (material)",
+    "value" : "soil"
+  }, {
+    "tag" : "environmental_sample",
+    "value" : "Yes"
+  }, {
+    "tag" : "Further Details",
+    "value" : "http://unieuk.org/project/"
+  }, {
+    "tag" : "geographic location (country and/or sea)",
+    "value" : "Costa Rica"
+  }, {
+    "tag" : "geographic location (elevation)",
+    "value" : "112"
+  }, {
+    "tag" : "geographic location (latitude)",
+    "value" : "10.4167049238151",
+    "unit" : "DD"
+  }, {
+    "tag" : "geographic location (longitude)",
+    "value" : "-84.0255786488488",
+    "unit" : "DD"
+  }, {
+    "tag" : "isolation_source",
+    "value" : "soil surface layer without leaf litter and stones"
+  }, {
+    "tag" : "pcr primers",
+    "value" : "CCAGCASCYGCGGTAATTCC, ACTTTCGTTCTTGATYRA"
+  }, {
+    "tag" : "target gene",
+    "value" : "18S"
+  }, {
+    "tag" : "target subfragment",
+    "value" : "V4"
+  }, {
+    "tag" : "ENA-CHECKLIST",
+    "value" : "ERC000040"
+  } ]
+}

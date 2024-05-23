@@ -1,0 +1,47 @@
+{
+  "alias" : "NN-BB651-I",
+  "accession" : "ERS5229055",
+  "centerName" : "CARDIFF UNIVERSITY",
+  "title" : "Staphylococci causing neonatal sepsis in LMIC",
+  "description" : "Staphylococci causing neonatal sepsis in LMIC Saureus & CoNs",
+  "organism" : {
+    "taxonId" : "1280",
+    "scientificName" : "Staphylococcus aureus"
+  },
+  "attributes" : [ {
+    "tag" : "collected_by",
+    "value" : "research nurses"
+  }, {
+    "tag" : "collection date",
+    "value" : "2015-17"
+  }, {
+    "tag" : "environmental_sample",
+    "value" : "No"
+  }, {
+    "tag" : "geographic location (country and/or sea)",
+    "value" : "Nigeria"
+  }, {
+    "tag" : "geographic location (latitude)",
+    "value" : "9",
+    "unit" : "DD"
+  }, {
+    "tag" : "geographic location (longitude)",
+    "value" : "7",
+    "unit" : "DD"
+  }, {
+    "tag" : "host health state",
+    "value" : "diseased"
+  }, {
+    "tag" : "host scientific name",
+    "value" : "human"
+  }, {
+    "tag" : "Is the sequenced pathogen host associated?",
+    "value" : "Yes"
+  }, {
+    "tag" : "isolate",
+    "value" : "Staphylococcus aureus"
+  }, {
+    "tag" : "ENA-CHECKLIST",
+    "value" : "ERC000029"
+  } ]
+}

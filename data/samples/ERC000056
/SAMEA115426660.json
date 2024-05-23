@@ -1,0 +1,18 @@
+{
+  "alias" : "Milk-838",
+  "accession" : "ERS18585771",
+  "centerName" : "DSMZ",
+  "title" : "bovine milk microbiome",
+  "description" : "16S rRNA amplicon sequences generated from 20ml bulk wholemilk (not quarter) taken from Holstein Firisan cows by an automated milking system",
+  "organism" : {
+    "taxonId" : "1616037",
+    "scientificName" : "milk metagenome"
+  },
+  "attributes" : [ {
+    "tag" : "sequencing method",
+    "value" : "Illumina MiSeq 2x 300bp"
+  }, {
+    "tag" : "ENA-CHECKLIST",
+    "value" : "ERC000056"
+  } ]
+}

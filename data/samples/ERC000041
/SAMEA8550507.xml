@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SAMPLE_SET>
+<SAMPLE accession="SAMEA8550507" alias="MT-2i ATAC-seq rep2" center_name="Tianjin Medical University">
+     <IDENTIFIERS>
+          <PRIMARY_ID>SAMEA8550507</PRIMARY_ID>
+          <SECONDARY_ID>ERS6235204</SECONDARY_ID>
+          <EXTERNAL_ID namespace="BioSample">SAMEA8550507</EXTERNAL_ID>
+          <SUBMITTER_ID namespace="Tianjin Medical University">MT-2i ATAC-seq rep2</SUBMITTER_ID>
+     </IDENTIFIERS>
+     <TITLE>mESCs ATAC-seq</TITLE>
+     <SAMPLE_NAME>
+          <TAXON_ID>10090</TAXON_ID>
+          <SCIENTIFIC_NAME>Mus musculus</SCIENTIFIC_NAME>
+          <COMMON_NAME>house mouse</COMMON_NAME>
+     </SAMPLE_NAME>
+     <SAMPLE_LINKS>
+    <SAMPLE_LINK>
+        <XREF_LINK>
+            <DB>ENA-FASTQ-FILES</DB>
+            <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERS6235204&result=read_run&fields=run_accession,fastq_ftp,fastq_md5,fastq_bytes]]></ID>
+        </XREF_LINK>
+    </SAMPLE_LINK>
+    <SAMPLE_LINK>
+        <XREF_LINK>
+            <DB>ENA-SUBMITTED-FILES</DB>
+            <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERS6235204&result=read_run&fields=run_accession,submitted_ftp,submitted_md5,submitted_bytes,submitted_format]]></ID>
+        </XREF_LINK>
+    </SAMPLE_LINK>
+</SAMPLE_LINKS>
+<SAMPLE_ATTRIBUTES>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>receipt date</TAG>
+               <VALUE>2021-04-11</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>ENA-CHECKLIST</TAG>
+               <VALUE>ERC000041</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>isolate</TAG>
+               <VALUE>mESCs</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>protocol</TAG>
+               <VALUE>50,000 mES cells were used for ATAC-seq. After washed by PBS, the cells or epiblasts were resuspended in lysis buffer (10 mM Tris-HCl, pH 7.5, 10 mM NaCl, 3 mM MgCl2, 0.1%(v/v) igepal CA-630 and 1x PIC). After 10 min incubation on ice, cells were spinned down by centrifugation at 500g, 4～C. Then the pellets were resuspended in transposome mix (37 ml ddH2O, 10 ml 5℅TTBL, 3 ml TTE mixV50 (TD501, Vazyme)) and gently flicked. The reaction was incubated at 37～C for 0.5 h in a PCR cycler, before 1 ml 0.5M EDTA, 1 ml proteinase K (20 mg/ml) and 5 ml 10% SDS were added to stop the reaction. After another incubation at 50～C for 1 h, DNA was purified with PCI and resuspended with 30 ml ddH2O. 15 mL DNA were amplified with i5 and i7 primers (Vazyme, TD202) and KAPA 2℅PCR mix (KM2602) following the cycling program with heated lid, 72～C, 5min; 98～C, 30s; 10 cycles for 98～C, 10s; 60～C, 30s; 72～C,30s; and 72～C for 5min, hold at 4～C. Upon the program completed, 0.5 volume (25 mL) Ampure XP beads were added to remove fragments above 1 Kb and another 0.5 volume (25 mL) Ampure XP beads were added to collect the 200-1,000bp fragments for sequencing.</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>ENA-FIRST-PUBLIC</TAG>
+               <VALUE>2022-02-22T00:26:34Z</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>organism</TAG>
+               <VALUE>Mus musculus</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>ENA-LAST-UPDATE</TAG>
+               <VALUE>2022-02-22T00:26:34Z</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>scientific_name</TAG>
+               <VALUE>Mus musculus</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>common name</TAG>
+               <VALUE>house mouse</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>geographic location (region and locality)</TAG>
+               <VALUE>TianJin</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>geographic location (country and/or sea)</TAG>
+               <VALUE>China</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>ENA-FIRST-PUBLIC</TAG>
+               <VALUE>2022-02-22</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>ENA-LAST-UPDATE</TAG>
+               <VALUE>2022-02-22</VALUE>
+          </SAMPLE_ATTRIBUTE>
+     </SAMPLE_ATTRIBUTES>
+</SAMPLE>
+</SAMPLE_SET>

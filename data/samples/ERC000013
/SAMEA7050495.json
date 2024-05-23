@@ -1,0 +1,96 @@
+{
+  "alias" : "Rumen fluid_2_H",
+  "accession" : "ERS4811125",
+  "centerName" : "QUEEN'S UNIVERSITY BELFAST",
+  "title" : "Rumen fluid",
+  "description" : "Rumen fluid second collection H",
+  "organism" : {
+    "taxonId" : "256318",
+    "commonName" : "Rumen fluid_2_H",
+    "scientificName" : "metagenome"
+  },
+  "attributes" : [ {
+    "tag" : "adapters",
+    "value" : "Illumina adapters"
+  }, {
+    "tag" : "collection date",
+    "value" : "2018"
+  }, {
+    "tag" : "environment (biome)",
+    "value" : "Rumen"
+  }, {
+    "tag" : "environment (feature)",
+    "value" : "GIT"
+  }, {
+    "tag" : "environment (material)",
+    "value" : "Rumen fluid"
+  }, {
+    "tag" : "geographic location (country and/or sea)",
+    "value" : "United Kingdom"
+  }, {
+    "tag" : "geographic location (latitude)",
+    "value" : "54.579.058",
+    "unit" : "DD"
+  }, {
+    "tag" : "geographic location (longitude)",
+    "value" : "-5.936.998",
+    "unit" : "DD"
+  }, {
+    "tag" : "geographic location (region and locality)",
+    "value" : "Belfast"
+  }, {
+    "tag" : "host age",
+    "value" : "8 months",
+    "unit" : "centuries"
+  }, {
+    "tag" : "host color",
+    "value" : "White"
+  }, {
+    "tag" : "host common name",
+    "value" : "Sheep"
+  }, {
+    "tag" : "host diet",
+    "value" : "H"
+  }, {
+    "tag" : "host sex",
+    "value" : "male"
+  }, {
+    "tag" : "host-associated environmental package",
+    "value" : "host-associated"
+  }, {
+    "tag" : "investigation type",
+    "value" : "bacteria_archaea"
+  }, {
+    "tag" : "nucleic acid amplification",
+    "value" : "PCR"
+  }, {
+    "tag" : "nucleic acid extraction",
+    "value" : "Fast DNA SPIN Kit for Soil"
+  }, {
+    "tag" : "pcr conditions",
+    "value" : "95�C for 3 minutes, 20 cycles at 95�C for 30 seconds, 55�C for 30 seconds, 72�C for 30 seconds and then 72�C for 5 minutes."
+  }, {
+    "tag" : "pcr primers",
+    "value" : "515F and 806R"
+  }, {
+    "tag" : "project name",
+    "value" : "EasyCare_2018"
+  }, {
+    "tag" : "sample storage temperature",
+    "value" : "-80",
+    "unit" : "°C"
+  }, {
+    "tag" : "sample volume or weight for DNA extraction",
+    "value" : "0.5ml",
+    "unit" : "g"
+  }, {
+    "tag" : "sequencing method",
+    "value" : "Illumina MiSeq"
+  }, {
+    "tag" : "target gene",
+    "value" : "16S: V4- 250 bp"
+  }, {
+    "tag" : "ENA-CHECKLIST",
+    "value" : "ERC000013"
+  } ]
+}

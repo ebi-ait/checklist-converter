@@ -1,0 +1,84 @@
+{
+  "alias" : "sam_A_minutum_95-A1",
+  "accession" : "ERS12154331",
+  "centerName" : "IFREMER_ODE_DYNECO_PELAGOS",
+  "title" : "Alexandrium minutum strain",
+  "organism" : {
+    "taxonId" : "39455",
+    "commonName" : "Alexandrium minutum",
+    "scientificName" : "Alexandrium minutum"
+  },
+  "attributes" : [ {
+    "tag" : "sample_name",
+    "value" : "A_minutum_95-A1"
+  }, {
+    "tag" : "project name",
+    "value" : "Alex_strains_2021"
+  }, {
+    "tag" : "sample_description",
+    "value" : "Strain obtained following single cell isolation after germination from sediment core"
+  }, {
+    "tag" : "environmental_sample",
+    "value" : "no"
+  }, {
+    "tag" : "investigation type",
+    "value" : "eukaryote"
+  }, {
+    "tag" : "ENA-CHECKLIST",
+    "value" : "ERC000043"
+  }, {
+    "tag" : "environmental package",
+    "value" : "none"
+  }, {
+    "tag" : "collection date",
+    "value" : "2014-05-21"
+  }, {
+    "tag" : "isolation_source",
+    "value" : "sediment core germination"
+  }, {
+    "tag" : "geographic location (country and/or sea)",
+    "value" : "France"
+  }, {
+    "tag" : "geographic location (region and locality)",
+    "value" : "Bay_of_Brest"
+  }, {
+    "tag" : "geographic location (depth)",
+    "value" : "not applicable"
+  }, {
+    "tag" : "geographic location (elevation)",
+    "value" : "not applicable"
+  }, {
+    "tag" : "environment (biome)",
+    "value" : "coastal environment"
+  }, {
+    "tag" : "environment (feature)",
+    "value" : "Bay"
+  }, {
+    "tag" : "environment (material)",
+    "value" : "sediment"
+  }, {
+    "tag" : "target gene",
+    "value" : "NA"
+  }, {
+    "tag" : "target subfragment",
+    "value" : "NA"
+  }, {
+    "tag" : "strain",
+    "value" : "A_minutum_95-A1"
+  }, {
+    "tag" : "pcr primers",
+    "value" : "Illumina PCR Primer Cocktail"
+  }, {
+    "tag" : "multiplex identifiers",
+    "value" : "ATTACTCG-AGGCTATA"
+  }, {
+    "tag" : "adapters",
+    "value" : "GATCGGAAGAGCACACGTCTGAACTCCAGTCAC[i7]ATCTCGTATGCCGTCTTCTGCTTG / AATGATACGGCGACCACCGAGATCTACAC[i5]ACACTCTTTCCCTACACGACGCTCTTCCGATCT"
+  }, {
+    "tag" : "sequencing method",
+    "value" : "Sequencing by synthesis (Illumina)"
+  }, {
+    "tag" : "LIBRARY_CONSTRUCTION_PROTOCOL",
+    "value" : "Illumina mRNA TruSeq Stranded Kit"
+  } ]
+}

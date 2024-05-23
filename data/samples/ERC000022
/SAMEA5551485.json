@@ -1,0 +1,61 @@
+{
+  "alias" : "MI.M03555_0160.001.FLD0182.Austria515_A71",
+  "accession" : "ERS3353531",
+  "centerName" : "University of Fribourg",
+  "title" : "16S amplicon",
+  "description" : "control*",
+  "organism" : {
+    "taxonId" : "410658",
+    "commonName" : "16S amplicon",
+    "scientificName" : "soil metagenome"
+  },
+  "attributes" : [ {
+    "tag" : "collection date",
+    "value" : "2016-06-07"
+  }, {
+    "tag" : "environment (biome)",
+    "value" : "area of cropland"
+  }, {
+    "tag" : "environment (feature)",
+    "value" : "vineyard"
+  }, {
+    "tag" : "environment (material)",
+    "value" : "soil"
+  }, {
+    "tag" : "geographic location (country and/or sea)",
+    "value" : "Austria"
+  }, {
+    "tag" : "geographic location (depth)",
+    "value" : "0.1",
+    "unit" : "m"
+  }, {
+    "tag" : "geographic location (elevation)",
+    "value" : "376",
+    "unit" : "m"
+  }, {
+    "tag" : "geographic location (latitude)",
+    "value" : "48.4954 N",
+    "unit" : "DD"
+  }, {
+    "tag" : "geographic location (longitude)",
+    "value" : "15.6348 E",
+    "unit" : "DD"
+  }, {
+    "tag" : "investigation type",
+    "value" : "metagenome"
+  }, {
+    "tag" : "project name",
+    "value" : "PRJEB31962"
+  }, {
+    "tag" : "sequencing method",
+    "value" : "Illumina MiSeq"
+  }, {
+    "tag" : "soil environmental package",
+    "value" : "soil"
+  }, {
+    "tag" : "subspecific genetic lineage"
+  }, {
+    "tag" : "ENA-CHECKLIST",
+    "value" : "ERC000022"
+  } ]
+}

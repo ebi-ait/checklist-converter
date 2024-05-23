@@ -1,0 +1,28 @@
+{
+  "alias" : "MQ210823-3",
+  "accession" : "ERS7711313",
+  "centerName" : "WDRC KAUST",
+  "title" : "MABRbiofilm_cDNA_day60_feedWW&OMPspike_A1",
+  "description" : "cDNA of MABR biofilm-Reactor A1 fed with wastewater and spiked with 13OMPs at 50ugL-1, sampled 8 April 2021",
+  "organism" : {
+    "taxonId" : "527639",
+    "commonName" : "MABRbiofilm_cDNA_day60_feedWW&OMPspike_A1",
+    "scientificName" : "wastewater metagenome"
+  },
+  "attributes" : [ {
+    "tag" : "collection date",
+    "value" : "2021-04-08"
+  }, {
+    "tag" : "geographic location (country and/or sea)",
+    "value" : "Saudi Arabia"
+  }, {
+    "tag" : "investigation type",
+    "value" : "metagenome"
+  }, {
+    "tag" : "sewage type",
+    "value" : "Municipal wastewater treatment plant"
+  }, {
+    "tag" : "ENA-CHECKLIST",
+    "value" : "ERC000036"
+  } ]
+}

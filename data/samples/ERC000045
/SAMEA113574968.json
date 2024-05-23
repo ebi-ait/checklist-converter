@@ -1,0 +1,30 @@
+{
+  "alias" : "K.pneumoniae-31_P3_8",
+  "accession" : "ERS15569897",
+  "centerName" : "UCIBIO/REQUIMTE-UPorto",
+  "title" : "Klebsiella pneumoniae strain 31_P3_8",
+  "description" : "Illumina sequencing of Klebsiella pneumoniae strain 31_P3_8 from chicken meat",
+  "organism" : {
+    "taxonId" : "573",
+    "scientificName" : "Klebsiella pneumoniae"
+  },
+  "attributes" : [ {
+    "tag" : "collection date",
+    "value" : "2022"
+  }, {
+    "tag" : "geographic location (country and/or sea)",
+    "value" : "Portugal"
+  }, {
+    "tag" : "isolate",
+    "value" : "31_P3_8"
+  }, {
+    "tag" : "isolation_source",
+    "value" : "Chicken meat"
+  }, {
+    "tag" : "receipt date",
+    "value" : "2022"
+  }, {
+    "tag" : "ENA-CHECKLIST",
+    "value" : "ERC000045"
+  } ]
+}

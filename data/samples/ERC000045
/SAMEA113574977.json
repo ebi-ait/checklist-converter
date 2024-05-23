@@ -1,0 +1,30 @@
+{
+  "alias" : "K.pneumoniae-27_P1_9",
+  "accession" : "ERS15569906",
+  "centerName" : "UCIBIO/REQUIMTE-UPorto",
+  "title" : "Klebsiella pneumoniae strain 27_P1_9",
+  "description" : "Illumina sequencing of Klebsiella pneumoniae strain 27_P1_9 from cleaned poultry house",
+  "organism" : {
+    "taxonId" : "573",
+    "scientificName" : "Klebsiella pneumoniae"
+  },
+  "attributes" : [ {
+    "tag" : "collection date",
+    "value" : "2022"
+  }, {
+    "tag" : "geographic location (country and/or sea)",
+    "value" : "Portugal"
+  }, {
+    "tag" : "isolate",
+    "value" : "27_P1_9"
+  }, {
+    "tag" : "isolation_source",
+    "value" : "Cleaned poultry house"
+  }, {
+    "tag" : "receipt date",
+    "value" : "2022"
+  }, {
+    "tag" : "ENA-CHECKLIST",
+    "value" : "ERC000045"
+  } ]
+}

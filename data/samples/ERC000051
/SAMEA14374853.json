@@ -1,0 +1,52 @@
+{
+  "alias" : "LX33-7",
+  "accession" : "ERS11968861",
+  "centerName" : "Centrum Medyczne Ksztalcenia Podyplomowego",
+  "title" : "LX33-7",
+  "description" : "HCT116 control",
+  "organism" : {
+    "taxonId" : "9606",
+    "commonName" : "human",
+    "scientificName" : "Homo sapiens"
+  },
+  "attributes" : [ {
+    "tag" : "engrafted tumor sample passage",
+    "value" : "33"
+  }, {
+    "tag" : "patient age at collection of tumor",
+    "value" : "48"
+  }, {
+    "tag" : "patient sex",
+    "value" : "Male"
+  }, {
+    "tag" : "patient tumor diagnosis at time of collection",
+    "value" : "48"
+  }, {
+    "tag" : "patient tumor primary site",
+    "value" : ""
+  }, {
+    "tag" : "patient tumor site of collection",
+    "value" : ""
+  }, {
+    "tag" : "patient tumor type",
+    "value" : "Primary Neoplasm"
+  }, {
+    "tag" : "sample material",
+    "value" : "cell suspension"
+  }, {
+    "tag" : "sample origin",
+    "value" : "Xenograft derived cell line"
+  }, {
+    "tag" : "sample taxon name",
+    "value" : "Homo sapiens/Mus musculus xenograft"
+  }, {
+    "tag" : "sample unique ID",
+    "value" : "LX33"
+  }, {
+    "tag" : "Was the PDX model humanised?",
+    "value" : "No"
+  }, {
+    "tag" : "ENA-CHECKLIST",
+    "value" : "ERC000051"
+  } ]
+}

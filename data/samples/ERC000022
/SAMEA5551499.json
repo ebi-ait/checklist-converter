@@ -1,0 +1,61 @@
+{
+  "alias" : "MI.M03555_0162.001.FLD0040.323-1_16",
+  "accession" : "ERS3353545",
+  "centerName" : "University of Fribourg",
+  "title" : "16S amplicon",
+  "description" : "CH23, inter-row 323, herbicide*",
+  "organism" : {
+    "taxonId" : "410658",
+    "commonName" : "16S amplicon",
+    "scientificName" : "soil metagenome"
+  },
+  "attributes" : [ {
+    "tag" : "collection date",
+    "value" : "2016-06-13"
+  }, {
+    "tag" : "environment (biome)",
+    "value" : "area of cropland"
+  }, {
+    "tag" : "environment (feature)",
+    "value" : "vineyard"
+  }, {
+    "tag" : "environment (material)",
+    "value" : "soil"
+  }, {
+    "tag" : "geographic location (country and/or sea)",
+    "value" : "Switzerland"
+  }, {
+    "tag" : "geographic location (depth)",
+    "value" : "0.1",
+    "unit" : "m"
+  }, {
+    "tag" : "geographic location (elevation)",
+    "value" : "616.7",
+    "unit" : "m"
+  }, {
+    "tag" : "geographic location (latitude)",
+    "value" : "46.2537 N",
+    "unit" : "DD"
+  }, {
+    "tag" : "geographic location (longitude)",
+    "value" : "7.4019 E",
+    "unit" : "DD"
+  }, {
+    "tag" : "investigation type",
+    "value" : "metagenome"
+  }, {
+    "tag" : "project name",
+    "value" : "PRJEB31962"
+  }, {
+    "tag" : "sequencing method",
+    "value" : "Illumina MiSeq"
+  }, {
+    "tag" : "soil environmental package",
+    "value" : "soil"
+  }, {
+    "tag" : "subspecific genetic lineage"
+  }, {
+    "tag" : "ENA-CHECKLIST",
+    "value" : "ERC000022"
+  } ]
+}

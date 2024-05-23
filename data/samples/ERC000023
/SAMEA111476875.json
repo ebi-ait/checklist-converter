@@ -1,0 +1,62 @@
+{
+  "alias" : "AEST.32",
+  "accession" : "ERS13570911",
+  "centerName" : "TU Delft",
+  "title" : "Beverwijk-Ca-1-t24",
+  "description" : "-",
+  "organism" : {
+    "taxonId" : "412754",
+    "scientificName" : "bioreactor sludge metagenome"
+  },
+  "attributes" : [ {
+    "tag" : "broad-scale environmental context",
+    "value" : "anthropogenic environmental material (ENVO:0010001)"
+  }, {
+    "tag" : "collection date",
+    "value" : "2021-03-15"
+  }, {
+    "tag" : "condition",
+    "value" : "CALCIUM"
+  }, {
+    "tag" : "day",
+    "value" : "20210315"
+  }, {
+    "tag" : "description",
+    "value" : "AEST.32"
+  }, {
+    "tag" : "environmental medium",
+    "value" : "secondary sludge (ENVO:00002058)"
+  }, {
+    "tag" : "geographic location (country and/or sea)",
+    "value" : "Netherlands"
+  }, {
+    "tag" : "geographic location (latitude)",
+    "value" : "52.47368",
+    "unit" : "DD"
+  }, {
+    "tag" : "geographic location (longitude)",
+    "value" : "4.66736",
+    "unit" : "DD"
+  }, {
+    "tag" : "local environmental context",
+    "value" : "activated sludge (ENVO:00002046)"
+  }, {
+    "tag" : "project name",
+    "value" : "Calcium enhances PHA production and selective growth"
+  }, {
+    "tag" : "replicate",
+    "value" : "A"
+  }, {
+    "tag" : "sequencing method",
+    "value" : "Illumina MiSeq"
+  }, {
+    "tag" : "time",
+    "value" : "T24"
+  }, {
+    "tag" : "wwtp",
+    "value" : "BEVERWIJK"
+  }, {
+    "tag" : "ENA-CHECKLIST",
+    "value" : "ERC000023"
+  } ]
+}

@@ -1,0 +1,79 @@
+{
+  "alias" : "23453",
+  "accession" : "ERS12426037",
+  "centerName" : "Tree of Life Programme",
+  "title" : "23453-tol",
+  "organism" : {
+    "taxonId" : "6317",
+    "scientificName" : "Ostertagia ostertagi"
+  },
+  "attributes" : [ {
+    "tag" : "ENA-CHECKLIST",
+    "value" : "ERC000053"
+  }, {
+    "tag" : "organism part",
+    "value" : "WHOLE ORGANISM"
+  }, {
+    "tag" : "lifestage",
+    "value" : "adult"
+  }, {
+    "tag" : "project name",
+    "value" : "SAG_000101"
+  }, {
+    "tag" : "tolid",
+    "value" : "nxOstOste2"
+  }, {
+    "tag" : "collected_by",
+    "value" : "PHIL STEELE | MARC FABER"
+  }, {
+    "tag" : "collection date",
+    "value" : "2022-05-23"
+  }, {
+    "tag" : "geographic location (country and/or sea)",
+    "value" : "United Kingdom"
+  }, {
+    "tag" : "geographic location (latitude)",
+    "value" : "55.856",
+    "unit" : "DD"
+  }, {
+    "tag" : "geographic location (longitude)",
+    "value" : "-3.195",
+    "unit" : "DD"
+  }, {
+    "tag" : "geographic location (region and locality)",
+    "value" : "Penicuik | Bush Loan | Moredun Research Institute | Farm"
+  }, {
+    "tag" : "identified_by",
+    "value" : "PHIL STEELE | MARC FABER"
+  }, {
+    "tag" : "habitat",
+    "value" : "Bovine abomasum"
+  }, {
+    "tag" : "identifier_affiliation",
+    "value" : "MOREDUN RESEARCH INSTITUTE | MOREDUN RESEARCH INSTITUTE"
+  }, {
+    "tag" : "sample same as",
+    "value" : "SAMEA110328941"
+  }, {
+    "tag" : "sex",
+    "value" : "MALE"
+  }, {
+    "tag" : "symbiont",
+    "value" : "N"
+  }, {
+    "tag" : "collecting institution",
+    "value" : "MOREDUN RESEARCH INSTITUTE | MOREDUN RESEARCH INSTITUTE"
+  }, {
+    "tag" : "GAL",
+    "value" : "Sanger Institute"
+  }, {
+    "tag" : "specimen_voucher",
+    "value" : "NOT PROVIDED"
+  }, {
+    "tag" : "specimen_id",
+    "value" : "SAN20001107"
+  }, {
+    "tag" : "GAL_sample_id",
+    "value" : "SAN20001107"
+  } ]
+}

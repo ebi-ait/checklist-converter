@@ -1,0 +1,62 @@
+{
+  "alias" : "AEST.5",
+  "accession" : "ERS13570884",
+  "centerName" : "TU Delft",
+  "title" : "Bath-K-1-t0",
+  "description" : "-",
+  "organism" : {
+    "taxonId" : "412754",
+    "scientificName" : "bioreactor sludge metagenome"
+  },
+  "attributes" : [ {
+    "tag" : "broad-scale environmental context",
+    "value" : "anthropogenic environmental material (ENVO:0010001)"
+  }, {
+    "tag" : "collection date",
+    "value" : "2021-03-22"
+  }, {
+    "tag" : "condition",
+    "value" : "POTASSIUM"
+  }, {
+    "tag" : "day",
+    "value" : "20210322"
+  }, {
+    "tag" : "description",
+    "value" : "AEST.5"
+  }, {
+    "tag" : "environmental medium",
+    "value" : "secondary sludge (ENVO:00002058)"
+  }, {
+    "tag" : "geographic location (country and/or sea)",
+    "value" : "Netherlands"
+  }, {
+    "tag" : "geographic location (latitude)",
+    "value" : "51.40015",
+    "unit" : "DD"
+  }, {
+    "tag" : "geographic location (longitude)",
+    "value" : "4.24406",
+    "unit" : "DD"
+  }, {
+    "tag" : "local environmental context",
+    "value" : "activated sludge (ENVO:00002046)"
+  }, {
+    "tag" : "project name",
+    "value" : "Calcium enhances PHA production and selective growth"
+  }, {
+    "tag" : "replicate",
+    "value" : "A"
+  }, {
+    "tag" : "sequencing method",
+    "value" : "Illumina MiSeq"
+  }, {
+    "tag" : "time",
+    "value" : "T0"
+  }, {
+    "tag" : "wwtp",
+    "value" : "BATH"
+  }, {
+    "tag" : "ENA-CHECKLIST",
+    "value" : "ERC000023"
+  } ]
+}
