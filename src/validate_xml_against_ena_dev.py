@@ -65,7 +65,7 @@ def main(username, password, input_paths, output_path):
         with open(sample_path, 'r') as sample_streamable:
             try:
                 response = submit(submission_xml_streamable, sample_streamable, submission_url, username, password)
-                os.makedirs(response.status_code, exist_ok=True)
+                os.makedirs(f"{join(output_path, response.http_code)}", exist_ok=True)
                 full_output_path = f"{join(output_path, response.http_code, output_name_no_extension)}.xml"
                 with open(full_output_path, 'w') as f:
                         f.write(response.text)
