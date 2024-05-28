@@ -1,0 +1,302 @@
+[
+  {
+    "dataPath": "/attributes/0/tag",
+    "errors": [
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant"
+    ]
+  },
+  {
+    "dataPath": "/attributes/0/value",
+    "errors": [
+      "must match pattern \"(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)\"",
+      "must match pattern \"(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)\""
+    ]
+  },
+  {
+    "dataPath": "/attributes/1/tag",
+    "errors": [
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant"
+    ]
+  },
+  {
+    "dataPath": "/attributes/1/value",
+    "errors": [
+      "must match pattern \"(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)\"",
+      "must match pattern \"(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)\"",
+      "must match pattern \"([+-]?(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?)|((^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$))\"",
+      "must match pattern \"((0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?)|((^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$))\""
+    ]
+  },
+  {
+    "dataPath": "/attributes/2/tag",
+    "errors": [
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant"
+    ]
+  },
+  {
+    "dataPath": "/attributes/2/value",
+    "errors": [
+      "must match pattern \"(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)\"",
+      "must match pattern \"(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)\"",
+      "must match pattern \"([+-]?(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?)|((^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$))\"",
+      "must match pattern \"((0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?)|((^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$))\""
+    ]
+  },
+  {
+    "dataPath": "/attributes/3/tag",
+    "errors": [
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant"
+    ]
+  },
+  {
+    "dataPath": "/attributes/3/value",
+    "errors": [
+      "must match pattern \"(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)\"",
+      "must match pattern \"(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)\"",
+      "must match pattern \"([+-]?(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?)|((^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$))\"",
+      "must match pattern \"((0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?)|((^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$))\""
+    ]
+  },
+  {
+    "dataPath": "/attributes/4/tag",
+    "errors": [
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant"
+    ]
+  },
+  {
+    "dataPath": "/attributes/4/value",
+    "errors": [
+      "must match pattern \"(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)\"",
+      "must match pattern \"(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)\"",
+      "must match pattern \"([+-]?(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?)|((^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$))\"",
+      "must match pattern \"((0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?)|((^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$))\""
+    ]
+  },
+  {
+    "dataPath": "/attributes/5/tag",
+    "errors": [
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant"
+    ]
+  },
+  {
+    "dataPath": "/attributes/6/tag",
+    "errors": [
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant"
+    ]
+  },
+  {
+    "dataPath": "/attributes/7/value",
+    "errors": [
+      "must match pattern \"(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)\"",
+      "must match pattern \"(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)\""
+    ]
+  },
+  {
+    "dataPath": "/attributes/8/tag",
+    "errors": [
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant"
+    ]
+  },
+  {
+    "dataPath": "/attributes/8/value",
+    "errors": [
+      "must match pattern \"(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)\"",
+      "must match pattern \"(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)\""
+    ]
+  },
+  {
+    "dataPath": "/attributes/9/tag",
+    "errors": [
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant"
+    ]
+  },
+  {
+    "dataPath": "/attributes/9/value",
+    "errors": [
+      "must match pattern \"(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)\"",
+      "must match pattern \"(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)\"",
+      "must match pattern \"([+-]?(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?)|((^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$))\"",
+      "must match pattern \"((0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?)|((^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$))\""
+    ]
+  },
+  {
+    "dataPath": "/attributes/10/tag",
+    "errors": [
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant"
+    ]
+  },
+  {
+    "dataPath": "/attributes/10/value",
+    "errors": [
+      "must match pattern \"(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)\"",
+      "must match pattern \"(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)\""
+    ]
+  },
+  {
+    "dataPath": "/attributes/11/tag",
+    "errors": [
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant"
+    ]
+  },
+  {
+    "dataPath": "/attributes/11/value",
+    "errors": [
+      "must match pattern \"(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)\"",
+      "must match pattern \"(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)\"",
+      "must match pattern \"([+-]?(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?)|((^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$))\"",
+      "must match pattern \"((0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?)|((^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$))\""
+    ]
+  },
+  {
+    "dataPath": "/attributes/12/tag",
+    "errors": [
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant"
+    ]
+  },
+  {
+    "dataPath": "/attributes/12/value",
+    "errors": [
+      "must match pattern \"(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)\"",
+      "must match pattern \"(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)\"",
+      "must match pattern \"([+-]?(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?)|((^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$))\"",
+      "must match pattern \"((0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?)|((^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$))\""
+    ]
+  },
+  {
+    "dataPath": "/attributes/13/value",
+    "errors": [
+      "must have required property 'value'",
+      "must have required property 'value'",
+      "must have required property 'value'",
+      "must have required property 'value'",
+      "must have required property 'value'",
+      "must have required property 'value'",
+      "must have required property 'value'"
+    ]
+  },
+  {
+    "dataPath": "/attributes/13/tag",
+    "errors": [
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant"
+    ]
+  },
+  {
+    "dataPath": "/attributes/14/tag",
+    "errors": [
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant"
+    ]
+  },
+  {
+    "dataPath": "/attributes/14/value",
+    "errors": [
+      "must match pattern \"(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)\"",
+      "must match pattern \"(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)\""
+    ]
+  },
+  {
+    "dataPath": "/attributes",
+    "errors": [
+      "must contain at least 1 and no more than 1 valid item(s)",
+      "must contain at least 1 and no more than 1 valid item(s)",
+      "must contain at least 1 and no more than 1 valid item(s)",
+      "must contain at least 1 and no more than 1 valid item(s)",
+      "must contain at least 1 and no more than 1 valid item(s)",
+      "must contain at least 1 and no more than 1 valid item(s)",
+      "must contain at least 1 and no more than 1 valid item(s)"
+    ]
+  },
+  {
+    "dataPath": "/attributes/7/tag",
+    "errors": [
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant"
+    ]
+  }
+]
