@@ -46,23 +46,6 @@ def get_document(accession):
     return response.text
 
 
-def clean_document(xml_document: str) -> str:
-    """
-    Remove accession identifiers from ENA XML document. They are not allowed for ENA validation.
-    :param xml_document:
-    :return:
-    """
-    root = ElementTree.XML(xml_document)
-    for parent in root.iter():
-        for child in list(parent):
-            if child.tag == 'SAMPLE':
-                del child.attrib['accession']
-                child.attrib['alias'] = str(uuid4())
-            if child.tag == 'IDENTIFIERS':
-                parent.remove(child)
-    return ElementTree.tostring(root).decode()
-
-
 def write_document(output_path, content):
     with open(output_path, 'w') as f:
         f.write(content)
