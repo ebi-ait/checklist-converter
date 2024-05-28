@@ -11,7 +11,6 @@ from xml.etree import ElementTree
 from uuid import uuid4
 
 
-
 def str_or_file_path(value: str) -> List:
     if isfile(value):
         with open(value, 'r') as f:
@@ -72,13 +71,14 @@ def write_document(output_path, content):
 def main(accessions, output_path):
     for accession in accessions:
         document = get_document(accession)
-        checklist = re.search("ERC\d{6}", document).group()
+        checklist = re.search("ERC\\d{6}", document).group()
         checklist_path = join(output_path, checklist)
         if not isdir(checklist_path):
             mkdir(checklist_path)
 
         output_file_path = join(checklist_path, f"{accession}.xml")
         write_document(output_file_path, document)
+
 
 if __name__ == '__main__':
     args = parse_arguments()
