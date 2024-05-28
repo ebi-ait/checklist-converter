@@ -51,34 +51,32 @@ def create_submission_xml():
 def submit(sub_xml_streamable, sample_xml_streamable, url, username, password):
     r = requests.post(url, files={'SUBMISSION': sub_xml_streamable, 'SAMPLE': sample_xml_streamable},
                       auth=(username, password))
-    return r.text
+    return r
 
 def main(username, password, input_paths, output_path):
     submission_xml = create_submission_xml()
     submission_xml_streamable = StringIO(submission_xml)
     submission_url = "https://wwwdev.ebi.ac.uk/ena/submit/drop-box/submit/"
 
-    receipts = {}
+    responses = {}
     for sample_path in input_paths:
         submission_xml_streamable.seek(0)
         output_name_no_extension = sample_path.split('/')[-1][:-4]
         with open(sample_path, 'r') as sample_streamable:
             try:
                 response = submit(submission_xml_streamable, sample_streamable, submission_url, username, password)
-                os.makedirs(f"{join(output_path, response.status_code)}", exist_ok=True)
-                full_output_path = f"{join(output_path, response.status_code, output_name_no_extension)}.xml"
+                os.makedirs(f"{join(output_path, str(response.status_code))}", exist_ok=True)
+                full_output_path = f"{join(output_path, str(response.status_code), output_name_no_extension)}.xml"
                 with open(full_output_path, 'w') as f:
-                        f.write(response.text)
-            except:
+                    f.write(response.text)
+            except Exception as e:
+                print(e)
                 full_output_path = f"{join(output_path, 'error', output_name_no_extension)}.xml"
                 with open(full_output_path, 'w') as f:
                     f.write(response.text)
 
 
-
 if __name__ == '__main__':
     args = parse_arguments()
     main(args.user, args.password, args.input, args.out_dir)
-
-
 
