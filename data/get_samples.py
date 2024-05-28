@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 from tqdm import tqdm
 import pandas as pd
@@ -17,7 +18,7 @@ def get_ena_xml(accession):
 def get_ena_json(ers_accession):
     headers = {'accept': 'application/json'}
     r = requests.get('https://www.ebi.ac.uk/ena/submit/webin-v2/sample/' + ers_accession,
-                     auth=('Webin-59287', 'Password@123'), headers=headers)
+                     auth=(os.getenv('ENA_USER'), os.getenv('ENA_PASSWORD')), headers=headers)
     return r.text
 
 
