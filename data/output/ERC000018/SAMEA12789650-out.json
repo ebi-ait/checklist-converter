@@ -1,0 +1,106 @@
+[
+  {
+    "dataPath": "/attributes/0/tag",
+    "errors": [
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant"
+    ]
+  },
+  {
+    "dataPath": "/attributes/1/tag",
+    "errors": [
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant"
+    ]
+  },
+  {
+    "dataPath": "/attributes/2/tag",
+    "errors": [
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant"
+    ]
+  },
+  {
+    "dataPath": "/attributes/3/tag",
+    "errors": [
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant"
+    ]
+  },
+  {
+    "dataPath": "/attributes/4/tag",
+    "errors": [
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant"
+    ]
+  },
+  {
+    "dataPath": "/attributes/5/tag",
+    "errors": [
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant"
+    ]
+  },
+  {
+    "dataPath": "/attributes/6/tag",
+    "errors": [
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant"
+    ]
+  },
+  {
+    "dataPath": "/attributes/7/tag",
+    "errors": [
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant"
+    ]
+  },
+  {
+    "dataPath": "/attributes/8/tag",
+    "errors": [
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant"
+    ]
+  },
+  {
+    "dataPath": "/attributes/9/tag",
+    "errors": [
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant"
+    ]
+  },
+  {
+    "dataPath": "/attributes/10/tag",
+    "errors": [
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant"
+    ]
+  },
+  {
+    "dataPath": "/attributes/11/tag",
+    "errors": [
+      "must be equal to constant",
+      "must be equal to constant",
+      "must be equal to constant"
+    ]
+  },
+  {
+    "dataPath": "/attributes",
+    "errors": [
+      "must contain at least 1 and no more than 1 valid item(s)",
+      "must contain at least 1 and no more than 1 valid item(s)",
+      "must contain at least 1 and no more than 1 valid item(s)"
+    ]
+  }
+]

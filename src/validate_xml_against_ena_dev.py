@@ -2,6 +2,7 @@ import requests
 
 from argparse import ArgumentParser, Namespace
 from io import StringIO
+import os
 from os.path import join, isfile, isdir
 import glob
 from typing import List
@@ -50,7 +51,6 @@ def create_submission_xml():
 def submit(sub_xml_streamable, sample_xml_streamable, url, username, password):
     r = requests.post(url, files={'SUBMISSION': sub_xml_streamable, 'SAMPLE': sample_xml_streamable},
                       auth=(username, password))
-    r.raise_for_status()
     return r.text
 
 def main(username, password, input_paths, output_path):
@@ -63,13 +63,17 @@ def main(username, password, input_paths, output_path):
         submission_xml_streamable.seek(0)
         output_name_no_extension = sample_path.split('/')[-1][:-4]
         with open(sample_path, 'r') as sample_streamable:
-            receipt = submit(submission_xml_streamable, sample_streamable, submission_url, username, password)
-            receipts[output_name_no_extension] = receipt
+            try:
+                response = submit(submission_xml_streamable, sample_streamable, submission_url, username, password)
+                os.makedirs(f"{join(output_path, response.status_code)}", exist_ok=True)
+                full_output_path = f"{join(output_path, response.status_code, output_name_no_extension)}.xml"
+                with open(full_output_path, 'w') as f:
+                        f.write(response.text)
+            except:
+                full_output_path = f"{join(output_path, 'error', output_name_no_extension)}.xml"
+                with open(full_output_path, 'w') as f:
+                    f.write(response.text)
 
-    for output_name_no_extension, receipt in receipts.items():
-        full_output_path = f"{join(output_path, output_name_no_extension)}_receipt.xml"
-        with open(full_output_path, 'w') as f:
-            f.write(receipt)
 
 
 if __name__ == '__main__':
