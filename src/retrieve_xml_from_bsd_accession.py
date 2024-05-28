@@ -1,8 +1,10 @@
 import argparse
 
+import re
 import requests
 
 from os.path import join, isfile, isdir
+from os import mkdir
 from typing import List
 from argparse import ArgumentParser
 from xml.etree import ElementTree
@@ -68,15 +70,15 @@ def write_document(output_path, content):
 
 
 def main(accessions, output_path):
-    documents = {}
     for accession in accessions:
         document = get_document(accession)
-        validation_ready_document = clean_document(document)
-        documents[accession] = validation_ready_document
+        checklist = re.search("ERC\d{6}", document).group()
+        checklist_path = join(output_path, checklist)
+        if not isdir(checklist_path):
+            mkdir(checklist_path)
 
-    for accession, content in documents.items():
-        output_file_path = join(output_path, f"{accession}.xml")
-        write_document(output_file_path, content)
+        output_file_path = join(checklist_path, f"{accession}.xml")
+        write_document(output_file_path, document)
 
 if __name__ == '__main__':
     args = parse_arguments()
