@@ -42,7 +42,7 @@ def retrieve_and_save_samples(checklists):
     accession_list = []
     for checklist in tqdm(checklists):
         r = requests.get(
-            'https://www.ebi.ac.uk/biosamples/samples?filter=attr:ENA-CHECKLIST:' + checklist + '&page=1&size=10')
+            'https://www.ebi.ac.uk/biosamples/samples?filter=attr:ENA-CHECKLIST:' + checklist + '&page=1&size=100')
 
         create_checklist_directory(checklist.strip())
         if '_embedded' in r.json():
