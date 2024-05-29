@@ -46,7 +46,7 @@ def create_submission_xml():
 <SUBMISSION>
    <ACTIONS>
       <ACTION>
-         <ADD/>
+         <VALIDATE/>
       </ACTION>
    </ACTIONS>
 </SUBMISSION>
