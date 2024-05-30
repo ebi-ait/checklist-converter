@@ -132,8 +132,7 @@
           "description" : "tissue type from which the sample was obtained",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "tissue_type"
+              "enum" : [ "tissue_type" ]
             },
             "value" : {
               "type" : "string"
@@ -153,8 +152,7 @@
           "description" : "The date the sample was collected with the intention of sequencing, either as an instance (single point in time) or interval. In case no exact time is available, the date/time can be right truncated i.e. all of these are valid ISO8601 compliant times: 2008-01-23T19:23:10+00:00; 2008-01-23T19:23:10; 2008-01-23; 2008-01; 2008.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "collection date"
+              "enum" : [ "collection date", "Event Date/Time", "collection_date" ]
             },
             "value" : {
               "type" : "string",
@@ -175,8 +173,7 @@
           "description" : "The geographical origin of where the sample was collected from, with the intention of sequencing, as defined by the country or sea name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html).",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "geographic location (country and/or sea)"
+              "enum" : [ "geographic location (country and/or sea)", "geographic location (country and/or sea)" ]
             },
             "value" : {
               "enum" : [ "Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Arctic Ocean", "Argentina", "Armenia", "Aruba", "Ashmore and Cartier Islands", "Atlantic Ocean", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Baker Island", "Baltic Sea", "Bangladesh", "Barbados", "Bassas da India", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Borneo", "Bosnia and Herzegovina", "Botswana", "Bouvet Island", "Brazil", "British Virgin Islands", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Clipperton Island", "Cocos Islands", "Colombia", "Comoros", "Cook Islands", "Coral Sea Islands", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Curacao", "Cyprus", "Czechia", "Democratic Republic of the Congo", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "East Timor", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Europa Island", "Falkland Islands (Islas Malvinas)", "Faroe Islands", "Fiji", "Finland", "France", "French Guiana", "French Polynesia", "French Southern and Antarctic Lands", "Gabon", "Gambia", "Gaza Strip", "Georgia", "Germany", "Ghana", "Gibraltar", "Glorioso Islands", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard Island and McDonald Islands", "Honduras", "Hong Kong", "Howland Island", "Hungary", "Iceland", "India", "Indian Ocean", "Indonesia", "Iran", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Jan Mayen", "Japan", "Jarvis Island", "Jersey", "Johnston Atoll", "Jordan", "Juan de Nova Island", "Kazakhstan", "Kenya", "Kerguelen Archipelago", "Kingman Reef", "Kiribati", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mediterranean Sea", "Mexico", "Micronesia", "Midway Islands", "Moldova", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Navassa Island", "Nepal", "Netherlands", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "North Korea", "North Sea", "Northern Mariana Islands", "Norway", "Oman", "Pacific Ocean", "Pakistan", "Palau", "Palmyra Atoll", "Panama", "Papua New Guinea", "Paracel Islands", "Paraguay", "Peru", "Philippines", "Pitcairn Islands", "Poland", "Portugal", "Puerto Rico", "Qatar", "Republic of the Congo", "Reunion", "Romania", "Ross Sea", "Russia", "Rwanda", "Saint Helena", "Saint Kitts and Nevis", "Saint Lucia", "Saint Pierre and Miquelon", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Sint Maarten", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "South Korea", "Southern Ocean", "Spain", "Spratly Islands", "Sri Lanka", "Sudan", "Suriname", "Svalbard", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Tasman Sea", "Thailand", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tromelin Island", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "USA", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Viet Nam", "Virgin Islands", "Wake Island", "Wallis and Futuna", "West Bank", "Western Sahara", "Yemen", "Zambia", "Zimbabwe", "missing: control sample", "missing: data agreement established pre-2023", "missing: endangered species", "missing: human-identifiable", "missing: lab stock", "missing: sample group", "missing: synthetic construct", "missing: third party data", "not applicable", "not collected", "not provided", "restricted access" ]
@@ -196,8 +193,7 @@
           "description" : "sex of the organism from which the sample was obtained",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "sex"
+              "enum" : [ "sex" ]
             },
             "value" : {
               "type" : "string"
@@ -217,8 +213,7 @@
           "description" : "Date of birth of subject the sample was derived from.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "date of birth"
+              "enum" : [ "date of birth" ]
             },
             "value" : {
               "type" : "string"
@@ -238,8 +233,7 @@
           "description" : "Date of death of subject the sample was derived from.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "date of death"
+              "enum" : [ "date of death" ]
             },
             "value" : {
               "type" : "string"
@@ -259,8 +253,7 @@
           "description" : "The investigation, analysis and recognition of the presence and nature of disease, condition, or injury from expressed signs and symptoms; also, the scientific determination of any kind; the concise results of such an investigation (http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C15220).",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "diagnosis"
+              "enum" : [ "diagnosis" ]
             },
             "value" : {
               "type" : "string"
@@ -280,8 +273,7 @@
           "description" : "Name of the strain from which the sample was obtained.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "strain"
+              "enum" : [ "strain" ]
             },
             "value" : {
               "type" : "string"
@@ -301,8 +293,7 @@
           "description" : "Determination of the grade (severity/stage) of a tumor sample, used in cancer biology to describe abnormalities/qualities of tumor cells or tissues. Values can be described by terms from NCI Thesaurus.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "tumor grading (OBI_0600002)"
+              "enum" : [ "tumor grading (OBI_0600002)" ]
             },
             "value" : {
               "type" : "string"
@@ -322,8 +313,7 @@
           "description" : "The name of the treatment agent used.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "treatment agent"
+              "enum" : [ "treatment agent" ]
             },
             "value" : {
               "type" : "string"
@@ -343,8 +333,7 @@
           "description" : "The dose of the treatment agent used.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "treatment dose"
+              "enum" : [ "treatment dose" ]
             },
             "value" : {
               "type" : "string"
@@ -364,8 +353,7 @@
           "description" : "The date of the treatment applied.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "treatment date"
+              "enum" : [ "treatment date" ]
             },
             "value" : {
               "type" : "string"
@@ -385,8 +373,7 @@
           "description" : "Reference details related to a sample in form of an URI.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "Further Details"
+              "enum" : [ "Further Details" ]
             },
             "value" : {
               "type" : "string"

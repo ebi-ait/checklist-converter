@@ -92,4 +92,38 @@ class ChecklistConverterServiceTest {
     }
     assertEquals("must be equal to constant", response.getBody().get(0).get("errors").get(0).asText());
   }
+
+
+
+  @Test
+  void synonyms_should_be_converted_correctly() {
+    ResponseEntity<JsonNode> response;
+
+    try {
+      ObjectNode requestNode;
+      String schema = checklistConverterService.getChecklist("ERC000024");
+      JsonNode schemaJson = objectMapper.readValue(schema, JsonNode.class);
+      File file = resourceLoader.getResource("classpath:samples/ERC000024/SAMEA110262237.json").getFile();
+      JsonNode sampleJson = objectMapper.readValue(file, JsonNode.class);
+
+      requestNode = objectMapper.createObjectNode();
+      requestNode.set("data", sampleJson);
+      requestNode.set("schema", schemaJson);
+
+      response = webClient.post()
+          .uri("http://localhost:3020/validate")
+          .bodyValue(requestNode)
+          .retrieve()
+          .toEntity(JsonNode.class)
+          .toFuture()
+          .get();
+    } catch (IOException | InterruptedException | ExecutionException e) {
+      throw new RuntimeException(e);
+    }
+
+    if (response.getBody() == null) {
+      throw new TestAbortedException("Response body can not be empty");
+    }
+    assertEquals(0, response.getBody().size());
+  }
 }

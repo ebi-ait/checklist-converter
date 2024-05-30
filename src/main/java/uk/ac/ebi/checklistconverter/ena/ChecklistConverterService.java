@@ -1,11 +1,14 @@
 package uk.ac.ebi.checklistconverter.ena;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.client.ResponseErrorHandler;
 import org.springframework.web.client.RestTemplate;
 import uk.ac.ebi.checklistconverter.exception.ApplicationStateException;
@@ -122,10 +125,25 @@ public class ChecklistConverterService {
     return enaChecklist.getChecklist().getDescriptor().getFieldGroups().stream().
         flatMap(group -> group.getFields().stream())
         .map(f -> Map.of("property", f.getName(),
+                "synonyms", getStringRepresentationOfSynonyms(f.getSynonyms(), f.getName()),
             "property_type", getTypedTemplate(f),
             "property_description", f.getDescription() == null ? "" : f.getDescription(),
             "requirement", f.getMandatory()))
         .collect(Collectors.toList());
+  }
+
+  private static String getStringRepresentationOfSynonyms(List<String> synonyms, String fieldName) {
+    List<String> names = new ArrayList<>();
+    names.add(fieldName);
+    if (!CollectionUtils.isEmpty(synonyms)) {
+      names.addAll(synonyms);
+    }
+    try {
+      return new ObjectMapper().writeValueAsString(names);
+    } catch (JsonProcessingException e) {
+      log.error("Failed to convert field_name and synonyms of the attribute: " + fieldName, e);
+      throw new RuntimeException(e);
+    }
   }
 
   static class EnaErrorHandler implements ResponseErrorHandler {

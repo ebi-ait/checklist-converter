@@ -78,6 +78,7 @@ public class SchemaTemplateGenerator {
     for (Map<String, String> p : propertyList) {
       VelocityContext ctx = new VelocityContext();
       ctx.put("attribute_name", p.get("property"));
+      ctx.put("synonyms", p.get("synonyms"));
       ctx.put("attribute_type", p.get("property_type"));
       ctx.put("description", p.get("property_description").replace("\"", "'"));
 

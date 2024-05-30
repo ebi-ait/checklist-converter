@@ -132,8 +132,7 @@
           "description" : "Description of relationship(s) between the subject organism and other organism(s) it is associated with. E.g., parasite on species X; mutualist with species Y. The target organism is the subject of the relationship, and the other organism(s) is the object.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "observed biotic relationship"
+              "enum" : [ "observed biotic relationship", "biotic relationship" ]
             },
             "value" : {
               "enum" : [ "commensal", "free living", "mutualism", "parasite", "symbiont" ]
@@ -153,8 +152,7 @@
           "description" : "The type of reproduction from the parent stock. Values for this field is specific to different taxa. For phage or virus: lytic/lysogenic/temperate/obligately lytic. For plasmids: incompatibility group. For eukaryotes: sexual/asexual. Mandatory for MIGs of eukayotes, plasmids and viruses.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "propagation"
+              "enum" : [ "propagation" ]
             },
             "value" : {
               "type" : "string"
@@ -174,8 +172,7 @@
           "description" : "The method employed for collecting the sample. Can be provided in the form of a PMID, DOI, url or text.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "sample collection method"
+              "enum" : [ "sample collection method", "samp_collec_method", "sample collection device or method", "sample_collec_method" ]
             },
             "value" : {
               "type" : "string"
@@ -195,8 +192,7 @@
           "description" : "temperature at which sample was stored, e.g. -80",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "sample storage temperature"
+              "enum" : [ "sample storage temperature", "samp_stor_temp" ]
             },
             "value" : {
               "type" : "string",
@@ -217,8 +213,7 @@
           "description" : "Location at which sample was stored, usually name of a specific freezer/room. Indicate the location name.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "sample storage location"
+              "enum" : [ "sample storage location", "samp_stor_loc" ]
             },
             "value" : {
               "type" : "string"
@@ -238,8 +233,7 @@
           "description" : "soil classification from the FAO World Reference Database for Soil Resources",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "soil_taxonomic/FAO classification"
+              "enum" : [ "soil_taxonomic/FAO classification" ]
             },
             "value" : {
               "type" : "string"
@@ -259,8 +253,7 @@
           "description" : "soil classification based on local soil classification system",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "soil_taxonomic/local classification"
+              "enum" : [ "soil_taxonomic/local classification" ]
             },
             "value" : {
               "type" : "string"
@@ -280,8 +273,7 @@
           "description" : "reference or method used in determining the local soil classification",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "soil_taxonomic/local classification method"
+              "enum" : [ "soil_taxonomic/local classification method" ]
             },
             "value" : {
               "type" : "string"
@@ -301,8 +293,7 @@
           "description" : "Description of the soil type or classification. This field accepts terms under soil (http://purl.obolibrary.org/obo/ENVO_00001998). Multiple terms can be separated by pipes.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "soil type"
+              "enum" : [ "soil type" ]
             },
             "value" : {
               "enum" : [ "Acrisol", "Albeluvisol", "Alisol", "Andosol", "Anthrosol", "Arenosol", "Calcisol", "Cambisol", "Chernozem", "Cryosol", "Durisol", "Ferralsol", "Fluvisol", "Gleysol", "Gypsisol", "Histosol", "Kastanozem", "Leptosol", "Lixisol", "Luvisol", "Nitisol", "Phaeozem", "Planosol", "Plinthosol", "Podzol", "Regosol", "Solonchak", "Solonetz", "Stagnosol", "Technosol", "Umbrisol", "Vertisol" ]
@@ -322,8 +313,7 @@
           "description" : "reference or method used in determining soil series name or other lower-level classification",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "soil type method"
+              "enum" : [ "soil type method" ]
             },
             "value" : {
               "type" : "string"
@@ -343,8 +333,7 @@
           "description" : "the relative proportion of different grain sizes of mineral particles in a soil, as described using a standard system; express as % sand (50 um to 2 mm), silt (2 um to 50 um), and clay (<2 um) with textural name (e.g., silty clay loam) optional.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "soil texture measurement"
+              "enum" : [ "soil texture measurement", "soil_text_measure", "texture" ]
             },
             "value" : {
               "type" : "string"
@@ -364,8 +353,7 @@
           "description" : "reference or method used in determining soil texture",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "soil texture method"
+              "enum" : [ "soil texture method", "texture method", "texture_meth" ]
             },
             "value" : {
               "type" : "string"
@@ -385,8 +373,7 @@
           "description" : "pH measurement of the soil; e.g. 6.2",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "soil pH"
+              "enum" : [ "soil pH" ]
             },
             "value" : {
               "type" : "string"
@@ -406,8 +393,7 @@
           "description" : "type of facility where the sampled plant was grown",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "growth facility"
+              "enum" : [ "growth facility" ]
             },
             "value" : {
               "enum" : [ "experimental garden", "field", "glasshouse", "growth chamber", "open top chamber", "other" ]
@@ -427,8 +413,7 @@
           "description" : "developmental stage at the time of sample collection; for Plant Ontology (PO) (v 20) terms, see http://purl.bioontology.org/ontology/PO, e.g. hypocotyl emergence stage (PO_0007043)",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "plant developmental stage"
+              "enum" : [ "plant developmental stage" ]
             },
             "value" : {
               "type" : "string"
@@ -448,8 +433,7 @@
           "description" : "age of subject at the time of sample collection; relevant scale depends on species and study; e.g. 2 weeks old",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "sampled age"
+              "enum" : [ "sampled age" ]
             },
             "value" : {
               "type" : "string"
@@ -469,8 +453,7 @@
           "description" : "health status of the subject at the time of sample collection",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "sample health state"
+              "enum" : [ "sample health state" ]
             },
             "value" : {
               "enum" : [ "diseased", "healthy" ]
@@ -490,8 +473,7 @@
           "description" : "measurement of wet mass at the time of sample collection; e.g. 0.23 g",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "sample wet mass"
+              "enum" : [ "sample wet mass" ]
             },
             "value" : {
               "type" : "string"
@@ -511,8 +493,7 @@
           "description" : "stage of the disease at the time of sample collection, e.g. inoculation, penetration, infection, growth and reproduction, dissemination of pathogen",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "sample disease stage"
+              "enum" : [ "sample disease stage" ]
             },
             "value" : {
               "type" : "string"
@@ -532,8 +513,7 @@
           "description" : "length of subject at the time of sampling, if different from the height; e.g. 2m",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "sample length"
+              "enum" : [ "sample length" ]
             },
             "value" : {
               "type" : "string"
@@ -553,8 +533,7 @@
           "description" : "height of subject at the time of sampling, if different from the length; e.g. 0.75m",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "sample height"
+              "enum" : [ "sample height" ]
             },
             "value" : {
               "type" : "string"
@@ -574,8 +553,7 @@
           "description" : "measurement of dry mass at the time of sample collection; e.g. 0.05g",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "sample dry mass"
+              "enum" : [ "sample dry mass" ]
             },
             "value" : {
               "type" : "string"
@@ -595,8 +573,7 @@
           "description" : "list of diseases with which the subject has been diagnosed at the time of sample collection; can include multiple diagnoses; the value of the field depends on subject; e.g. Charcoal rot (Macrophomina phaseolina), Late wilt (Cephalosporium maydis)",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "sample disease status"
+              "enum" : [ "sample disease status" ]
             },
             "value" : {
               "type" : "string"
@@ -616,8 +593,7 @@
           "description" : "phenotype of the plant from which the sample was obtained, such as colour of corolla, fruit diameter, circular leaf shape; Plant Trait Ontology (TO), Phenotypic Quality Ontology (PATO), or other ontology is recommended; e.g. stem epidermis colour (TO:1000018)",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "sample phenotype"
+              "enum" : [ "sample phenotype" ]
             },
             "value" : {
               "type" : "string"
@@ -637,8 +613,7 @@
           "description" : "The ploidy level of the genome (e.g. allopolyploid, haploid, diploid, triploid, tetraploid). It has implications for the downstream study of duplicated gene and regions of the genomes (and perhaps for difficulties in assembly). For terms, please select terms listed under class ploidy (PATO:001374) of Phenotypic Quality Ontology (PATO), and for a browser of PATO (v 2018-03-27) please refer to http://purl.bioontology.org/ontology/PATO",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "ploidy"
+              "enum" : [ "ploidy" ]
             },
             "value" : {
               "type" : "string"
@@ -658,8 +633,7 @@
           "description" : "Reports the number of replicons in a nuclear genome of eukaryotes, in the genome of a bacterium or archaea or the number of segments in a segmented virus. Always applied to the haploid chromosome count of a eukaryote. Mandatory for MIGS of eukaryotes, bacteria, archaea and segmented virus.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "number of replicons"
+              "enum" : [ "number of replicons" ]
             },
             "value" : {
               "type" : "string",
@@ -680,8 +654,7 @@
           "description" : "Do plasmids exist of significant phenotypic consequence (e.g. ones that determine virulence or antibiotic resistance). Megaplasmids? Other plasmids (borrelia has 15+ plasmids).",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "extrachromosomal elements"
+              "enum" : [ "extrachromosomal elements" ]
             },
             "value" : {
               "type" : "string",
@@ -702,8 +675,7 @@
           "description" : "The estimated size of the genome (in bp) prior to sequencing. Of particular importance in the sequencing of (eukaryotic) genome which could remain in draft form for a long or unspecified period. Mandatory for MIGS of eukaryotes.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "estimated size"
+              "enum" : [ "estimated size" ]
             },
             "value" : {
               "type" : "string",
@@ -724,8 +696,7 @@
           "description" : "name of persons or institute who collected the specimen",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "collected_by"
+              "enum" : [ "collected_by" ]
             },
             "value" : {
               "type" : "string"
@@ -745,8 +716,7 @@
           "description" : "The date the sample was collected with the intention of sequencing, either as an instance (single point in time) or interval. In case no exact time is available, the date/time can be right truncated i.e. all of these are valid ISO8601 compliant times: 2008-01-23T19:23:10+00:00; 2008-01-23T19:23:10; 2008-01-23; 2008-01; 2008.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "collection date"
+              "enum" : [ "collection date", "Event Date/Time", "collection_date" ]
             },
             "value" : {
               "type" : "string",
@@ -767,8 +737,7 @@
           "description" : "The altitude of the sample is the vertical distance between Earth's surface above Sea Level and the sampled position in the air.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "altitude"
+              "enum" : [ "altitude", "geographic location (altitude)" ]
             },
             "value" : {
               "type" : "string",
@@ -789,8 +758,7 @@
           "description" : "The geographical origin of where the sample was collected from, with the intention of sequencing, as defined by the country or sea name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html).",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "geographic location (country and/or sea)"
+              "enum" : [ "geographic location (country and/or sea)", "geographic location (country and/or sea)" ]
             },
             "value" : {
               "enum" : [ "Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Arctic Ocean", "Argentina", "Armenia", "Aruba", "Ashmore and Cartier Islands", "Atlantic Ocean", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Baker Island", "Baltic Sea", "Bangladesh", "Barbados", "Bassas da India", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Borneo", "Bosnia and Herzegovina", "Botswana", "Bouvet Island", "Brazil", "British Virgin Islands", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Clipperton Island", "Cocos Islands", "Colombia", "Comoros", "Cook Islands", "Coral Sea Islands", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Curacao", "Cyprus", "Czechia", "Democratic Republic of the Congo", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "East Timor", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Europa Island", "Falkland Islands (Islas Malvinas)", "Faroe Islands", "Fiji", "Finland", "France", "French Guiana", "French Polynesia", "French Southern and Antarctic Lands", "Gabon", "Gambia", "Gaza Strip", "Georgia", "Germany", "Ghana", "Gibraltar", "Glorioso Islands", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard Island and McDonald Islands", "Honduras", "Hong Kong", "Howland Island", "Hungary", "Iceland", "India", "Indian Ocean", "Indonesia", "Iran", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Jan Mayen", "Japan", "Jarvis Island", "Jersey", "Johnston Atoll", "Jordan", "Juan de Nova Island", "Kazakhstan", "Kenya", "Kerguelen Archipelago", "Kingman Reef", "Kiribati", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mediterranean Sea", "Mexico", "Micronesia", "Midway Islands", "Moldova", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Navassa Island", "Nepal", "Netherlands", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "North Korea", "North Sea", "Northern Mariana Islands", "Norway", "Oman", "Pacific Ocean", "Pakistan", "Palau", "Palmyra Atoll", "Panama", "Papua New Guinea", "Paracel Islands", "Paraguay", "Peru", "Philippines", "Pitcairn Islands", "Poland", "Portugal", "Puerto Rico", "Qatar", "Republic of the Congo", "Reunion", "Romania", "Ross Sea", "Russia", "Rwanda", "Saint Helena", "Saint Kitts and Nevis", "Saint Lucia", "Saint Pierre and Miquelon", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Sint Maarten", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "South Korea", "Southern Ocean", "Spain", "Spratly Islands", "Sri Lanka", "Sudan", "Suriname", "Svalbard", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Tasman Sea", "Thailand", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tromelin Island", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "USA", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Viet Nam", "Virgin Islands", "Wake Island", "Wallis and Futuna", "West Bank", "Western Sahara", "Yemen", "Zambia", "Zimbabwe", "missing: control sample", "missing: data agreement established pre-2023", "missing: endangered species", "missing: human-identifiable", "missing: lab stock", "missing: sample group", "missing: synthetic construct", "missing: third party data", "not applicable", "not collected", "not provided", "restricted access" ]
@@ -810,8 +778,7 @@
           "description" : "The geographical origin of the sample as defined by latitude. The values should be reported in decimal degrees and in WGS84 system",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "geographic location (latitude)"
+              "enum" : [ "geographic location (latitude)" ]
             },
             "value" : {
               "type" : "string",
@@ -832,8 +799,7 @@
           "description" : "The geographical origin of the sample as defined by longitude. The values should be reported in decimal degrees and in WGS84 system",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "geographic location (longitude)"
+              "enum" : [ "geographic location (longitude)" ]
             },
             "value" : {
               "type" : "string",
@@ -854,8 +820,7 @@
           "description" : "The geographical origin of the sample as defined by the specific region name followed by the locality name.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "geographic location (region and locality)"
+              "enum" : [ "geographic location (region and locality)" ]
             },
             "value" : {
               "type" : "string"
@@ -875,8 +840,7 @@
           "description" : "name of the expert who identified the specimen taxonomically",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "identified_by"
+              "enum" : [ "identified_by" ]
             },
             "value" : {
               "type" : "string"
@@ -896,8 +860,7 @@
           "description" : "Report the major environmental system the sample or specimen came from. The system(s) identified should have a coarse spatial grain, to provide the general environmental context of where the sampling was done (e.g. in the desert or a rainforest). We recommend using subclasses of EnvO’s biome class: http://purl.obolibrary.org/obo/ENVO_00000428. EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "broad-scale environmental context"
+              "enum" : [ "broad-scale environmental context", "environment (biome)" ]
             },
             "value" : {
               "type" : "string"
@@ -917,8 +880,7 @@
           "description" : "Report the entity or entities which are in the sample or specimen’s local vicinity and which you believe have significant causal influences on your sample or specimen. We recommend using EnvO terms which are of smaller spatial grain than your entry for 'broad-scale environmental context'. Terms, such as anatomical sites, from other OBO Library ontologies which interoperate with EnvO (e.g. UBERON) are accepted in this field. EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "local environmental context"
+              "enum" : [ "local environmental context", "environment (feature)" ]
             },
             "value" : {
               "type" : "string"
@@ -938,8 +900,7 @@
           "description" : "The elevation of the sampling site as measured by the vertical distance from mean sea level.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "elevation"
+              "enum" : [ "elevation", "geographic location (elevation)" ]
             },
             "value" : {
               "type" : "string",
@@ -960,8 +921,7 @@
           "description" : "The total amount or size (volume (ml), mass (g) or area (m2) ) of sample collected.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "amount or size of sample collected"
+              "enum" : [ "amount or size of sample collected" ]
             },
             "value" : {
               "type" : "string",
@@ -982,8 +942,7 @@
           "description" : "Time point at which a sample or observation is made or taken from a biomaterial as measured from some reference point. Indicate the timepoint written in ISO 8601 format.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "sampling time point"
+              "enum" : [ "sampling time point", "timepoint" ]
             },
             "value" : {
               "type" : "string"
@@ -1003,8 +962,7 @@
           "description" : "Reason for the sample collection.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "sample capture status"
+              "enum" : [ "sample capture status" ]
             },
             "value" : {
               "enum" : [ "active surveillance in response to outbreak", "active surveillance not initiated by an outbreak", "farm sample", "market sample", "other", "pet sample", "zoo sample" ]
@@ -1024,8 +982,7 @@
           "description" : "common name of the subject organism, e.g. maize",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "organism common name"
+              "enum" : [ "organism common name" ]
             },
             "value" : {
               "type" : "string"
@@ -1045,8 +1002,7 @@
           "description" : "the level of genome modification; controlled vocabulary: wild, natural, semi-natural, inbred line, breeder's line, hybrid, clonal selection, mutant",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "biological status"
+              "enum" : [ "biological status" ]
             },
             "value" : {
               "type" : "string"
@@ -1066,8 +1022,7 @@
           "description" : "characteristic shape, appearance or growth form of a plant species",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "growth habit"
+              "enum" : [ "growth habit" ]
             },
             "value" : {
               "enum" : [ "erect", "prostrate", "semi-erect", "spreading" ]
@@ -1087,8 +1042,7 @@
           "description" : "sex of the reproductive parts on the whole plant, e.g. pistilate, staminate, monoecieous, hermaphrodite",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "plant sex"
+              "enum" : [ "plant sex" ]
             },
             "value" : {
               "type" : "string"
@@ -1108,8 +1062,7 @@
           "description" : "name of plant structure that the sample was obtained from; for Plant Ontology (PO) terms see http://purl.bioontology.org/ontology/PO, e.g. petiole epidermis (PO_0000051); if an individual flower is sampled the sex of it can be recorded here",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "plant structure"
+              "enum" : [ "plant structure" ]
             },
             "value" : {
               "type" : "string"
@@ -1129,8 +1082,7 @@
           "description" : "Duration for which the sample was stored. Indicate the duration for which the sample was stored written in ISO 8601 format.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "sample storage duration"
+              "enum" : [ "sample storage duration", "samp_stor_dur" ]
             },
             "value" : {
               "type" : "string"
@@ -1150,8 +1102,7 @@
           "description" : "treatment involving an exposure to a particular climate; can include multiple climates",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "climate environment"
+              "enum" : [ "climate environment" ]
             },
             "value" : {
               "type" : "string"
@@ -1171,8 +1122,7 @@
           "description" : "use of conditions with differing gaseous environments; should include the name of gaseous compound, amount administered, treatment duration, interval and total experimental duration; can include multiple gaseous environment regimens",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "gaseous environment"
+              "enum" : [ "gaseous environment" ]
             },
             "value" : {
               "type" : "string"
@@ -1192,8 +1142,7 @@
           "description" : "treatment involving an exposure to a particular season (e.g. winter, summer, rabi, rainy etc.)",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "seasonal environment"
+              "enum" : [ "seasonal environment" ]
             },
             "value" : {
               "type" : "string"
@@ -1213,8 +1162,7 @@
           "description" : "drainage classification from a standard system such as the USDA system",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "drainage classification"
+              "enum" : [ "drainage classification" ]
             },
             "value" : {
               "enum" : [ "excessively drained", "moderately well", "poorly", "somewhat poorly", "very poorly", "well" ]
@@ -1234,8 +1182,7 @@
           "description" : "A unique identifier assigned to a material sample (as defined by http://rs.tdwg.org/dwc/terms/materialSampleID, and as opposed to a particular digital record of a material sample) used for extracting nucleic acids, and subsequent sequencing. The identifier can refer either to the original material collected or to any derived sub-samples. The INSDC qualifiers /specimen_voucher, /bio_material, or /culture_collection may or may not share the same value as the source_mat_id field. For instance, the /specimen_voucher qualifier and source_mat_id may both contain 'UAM:Herps:14' , referring to both the specimen voucher and sampled tissue with the same identifier. However, the /culture_collection qualifier may refer to a value from an initial culture (e.g. ATCC:11775) while source_mat_id would refer to an identifier from some derived culture from which the nucleic acids were extracted (e.g. xatc123 or ark:/2154/R2).",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "source material identifiers"
+              "enum" : [ "source material identifiers" ]
             },
             "value" : {
               "type" : "string"
@@ -1255,8 +1202,7 @@
           "description" : "further information to clarify the nature of the specimen or population used that is not collected elsewhere, e.g. if source was derived from accessioned stock, describe how it links to the original material",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "source material description"
+              "enum" : [ "source material description" ]
             },
             "value" : {
               "type" : "string"
@@ -1276,8 +1222,7 @@
           "description" : "type of perturbation, e.g. chemical administration, physical disturbance, etc., coupled with time that perturbation occurred; can include multiple perturbation types",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "perturbation"
+              "enum" : [ "perturbation" ]
             },
             "value" : {
               "type" : "string"
@@ -1297,8 +1242,7 @@
           "description" : "name or code for genotype of organism",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "genotype"
+              "enum" : [ "genotype" ]
             },
             "value" : {
               "type" : "string"
@@ -1318,8 +1262,7 @@
           "description" : "A genetic modification of the genome of an organism which may occur naturally by spontaneous mutation, or be introduced by some experimental means. Examples of genetic modification include specification of a transgene or the gene knocked-out or details of transient transfection.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "genetic modification"
+              "enum" : [ "genetic modification" ]
             },
             "value" : {
               "type" : "string"
@@ -1339,8 +1282,7 @@
           "description" : "further information about the genetic distinctness of this lineage by recording additional information i.e. variety, cultivar, ecotype, inbred line,; it can also contain alternative taxonomic information",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "subspecific genetic lineage rank"
+              "enum" : [ "subspecific genetic lineage rank" ]
             },
             "value" : {
               "type" : "string"
@@ -1360,8 +1302,7 @@
           "description" : "name of the infraspecific rank, e.g ecotype Col-0",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "subspecific genetic lineage name"
+              "enum" : [ "subspecific genetic lineage name" ]
             },
             "value" : {
               "type" : "string"
@@ -1381,8 +1322,7 @@
           "description" : "most relevant phenotypic traits of the subject; for Phenotypic quality Ontology (PATO) (v 2013-10-28) terms, please see http://purl.bioontology.org/ontology/PATO, e.g. bifurcated (PATO_0001784); terms from Trait Ontology (TO), Plant Ontology (PO) or Crop Ontology (CO) are also accepted; include name/method/scale for each trait; can include multiple traits",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "organism phenotype"
+              "enum" : [ "organism phenotype" ]
             },
             "value" : {
               "type" : "string"
@@ -1402,8 +1342,7 @@
           "description" : "information about either pedigree or other description of ancestral information (e.g. parental variety in case of mutant or selection), e.g. A/3*B (meaning [(A x B) x B] x B)",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "ancestral data"
+              "enum" : [ "ancestral data" ]
             },
             "value" : {
               "type" : "string"
@@ -1423,8 +1362,7 @@
           "description" : "Specification of the media for growing the plants or tissue cultured samples, e.g. soil, aeroponic, hydroponic, in vitro solid culture medium, in vitro liquid culture medium. Recommended value is a specific value from EO:plant growth medium (follow this link for terms http://purl.obolibrary.org/obo/EO_0007147).",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "plant growth medium"
+              "enum" : [ "plant growth medium" ]
             },
             "value" : {
               "type" : "string"
@@ -1444,8 +1382,7 @@
           "description" : "relevant rooting conditions, such as field plot size, sowing density, container dimensions, number of plants per container",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "rooting conditions"
+              "enum" : [ "rooting conditions" ]
             },
             "value" : {
               "type" : "string"
@@ -1465,8 +1402,7 @@
           "description" : "name or reference for the hydroponic or in vitro culture rooting medium, can be a name of a commonly used medium or reference to a specific medium; e.g. Murashige and Skoog medium, if the medium has not been formally published, use the rooting medium descriptors",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "culture rooting medium"
+              "enum" : [ "culture rooting medium" ]
             },
             "value" : {
               "type" : "string"
@@ -1486,8 +1422,7 @@
           "description" : "measurement of the culture rooting medium macronutrients (N,P, K, Ca, Mg, S); e.g. KH2PO4 (170mg/L)",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "rooting medium macronutrients"
+              "enum" : [ "rooting medium macronutrients" ]
             },
             "value" : {
               "type" : "string"
@@ -1507,8 +1442,7 @@
           "description" : "measurement of the culture rooting medium micronutrients (Fe, Mn, Zn, B, Cu, Mo); e.g. H3BO3 (6.2mg/L)",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "rooting medium micronutrients"
+              "enum" : [ "rooting medium micronutrients" ]
             },
             "value" : {
               "type" : "string"
@@ -1528,8 +1462,7 @@
           "description" : "organic supplements of the culture rooting medium, such as vitaimins, amino acids, organic acids, antibiotics activated charcoal; e.g. Nicotinic acid (0.5mg/L)",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "rooting medium organic supplements"
+              "enum" : [ "rooting medium organic supplements" ]
             },
             "value" : {
               "type" : "string"
@@ -1549,8 +1482,7 @@
           "description" : "source of organic carbon in the culture rooting medium; e.g. sucrose",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "rooting medium carbon"
+              "enum" : [ "rooting medium carbon" ]
             },
             "value" : {
               "type" : "string"
@@ -1570,8 +1502,7 @@
           "description" : "growth regulators in the culture rooting medium, such as cytokinins, auxins, gybberellins, abscisic acid; e.g. 0.5mg/L NAA",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "rooting medium regulators"
+              "enum" : [ "rooting medium regulators" ]
             },
             "value" : {
               "type" : "string"
@@ -1591,8 +1522,7 @@
           "description" : "specification of the solidifying agent in the culture rooting medium; e.g. agar",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "rooting medium solidifier"
+              "enum" : [ "rooting medium solidifier" ]
             },
             "value" : {
               "type" : "string"
@@ -1612,8 +1542,7 @@
           "description" : "pH measurement of the culture rooting medium; e.g. 5.5",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "rooting medium pH"
+              "enum" : [ "rooting medium pH" ]
             },
             "value" : {
               "type" : "string"
@@ -1633,8 +1562,7 @@
           "description" : "Publication reference in the form of pubmed ID (pmid), digital object identifier (doi) or url for isolation and growth condition specifications of the organism/material. Mandatory for MIGS and MIMARKS Specimen.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "isolation and growth condition"
+              "enum" : [ "isolation and growth condition" ]
             },
             "value" : {
               "type" : "string"
@@ -1654,8 +1582,7 @@
           "description" : "A brief description of any processing applied to the sample during or after retrieving the sample from environment, or a link to the relevant protocol(s) performed.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "sample material processing"
+              "enum" : [ "sample material processing" ]
             },
             "value" : {
               "type" : "string"
@@ -1675,8 +1602,7 @@
           "description" : "Volume (ml) or mass (g) of total collected sample processed for DNA extraction. Note: total sample collected should be entered under the term 'sample size'.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "sample volume or weight for DNA extraction"
+              "enum" : [ "sample volume or weight for DNA extraction", "sample weight for DNA extraction" ]
             },
             "value" : {
               "type" : "string",
@@ -1697,8 +1623,7 @@
           "description" : "The vertical distance below local surface, e.g. for sediment or soil samples depth is measured from sediment or soil surface, respectively. Depth can be reported as an interval for subsurface samples.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "depth"
+              "enum" : [ "depth", "Depth", "geographic location (depth)" ]
             },
             "value" : {
               "type" : "string",
@@ -1719,8 +1644,7 @@
           "description" : "information about treatment involving an exposure to varying temperatures; should include the temperature, treatment duration, interval and total experimental duration; can include different temperature regimens",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "air temperature regimen"
+              "enum" : [ "air temperature regimen" ]
             },
             "value" : {
               "type" : "string"
@@ -1740,8 +1664,7 @@
           "description" : "information about treatment involving antibiotic administration; should include the name of antibiotic, amount administered, treatment duration, interval and total experimental duration; can include multiple antibiotic regimens",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "antibiotic regimen"
+              "enum" : [ "antibiotic regimen" ]
             },
             "value" : {
               "type" : "string"
@@ -1761,8 +1684,7 @@
           "description" : "treatment involving use of mutagens; should include the name of mutagen, amount administered, treatment duration, interval and total experimental duration; can include multiple mutagen regimens",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "chemical mutagen"
+              "enum" : [ "chemical mutagen" ]
             },
             "value" : {
               "type" : "string"
@@ -1782,8 +1704,7 @@
           "description" : "Type of fertilizer or amendment added to the soil or water for the purpose of improving substrate health and quality for plant growth. This field accepts terms listed under agronomic fertilizer (http://purl.obolibrary.org/obo/AGRO_00002062). Multiple terms may apply and can be separated by pipes, listing in reverse chronological order. N.B. Old ENA definition as 'fertilizer regimen': information about treatment involving the use of fertilizers; should include the name fertilizer, amount administered, treatment duration, interval and total experimental duration; can include multiple fertilizer regimens",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "fertilizer administration"
+              "enum" : [ "fertilizer administration", "fertilizer regimen" ]
             },
             "value" : {
               "type" : "string"
@@ -1803,8 +1724,7 @@
           "description" : "information about treatment involving use of fungicides; should include the name of fungicide, amount administered, treatment duration, interval and total experimental duration; can include multiple fungicide regimens",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "fungicide regimen"
+              "enum" : [ "fungicide regimen" ]
             },
             "value" : {
               "type" : "string"
@@ -1824,8 +1744,7 @@
           "description" : "information about treatment involving use of gravity factor to study various types of responses in presence, absence or modified levels of gravity; can include multiple treatments",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "gravity"
+              "enum" : [ "gravity" ]
             },
             "value" : {
               "type" : "string"
@@ -1845,8 +1764,7 @@
           "description" : "information about treatment involving use of growth hormones; should include the name of growth hormone, amount administered, treatment duration, interval and total experimental duration; can include multiple growth hormone regimens",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "growth hormone regimen"
+              "enum" : [ "growth hormone regimen" ]
             },
             "value" : {
               "type" : "string"
@@ -1866,8 +1784,7 @@
           "description" : "information about treatment involving use of herbicides; information about treatment involving use of growth hormones; should include the name of herbicide, amount administered, treatment duration, interval and total experimental duration; can include multiple regimens",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "herbicide regimen"
+              "enum" : [ "herbicide regimen" ]
             },
             "value" : {
               "type" : "string"
@@ -1887,8 +1804,7 @@
           "description" : "information about treatment involving an exposure to varying degree of humidity; information about treatment involving use of growth hormones; should include amount of humidity administered, treatment duration, interval and total experimental duration; can include multiple regimens",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "humidity regimen"
+              "enum" : [ "humidity regimen" ]
             },
             "value" : {
               "type" : "string"
@@ -1908,8 +1824,7 @@
           "description" : "information about treatment involving the use of mineral supplements; should include the name of mineral nutrient, amount administered, treatment duration, interval and total experimental duration; can include multiple mineral nutrient regimens",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "mineral nutrient regimen"
+              "enum" : [ "mineral nutrient regimen" ]
             },
             "value" : {
               "type" : "string"
@@ -1929,8 +1844,7 @@
           "description" : "information about treatment involving the exposure of plant to non-mineral nutrient such as oxygen, hydrogen or carbon; should include the name of non-mineral nutrient, amount administered, treatment duration, interval and total experimental duration; can include multiple non-mineral nutrient regimens",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "non-mineral nutrient regimen"
+              "enum" : [ "non-mineral nutrient regimen", "non_mineral_nutr_regm" ]
             },
             "value" : {
               "type" : "string"
@@ -1950,8 +1864,7 @@
           "description" : "information about treatment involving use of insecticides; should include the name of pesticide, amount administered, treatment duration, interval and total experimental duration; can include multiple pesticide regimens",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "pesticide regimen"
+              "enum" : [ "pesticide regimen" ]
             },
             "value" : {
               "type" : "string"
@@ -1971,8 +1884,7 @@
           "description" : "information about treatment involving exposure of plants to varying levels of pH of the growth media; can include multiple regimen",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "pH regimen"
+              "enum" : [ "pH regimen" ]
             },
             "value" : {
               "type" : "string"
@@ -1992,8 +1904,7 @@
           "description" : "information about treatment involving exposure of plant or a plant part to a particular radiation regimen; should include the radiation type, amount or intensity administered, treatment duration, interval and total experimental duration; can include multiple radiation regimens",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "radiation regimen"
+              "enum" : [ "radiation regimen" ]
             },
             "value" : {
               "type" : "string"
@@ -2013,8 +1924,7 @@
           "description" : "information about treatment involving an exposure to a given amount of rainfall; can include multiple regimens",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "rainfall regimen"
+              "enum" : [ "rainfall regimen" ]
             },
             "value" : {
               "type" : "string"
@@ -2034,8 +1944,7 @@
           "description" : "information about treatment involving use of salts as supplement to liquid and soil growth media; should include the name of salt, amount administered, treatment duration, interval and total experimental duration; can include multiple salt regimens",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "salt regimen"
+              "enum" : [ "salt regimen" ]
             },
             "value" : {
               "type" : "string"
@@ -2055,8 +1964,7 @@
           "description" : "treatment involving an exposure to standing water during a plant's life span, types can be flood water or standing water; can include multiple regimens",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "standing water regimen"
+              "enum" : [ "standing water regimen" ]
             },
             "value" : {
               "type" : "string"
@@ -2076,8 +1984,7 @@
           "description" : "information about treatment involving an exposure to watering frequencies; can include multiple regimens",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "watering regimen"
+              "enum" : [ "watering regimen" ]
             },
             "value" : {
               "type" : "string"
@@ -2097,8 +2004,7 @@
           "description" : "information about treatment involving an exposure to water with varying degree of temperature; can include multiple regimens",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "water temperature regimen"
+              "enum" : [ "water temperature regimen" ]
             },
             "value" : {
               "type" : "string"
@@ -2118,8 +2024,7 @@
           "description" : "ontology term(s) that describes the plant treatment or relevant environmental conditions, recommend use of Plant Environment Ontology (EO) or other ontology, such as XEML Environment Ontology (XEO) or Crop Ontology (CO), more specific fields in the treatment section can be used in addition to or in place of this field",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "plant treatment"
+              "enum" : [ "plant treatment" ]
             },
             "value" : {
               "type" : "string"
@@ -2139,8 +2044,7 @@
           "description" : "information about treatment involving an exposure to light, this includes both light intensity and quality",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "light regimen"
+              "enum" : [ "light regimen" ]
             },
             "value" : {
               "type" : "string"
@@ -2160,8 +2064,7 @@
           "description" : "information about treatment involving use of biotic factors, such as bacteria, viruses or fungi",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "biotic regimen"
+              "enum" : [ "biotic regimen" ]
             },
             "value" : {
               "type" : "string"
@@ -2181,8 +2084,7 @@
           "description" : "information about any mechanical damage exerted on the plant; can include multiple damages and sites",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "mechanical damage"
+              "enum" : [ "mechanical damage" ]
             },
             "value" : {
               "type" : "string"
@@ -2202,8 +2104,7 @@
           "description" : "list of chemical compounds administered to the host or site where sampling occurred, and when (e.g. antibiotics, N fertilizer, air filter); can include multiple compounds. For Chemical Entities of Biological Interest ontology (CHEBI) (v111), please see http://purl.bioontology.org/ontology/CHEBI",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "chemical administration"
+              "enum" : [ "chemical administration" ]
             },
             "value" : {
               "type" : "string"

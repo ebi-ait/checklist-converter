@@ -132,8 +132,7 @@
           "description" : "Number of host individuals inoculated for the experiment.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "number of inoculated individuals"
+              "enum" : [ "number of inoculated individuals" ]
             },
             "value" : {
               "type" : "string"
@@ -153,8 +152,7 @@
           "description" : "Trophic levels are the feeding position in a food chain. Microbes can be a range of producers (e.g. chemolithotroph)",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "trophic level"
+              "enum" : [ "trophic level" ]
             },
             "value" : {
               "enum" : [ "autotroph", "carboxydotroph", "chemoautotroph", "chemoheterotroph", "chemolithoautotroph", "chemolithotroph", "chemoorganoheterotroph", "chemoorganotroph", "chemosynthetic", "chemotroph", "copiotroph", "diazotroph", "facultative autotroph", "heterotroph", "lithoautotroph", "lithoheterotroph", "lithotroph", "methanotroph", "methylotroph", "mixotroph", "obligate chemoautolithotroph", "oligotroph", "organoheterotroph", "organotroph", "photoautotroph", "photoheterotroph", "photolithoautotroph", "photolithotroph", "photosynthetic", "phototroph" ]
@@ -174,8 +172,7 @@
           "description" : "Description of relationship(s) between the subject organism and other organism(s) it is associated with. E.g., parasite on species X; mutualist with species Y. The target organism is the subject of the relationship, and the other organism(s) is the object.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "observed biotic relationship"
+              "enum" : [ "observed biotic relationship", "biotic relationship" ]
             },
             "value" : {
               "enum" : [ "commensal", "free living", "mutualism", "parasite", "symbiont" ]
@@ -195,8 +192,7 @@
           "description" : "To what is the entity pathogenic, for instance plant, fungi, bacteria",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "known pathogenicity"
+              "enum" : [ "known pathogenicity" ]
             },
             "value" : {
               "type" : "string"
@@ -216,8 +212,7 @@
           "description" : "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "relationship to oxygen"
+              "enum" : [ "relationship to oxygen" ]
             },
             "value" : {
               "enum" : [ "aerobe", "anaerobe", "facultative", "microaerophilic", "microanaerobe", "obligate aerobe", "obligate anaerobe" ]
@@ -237,8 +232,7 @@
           "description" : "The type of reproduction from the parent stock. Values for this field is specific to different taxa. For phage or virus: lytic/lysogenic/temperate/obligately lytic. For plasmids: incompatibility group. For eukaryotes: sexual/asexual. Mandatory for MIGs of eukayotes, plasmids and viruses.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "propagation"
+              "enum" : [ "propagation" ]
             },
             "value" : {
               "type" : "string"
@@ -258,8 +252,7 @@
           "description" : "The device used to collect an environmental sample. It is recommended to use terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO) and/or terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094).",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "sample collection device"
+              "enum" : [ "sample collection device", "Sample Collection Device", "samp_collec_device" ]
             },
             "value" : {
               "type" : "string"
@@ -279,8 +272,7 @@
           "description" : "The method employed for collecting the sample. Can be provided in the form of a PMID, DOI, url or text.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "sample collection method"
+              "enum" : [ "sample collection method", "samp_collec_method", "sample collection device or method", "sample_collec_method" ]
             },
             "value" : {
               "type" : "string"
@@ -300,8 +292,7 @@
           "description" : "Name of the project within which the sequencing was organized",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "project name"
+              "enum" : [ "project name" ]
             },
             "value" : {
               "type" : "string"
@@ -321,8 +312,7 @@
           "description" : "The number of times a meal is cooked per week",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "frequency of cooking"
+              "enum" : [ "frequency of cooking" ]
             },
             "value" : {
               "type" : "string"
@@ -342,8 +332,7 @@
           "description" : "The ploidy level of the genome (e.g. allopolyploid, haploid, diploid, triploid, tetraploid). It has implications for the downstream study of duplicated gene and regions of the genomes (and perhaps for difficulties in assembly). For terms, please select terms listed under class ploidy (PATO:001374) of Phenotypic Quality Ontology (PATO), and for a browser of PATO (v 2018-03-27) please refer to http://purl.bioontology.org/ontology/PATO",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "ploidy"
+              "enum" : [ "ploidy" ]
             },
             "value" : {
               "type" : "string"
@@ -363,8 +352,7 @@
           "description" : "Reports the number of replicons in a nuclear genome of eukaryotes, in the genome of a bacterium or archaea or the number of segments in a segmented virus. Always applied to the haploid chromosome count of a eukaryote. Mandatory for MIGS of eukaryotes, bacteria, archaea and segmented virus.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "number of replicons"
+              "enum" : [ "number of replicons" ]
             },
             "value" : {
               "type" : "string",
@@ -385,8 +373,7 @@
           "description" : "Do plasmids exist of significant phenotypic consequence (e.g. ones that determine virulence or antibiotic resistance). Megaplasmids? Other plasmids (borrelia has 15+ plasmids).",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "extrachromosomal elements"
+              "enum" : [ "extrachromosomal elements" ]
             },
             "value" : {
               "type" : "string",
@@ -407,8 +394,7 @@
           "description" : "The estimated size of the genome (in bp) prior to sequencing. Of particular importance in the sequencing of (eukaryotic) genome which could remain in draft form for a long or unspecified period. Mandatory for MIGS of eukaryotes.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "estimated size"
+              "enum" : [ "estimated size" ]
             },
             "value" : {
               "type" : "string",
@@ -429,8 +415,7 @@
           "description" : "Targeted gene or locus name for marker gene studies",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "target gene"
+              "enum" : [ "target gene" ]
             },
             "value" : {
               "type" : "string"
@@ -450,8 +435,7 @@
           "description" : "Name of subfragment of a gene or locus. Important to e.g. identify special regions on marker genes like V6 on 16S rRNA",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "target subfragment"
+              "enum" : [ "target subfragment" ]
             },
             "value" : {
               "type" : "string"
@@ -471,8 +455,7 @@
           "description" : "Molecular barcodes, called Multiplex Identifiers (MIDs), that are used to specifically tag unique samples in a sequencing run. Sequence should be reported in uppercase letters",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "multiplex identifiers"
+              "enum" : [ "multiplex identifiers" ]
             },
             "value" : {
               "type" : "string"
@@ -492,8 +475,7 @@
           "description" : "Indicate if the sequence has been called by automatic systems (none) or undergone a manual editing procedure (e.g. by inspecting the raw data or chromatograms). Applied only for sequences that are not submitted to SRA or DRA",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "sequence quality check"
+              "enum" : [ "sequence quality check" ]
             },
             "value" : {
               "enum" : [ "manual", "none", "software" ]
@@ -513,8 +495,7 @@
           "description" : "Tool(s) used for chimera checking, including version number and parameters, to discover and remove chimeric sequences. A chimeric sequence is comprised of two or more phylogenetically distinct parent sequences.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "chimera check software"
+              "enum" : [ "chimera check software", "chimera check" ]
             },
             "value" : {
               "type" : "string"
@@ -534,8 +515,7 @@
           "description" : "A related resource that is referenced, cited, or otherwise associated to the sequence in the format of a PMID, DOI or URL",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "relevant electronic resources"
+              "enum" : [ "relevant electronic resources" ]
             },
             "value" : {
               "type" : "string"
@@ -555,8 +535,7 @@
           "description" : "Standard operating procedures used in assembly and/or annotation of genomes, metagenomes or environmental sequences in the format of a PMID, DOI or URL",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "relevant standard operating procedures"
+              "enum" : [ "relevant standard operating procedures" ]
             },
             "value" : {
               "type" : "string"
@@ -576,8 +555,7 @@
           "description" : "The date the sample was collected with the intention of sequencing, either as an instance (single point in time) or interval. In case no exact time is available, the date/time can be right truncated i.e. all of these are valid ISO8601 compliant times: 2008-01-23T19:23:10+00:00; 2008-01-23T19:23:10; 2008-01-23; 2008-01; 2008.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "collection date"
+              "enum" : [ "collection date", "Event Date/Time", "collection_date" ]
             },
             "value" : {
               "type" : "string",
@@ -598,8 +576,7 @@
           "description" : "The altitude of the sample is the vertical distance between Earth's surface above Sea Level and the sampled position in the air.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "altitude"
+              "enum" : [ "altitude", "geographic location (altitude)" ]
             },
             "value" : {
               "type" : "string",
@@ -620,8 +597,7 @@
           "description" : "The geographical origin of where the sample was collected from, with the intention of sequencing, as defined by the country or sea name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html).",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "geographic location (country and/or sea)"
+              "enum" : [ "geographic location (country and/or sea)", "geographic location (country and/or sea)" ]
             },
             "value" : {
               "enum" : [ "Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Arctic Ocean", "Argentina", "Armenia", "Aruba", "Ashmore and Cartier Islands", "Atlantic Ocean", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Baker Island", "Baltic Sea", "Bangladesh", "Barbados", "Bassas da India", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Borneo", "Bosnia and Herzegovina", "Botswana", "Bouvet Island", "Brazil", "British Virgin Islands", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Clipperton Island", "Cocos Islands", "Colombia", "Comoros", "Cook Islands", "Coral Sea Islands", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Curacao", "Cyprus", "Czechia", "Democratic Republic of the Congo", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "East Timor", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Europa Island", "Falkland Islands (Islas Malvinas)", "Faroe Islands", "Fiji", "Finland", "France", "French Guiana", "French Polynesia", "French Southern and Antarctic Lands", "Gabon", "Gambia", "Gaza Strip", "Georgia", "Germany", "Ghana", "Gibraltar", "Glorioso Islands", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard Island and McDonald Islands", "Honduras", "Hong Kong", "Howland Island", "Hungary", "Iceland", "India", "Indian Ocean", "Indonesia", "Iran", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Jan Mayen", "Japan", "Jarvis Island", "Jersey", "Johnston Atoll", "Jordan", "Juan de Nova Island", "Kazakhstan", "Kenya", "Kerguelen Archipelago", "Kingman Reef", "Kiribati", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mediterranean Sea", "Mexico", "Micronesia", "Midway Islands", "Moldova", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Navassa Island", "Nepal", "Netherlands", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "North Korea", "North Sea", "Northern Mariana Islands", "Norway", "Oman", "Pacific Ocean", "Pakistan", "Palau", "Palmyra Atoll", "Panama", "Papua New Guinea", "Paracel Islands", "Paraguay", "Peru", "Philippines", "Pitcairn Islands", "Poland", "Portugal", "Puerto Rico", "Qatar", "Republic of the Congo", "Reunion", "Romania", "Ross Sea", "Russia", "Rwanda", "Saint Helena", "Saint Kitts and Nevis", "Saint Lucia", "Saint Pierre and Miquelon", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Sint Maarten", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "South Korea", "Southern Ocean", "Spain", "Spratly Islands", "Sri Lanka", "Sudan", "Suriname", "Svalbard", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Tasman Sea", "Thailand", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tromelin Island", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "USA", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Viet Nam", "Virgin Islands", "Wake Island", "Wallis and Futuna", "West Bank", "Western Sahara", "Yemen", "Zambia", "Zimbabwe", "missing: control sample", "missing: data agreement established pre-2023", "missing: endangered species", "missing: human-identifiable", "missing: lab stock", "missing: sample group", "missing: synthetic construct", "missing: third party data", "not applicable", "not collected", "not provided", "restricted access" ]
@@ -641,8 +617,7 @@
           "description" : "The geographical origin of the sample as defined by latitude. The values should be reported in decimal degrees and in WGS84 system",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "geographic location (latitude)"
+              "enum" : [ "geographic location (latitude)" ]
             },
             "value" : {
               "type" : "string",
@@ -663,8 +638,7 @@
           "description" : "The geographical origin of the sample as defined by longitude. The values should be reported in decimal degrees and in WGS84 system",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "geographic location (longitude)"
+              "enum" : [ "geographic location (longitude)" ]
             },
             "value" : {
               "type" : "string",
@@ -685,8 +659,7 @@
           "description" : "The geographical origin of the sample as defined by the specific region name followed by the locality name.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "geographic location (region and locality)"
+              "enum" : [ "geographic location (region and locality)" ]
             },
             "value" : {
               "type" : "string"
@@ -706,8 +679,7 @@
           "description" : "Report the major environmental system the sample or specimen came from. The system(s) identified should have a coarse spatial grain, to provide the general environmental context of where the sampling was done (e.g. in the desert or a rainforest). We recommend using subclasses of EnvO’s biome class: http://purl.obolibrary.org/obo/ENVO_00000428. EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "broad-scale environmental context"
+              "enum" : [ "broad-scale environmental context", "environment (biome)" ]
             },
             "value" : {
               "type" : "string"
@@ -727,8 +699,7 @@
           "description" : "Report the entity or entities which are in the sample or specimen’s local vicinity and which you believe have significant causal influences on your sample or specimen. We recommend using EnvO terms which are of smaller spatial grain than your entry for 'broad-scale environmental context'. Terms, such as anatomical sites, from other OBO Library ontologies which interoperate with EnvO (e.g. UBERON) are accepted in this field. EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "local environmental context"
+              "enum" : [ "local environmental context", "environment (feature)" ]
             },
             "value" : {
               "type" : "string"
@@ -748,8 +719,7 @@
           "description" : "Report the environmental material(s) immediately surrounding the sample or specimen at the time of sampling. We recommend using subclasses of 'environmental material' (http://purl.obolibrary.org/obo/ENVO_00010483). EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS . Terms from other OBO ontologies are permissible as long as they reference mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities (e.g. a tree, a leaf, a table top).",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "environmental medium"
+              "enum" : [ "environmental medium", "environment (material)" ]
             },
             "value" : {
               "type" : "string"
@@ -769,8 +739,7 @@
           "description" : "The elevation of the sampling site as measured by the vertical distance from mean sea level.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "elevation"
+              "enum" : [ "elevation", "geographic location (elevation)" ]
             },
             "value" : {
               "type" : "string",
@@ -791,8 +760,7 @@
           "description" : "The recent and long term history of outside sampling",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "sampling time outside"
+              "enum" : [ "sampling time outside" ]
             },
             "value" : {
               "type" : "string"
@@ -812,8 +780,7 @@
           "description" : "The recorded temperature value at sampling time outside",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "temperature outside house"
+              "enum" : [ "temperature outside house" ]
             },
             "value" : {
               "type" : "string",
@@ -834,8 +801,7 @@
           "description" : "The train station collection location",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "train station collection location"
+              "enum" : [ "train station collection location" ]
             },
             "value" : {
               "type" : "string"
@@ -855,8 +821,7 @@
           "description" : "The train stop collection location",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "train stop collection location"
+              "enum" : [ "train stop collection location" ]
             },
             "value" : {
               "type" : "string"
@@ -876,8 +841,7 @@
           "description" : "surface materials at the point of sampling",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "surface material"
+              "enum" : [ "surface material" ]
             },
             "value" : {
               "enum" : [ "adobe", "carpet", "cinder blocks", "concrete", "glass", "hay bales", "metal", "paint", "plastic", "stainless steel", "stone", "stucco", "tile", "vinyl", "wood" ]
@@ -897,8 +861,7 @@
           "description" : "contaminant identified on surface",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "surface-air contaminant"
+              "enum" : [ "surface-air contaminant", "surface air contaminant" ]
             },
             "value" : {
               "enum" : [ "biocides", "biological contaminants", "dust", "nutrients", "organic matter", "particulate matter", "radon", "volatile organic compounds" ]
@@ -918,8 +881,7 @@
           "description" : "type of indoor surface",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "indoor surface"
+              "enum" : [ "indoor surface" ]
             },
             "value" : {
               "enum" : [ "cabinet", "ceiling", "counter top", "door", "shelving", "vent cover", "wall", "window" ]
@@ -939,8 +901,7 @@
           "description" : "a distinguishable space within a structure, the purpose for which discrete areas of a building is used",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "indoor space"
+              "enum" : [ "indoor space" ]
             },
             "value" : {
               "enum" : [ "bathroom", "bedroom", "elevator", "foyer", "hallway", "kitchen", "locker room", "office" ]
@@ -960,8 +921,7 @@
           "description" : "a device which removes solid particulates or airborne molecular contaminants",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "filter type"
+              "enum" : [ "filter type" ]
             },
             "value" : {
               "enum" : [ "HEPA filter", "chemical air filter", "electrostatic air treatment", "gas-phase air treatment", "low-MERV pleated media", "particulate air filter", "ultraviolet air treatment" ]
@@ -981,8 +941,7 @@
           "description" : "methods of conditioning or heating a room or building",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "heating and cooling system type"
+              "enum" : [ "heating and cooling system type" ]
             },
             "value" : {
               "enum" : [ "forced air system", "heat pump", "radiant system", "steam forced heat", "wood stove" ]
@@ -1002,8 +961,7 @@
           "description" : "the substructure or under building is that largely hidden section of the building which is built off the foundations to the ground floor level",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "substructure type"
+              "enum" : [ "substructure type" ]
             },
             "value" : {
               "enum" : [ "basement", "crawlspace", "slab on grade" ]
@@ -1023,8 +981,7 @@
           "description" : "application of light to achieve some practical or aesthetic effect. Lighting includes the use of both artificial light sources such as lamps and light fixtures, as well as natural illumination by capturing daylight. Can also include absence of light",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "light type"
+              "enum" : [ "light type" ]
             },
             "value" : {
               "enum" : [ "electric light", "natural light", "no light" ]
@@ -1044,8 +1001,7 @@
           "description" : "a location (geography) where a building is set",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "building setting"
+              "enum" : [ "building setting" ]
             },
             "value" : {
               "enum" : [ "exurban", "rural", "suburban", "urban" ]
@@ -1065,8 +1021,7 @@
           "description" : "the primary function for which a building or discrete part of a building is intended to be used",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "building occupancy type"
+              "enum" : [ "building occupancy type" ]
             },
             "value" : {
               "enum" : [ "agricultural", "airport", "commercial", "educational", "goverment", "health care", "high rise", "industrial", "low rise", "market", "military", "office", "parking", "religious", "residential", "restaurant", "school", "sports complex", "storage", "transport", "wood framed" ]
@@ -1086,8 +1041,7 @@
           "description" : "customary or normal state of the space",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "space typical state"
+              "enum" : [ "space typical state" ]
             },
             "value" : {
               "enum" : [ "typically occupied", "typically unoccupied" ]
@@ -1107,8 +1061,7 @@
           "description" : "customary or normal density of occupants",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "typical occupant density"
+              "enum" : [ "typical occupant density" ]
             },
             "value" : {
               "type" : "string",
@@ -1129,8 +1082,7 @@
           "description" : "number of occupants present at time of sample within the given space",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "occupancy at sampling"
+              "enum" : [ "occupancy at sampling" ]
             },
             "value" : {
               "type" : "string",
@@ -1151,8 +1103,7 @@
           "description" : "average number of occupants at time of sampling per square footage",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "occupant density at sampling"
+              "enum" : [ "occupant density at sampling" ]
             },
             "value" : {
               "type" : "string",
@@ -1173,8 +1124,7 @@
           "description" : "The intentional movement of air from outside a building to the inside through forced or natural movement of air",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "ventilation type"
+              "enum" : [ "ventilation type" ]
             },
             "value" : {
               "enum" : [ "forced ventilation", "mechanical ventilation", "natural ventilation" ]
@@ -1194,8 +1144,7 @@
           "description" : "List of room(s) (room number, room name) located in the same hallway as sampling room",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "rooms that are on the same hallway"
+              "enum" : [ "rooms that are on the same hallway" ]
             },
             "value" : {
               "type" : "string"
@@ -1215,8 +1164,7 @@
           "description" : "The surface treatment of interior wall",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "wall surface treatment"
+              "enum" : [ "wall surface treatment" ]
             },
             "value" : {
               "type" : "string",
@@ -1237,8 +1185,7 @@
           "description" : "The total area of the sampled room's walls",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "wall area"
+              "enum" : [ "wall area" ]
             },
             "value" : {
               "type" : "string"
@@ -1258,8 +1205,7 @@
           "description" : "The number of elevators within the built structure",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "elevator count"
+              "enum" : [ "elevator count" ]
             },
             "value" : {
               "type" : "string",
@@ -1280,8 +1226,7 @@
           "description" : "The area of the floor space within the room",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "floor area"
+              "enum" : [ "floor area" ]
             },
             "value" : {
               "type" : "string",
@@ -1302,8 +1247,7 @@
           "description" : "The types of furniture present in the sampled room",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "furniture"
+              "enum" : [ "furniture" ]
             },
             "value" : {
               "type" : "string"
@@ -1323,8 +1267,7 @@
           "description" : "The type of water feature present within the building being sampled",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "water feature type"
+              "enum" : [ "water feature type" ]
             },
             "value" : {
               "type" : "string"
@@ -1344,8 +1287,7 @@
           "description" : "Distance between doors (meters) in the hallway between the sampling room and adjacent rooms",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "room door distance"
+              "enum" : [ "room door distance" ]
             },
             "value" : {
               "type" : "string",
@@ -1366,8 +1308,7 @@
           "description" : "The main purpose or activity of the sampling room. A room is any distinguishable space within a structure",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "room type"
+              "enum" : [ "room type" ]
             },
             "value" : {
               "type" : "string"
@@ -1387,8 +1328,7 @@
           "description" : "The relative location of the window within the room",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "window location"
+              "enum" : [ "window location" ]
             },
             "value" : {
               "type" : "string"
@@ -1408,8 +1348,7 @@
           "description" : "The type of ceiling according to the ceiling's appearance or construction",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "ceiling type"
+              "enum" : [ "ceiling type" ]
             },
             "value" : {
               "type" : "string"
@@ -1429,8 +1368,7 @@
           "description" : "The direction the door opens",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "door direction of opening"
+              "enum" : [ "door direction of opening" ]
             },
             "value" : {
               "type" : "string"
@@ -1450,8 +1388,7 @@
           "description" : "The number of exposed pipes in the room",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "exposed pipes"
+              "enum" : [ "exposed pipes" ]
             },
             "value" : {
               "type" : "string",
@@ -1472,8 +1409,7 @@
           "description" : "The average height of the walls in the sampled room",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "wall height"
+              "enum" : [ "wall height" ]
             },
             "value" : {
               "type" : "string",
@@ -1494,8 +1430,7 @@
           "description" : "The type of metal door",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "door type, metal"
+              "enum" : [ "door type, metal" ]
             },
             "value" : {
               "type" : "string"
@@ -1515,8 +1450,7 @@
           "description" : "The recorded value at sampling time (power density)",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "inside lux light"
+              "enum" : [ "inside lux light" ]
             },
             "value" : {
               "type" : "string",
@@ -1537,8 +1471,7 @@
           "description" : "The amount of exposed ductwork in the room",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "exposed ductwork"
+              "enum" : [ "exposed ductwork" ]
             },
             "value" : {
               "type" : "string"
@@ -1558,8 +1491,7 @@
           "description" : "The material the door is composed of",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "door material"
+              "enum" : [ "door material" ]
             },
             "value" : {
               "type" : "string"
@@ -1579,8 +1511,7 @@
           "description" : "List of rooms (room number, room name) immediately adjacent to the sampling room",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "adjacent rooms"
+              "enum" : [ "adjacent rooms" ]
             },
             "value" : {
               "type" : "string"
@@ -1600,8 +1531,7 @@
           "description" : "The ability of the wall to provide inertia against temperature fluctuations. Generally this means concrete or concrete block that is either exposed or covered only with paint",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "wall thermal mass"
+              "enum" : [ "wall thermal mass" ]
             },
             "value" : {
               "type" : "string",
@@ -1622,8 +1552,7 @@
           "description" : "Signs of the presence of mold or mildew on the ceiling",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "ceiling signs of water/mold"
+              "enum" : [ "ceiling signs of water/mold" ]
             },
             "value" : {
               "type" : "string"
@@ -1643,8 +1572,7 @@
           "description" : "Defines whether the windows were open or closed during environmental testing",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "window status"
+              "enum" : [ "window status" ]
             },
             "value" : {
               "type" : "string"
@@ -1664,8 +1592,7 @@
           "description" : "The relative location of the door in the room",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "door location"
+              "enum" : [ "door location" ]
             },
             "value" : {
               "type" : "string"
@@ -1685,8 +1612,7 @@
           "description" : "Signs of the presence of mold or mildew on the window.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "window signs of water/mold"
+              "enum" : [ "window signs of water/mold" ]
             },
             "value" : {
               "type" : "string"
@@ -1706,8 +1632,7 @@
           "description" : "The type of windows",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "window type"
+              "enum" : [ "window type" ]
             },
             "value" : {
               "type" : "string"
@@ -1727,8 +1652,7 @@
           "description" : "The type of material used to finish a window",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "window material"
+              "enum" : [ "window material" ]
             },
             "value" : {
               "type" : "string"
@@ -1748,8 +1672,7 @@
           "description" : "The horizontal position of the window on the wall",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "window horizontal position"
+              "enum" : [ "window horizontal position" ]
             },
             "value" : {
               "type" : "string"
@@ -1769,8 +1692,7 @@
           "description" : "The condition of the room at the time of sampling",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "room condition"
+              "enum" : [ "room condition" ]
             },
             "value" : {
               "type" : "string"
@@ -1790,8 +1712,7 @@
           "description" : "The window's length and width",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "window area/size"
+              "enum" : [ "window area/size" ]
             },
             "value" : {
               "type" : "string"
@@ -1811,8 +1732,7 @@
           "description" : "The floor of the building, where the sampling room is located",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "sampling floor"
+              "enum" : [ "sampling floor" ]
             },
             "value" : {
               "type" : "string"
@@ -1832,8 +1752,7 @@
           "description" : "The total count of rooms in the built structure including all room types",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "room count"
+              "enum" : [ "room count" ]
             },
             "value" : {
               "type" : "string",
@@ -1854,8 +1773,7 @@
           "description" : "Daily average occupancy of room. Indicate the number of person(s) daily occupying the sampling room.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "average daily occupancy"
+              "enum" : [ "average daily occupancy" ]
             },
             "value" : {
               "type" : "string",
@@ -1876,8 +1794,7 @@
           "description" : "The physical condition of the floor at the time of sampling; photos or video preferred; use drawings to indicate location of damaged areas",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "floor condition"
+              "enum" : [ "floor condition" ]
             },
             "value" : {
               "type" : "string"
@@ -1897,8 +1814,7 @@
           "description" : "The type of wood door",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "door type, wood"
+              "enum" : [ "door type, wood" ]
             },
             "value" : {
               "type" : "string"
@@ -1918,8 +1834,7 @@
           "description" : "The physical condition of the door",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "door condition"
+              "enum" : [ "door condition" ]
             },
             "value" : {
               "type" : "string"
@@ -1939,8 +1854,7 @@
           "description" : "The type of movement of the door",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "door movement"
+              "enum" : [ "door movement" ]
             },
             "value" : {
               "type" : "string"
@@ -1960,8 +1874,7 @@
           "description" : "The physical condition of the wall at the time of sampling; photos or video preferred; use drawings to indicate location of damaged areas",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "interior wall condition"
+              "enum" : [ "interior wall condition" ]
             },
             "value" : {
               "type" : "string"
@@ -1981,8 +1894,7 @@
           "description" : "Signs of the presence of mold or mildew in a room",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "floor signs of water/mold"
+              "enum" : [ "floor signs of water/mold" ]
             },
             "value" : {
               "type" : "string"
@@ -2002,8 +1914,7 @@
           "description" : "The construction format of the ceiling",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "ceiling structure"
+              "enum" : [ "ceiling structure" ]
             },
             "value" : {
               "type" : "string"
@@ -2023,8 +1934,7 @@
           "description" : "The feel, appearance, or consistency of a wall surface",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "wall texture"
+              "enum" : [ "wall texture" ]
             },
             "value" : {
               "type" : "string"
@@ -2044,8 +1954,7 @@
           "description" : "The ability of the floor to provide inertia against temperature fluctuations",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "floor thermal mass"
+              "enum" : [ "floor thermal mass" ]
             },
             "value" : {
               "type" : "string",
@@ -2066,8 +1975,7 @@
           "description" : "The rate at which outside air replaces indoor air in a given space",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "room air exchange rate"
+              "enum" : [ "room air exchange rate" ]
             },
             "value" : {
               "type" : "string"
@@ -2087,8 +1995,7 @@
           "description" : "The number of bathrooms in the building",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "bathroom count"
+              "enum" : [ "bathroom count" ]
             },
             "value" : {
               "type" : "string",
@@ -2109,8 +2016,7 @@
           "description" : "Signs of the presence of mold or mildew on the shading device",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "shading device signs of water/mold"
+              "enum" : [ "shading device signs of water/mold" ]
             },
             "value" : {
               "type" : "string"
@@ -2130,8 +2036,7 @@
           "description" : "The type of window covering",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "window covering"
+              "enum" : [ "window covering" ]
             },
             "value" : {
               "type" : "string"
@@ -2151,8 +2056,7 @@
           "description" : "The feel, appearance, or consistency of a ceiling surface",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "ceiling texture"
+              "enum" : [ "ceiling texture" ]
             },
             "value" : {
               "type" : "string"
@@ -2172,8 +2076,7 @@
           "description" : "The maximum amount of people allowed in the indoor environment",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "maximum occupancy"
+              "enum" : [ "maximum occupancy" ]
             },
             "value" : {
               "type" : "string",
@@ -2194,8 +2097,7 @@
           "description" : "The gender type of the restroom",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "gender of restroom"
+              "enum" : [ "gender of restroom" ]
             },
             "value" : {
               "type" : "string"
@@ -2215,8 +2117,7 @@
           "description" : "The physical condition of the ceiling at the time of sampling; photos or video preferred; use drawings to indicate location of damaged areas",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "ceiling condition"
+              "enum" : [ "ceiling condition" ]
             },
             "value" : {
               "type" : "string"
@@ -2236,8 +2137,7 @@
           "description" : "Refers to the structural elements and subfloor upon which the finish flooring is installed",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "floor structure"
+              "enum" : [ "floor structure" ]
             },
             "value" : {
               "type" : "string"
@@ -2257,8 +2157,7 @@
           "description" : "List of room(s) (room number, room name) sharing a wall with the sampling room",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "rooms that share a wall with sampling room"
+              "enum" : [ "rooms that share a wall with sampling room" ]
             },
             "value" : {
               "type" : "string"
@@ -2278,8 +2177,7 @@
           "description" : "The material utilized to finish the outer most layer of the wall",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "wall finish material"
+              "enum" : [ "wall finish material" ]
             },
             "value" : {
               "type" : "string"
@@ -2299,8 +2197,7 @@
           "description" : "Count of room occupancy at time of sampling",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "room occupancy"
+              "enum" : [ "room occupancy" ]
             },
             "value" : {
               "type" : "string",
@@ -2321,8 +2218,7 @@
           "description" : "The position of the room within the building",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "room location in building"
+              "enum" : [ "room location in building" ]
             },
             "value" : {
               "type" : "string"
@@ -2342,8 +2238,7 @@
           "description" : "The floor covering type; the finished surface that is walked on",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "floor finish material"
+              "enum" : [ "floor finish material" ]
             },
             "value" : {
               "type" : "string"
@@ -2363,8 +2258,7 @@
           "description" : "Number of windows in the room",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "room window count"
+              "enum" : [ "room window count" ]
             },
             "value" : {
               "type" : "string",
@@ -2385,8 +2279,7 @@
           "description" : "Explain how and for how long the soil sample was stored before DNA extraction (fresh/frozen/other).",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "sampling room id or name"
+              "enum" : [ "sampling room id or name", "sampling room ID or name" ]
             },
             "value" : {
               "type" : "string"
@@ -2406,8 +2299,7 @@
           "description" : "The average carpet fiber height in the indoor environment",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "height carpet fiber mat"
+              "enum" : [ "height carpet fiber mat" ]
             },
             "value" : {
               "type" : "string",
@@ -2428,8 +2320,7 @@
           "description" : "The area of the ceiling space within the room",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "ceiling area"
+              "enum" : [ "ceiling area" ]
             },
             "value" : {
               "type" : "string",
@@ -2450,8 +2341,7 @@
           "description" : "The method by which the heat is delivered through the system",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "heating system delivery method"
+              "enum" : [ "heating system delivery method" ]
             },
             "value" : {
               "type" : "string"
@@ -2471,8 +2361,7 @@
           "description" : "The horizontal sampling position in the room relative to architectural elements",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "room sampling position"
+              "enum" : [ "room sampling position" ]
             },
             "value" : {
               "type" : "string"
@@ -2492,8 +2381,7 @@
           "description" : "The history of moisture damage or mold in the past 12 months. Number of events of moisture damage or mold observed",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "room moisture damage or mold history"
+              "enum" : [ "room moisture damage or mold history" ]
             },
             "value" : {
               "type" : "string"
@@ -2513,8 +2401,7 @@
           "description" : "Signs of the presence of mold or mildew on a door",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "door signs of water/mold"
+              "enum" : [ "door signs of water/mold" ]
             },
             "value" : {
               "type" : "string"
@@ -2534,8 +2421,7 @@
           "description" : "The net floor area of sampling room. Net area excludes wall thicknesses",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "room net area"
+              "enum" : [ "room net area" ]
             },
             "value" : {
               "type" : "string",
@@ -2556,8 +2442,7 @@
           "description" : "The ability of the ceiling to provide inertia against temperature fluctuations. Generally this means concrete that is exposed. A metal deck that supports a concrete slab will act thermally as long as it is exposed to room air flow",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "ceiling thermal mass"
+              "enum" : [ "ceiling thermal mass" ]
             },
             "value" : {
               "type" : "string",
@@ -2578,8 +2463,7 @@
           "description" : "List of room(s) (room number, room name) sharing a door with the sampling room",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "rooms that share a door with sampling room"
+              "enum" : [ "rooms that share a door with sampling room" ]
             },
             "value" : {
               "type" : "string"
@@ -2599,8 +2483,7 @@
           "description" : "The compass direction the exterior window of the room is facing",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "orientations of exterior window"
+              "enum" : [ "orientations of exterior window" ]
             },
             "value" : {
               "type" : "string"
@@ -2620,8 +2503,7 @@
           "description" : "The relative location of the wall within the room",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "wall location"
+              "enum" : [ "wall location" ]
             },
             "value" : {
               "type" : "string"
@@ -2641,8 +2523,7 @@
           "description" : "Volume of sampling room",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "room volume"
+              "enum" : [ "room volume" ]
             },
             "value" : {
               "type" : "string",
@@ -2663,8 +2544,7 @@
           "description" : "The composite type of the door",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "door type, composite"
+              "enum" : [ "door type, composite" ]
             },
             "value" : {
               "type" : "string"
@@ -2684,8 +2564,7 @@
           "description" : "The number of bedrooms in the building",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "bedroom count"
+              "enum" : [ "bedroom count" ]
             },
             "value" : {
               "type" : "string",
@@ -2706,8 +2585,7 @@
           "description" : "The building class of the wall defined by the composition of the building elements and fire-resistance rating.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "wall construction type"
+              "enum" : [ "wall construction type" ]
             },
             "value" : {
               "type" : "string"
@@ -2727,8 +2605,7 @@
           "description" : "Signs of the presence of mold or mildew on a wall",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "wall signs of water/mold"
+              "enum" : [ "wall signs of water/mold" ]
             },
             "value" : {
               "type" : "string"
@@ -2748,8 +2625,7 @@
           "description" : "The physical condition of the window at the time of sampling",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "window condition"
+              "enum" : [ "window condition" ]
             },
             "value" : {
               "type" : "string"
@@ -2769,8 +2645,7 @@
           "description" : "The number of escalators within the built structure",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "escalator count"
+              "enum" : [ "escalator count" ]
             },
             "value" : {
               "type" : "string",
@@ -2791,8 +2666,7 @@
           "description" : "The cooling system identifier",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "cooling system identifier"
+              "enum" : [ "cooling system identifier" ]
             },
             "value" : {
               "type" : "string"
@@ -2812,8 +2686,7 @@
           "description" : "The quadrant position of the sampling room within the building",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "quadrant position"
+              "enum" : [ "quadrant position" ]
             },
             "value" : {
               "type" : "string"
@@ -2833,8 +2706,7 @@
           "description" : "The number of pets residing in the sampled space",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "number of pets"
+              "enum" : [ "number of pets" ]
             },
             "value" : {
               "type" : "string",
@@ -2855,8 +2727,7 @@
           "description" : "The vertical position of the window on the wall",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "window vertical position"
+              "enum" : [ "window vertical position" ]
             },
             "value" : {
               "type" : "string"
@@ -2876,8 +2747,7 @@
           "description" : "A firebox with chimney",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "fireplace type"
+              "enum" : [ "fireplace type" ]
             },
             "value" : {
               "type" : "string"
@@ -2897,8 +2767,7 @@
           "description" : "The location of heat delivery within the room",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "heating delivery locations"
+              "enum" : [ "heating delivery locations" ]
             },
             "value" : {
               "type" : "string"
@@ -2918,8 +2787,7 @@
           "description" : "The type of material used to finish a ceiling",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "ceiling finish material"
+              "enum" : [ "ceiling finish material" ]
             },
             "value" : {
               "type" : "string"
@@ -2939,8 +2807,7 @@
           "description" : "The type of door material",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "door type"
+              "enum" : [ "door type" ]
             },
             "value" : {
               "type" : "string"
@@ -2960,8 +2827,7 @@
           "description" : "The number of plant(s) in the sampling space",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "number of houseplants"
+              "enum" : [ "number of houseplants" ]
             },
             "value" : {
               "type" : "string",
@@ -2982,8 +2848,7 @@
           "description" : "The time period since instalment of the carpet or flooring",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "floor age"
+              "enum" : [ "floor age" ]
             },
             "value" : {
               "type" : "string",
@@ -3004,8 +2869,7 @@
           "description" : "List of rooms connected to the sampling room by a doorway",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "rooms connected by a doorway"
+              "enum" : [ "rooms connected by a doorway" ]
             },
             "value" : {
               "type" : "string"
@@ -3025,8 +2889,7 @@
           "description" : "The building specifications. If design is chosen, indicate phase: conceptual, schematic, design development, construction documents",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "specifications"
+              "enum" : [ "specifications" ]
             },
             "value" : {
               "type" : "string"
@@ -3046,8 +2909,7 @@
           "description" : "The mass of water vapour in a unit mass of moist air, usually expressed as grams of vapour per kilogram of air, or, in air conditioning, as grains per pound.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "specific humidity"
+              "enum" : [ "specific humidity" ]
             },
             "value" : {
               "type" : "string",
@@ -3068,8 +2930,7 @@
           "description" : "The number of times windows are opened per week",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "window open frequency"
+              "enum" : [ "window open frequency" ]
             },
             "value" : {
               "type" : "string"
@@ -3089,8 +2950,7 @@
           "description" : "The length, width and height of sampling room",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "room dimensions"
+              "enum" : [ "room dimensions" ]
             },
             "value" : {
               "type" : "string"
@@ -3110,8 +2970,7 @@
           "description" : "The size of the water feature",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "water feature size"
+              "enum" : [ "water feature size" ]
             },
             "value" : {
               "type" : "string",
@@ -3132,8 +2991,7 @@
           "description" : "The total amount or size (volume (ml), mass (g) or area (m2) ) of sample collected.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "amount or size of sample collected"
+              "enum" : [ "amount or size of sample collected" ]
             },
             "value" : {
               "type" : "string",
@@ -3154,8 +3012,7 @@
           "description" : "method by which samples are sorted",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "sample size sorting method"
+              "enum" : [ "sample size sorting method" ]
             },
             "value" : {
               "type" : "string"
@@ -3175,8 +3032,7 @@
           "description" : "Total cell count of any organism (or group of organisms) per gram, volume or area of sample, should include name of organism followed by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "organism count"
+              "enum" : [ "organism count" ]
             },
             "value" : {
               "type" : "string"
@@ -3196,8 +3052,7 @@
           "description" : "mechanical structure: a moving structure",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "mechanical structure"
+              "enum" : [ "mechanical structure" ]
             },
             "value" : {
               "type" : "string"
@@ -3217,8 +3072,7 @@
           "description" : "The handidness of the individual sampled",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "handidness"
+              "enum" : [ "handidness" ]
             },
             "value" : {
               "type" : "string"
@@ -3238,8 +3092,7 @@
           "description" : "list of diseases with which the host has been diagnosed; can include multiple diagnoses. The value of the field depends on host; for humans the terms should be chosen from DO (Disease Ontology) at http://www.disease-ontology.org, other hosts are free text",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "host disease status"
+              "enum" : [ "host disease status", "health or disease status of specific host" ]
             },
             "value" : {
               "type" : "string"
@@ -3259,8 +3112,7 @@
           "description" : "Scientific name of the natural (as opposed to laboratory) host to the organism from which sample was obtained.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "host scientific name"
+              "enum" : [ "host scientific name", "specific host" ]
             },
             "value" : {
               "type" : "string"
@@ -3280,8 +3132,7 @@
           "description" : "partial vapor and air pressure, density of the vapor and air, or by the actual mass of the vapor and air",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "relative air humidity"
+              "enum" : [ "relative air humidity" ]
             },
             "value" : {
               "type" : "string",
@@ -3302,8 +3153,7 @@
           "description" : "actual mass of water vapor - mh20 - present in the air water vapor mixture",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "absolute air humidity"
+              "enum" : [ "absolute air humidity" ]
             },
             "value" : {
               "type" : "string",
@@ -3324,8 +3174,7 @@
           "description" : "surface water activity as a function of air and material moisture",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "surface humidity"
+              "enum" : [ "surface humidity" ]
             },
             "value" : {
               "type" : "string",
@@ -3346,8 +3195,7 @@
           "description" : "temperature of the air at time of sampling",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "air temperature"
+              "enum" : [ "air temperature" ]
             },
             "value" : {
               "type" : "string",
@@ -3368,8 +3216,7 @@
           "description" : "temperature of the surface at time of sampling",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "surface temperature"
+              "enum" : [ "surface temperature" ]
             },
             "value" : {
               "type" : "string",
@@ -3390,8 +3237,7 @@
           "description" : "water held on the surface",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "surface moisture"
+              "enum" : [ "surface moisture" ]
             },
             "value" : {
               "type" : "string",
@@ -3412,8 +3258,7 @@
           "description" : "pH measurement of surface",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "surface moisture pH"
+              "enum" : [ "surface moisture pH" ]
             },
             "value" : {
               "type" : "string",
@@ -3434,8 +3279,7 @@
           "description" : "The temperature to which a given parcel of humid air must be cooled, at constant barometric pressure, for water vapor to condense into water",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "dew point"
+              "enum" : [ "dew point" ]
             },
             "value" : {
               "type" : "string",
@@ -3456,8 +3300,7 @@
           "description" : "temperature of the sample at time of sampling",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "temperature"
+              "enum" : [ "temperature" ]
             },
             "value" : {
               "type" : "string",
@@ -3478,8 +3321,7 @@
           "description" : "The last time the floor was cleaned (swept, mopped, vacuumed)",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "last time swept/mopped/vacuumed"
+              "enum" : [ "last time swept/mopped/vacuumed" ]
             },
             "value" : {
               "type" : "string"
@@ -3499,8 +3341,7 @@
           "description" : "The number of individuals currently occupying in the sampling location",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "number of residents"
+              "enum" : [ "number of residents" ]
             },
             "value" : {
               "type" : "string",
@@ -3521,8 +3362,7 @@
           "description" : "The average of dew point measures taken at the beginning of every hour over a 24 hour period on the sampling day",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "average dew point"
+              "enum" : [ "average dew point" ]
             },
             "value" : {
               "type" : "string",
@@ -3543,8 +3383,7 @@
           "description" : "The number of times the sample location is cleaned. Frequency of cleaning might be on a Daily basis, Weekly, Monthly, Quarterly or Annually.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "frequency of cleaning"
+              "enum" : [ "frequency of cleaning" ]
             },
             "value" : {
               "enum" : [ "Annually", "Daily", "Monthly", "Quarterly", "Weekly" ]
@@ -3564,8 +3403,7 @@
           "description" : "carbon dioxide (gas) amount or concentration at the time of sampling",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "carbon dioxide"
+              "enum" : [ "carbon dioxide" ]
             },
             "value" : {
               "type" : "string",
@@ -3586,8 +3424,7 @@
           "description" : "A unique identifier assigned to a material sample (as defined by http://rs.tdwg.org/dwc/terms/materialSampleID, and as opposed to a particular digital record of a material sample) used for extracting nucleic acids, and subsequent sequencing. The identifier can refer either to the original material collected or to any derived sub-samples. The INSDC qualifiers /specimen_voucher, /bio_material, or /culture_collection may or may not share the same value as the source_mat_id field. For instance, the /specimen_voucher qualifier and source_mat_id may both contain 'UAM:Herps:14' , referring to both the specimen voucher and sampled tissue with the same identifier. However, the /culture_collection qualifier may refer to a value from an initial culture (e.g. ATCC:11775) while source_mat_id would refer to an identifier from some derived culture from which the nucleic acids were extracted (e.g. xatc123 or ark:/2154/R2).",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "source material identifiers"
+              "enum" : [ "source material identifiers" ]
             },
             "value" : {
               "type" : "string"
@@ -3607,8 +3444,7 @@
           "description" : "The seasons the space is occupied",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "seasonal use"
+              "enum" : [ "seasonal use" ]
             },
             "value" : {
               "type" : "string"
@@ -3628,8 +3464,7 @@
           "description" : "The season when sampling occurred. Any of the four periods into which the year is divided by the equinoxes and solstices. This field accepts terms listed under season (http://purl.obolibrary.org/obo/NCIT_C94729).",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "season"
+              "enum" : [ "season" ]
             },
             "value" : {
               "type" : "string"
@@ -3649,8 +3484,7 @@
           "description" : "The average of temperatures taken at the beginning of every hour over a 24 hour period on the sampling day",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "average temperature"
+              "enum" : [ "average temperature" ]
             },
             "value" : {
               "type" : "string",
@@ -3671,8 +3505,7 @@
           "description" : "The range and diversity of host species that an organism is capable of infecting, defined by NCBI taxonomy identifier.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "host specificity or range"
+              "enum" : [ "host specificity or range" ]
             },
             "value" : {
               "type" : "string"
@@ -3692,8 +3525,7 @@
           "description" : "type of perturbation, e.g. chemical administration, physical disturbance, etc., coupled with time that perturbation occurred; can include multiple perturbation types",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "perturbation"
+              "enum" : [ "perturbation" ]
             },
             "value" : {
               "type" : "string"
@@ -3713,8 +3545,7 @@
           "description" : "The substance or equipment used as a negative control in an investigation",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "negative control type"
+              "enum" : [ "negative control type" ]
             },
             "value" : {
               "type" : "string"
@@ -3734,8 +3565,7 @@
           "description" : "The substance, mixture, product, or apparatus used to verify that a process which is part of an investigation delivers a true positive.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "positive control type"
+              "enum" : [ "positive control type" ]
             },
             "value" : {
               "type" : "string"
@@ -3755,8 +3585,7 @@
           "description" : "Experimental factors are essentially the variable aspects of an experiment design which can be used to describe an experiment, or set of experiments, in an increasingly detailed manner. This field accepts ontology terms from Experimental Factor Ontology (EFO) and/or Ontology for Biomedical Investigations (OBI). For a browser of EFO (v 2.95) terms, please see http://purl.bioontology.org/ontology/EFO; for a browser of OBI (v 2018-02-12) terms please see http://purl.bioontology.org/ontology/OBI. E.g. time series design [EFO:EFO_0001779]",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "experimental factor"
+              "enum" : [ "experimental factor" ]
             },
             "value" : {
               "type" : "string"
@@ -3776,8 +3605,7 @@
           "description" : "Should include key traits like antibiotic resistance or xenobiotic degradation phenotypes for plasmids, converting genes for phage",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "encoded traits"
+              "enum" : [ "encoded traits" ]
             },
             "value" : {
               "type" : "string"
@@ -3797,8 +3625,7 @@
           "description" : "Information about the genetic distinctness of the sequenced organism below the subspecies level, e.g., serovar, serotype, biotype, ecotype, or any relevant genetic typing schemes like Group I plasmid. Subspecies should not be recorded in this term, but in the NCBI taxonomy. Supply both the lineage name and the lineage rank separated by a colon, e.g., biovar:abc123.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "subspecific genetic lineage"
+              "enum" : [ "subspecific genetic lineage" ]
             },
             "value" : {
               "type" : "string"
@@ -3818,8 +3645,7 @@
           "description" : "Method used for taxonomic classification, along with reference database used, classification rank, and thresholds used to classify new genomes. Expected values are: classification method, database name, and other parameters e.g. vConTACT vContact2 (references from NCBI RefSeq v83, genus rank classification, default parameters)",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "taxonomic classification"
+              "enum" : [ "taxonomic classification" ]
             },
             "value" : {
               "type" : "string"
@@ -3839,8 +3665,7 @@
           "description" : "Publication reference in the form of pubmed ID (pmid), digital object identifier (doi) or url for isolation and growth condition specifications of the organism/material. Mandatory for MIGS and MIMARKS Specimen.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "isolation and growth condition"
+              "enum" : [ "isolation and growth condition" ]
             },
             "value" : {
               "type" : "string"
@@ -3860,8 +3685,7 @@
           "description" : "For cases where annotation was provided by a community jamboree or model organism database rather than by a specific submitter",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "annotation source"
+              "enum" : [ "annotation source", "annotation" ]
             },
             "value" : {
               "type" : "string"
@@ -3881,8 +3705,7 @@
           "description" : "Primary publication if isolated before genome publication; otherwise, primary genome report. Mandatory for MIGS of bacteria and archaea.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "reference for biomaterial"
+              "enum" : [ "reference for biomaterial" ]
             },
             "value" : {
               "type" : "string"
@@ -3902,8 +3725,7 @@
           "description" : "A brief description of any processing applied to the sample during or after retrieving the sample from environment, or a link to the relevant protocol(s) performed.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "sample material processing"
+              "enum" : [ "sample material processing" ]
             },
             "value" : {
               "type" : "string"
@@ -3923,8 +3745,7 @@
           "description" : "Volume (ml) or mass (g) of total collected sample processed for DNA extraction. Note: total sample collected should be entered under the term 'sample size'.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "sample volume or weight for DNA extraction"
+              "enum" : [ "sample volume or weight for DNA extraction", "sample weight for DNA extraction" ]
             },
             "value" : {
               "type" : "string",
@@ -3945,8 +3766,7 @@
           "description" : "A link to a literature reference, electronic resource or a standard operating procedure (SOP), that describes the material separation to recover the nucleic acid fraction from a sample",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "nucleic acid extraction"
+              "enum" : [ "nucleic acid extraction" ]
             },
             "value" : {
               "type" : "string"
@@ -3966,8 +3786,7 @@
           "description" : "A link to a literature reference, electronic resource or a standard operating procedure (SOP), that describes the enzymatic amplification (PCR, TMA, NASBA) of specific nucleic acids",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "nucleic acid amplification"
+              "enum" : [ "nucleic acid amplification" ]
             },
             "value" : {
               "type" : "string"
@@ -3987,8 +3806,7 @@
           "description" : "Total number of clones in the library prepared for the project",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "library size"
+              "enum" : [ "library size" ]
             },
             "value" : {
               "type" : "string",
@@ -4009,8 +3827,7 @@
           "description" : "Total number of clones sequenced from the library",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "library reads sequenced"
+              "enum" : [ "library reads sequenced" ]
             },
             "value" : {
               "type" : "string",
@@ -4031,8 +3848,7 @@
           "description" : "Library construction method used for clone libraries",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "library construction method"
+              "enum" : [ "library construction method" ]
             },
             "value" : {
               "type" : "string"
@@ -4052,8 +3868,7 @@
           "description" : "Cloning vector type(s) used in construction of libraries",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "library vector"
+              "enum" : [ "library vector" ]
             },
             "value" : {
               "type" : "string"
@@ -4073,8 +3888,7 @@
           "description" : "Specific enrichment or screening methods applied before and/or after creating clone libraries in order to select a specific group of sequences",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "library screening strategy"
+              "enum" : [ "library screening strategy" ]
             },
             "value" : {
               "type" : "string"
@@ -4094,8 +3908,7 @@
           "description" : "Description of reaction conditions and components for PCR in the form of 'initial denaturation:94degC_1.5min; annealing=...'",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "pcr conditions"
+              "enum" : [ "pcr conditions" ]
             },
             "value" : {
               "type" : "string"
@@ -4115,8 +3928,7 @@
           "description" : "PCR primers that were used to amplify the sequence of the targeted gene, locus or subfragment. This field should contain all the primers used for a single PCR reaction if multiple forward or reverse primers are present in a single PCR reaction. The primer sequence should be reported in uppercase letters",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "pcr primers"
+              "enum" : [ "pcr primers" ]
             },
             "value" : {
               "type" : "string"
@@ -4136,8 +3948,7 @@
           "description" : "Adapters provide priming sequences for both amplification and sequencing of the sample-library fragments. Both adapters should be reported; in uppercase letters",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "adapters"
+              "enum" : [ "adapters" ]
             },
             "value" : {
               "type" : "string"
@@ -4157,8 +3968,7 @@
           "description" : "The date of the last time it rained",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "date last rain"
+              "enum" : [ "date last rain" ]
             },
             "value" : {
               "type" : "string"
@@ -4178,8 +3988,7 @@
           "description" : "The weather on the sampling day",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "sampling day weather"
+              "enum" : [ "sampling day weather" ]
             },
             "value" : {
               "type" : "string"
@@ -4199,8 +4008,7 @@
           "description" : "The unit of illuminance and luminous emittance, measuring luminous flux per unit area",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "amount of light"
+              "enum" : [ "amount of light" ]
             },
             "value" : {
               "type" : "string",
@@ -4221,8 +4029,7 @@
           "description" : "The subway line name",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "train line"
+              "enum" : [ "train line" ]
             },
             "value" : {
               "type" : "string"
@@ -4242,8 +4049,7 @@
           "description" : "The recorded outside relative humidity value at the time of sampling",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "outside relative humidity"
+              "enum" : [ "outside relative humidity" ]
             },
             "value" : {
               "type" : "string",
@@ -4264,8 +4070,7 @@
           "description" : "The vertical distance below local surface, e.g. for sediment or soil samples depth is measured from sediment or soil surface, respectively. Depth can be reported as an interval for subsurface samples.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "depth"
+              "enum" : [ "depth", "Depth", "geographic location (depth)" ]
             },
             "value" : {
               "type" : "string",
@@ -4286,8 +4091,7 @@
           "description" : "The size of the door",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "door area or size"
+              "enum" : [ "door area or size" ]
             },
             "value" : {
               "type" : "string"
@@ -4307,8 +4111,7 @@
           "description" : "The building visual media",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "visual media"
+              "enum" : [ "visual media" ]
             },
             "value" : {
               "type" : "string"
@@ -4328,8 +4131,7 @@
           "description" : "The characterization of the location of the built structure as high or low human density",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "built structure setting"
+              "enum" : [ "built structure setting" ]
             },
             "value" : {
               "type" : "string"
@@ -4349,8 +4151,7 @@
           "description" : "A physical structure that is a body or assemblage of bodies in space to form a system capable of supporting loads",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "built structure type"
+              "enum" : [ "built structure type" ]
             },
             "value" : {
               "type" : "string"
@@ -4370,8 +4171,7 @@
           "description" : "The number of exterior doors in the built structure",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "exterior door count"
+              "enum" : [ "exterior door count" ]
             },
             "value" : {
               "type" : "string",
@@ -4392,8 +4192,7 @@
           "description" : "The building design, construction and operation documents",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "design, construction, and operation documents"
+              "enum" : [ "design, construction, and operation documents" ]
             },
             "value" : {
               "type" : "string"
@@ -4413,8 +4212,7 @@
           "description" : "The physical condition of the shading device at the time of sampling",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "shading device condition"
+              "enum" : [ "shading device condition" ]
             },
             "value" : {
               "type" : "string"
@@ -4434,8 +4232,7 @@
           "description" : "The type of documentation of occupancy",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "occupancy documentation"
+              "enum" : [ "occupancy documentation" ]
             },
             "value" : {
               "type" : "string"
@@ -4455,8 +4252,7 @@
           "description" : "The number of floors in the building, including basements and mechanical penthouse",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "floor count"
+              "enum" : [ "floor count" ]
             },
             "value" : {
               "type" : "string",
@@ -4477,8 +4273,7 @@
           "description" : "The material the shading device is composed of",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "shading device material"
+              "enum" : [ "shading device material" ]
             },
             "value" : {
               "type" : "string"
@@ -4498,8 +4293,7 @@
           "description" : "The age of the built structure since construction",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "built structure age"
+              "enum" : [ "built structure age" ]
             },
             "value" : {
               "type" : "string",
@@ -4520,8 +4314,7 @@
           "description" : "The total count of hallways and corridors in the built structure",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "hallway/corridor count"
+              "enum" : [ "hallway/corridor count" ]
             },
             "value" : {
               "type" : "string",
@@ -4542,8 +4335,7 @@
           "description" : "An architectural structure is a human-made, free-standing, immobile outdoor construction",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "architectural structure"
+              "enum" : [ "architectural structure" ]
             },
             "value" : {
               "type" : "string"
@@ -4563,8 +4355,7 @@
           "description" : "The type of shading device",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "shading device type"
+              "enum" : [ "shading device type" ]
             },
             "value" : {
               "type" : "string"
@@ -4584,8 +4375,7 @@
           "description" : "The location of the shading device in relation to the built structure",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "shading device location"
+              "enum" : [ "shading device location" ]
             },
             "value" : {
               "type" : "string"
@@ -4605,8 +4395,7 @@
           "description" : "The buildings architectural drawings; if design is chosen, indicate phase-conceptual, schematic, design development, and construction documents",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "drawings"
+              "enum" : [ "drawings" ]
             },
             "value" : {
               "type" : "string"
@@ -4626,8 +4415,7 @@
           "description" : "The street name and building number where the sampling occurred.",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "address"
+              "enum" : [ "address" ]
             },
             "value" : {
               "type" : "string"
@@ -4647,8 +4435,7 @@
           "description" : "The unique details and component parts that, together, form the architecture of a distinguishable space within a built structure",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "room architectural elements"
+              "enum" : [ "room architectural elements" ]
             },
             "value" : {
               "type" : "string"
@@ -4668,8 +4455,7 @@
           "description" : "Aerospace structures typically consist of thin plates with stiffeners for the external surfaces, bulkheads and frames to support the shape and fasteners such as welds, rivets, screws and bolts to hold the components together",
           "properties" : {
             "tag" : {
-              "type" : "string",
-              "const" : "aerospace structure"
+              "enum" : [ "aerospace structure" ]
             },
             "value" : {
               "type" : "string"

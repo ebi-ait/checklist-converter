@@ -4,8 +4,7 @@
         "description": "${description}",
         "properties": {
           "tag": {
-            "type": "string",
-            "const": "${attribute_name}"
+            "enum": ${synonyms}
           },
           "value": ${attribute_type},
           "unit": {

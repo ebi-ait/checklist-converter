@@ -8,6 +8,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import lombok.Data;
 
 import java.util.List;
+import java.util.Set;
 
 @Data
 @JacksonXmlRootElement(localName = "CHECKLIST_SET")
@@ -55,6 +56,9 @@ class Field {
     private String label;
     @JacksonXmlProperty(localName = "NAME")
     private String name;
+    @JacksonXmlProperty(localName = "SYNONYM")
+    @JacksonXmlElementWrapper(useWrapping = false)
+    private List<String> synonyms;
     @JacksonXmlProperty(localName = "DESCRIPTION")
     private String description;
     @JacksonXmlProperty(localName = "MANDATORY")
