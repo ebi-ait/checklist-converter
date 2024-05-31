@@ -3,7 +3,7 @@ services:
   biovalidator:
     image: quay.io/ebi-ait/biovalidator:2.2.2
     ports:
-      - 3020:3020
+      - "3020:3020"
 #networks:
 #  default:
 #    ipam:
