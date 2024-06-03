@@ -33,9 +33,7 @@ public class ChecklistConverterService {
   private static String getTypedTemplate(Field field) {
     String fieldTypeTemplate;
     if (field.getFieldType().getTextChoiceField() != null) {
-      fieldTypeTemplate = SchemaTemplateGenerator.getEnumTemplate(
-          field.getFieldType().getTextChoiceField().getTextValue()
-              .stream().map(TextValue::getValue).collect(Collectors.toList()));
+      fieldTypeTemplate = SchemaTemplateGenerator.getEnumTemplate(getEnumValueList(field.getFieldType().getTextChoiceField()));
     } else if (field.getFieldType().getTextField() != null) {
       String regex = field.getFieldType().getTextField().getRegex() != null ? field.getFieldType().getTextField().getRegex() : "";
       fieldTypeTemplate = SchemaTemplateGenerator.getStringTemplate(regex, 0, 0, "");
@@ -144,6 +142,17 @@ public class ChecklistConverterService {
       log.error("Failed to convert field_name and synonyms of the attribute: " + fieldName, e);
       throw new RuntimeException(e);
     }
+  }
+
+  private static List<String> getEnumValueList(TextChoiceField enumField) {
+    List<String> values = new ArrayList<>();
+    for (TextValue textValue : enumField.getTextValue()) {
+      values.add(textValue.getValue());
+      if (textValue.getSynonyms() != null) {
+        values.addAll(textValue.getSynonyms());
+      }
+    }
+    return values;
   }
 
   static class EnaErrorHandler implements ResponseErrorHandler {
