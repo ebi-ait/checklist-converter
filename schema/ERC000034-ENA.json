@@ -339,7 +339,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "femtomolar", "micromolar", "millimolar", "molar", "nanomolar", "picomolar" ]
             }
           },
           "required" : [ "tag", "value" ]

@@ -583,7 +583,8 @@
               "pattern" : "((0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?)|((^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$))"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "m" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -624,7 +625,8 @@
               "pattern" : "(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "DD" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -645,7 +647,8 @@
               "pattern" : "(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "DD" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -746,7 +749,8 @@
               "pattern" : "([+-]?(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?)|((^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$))"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "m" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -787,7 +791,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "°C" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1457,7 +1462,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "W/m2", "kg s−3" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1477,7 +1483,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "W/m2", "kg s−3" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1497,7 +1504,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "W/m2", "kg s−3" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1538,7 +1546,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "Cth", "J/K", "J/°C" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1558,7 +1567,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "Cth", "J/K", "J/°C" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1578,7 +1588,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "%" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1598,7 +1609,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1618,7 +1630,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1638,7 +1651,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "mg/L", "ppm" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1658,7 +1672,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "%", "g/m3" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1698,7 +1713,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "km", "m", "mm" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1718,7 +1734,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "km", "m", "mm" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1738,7 +1755,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "°C" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1780,7 +1798,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "°C" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1800,7 +1819,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "°C" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1820,7 +1840,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "°C" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1920,7 +1941,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "m" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1940,7 +1962,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "m" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1961,7 +1984,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "J/°C" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1981,7 +2005,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "hour", "month", "week", "year" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2002,7 +2027,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "hour", "month", "week", "year" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2022,7 +2048,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "hour", "month", "week", "year" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2042,7 +2069,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "hour", "month", "week", "year" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2062,7 +2090,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "hour", "month", "week", "year" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2083,7 +2112,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "hour", "month", "week", "year" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2103,7 +2133,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "hour", "month", "week", "year" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2123,7 +2154,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "hour", "month", "week", "year" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2143,7 +2175,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2163,7 +2196,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2183,7 +2217,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2204,7 +2239,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2224,7 +2260,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2244,7 +2281,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2265,7 +2303,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2285,7 +2324,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "day", "hour", "month", "week", "year" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2306,7 +2346,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "cm", "mm" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2327,7 +2368,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "m2" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2347,7 +2389,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "m2" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2367,7 +2410,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "m2" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2387,7 +2431,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "°C" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2407,7 +2452,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "%", "minute" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2428,7 +2474,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "m2" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2449,7 +2496,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "Cth", "J/K", "J/°C" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2469,7 +2517,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "day", "week", "year" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2489,7 +2538,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "day", "week", "year" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2509,7 +2559,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "°C" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2530,7 +2581,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "m2" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2550,7 +2602,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "m2" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2571,7 +2624,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "m2" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2591,7 +2645,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "m2" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2611,7 +2666,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "m2" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2631,7 +2687,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "m2" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2652,7 +2709,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "m2" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2672,7 +2730,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "°C" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2692,7 +2751,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "°C" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2713,7 +2773,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "°C" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2733,7 +2794,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "°C" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2753,7 +2815,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "°C" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2773,7 +2836,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "°C" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2793,7 +2857,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "°C" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2813,7 +2878,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "°C" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2834,7 +2900,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "°C" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2855,7 +2922,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "century", "month", "week", "year" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2875,7 +2943,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "century", "month", "week", "year" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2916,7 +2985,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "g/m3" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2936,7 +3006,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "m" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2977,7 +3048,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "cm2", "ha", "km2", "m2" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2998,7 +3070,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "L", "g", "kg", "m2", "m3" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -3078,7 +3151,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "hour", "month", "week", "year" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -3139,7 +3213,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "%" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -3160,7 +3235,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "kg" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -3181,7 +3257,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "%" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -3202,7 +3279,8 @@
               "pattern" : "[+-]?(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "ºC" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -3223,7 +3301,8 @@
               "pattern" : "[+-]?(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "ºC" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -3244,7 +3323,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "g/m2", "g/m3", "parts/million" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -3286,7 +3366,8 @@
               "pattern" : "[+-]?(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "ºC" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -3307,7 +3388,8 @@
               "pattern" : "[+-]?(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "ºC" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -3348,7 +3430,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "m" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -3369,7 +3452,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "°C" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -3389,7 +3473,8 @@
               "enum" : [ "Annually", "Daily", "Monthly", "Quarterly", "Weekly" ]
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -3410,7 +3495,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "µmol/L" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -3450,7 +3536,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "century", "month", "week", "year" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -3752,7 +3839,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "g", "mL", "mg", "ng" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -3994,7 +4082,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "%", "g/m3" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -4015,7 +4104,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "W/m2" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -4035,7 +4125,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "°C" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -4056,7 +4147,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "%", "g/m3" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -4077,7 +4169,8 @@
               "pattern" : "((0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?)|((^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$))"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "m", "mm" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -4157,7 +4250,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "m" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -4178,7 +4272,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "°C" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -4198,7 +4293,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "hour", "month", "week", "year" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -4218,7 +4314,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "hour", "month", "week", "year" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -4238,7 +4335,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -4259,7 +4357,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -4279,7 +4378,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -4300,7 +4400,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "day", "hour", "month", "week", "year" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -4321,7 +4422,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "%", "g/m3" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -4341,7 +4443,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "m2" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -4361,7 +4464,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "m2" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -4381,7 +4485,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "°C" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -4401,7 +4506,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "century", "month", "week", "year" ]
             }
           },
           "required" : [ "tag", "value" ]

@@ -279,7 +279,8 @@
               "pattern" : "[+-]?(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "°C" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -320,7 +321,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "mm", "nm", "µm" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -341,7 +343,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "mm", "nm", "µm" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -382,7 +385,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "g/m3" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -667,7 +671,8 @@
               "pattern" : "((0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?)|((^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$))"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "m" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -708,7 +713,8 @@
               "pattern" : "(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "DD" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -729,7 +735,8 @@
               "pattern" : "(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "DD" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -830,7 +837,8 @@
               "pattern" : "([+-]?(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?)|((^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$))"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "m" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -851,7 +859,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "L", "g", "kg", "m2", "m3" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -871,7 +880,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "g", "kg", "t" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -992,7 +1002,8 @@
               "pattern" : "[1-9][0-9]*\\.?[0-9]*([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "mS/cm" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1013,7 +1024,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "knot", "m3/s" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1034,7 +1046,8 @@
               "pattern" : "[1-9][0-9]*\\.?[0-9]*([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "V", "mg Chla/m3" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1055,7 +1068,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "lux" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1076,7 +1090,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "m/s" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1097,7 +1112,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "m/s" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1118,7 +1134,8 @@
               "pattern" : "[1-9][0-9]*\\.?[0-9]*([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "µE/m2/s" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1139,7 +1156,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "µmol/m2/s" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1160,7 +1178,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "atm", "bar" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1181,7 +1200,8 @@
               "pattern" : "[+-]?(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "ºC" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1222,7 +1242,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "FTU", "NTU" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1264,7 +1285,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "m" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1285,7 +1307,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "M/L", "µg/L" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1306,7 +1329,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "mol/L/h" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1327,7 +1351,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "µmol/L" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1348,7 +1373,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "ng/h" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1369,7 +1395,8 @@
               "pattern" : "[1-9][0-9]*\\.?[0-9]*([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "mg/m3/d" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1390,7 +1417,8 @@
               "pattern" : "[1-9][0-9]*\\.?[0-9]*([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "mg/m3/d" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1411,7 +1439,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "µg/L", "µg/g" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1432,7 +1461,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "parts/million", "µmol/L" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1453,7 +1483,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "mg/L", "parts/million", "µmol/L" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1495,7 +1526,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "mg/L" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1516,7 +1548,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "mg/m3", "µg/L" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1537,7 +1570,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "ng/L" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1558,7 +1592,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "µmol/L" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1579,7 +1614,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "µmol/L" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1600,7 +1636,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "µg/L" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1621,7 +1658,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "µg/L" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1642,7 +1680,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "µg/L" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1663,7 +1702,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "µmol/L" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1684,7 +1724,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "mg/L", "µg/L" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1705,7 +1746,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "µmol/kg" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1726,7 +1768,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "mol/L/h" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1747,7 +1790,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "mg/L", "mol/L", "parts/million" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1768,7 +1812,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "µmol/L" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1789,7 +1834,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "µmol/L" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1810,7 +1856,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "µmol/L" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1831,7 +1878,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "µmol/L" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1852,7 +1900,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "µmol/L" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1873,7 +1922,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "µg/L" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1894,7 +1944,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "µg/L" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1915,7 +1966,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "µg/L" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1936,7 +1988,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "µg/L" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1957,7 +2010,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "µmol/L" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1978,7 +2032,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "mg/m3", "µg/L" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -1999,7 +2054,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "µmol/L" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2020,7 +2076,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "mol/L", "mol/g" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2041,7 +2098,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "parts/million", "µmol/L" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2062,7 +2120,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "g/m2/day", "mg/m3/day" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2083,7 +2142,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "mV" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2104,7 +2164,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "psu" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2125,7 +2186,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "µmol/L" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2146,7 +2208,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "parts/million", "µmol/L" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2167,7 +2230,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "µmol/L" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2188,7 +2252,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "mg/L", "µmol/L" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2209,7 +2274,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "mg/L", "µmol/L" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2230,7 +2296,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "mg/L" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2251,7 +2318,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "µg/L" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2272,7 +2340,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "µg/L" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2293,7 +2362,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "µg/L", "µmol/L" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2314,7 +2384,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "µg/L", "µmol/L" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2335,7 +2406,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "µmol/L" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2355,7 +2427,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "m2" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2376,7 +2449,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "mEq/L" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2637,7 +2711,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "g", "mL", "mg", "ng" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -2860,7 +2935,8 @@
               "pattern" : "((0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?)|((^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$))"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "m", "mm" ]
             }
           },
           "required" : [ "tag", "value" ]

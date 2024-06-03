@@ -299,7 +299,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "day", "month", "week", "year" ]
             }
           },
           "required" : [ "tag", "value" ]

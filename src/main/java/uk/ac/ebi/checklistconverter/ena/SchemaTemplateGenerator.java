@@ -81,6 +81,7 @@ public class SchemaTemplateGenerator {
       ctx.put("synonyms", p.get("synonyms"));
       ctx.put("attribute_type", p.get("property_type"));
       ctx.put("description", p.get("property_description").replace("\"", "'"));
+      ctx.put("units", p.get("units"));
 
       if (p.get("requirement").equalsIgnoreCase("mandatory")) {
         ctx.put("required", 1);

@@ -15,7 +15,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class ChecklistConverterServiceTest {
@@ -155,5 +155,37 @@ class ChecklistConverterServiceTest {
       throw new TestAbortedException("Response body can not be empty");
     }
     assertEquals(0, response.getBody().size());
+  }
+
+  @Test
+  void units_should_be_converted_correctly() {
+    ResponseEntity<JsonNode> response;
+
+    try {
+      ObjectNode requestNode;
+      String schema = checklistConverterService.getChecklist("ERC000052");
+      JsonNode schemaJson = objectMapper.readValue(schema, JsonNode.class);
+      File file = resourceLoader.getResource("classpath:samples/ERC000052/SAMEA7025236.json").getFile();
+      JsonNode sampleJson = objectMapper.readValue(file, JsonNode.class);
+
+      requestNode = objectMapper.createObjectNode();
+      requestNode.set("data", sampleJson);
+      requestNode.set("schema", schemaJson);
+
+      response = webClient.post()
+          .uri("http://localhost:3020/validate")
+          .bodyValue(requestNode)
+          .retrieve()
+          .toEntity(JsonNode.class)
+          .toFuture()
+          .get();
+    } catch (IOException | InterruptedException | ExecutionException e) {
+      throw new RuntimeException(e);
+    }
+
+    if (response.getBody() == null) {
+      throw new TestAbortedException("Response body can not be empty");
+    }
+    assertFalse(response.getBody().isEmpty());
   }
 }

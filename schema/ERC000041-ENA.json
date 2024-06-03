@@ -159,7 +159,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "°C" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -200,7 +201,8 @@
               "pattern" : "[+-]?(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "°C" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -280,7 +282,8 @@
               "type" : "string"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "ng/µl" ]
             }
           },
           "required" : [ "tag", "value" ]
@@ -382,7 +385,8 @@
               "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
             },
             "unit" : {
-              "type" : "string"
+              "type" : "string",
+              "enum" : [ "L", "g", "kg", "m2", "m3" ]
             }
           },
           "required" : [ "tag", "value" ]

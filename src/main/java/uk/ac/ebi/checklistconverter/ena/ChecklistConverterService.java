@@ -126,6 +126,7 @@ public class ChecklistConverterService {
                 "synonyms", getStringRepresentationOfSynonyms(f.getSynonyms(), f.getName()),
             "property_type", getTypedTemplate(f),
             "property_description", f.getDescription() == null ? "" : f.getDescription(),
+            "units", f.getUnits() == null ? "" : getStringRepresentationOfUnits(f.getUnits()),
             "requirement", f.getMandatory()))
         .collect(Collectors.toList());
   }
@@ -140,6 +141,20 @@ public class ChecklistConverterService {
       return new ObjectMapper().writeValueAsString(names);
     } catch (JsonProcessingException e) {
       log.error("Failed to convert field_name and synonyms of the attribute: " + fieldName, e);
+      throw new RuntimeException(e);
+    }
+  }
+
+  private static String getStringRepresentationOfUnits(List<String> units) {
+    String unitsEnumField = """
+        ,
+                    "enum":
+        """;
+    try {
+      String unitEnumValue =  new ObjectMapper().writeValueAsString(units);
+      return unitsEnumField + " " + unitEnumValue;
+    } catch (JsonProcessingException e) {
+      log.error("Failed to convert field_name and synonyms of the attribute: " + units, e);
       throw new RuntimeException(e);
     }
   }
