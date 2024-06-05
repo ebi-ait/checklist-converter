@@ -126,934 +126,616 @@
     },
     "attributes" : {
       "type" : "array",
+      "items" : {
+        "type" : "object",
+        "properties" : {
+          "tag" : {
+            "type" : "string",
+            "enum" : [ "sample storage conditions", "storage conditions", "storage conditions (fresh/frozen/other)", "subject exposure", "travel-relation", "clinical setting", "country of travel", "collected_by", "collection date", "Event Date/Time", "collection_date", "altitude", "geographic location (altitude)", "geographic location (country and/or sea)", "geographic location (country and/or sea)", "geographic location (latitude)", "geographic location (longitude)", "geographic location (region and locality)", "identified_by", "subject exposure duration", "amount or size of sample collected", "environmental_sample", "mating_type", "pathotype", "host disease status", "health or disease status of specific host", "host disease outcome", "host subject id", "host age", "host taxid", "host of the symbiotic host taxon id", "host life stage", "host health state", "host sex", "lab_host", "host scientific name", "specific host", "passage_history", "Is the sequenced pathogen host associated?", "bio_material", "culture_collection", "specimen_voucher", "isolate", "sub_species", "sub_strain", "sub_group", "sub_type", "serovar", "strain", "host disease stage", "host of the symbiotic host disease status", "isolation source host-associated", "host description", "genotype", "isolation source non-host-associated", "depth", "Depth", "geographic location (depth)" ]
+          },
+          "value" : {
+            "oneOf" : [ {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "sample storage conditions", "storage conditions", "storage conditions (fresh/frozen/other)" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "subject exposure" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "travel-relation" ]
+                  }
+                }
+              },
+              "then" : {
+                "enum" : [ "not ascertainable", "not travel-related", "travel-related" ]
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "clinical setting" ]
+                  }
+                }
+              },
+              "then" : {
+                "enum" : [ "after travel", "during travel" ]
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "country of travel" ]
+                  }
+                }
+              },
+              "then" : {
+                "enum" : [ "Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Ashmore and Cartier Islands", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Baker Island", "Bangladesh", "Barbados", "Bassas da India", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Bouvet Island", "Brazil", "British Virgin Islands", "Brunei", "Bulgaria", "Burkina Faso", "Burma", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Clipperton Island", "Cocos Islands", "Colombia", "Comoros", "Cook Islands", "Coral Sea Islands", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic", "Czechoslovakia", "Democratic Republic of the Congo", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Europa Island", "Falkland Islands", "Faroe Islands", "Federal Republic of Germany", "Fiji", "Finland", "Former Yugoslav Republic of Macedonia", "France", "French Guiana", "French Polynesia", "French Southern and Antarctic Lands", "GDR", "Gabon", "Gambia", "Gaza Strip", "Georgia", "Germany", "Ghana", "Gibraltar", "Glorioso Islands", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard Island and McDonald Islands", "Honduras", "Hong Kong", "Howland Island", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Jan Mayen", "Japan", "Jarvis Island", "Jersey", "Johnston Atoll", "Jordan", "Juan de Nova Island", "Kazakhstan", "Kenya", "Kingman Reef", "Kiribati", "Korea", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mexico", "Micronesia", "Midway Islands", "Moldova", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Namibia", "Nauru", "Navassa Island", "Nepal", "Netherlands", "Netherlands Antilles", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "North Korea", "Northern Mariana Islands", "Norway", "Oman", "Pakistan", "Palau", "Palmyra Atoll", "Panama", "Papua New Guinea", "Paracel Islands", "Paraguay", "Peru", "Philippines", "Pitcairn Islands", "Poland", "Portugal", "Puerto Rico", "Qatar", "Republic of the Congo", "Reunion", "Romania", "Russia", "Rwanda", "Saint Barthelemy", "Saint Helena", "Saint Kitts and Nevis", "Saint Lucia", "Saint Martin", "Saint Pierre and Miquelon", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Serbia and Montenegro", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "South Korea", "South Sudan", "Spain", "Spratly Islands", "Sri Lanka", "State of Palestine", "Sudan", "Suriname", "Svalbard", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Timor-Leste", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tromelin Island", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "USA", "USSR", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Viet Nam", "Virgin Islands", "Wake Island", "Wallis and Futuna", "West Bank", "Western Sahara", "Yemen", "Zambia", "Zimbabwe" ]
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "collected_by" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "collection date", "Event Date/Time", "collection_date" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string",
+                "pattern" : "(^[12][0-9]{3}(-(0[1-9]|1[0-2])(-(0[1-9]|[12][0-9]|3[01])(T[0-9]{2}:[0-9]{2}(:[0-9]{2})?Z?([+-][0-9]{1,2})?)?)?)?(/[0-9]{4}(-[0-9]{2}(-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2})?Z?([+-][0-9]{1,2})?)?)?)?)?$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "altitude", "geographic location (altitude)" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string",
+                "pattern" : "((0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?)|((^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$))"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "geographic location (country and/or sea)", "geographic location (country and/or sea)" ]
+                  }
+                }
+              },
+              "then" : {
+                "enum" : [ "Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Arctic Ocean", "Argentina", "Armenia", "Aruba", "Ashmore and Cartier Islands", "Atlantic Ocean", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Baker Island", "Baltic Sea", "Bangladesh", "Barbados", "Bassas da India", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Borneo", "Bosnia and Herzegovina", "Botswana", "Bouvet Island", "Brazil", "British Virgin Islands", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Clipperton Island", "Cocos Islands", "Colombia", "Comoros", "Cook Islands", "Coral Sea Islands", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Curacao", "Cyprus", "Czechia", "Democratic Republic of the Congo", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "East Timor", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Europa Island", "Falkland Islands (Islas Malvinas)", "Faroe Islands", "Fiji", "Finland", "France", "French Guiana", "French Polynesia", "French Southern and Antarctic Lands", "Gabon", "Gambia", "Gaza Strip", "Georgia", "Germany", "Ghana", "Gibraltar", "Glorioso Islands", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard Island and McDonald Islands", "Honduras", "Hong Kong", "Howland Island", "Hungary", "Iceland", "India", "Indian Ocean", "Indonesia", "Iran", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Jan Mayen", "Japan", "Jarvis Island", "Jersey", "Johnston Atoll", "Jordan", "Juan de Nova Island", "Kazakhstan", "Kenya", "Kerguelen Archipelago", "Kingman Reef", "Kiribati", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mediterranean Sea", "Mexico", "Micronesia", "Midway Islands", "Moldova", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Navassa Island", "Nepal", "Netherlands", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "North Korea", "North Sea", "Northern Mariana Islands", "Norway", "Oman", "Pacific Ocean", "Pakistan", "Palau", "Palmyra Atoll", "Panama", "Papua New Guinea", "Paracel Islands", "Paraguay", "Peru", "Philippines", "Pitcairn Islands", "Poland", "Portugal", "Puerto Rico", "Qatar", "Republic of the Congo", "Reunion", "Romania", "Ross Sea", "Russia", "Rwanda", "Saint Helena", "Saint Kitts and Nevis", "Saint Lucia", "Saint Pierre and Miquelon", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Sint Maarten", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "South Korea", "Southern Ocean", "Spain", "Spratly Islands", "Sri Lanka", "Sudan", "Suriname", "Svalbard", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Tasman Sea", "Thailand", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tromelin Island", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "USA", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Viet Nam", "Virgin Islands", "Wake Island", "Wallis and Futuna", "West Bank", "Western Sahara", "Yemen", "Zambia", "Zimbabwe", "missing: control sample", "missing: data agreement established pre-2023", "missing: endangered species", "missing: human-identifiable", "missing: lab stock", "missing: sample group", "missing: synthetic construct", "missing: third party data", "not applicable", "not collected", "not provided", "restricted access" ]
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "geographic location (latitude)" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string",
+                "pattern" : "(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "geographic location (longitude)" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string",
+                "pattern" : "(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "geographic location (region and locality)" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "identified_by" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "subject exposure duration" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "amount or size of sample collected" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string",
+                "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "environmental_sample" ]
+                  }
+                }
+              },
+              "then" : {
+                "enum" : [ "No", "Yes" ]
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "mating_type" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "pathotype" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "host disease status", "health or disease status of specific host" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "host disease outcome" ]
+                  }
+                }
+              },
+              "then" : {
+                "enum" : [ "dead", "recovered", "recovered with sequelae" ]
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "host subject id" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "host age" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string",
+                "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "host taxid", "host of the symbiotic host taxon id" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string",
+                "pattern" : "[+-]?[0-9]+"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "host life stage" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "host health state" ]
+                  }
+                }
+              },
+              "then" : {
+                "enum" : [ "diseased", "healthy", "missing: control sample", "missing: data agreement established pre-2023", "missing: endangered species", "missing: human-identifiable", "missing: lab stock", "missing: sample group", "missing: synthetic construct", "missing: third party data", "not applicable", "not collected", "not provided", "restricted access" ]
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "host sex" ]
+                  }
+                }
+              },
+              "then" : {
+                "enum" : [ "female", "hermaphrodite", "male", "missing: control sample", "missing: data agreement established pre-2023", "missing: endangered species", "missing: human-identifiable", "missing: lab stock", "missing: sample group", "missing: synthetic construct", "missing: third party data", "neuter", "not applicable", "not collected", "not provided", "other", "restricted access" ]
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "lab_host" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "host scientific name", "specific host" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "passage_history" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "Is the sequenced pathogen host associated?" ]
+                  }
+                }
+              },
+              "then" : {
+                "enum" : [ "No", "Yes" ]
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "bio_material" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "culture_collection" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "specimen_voucher" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "isolate" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "sub_species" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "sub_strain" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "sub_group" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "sub_type" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "serovar" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "strain" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "host disease stage", "host of the symbiotic host disease status" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "isolation source host-associated" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "host description" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "genotype" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "isolation source non-host-associated" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "depth", "Depth", "geographic location (depth)" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string",
+                "pattern" : "((0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?)|((^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$))"
+              }
+            } ]
+          },
+          "unit" : {
+            "type" : "string"
+          }
+        },
+        "required" : [ "tag", "value" ]
+      },
       "allOf" : [ {
         "contains" : {
-          "type" : "object",
-          "description" : "Conditions at which sample was stored, usually storage temperature, duration and location. In soil context: Explain how and for how long the soil sample was stored before DNA extraction (fresh/frozen/other).",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "sample storage conditions", "storage conditions", "storage conditions (fresh/frozen/other)" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Exposure of the subject to infected human or animals, such as poultry, wild bird or swine. If multiple exposures are applicable, please state them separated by semicolon. Example: poultry; wild bird",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "subject exposure" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Designates the relation of the main diagnosis to the patient's travel.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "travel-relation" ]
-            },
-            "value" : {
-              "enum" : [ "not ascertainable", "not travel-related", "travel-related" ]
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "The timing of the clinic visit in relation to travel.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "clinical setting" ]
-            },
-            "value" : {
-              "enum" : [ "after travel", "during travel" ]
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "The name of the country of patient's travel.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "country of travel" ]
-            },
-            "value" : {
-              "enum" : [ "Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Ashmore and Cartier Islands", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Baker Island", "Bangladesh", "Barbados", "Bassas da India", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Bouvet Island", "Brazil", "British Virgin Islands", "Brunei", "Bulgaria", "Burkina Faso", "Burma", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Clipperton Island", "Cocos Islands", "Colombia", "Comoros", "Cook Islands", "Coral Sea Islands", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic", "Czechoslovakia", "Democratic Republic of the Congo", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Europa Island", "Falkland Islands", "Faroe Islands", "Federal Republic of Germany", "Fiji", "Finland", "Former Yugoslav Republic of Macedonia", "France", "French Guiana", "French Polynesia", "French Southern and Antarctic Lands", "GDR", "Gabon", "Gambia", "Gaza Strip", "Georgia", "Germany", "Ghana", "Gibraltar", "Glorioso Islands", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard Island and McDonald Islands", "Honduras", "Hong Kong", "Howland Island", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Jan Mayen", "Japan", "Jarvis Island", "Jersey", "Johnston Atoll", "Jordan", "Juan de Nova Island", "Kazakhstan", "Kenya", "Kingman Reef", "Kiribati", "Korea", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mexico", "Micronesia", "Midway Islands", "Moldova", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Namibia", "Nauru", "Navassa Island", "Nepal", "Netherlands", "Netherlands Antilles", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "North Korea", "Northern Mariana Islands", "Norway", "Oman", "Pakistan", "Palau", "Palmyra Atoll", "Panama", "Papua New Guinea", "Paracel Islands", "Paraguay", "Peru", "Philippines", "Pitcairn Islands", "Poland", "Portugal", "Puerto Rico", "Qatar", "Republic of the Congo", "Reunion", "Romania", "Russia", "Rwanda", "Saint Barthelemy", "Saint Helena", "Saint Kitts and Nevis", "Saint Lucia", "Saint Martin", "Saint Pierre and Miquelon", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Serbia and Montenegro", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "South Korea", "South Sudan", "Spain", "Spratly Islands", "Sri Lanka", "State of Palestine", "Sudan", "Suriname", "Svalbard", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Timor-Leste", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tromelin Island", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "USA", "USSR", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Viet Nam", "Virgin Islands", "Wake Island", "Wallis and Futuna", "West Bank", "Western Sahara", "Yemen", "Zambia", "Zimbabwe" ]
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "name of persons or institute who collected the specimen",
           "properties" : {
             "tag" : {
               "enum" : [ "collected_by" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
             }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 1,
-        "maxContains" : 1,
-        "recommended" : true
+          }
+        }
       }, {
         "contains" : {
-          "type" : "object",
-          "description" : "The date the sample was collected with the intention of sequencing, either as an instance (single point in time) or interval. In case no exact time is available, the date/time can be right truncated i.e. all of these are valid ISO8601 compliant times: 2008-01-23T19:23:10+00:00; 2008-01-23T19:23:10; 2008-01-23; 2008-01; 2008.",
           "properties" : {
             "tag" : {
               "enum" : [ "collection date", "Event Date/Time", "collection_date" ]
-            },
-            "value" : {
-              "type" : "string",
-              "pattern" : "(^[12][0-9]{3}(-(0[1-9]|1[0-2])(-(0[1-9]|[12][0-9]|3[01])(T[0-9]{2}:[0-9]{2}(:[0-9]{2})?Z?([+-][0-9]{1,2})?)?)?)?(/[0-9]{4}(-[0-9]{2}(-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2})?Z?([+-][0-9]{1,2})?)?)?)?)?$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)"
-            },
-            "unit" : {
-              "type" : "string"
             }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 1,
-        "maxContains" : 1,
-        "recommended" : true
+          }
+        }
       }, {
         "contains" : {
-          "type" : "object",
-          "description" : "The altitude of the sample is the vertical distance between Earth's surface above Sea Level and the sampled position in the air.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "altitude", "geographic location (altitude)" ]
-            },
-            "value" : {
-              "type" : "string",
-              "pattern" : "((0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?)|((^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$))"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "The geographical origin of where the sample was collected from, with the intention of sequencing, as defined by the country or sea name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html).",
           "properties" : {
             "tag" : {
               "enum" : [ "geographic location (country and/or sea)", "geographic location (country and/or sea)" ]
-            },
-            "value" : {
-              "enum" : [ "Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Arctic Ocean", "Argentina", "Armenia", "Aruba", "Ashmore and Cartier Islands", "Atlantic Ocean", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Baker Island", "Baltic Sea", "Bangladesh", "Barbados", "Bassas da India", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Borneo", "Bosnia and Herzegovina", "Botswana", "Bouvet Island", "Brazil", "British Virgin Islands", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Clipperton Island", "Cocos Islands", "Colombia", "Comoros", "Cook Islands", "Coral Sea Islands", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Curacao", "Cyprus", "Czechia", "Democratic Republic of the Congo", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "East Timor", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Europa Island", "Falkland Islands (Islas Malvinas)", "Faroe Islands", "Fiji", "Finland", "France", "French Guiana", "French Polynesia", "French Southern and Antarctic Lands", "Gabon", "Gambia", "Gaza Strip", "Georgia", "Germany", "Ghana", "Gibraltar", "Glorioso Islands", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard Island and McDonald Islands", "Honduras", "Hong Kong", "Howland Island", "Hungary", "Iceland", "India", "Indian Ocean", "Indonesia", "Iran", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Jan Mayen", "Japan", "Jarvis Island", "Jersey", "Johnston Atoll", "Jordan", "Juan de Nova Island", "Kazakhstan", "Kenya", "Kerguelen Archipelago", "Kingman Reef", "Kiribati", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mediterranean Sea", "Mexico", "Micronesia", "Midway Islands", "Moldova", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Navassa Island", "Nepal", "Netherlands", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "North Korea", "North Sea", "Northern Mariana Islands", "Norway", "Oman", "Pacific Ocean", "Pakistan", "Palau", "Palmyra Atoll", "Panama", "Papua New Guinea", "Paracel Islands", "Paraguay", "Peru", "Philippines", "Pitcairn Islands", "Poland", "Portugal", "Puerto Rico", "Qatar", "Republic of the Congo", "Reunion", "Romania", "Ross Sea", "Russia", "Rwanda", "Saint Helena", "Saint Kitts and Nevis", "Saint Lucia", "Saint Pierre and Miquelon", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Sint Maarten", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "South Korea", "Southern Ocean", "Spain", "Spratly Islands", "Sri Lanka", "Sudan", "Suriname", "Svalbard", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Tasman Sea", "Thailand", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tromelin Island", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "USA", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Viet Nam", "Virgin Islands", "Wake Island", "Wallis and Futuna", "West Bank", "Western Sahara", "Yemen", "Zambia", "Zimbabwe", "missing: control sample", "missing: data agreement established pre-2023", "missing: endangered species", "missing: human-identifiable", "missing: lab stock", "missing: sample group", "missing: synthetic construct", "missing: third party data", "not applicable", "not collected", "not provided", "restricted access" ]
-            },
-            "unit" : {
-              "type" : "string"
             }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 1,
-        "maxContains" : 1,
-        "recommended" : true
+          }
+        }
       }, {
         "contains" : {
-          "type" : "object",
-          "description" : "The geographical origin of the sample as defined by latitude. The values should be reported in decimal degrees and in WGS84 system",
           "properties" : {
             "tag" : {
               "enum" : [ "geographic location (latitude)" ]
-            },
-            "value" : {
-              "type" : "string",
-              "pattern" : "(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)"
-            },
-            "unit" : {
-              "type" : "string"
             }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 1,
-        "maxContains" : 1,
-        "recommended" : true
+          }
+        }
       }, {
         "contains" : {
-          "type" : "object",
-          "description" : "The geographical origin of the sample as defined by longitude. The values should be reported in decimal degrees and in WGS84 system",
           "properties" : {
             "tag" : {
               "enum" : [ "geographic location (longitude)" ]
-            },
-            "value" : {
-              "type" : "string",
-              "pattern" : "(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)"
-            },
-            "unit" : {
-              "type" : "string"
             }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 1,
-        "maxContains" : 1,
-        "recommended" : true
+          }
+        }
       }, {
         "contains" : {
-          "type" : "object",
-          "description" : "The geographical origin of the sample as defined by the specific region name followed by the locality name.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "geographic location (region and locality)" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "name of the expert who identified the specimen taxonomically",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "identified_by" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Duration of the exposure of the subject to an infected human or animal. If multiple exposures are applicable, please state their duration in the same order in which you reported the exposure in the field 'subject exposure'. Example: 1 day; 0.33 days",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "subject exposure duration" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "The total amount or size (volume (ml), mass (g) or area (m2) ) of sample collected.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "amount or size of sample collected" ]
-            },
-            "value" : {
-              "type" : "string",
-              "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "identifies sequences derived by direct molecular isolation from a bulk environmental DNA sample (by PCR with or without subsequent cloning of the product, DGGE, or other anonymous methods) with no reliable identification of the source organism",
           "properties" : {
             "tag" : {
               "enum" : [ "environmental_sample" ]
-            },
-            "value" : {
-              "enum" : [ "No", "Yes" ]
-            },
-            "unit" : {
-              "type" : "string"
             }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 1,
-        "maxContains" : 1,
-        "recommended" : true
+          }
+        }
       }, {
         "contains" : {
-          "type" : "object",
-          "description" : "mating type of the organism from which the sequence was obtained; mating type is used for prokaryotes, and for eukaryotes that undergo meiosis without sexually dimorphic gametes",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "mating_type" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "name or code for pathotype of organism",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "pathotype" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "list of diseases with which the host has been diagnosed; can include multiple diagnoses. The value of the field depends on host; for humans the terms should be chosen from DO (Disease Ontology) at http://www.disease-ontology.org, other hosts are free text",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "host disease status", "health or disease status of specific host" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Disease outcome in the host.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "host disease outcome" ]
-            },
-            "value" : {
-              "enum" : [ "dead", "recovered", "recovered with sequelae" ]
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "a unique identifier by which each subject can be referred to, de-identified, e.g. #131",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "host subject id" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "age of host at the time of sampling; relevant scale depends on species and study, e.g. could be seconds for amoebae or centuries for trees",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "host age" ]
-            },
-            "value" : {
-              "type" : "string",
-              "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "NCBI taxon id of the host, e.g. 9606",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "host taxid", "host of the symbiotic host taxon id" ]
-            },
-            "value" : {
-              "type" : "string",
-              "pattern" : "[+-]?[0-9]+"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "description of life stage of host",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "host life stage" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Health status of the host at the time of sample collection.",
           "properties" : {
             "tag" : {
               "enum" : [ "host health state" ]
-            },
-            "value" : {
-              "enum" : [ "diseased", "healthy", "missing: control sample", "missing: data agreement established pre-2023", "missing: endangered species", "missing: human-identifiable", "missing: lab stock", "missing: sample group", "missing: synthetic construct", "missing: third party data", "not applicable", "not collected", "not provided", "restricted access" ]
-            },
-            "unit" : {
-              "type" : "string"
             }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 1,
-        "maxContains" : 1,
-        "recommended" : true
+          }
+        }
       }, {
         "contains" : {
-          "type" : "object",
-          "description" : "Gender or sex of the host.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "host sex" ]
-            },
-            "value" : {
-              "enum" : [ "female", "hermaphrodite", "male", "missing: control sample", "missing: data agreement established pre-2023", "missing: endangered species", "missing: human-identifiable", "missing: lab stock", "missing: sample group", "missing: synthetic construct", "missing: third party data", "neuter", "not applicable", "not collected", "not provided", "other", "restricted access" ]
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "scientific name of the laboratory host used to propagate the source organism from which the sample was obtained",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "lab_host" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Scientific name of the natural (as opposed to laboratory) host to the organism from which sample was obtained.",
           "properties" : {
             "tag" : {
               "enum" : [ "host scientific name", "specific host" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
             }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 1,
-        "maxContains" : 1,
-        "recommended" : true
+          }
+        }
       }, {
         "contains" : {
-          "type" : "object",
-          "description" : "details of passage of culture between time of isolation and sequencing",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "passage_history" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Is the sequenced pathogen host associated? ('Yes' or 'No')",
           "properties" : {
             "tag" : {
               "enum" : [ "Is the sequenced pathogen host associated?" ]
-            },
-            "value" : {
-              "enum" : [ "No", "Yes" ]
-            },
-            "unit" : {
-              "type" : "string"
             }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 1,
-        "maxContains" : 1,
-        "recommended" : true
+          }
+        }
       }, {
         "contains" : {
-          "type" : "object",
-          "description" : "Unique identifier that references the biological material from which the sample was obtained and that ideally exists in a curated collection (e.g. stock centres, seed banks, DNA banks). The ID should have the following structure: name of the institution (institution code) followed by the collection code (if available) and the voucher id (institution_code:collection_code:voucher_id). Please note institution codes and collection codes are taken from a controlled vocabulary maintained by the INSDC: https://ftp.ncbi.nih.gov/pub/taxonomy/biocollections/",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "bio_material" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Unique identifier that references the culture (e.g. live microbial and viral cultures and cell lines) from which the sample has been obtained and that have been deposited in curated culture collections. The ID needs to provide an institution code and the culture id, with optional collection code, in the following structure: (-institution_code:(collection_code):voucher_id. Please note institution codes (and optional collection codes) are taken from a controlled vocabulary maintained by the INSDC: https://ftp.ncbi.nih.gov/pub/taxonomy/biocollections/",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "culture_collection" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Unique identifier that references the physical specimen that remains after the sequence has been obtained and that ideally exists in a curated collection. The ID should have the following structure: name of the institution (institution code) followed by the collection code (if available) and the voucher id (institution_code:collection_code:voucher_id). Please note institution codes and collection codes are taken from a controlled vocabulary maintained by the INSDC: https://ftp.ncbi.nih.gov/pub/taxonomy/biocollections/",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "specimen_voucher" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "individual isolate from which the sample was obtained",
           "properties" : {
             "tag" : {
               "enum" : [ "isolate" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
             }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 1,
-        "maxContains" : 1,
-        "recommended" : true
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "name of sub-species of organism from which sample was obtained",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "sub_species" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "name or identifier of a genetically or otherwise modified strain from which sample was obtained, derived from a parental strain (which should be annotated in the strain field; sub_strain from which sample was obtained",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "sub_strain" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "name of sub-group of organism from which sample was obtained",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "sub_group" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "name of sub-type of organism from which sample was obtained",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "sub_type" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "serological variety of a species (usually a prokaryote) characterized by its antigenic properties",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "serovar" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : true
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Name of the strain from which the sample was obtained.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "strain" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : true
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "disease stage of host",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "host disease stage", "host of the symbiotic host disease status" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Name of host tissue or organ sampled for analysis. Example: tracheal tissue",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "isolation source host-associated" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : true
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Other descriptive information relating to the host.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "host description" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "name or code for genotype of organism",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "genotype" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Describes the physical, environmental and/or local geographical source of the biological sample from which the sample was derived. Example: soil",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "isolation source non-host-associated" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : true
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "The vertical distance below local surface, e.g. for sediment or soil samples depth is measured from sediment or soil surface, respectively. Depth can be reported as an interval for subsurface samples.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "depth", "Depth", "geographic location (depth)" ]
-            },
-            "value" : {
-              "type" : "string",
-              "pattern" : "((0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?)|((^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$))"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
+          }
+        }
       } ]
     },
     "links" : {

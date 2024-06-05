@@ -126,10 +126,75 @@
     },
     "attributes": {
       "type": "array",
-      "allOf": [
-        ${required_attributes}
-      ]
-    },
+      "items": {
+        "type": "object",
+        "properties": {
+          "tag":{
+            "type":"string",
+            "enum" :[
+              #foreach ($property in $propertyList)
+                #foreach ($synonym in $property.get("synonyms"))
+                  "${synonym}"#if( $foreach.hasNext || $foreach.parent.hasNext ),#end
+                #end
+              #end
+            ]
+          },
+          "value":{
+            "oneOf": [
+              #foreach ($property in $propertyList)
+              {
+                "if": {
+                  "properties": {
+                    "tag": {
+                     "enum": [
+                        #foreach ($synonym in $property.get("synonyms"))
+                          "${synonym}"#if( $foreach.hasNext ),#end
+                        #end
+                      ]
+                    }
+                  }
+                },
+                "then":  $property.get("property_type")
+              }#if( $foreach.hasNext ),#end
+              #end
+            ]
+          },
+          "unit":{
+            "type":"string"
+          }
+        },
+        "required": ["tag", "value"]
+      }
+      ## required attributes
+      #set ($requiredProperties = [])
+      #foreach ($property in $propertyList)
+        #if ($property.get("requirement")=="mandatory")
+          #set ($void = $requiredProperties.add($property))
+        #end
+      #end
+      #if (!$requiredProperties.isEmpty())
+        ## The comma on the next line is only needed when we are adding a
+        ## section for required attributes.
+        ,
+        "allOf":[
+          #foreach ($property in $requiredProperties)
+            {
+              "contains": {
+                "properties": {
+                  "tag": {
+                    "enum": [
+                      #foreach ($synonym in $property.get("synonyms"))
+                        "${synonym}"#if( $foreach.hasNext ),#end
+                      #end
+                    ]
+                  }
+                }
+              }
+            }#if( $foreach.hasNext ),#end
+          #end
+        ]
+      #end
+      },
     "links": {
       "type": "array",
       "items": {

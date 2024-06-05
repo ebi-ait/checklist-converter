@@ -126,1998 +126,1187 @@
     },
     "attributes" : {
       "type" : "array",
+      "items" : {
+        "type" : "object",
+        "properties" : {
+          "tag" : {
+            "type" : "string",
+            "enum" : [ "observed biotic relationship", "biotic relationship", "propagation", "sample collection method", "samp_collec_method", "sample collection device or method", "sample_collec_method", "sample storage temperature", "samp_stor_temp", "sample storage location", "samp_stor_loc", "soil_taxonomic/FAO classification", "soil_taxonomic/local classification", "soil_taxonomic/local classification method", "soil type", "soil type method", "soil texture measurement", "soil_text_measure", "texture", "soil texture method", "texture method", "texture_meth", "soil pH", "growth facility", "plant developmental stage", "sampled age", "sample health state", "sample wet mass", "sample disease stage", "sample length", "sample height", "sample dry mass", "sample disease status", "sample phenotype", "ploidy", "number of replicons", "extrachromosomal elements", "estimated size", "collected_by", "collection date", "Event Date/Time", "collection_date", "altitude", "geographic location (altitude)", "geographic location (country and/or sea)", "geographic location (country and/or sea)", "geographic location (latitude)", "geographic location (longitude)", "geographic location (region and locality)", "identified_by", "broad-scale environmental context", "environment (biome)", "local environmental context", "environment (feature)", "elevation", "geographic location (elevation)", "amount or size of sample collected", "sampling time point", "timepoint", "sample capture status", "organism common name", "biological status", "growth habit", "plant sex", "plant structure", "sample storage duration", "samp_stor_dur", "climate environment", "gaseous environment", "seasonal environment", "drainage classification", "source material identifiers", "source material description", "perturbation", "genotype", "genetic modification", "subspecific genetic lineage rank", "subspecific genetic lineage name", "organism phenotype", "ancestral data", "plant growth medium", "rooting conditions", "culture rooting medium", "rooting medium macronutrients", "rooting medium micronutrients", "rooting medium organic supplements", "rooting medium carbon", "rooting medium regulators", "rooting medium solidifier", "rooting medium pH", "isolation and growth condition", "sample material processing", "sample volume or weight for DNA extraction", "sample weight for DNA extraction", "depth", "Depth", "geographic location (depth)", "air temperature regimen", "antibiotic regimen", "chemical mutagen", "fertilizer administration", "fertilizer regimen", "fungicide regimen", "gravity", "growth hormone regimen", "herbicide regimen", "humidity regimen", "mineral nutrient regimen", "non-mineral nutrient regimen", "non_mineral_nutr_regm", "pesticide regimen", "pH regimen", "radiation regimen", "rainfall regimen", "salt regimen", "standing water regimen", "watering regimen", "water temperature regimen", "plant treatment", "light regimen", "biotic regimen", "mechanical damage", "chemical administration" ]
+          },
+          "value" : {
+            "oneOf" : [ {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "observed biotic relationship", "biotic relationship" ]
+                  }
+                }
+              },
+              "then" : {
+                "enum" : [ "commensal", "free living", "mutualism", "parasite", "symbiont" ]
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "propagation" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "sample collection method", "samp_collec_method", "sample collection device or method", "sample_collec_method" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "sample storage temperature", "samp_stor_temp" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string",
+                "pattern" : "[+-]?(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "sample storage location", "samp_stor_loc" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "soil_taxonomic/FAO classification" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "soil_taxonomic/local classification" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "soil_taxonomic/local classification method" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "soil type" ]
+                  }
+                }
+              },
+              "then" : {
+                "enum" : [ "Acrisol", "Albeluvisol", "Alisol", "Andosol", "Anthrosol", "Arenosol", "Calcisol", "Cambisol", "Chernozem", "Cryosol", "Durisol", "Ferralsol", "Fluvisol", "Gleysol", "Gypsisol", "Histosol", "Kastanozem", "Leptosol", "Lixisol", "Luvisol", "Nitisol", "Phaeozem", "Planosol", "Plinthosol", "Podzol", "Regosol", "Solonchak", "Solonetz", "Stagnosol", "Technosol", "Umbrisol", "Vertisol" ]
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "soil type method" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "soil texture measurement", "soil_text_measure", "texture" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "soil texture method", "texture method", "texture_meth" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "soil pH" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "growth facility" ]
+                  }
+                }
+              },
+              "then" : {
+                "enum" : [ "experimental garden", "field", "glasshouse", "growth chamber", "open top chamber", "other" ]
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "plant developmental stage" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "sampled age" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "sample health state" ]
+                  }
+                }
+              },
+              "then" : {
+                "enum" : [ "diseased", "healthy" ]
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "sample wet mass" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "sample disease stage" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "sample length" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "sample height" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "sample dry mass" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "sample disease status" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "sample phenotype" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "ploidy" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "number of replicons" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string",
+                "pattern" : "[+-]?[0-9]+"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "extrachromosomal elements" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string",
+                "pattern" : "[+-]?[0-9]+"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "estimated size" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string",
+                "pattern" : "[+-]?[0-9]+"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "collected_by" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "collection date", "Event Date/Time", "collection_date" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string",
+                "pattern" : "(^[12][0-9]{3}(-(0[1-9]|1[0-2])(-(0[1-9]|[12][0-9]|3[01])(T[0-9]{2}:[0-9]{2}(:[0-9]{2})?Z?([+-][0-9]{1,2})?)?)?)?(/[0-9]{4}(-[0-9]{2}(-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2})?Z?([+-][0-9]{1,2})?)?)?)?)?$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "altitude", "geographic location (altitude)" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string",
+                "pattern" : "((0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?)|((^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$))"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "geographic location (country and/or sea)", "geographic location (country and/or sea)" ]
+                  }
+                }
+              },
+              "then" : {
+                "enum" : [ "Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Arctic Ocean", "Argentina", "Armenia", "Aruba", "Ashmore and Cartier Islands", "Atlantic Ocean", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Baker Island", "Baltic Sea", "Bangladesh", "Barbados", "Bassas da India", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Borneo", "Bosnia and Herzegovina", "Botswana", "Bouvet Island", "Brazil", "British Virgin Islands", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Clipperton Island", "Cocos Islands", "Colombia", "Comoros", "Cook Islands", "Coral Sea Islands", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Curacao", "Cyprus", "Czechia", "Democratic Republic of the Congo", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "East Timor", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Europa Island", "Falkland Islands (Islas Malvinas)", "Faroe Islands", "Fiji", "Finland", "France", "French Guiana", "French Polynesia", "French Southern and Antarctic Lands", "Gabon", "Gambia", "Gaza Strip", "Georgia", "Germany", "Ghana", "Gibraltar", "Glorioso Islands", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard Island and McDonald Islands", "Honduras", "Hong Kong", "Howland Island", "Hungary", "Iceland", "India", "Indian Ocean", "Indonesia", "Iran", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Jan Mayen", "Japan", "Jarvis Island", "Jersey", "Johnston Atoll", "Jordan", "Juan de Nova Island", "Kazakhstan", "Kenya", "Kerguelen Archipelago", "Kingman Reef", "Kiribati", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mediterranean Sea", "Mexico", "Micronesia", "Midway Islands", "Moldova", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Navassa Island", "Nepal", "Netherlands", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "North Korea", "North Sea", "Northern Mariana Islands", "Norway", "Oman", "Pacific Ocean", "Pakistan", "Palau", "Palmyra Atoll", "Panama", "Papua New Guinea", "Paracel Islands", "Paraguay", "Peru", "Philippines", "Pitcairn Islands", "Poland", "Portugal", "Puerto Rico", "Qatar", "Republic of the Congo", "Reunion", "Romania", "Ross Sea", "Russia", "Rwanda", "Saint Helena", "Saint Kitts and Nevis", "Saint Lucia", "Saint Pierre and Miquelon", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Sint Maarten", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "South Korea", "Southern Ocean", "Spain", "Spratly Islands", "Sri Lanka", "Sudan", "Suriname", "Svalbard", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Tasman Sea", "Thailand", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tromelin Island", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "USA", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Viet Nam", "Virgin Islands", "Wake Island", "Wallis and Futuna", "West Bank", "Western Sahara", "Yemen", "Zambia", "Zimbabwe", "missing: control sample", "missing: data agreement established pre-2023", "missing: endangered species", "missing: human-identifiable", "missing: lab stock", "missing: sample group", "missing: synthetic construct", "missing: third party data", "not applicable", "not collected", "not provided", "restricted access" ]
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "geographic location (latitude)" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string",
+                "pattern" : "(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "geographic location (longitude)" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string",
+                "pattern" : "(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "geographic location (region and locality)" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "identified_by" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "broad-scale environmental context", "environment (biome)" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "local environmental context", "environment (feature)" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "elevation", "geographic location (elevation)" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string",
+                "pattern" : "([+-]?(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?)|((^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$))"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "amount or size of sample collected" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string",
+                "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "sampling time point", "timepoint" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "sample capture status" ]
+                  }
+                }
+              },
+              "then" : {
+                "enum" : [ "active surveillance in response to outbreak", "active surveillance not initiated by an outbreak", "farm sample", "market sample", "other", "pet sample", "zoo sample" ]
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "organism common name" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "biological status" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "growth habit" ]
+                  }
+                }
+              },
+              "then" : {
+                "enum" : [ "erect", "prostrate", "semi-erect", "spreading" ]
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "plant sex" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "plant structure" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "sample storage duration", "samp_stor_dur" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "climate environment" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "gaseous environment" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "seasonal environment" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "drainage classification" ]
+                  }
+                }
+              },
+              "then" : {
+                "enum" : [ "excessively drained", "moderately well", "poorly", "somewhat poorly", "very poorly", "well" ]
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "source material identifiers" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "source material description" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "perturbation" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "genotype" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "genetic modification" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "subspecific genetic lineage rank" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "subspecific genetic lineage name" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "organism phenotype" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "ancestral data" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "plant growth medium" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "rooting conditions" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "culture rooting medium" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "rooting medium macronutrients" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "rooting medium micronutrients" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "rooting medium organic supplements" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "rooting medium carbon" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "rooting medium regulators" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "rooting medium solidifier" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "rooting medium pH" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "isolation and growth condition" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "sample material processing" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "sample volume or weight for DNA extraction", "sample weight for DNA extraction" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string",
+                "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "depth", "Depth", "geographic location (depth)" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string",
+                "pattern" : "((0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?)|((^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$))"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "air temperature regimen" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "antibiotic regimen" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "chemical mutagen" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "fertilizer administration", "fertilizer regimen" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "fungicide regimen" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "gravity" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "growth hormone regimen" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "herbicide regimen" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "humidity regimen" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "mineral nutrient regimen" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "non-mineral nutrient regimen", "non_mineral_nutr_regm" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "pesticide regimen" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "pH regimen" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "radiation regimen" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "rainfall regimen" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "salt regimen" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "standing water regimen" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "watering regimen" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "water temperature regimen" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "plant treatment" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "light regimen" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "biotic regimen" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "mechanical damage" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            }, {
+              "if" : {
+                "properties" : {
+                  "tag" : {
+                    "enum" : [ "chemical administration" ]
+                  }
+                }
+              },
+              "then" : {
+                "type" : "string"
+              }
+            } ]
+          },
+          "unit" : {
+            "type" : "string"
+          }
+        },
+        "required" : [ "tag", "value" ]
+      },
       "allOf" : [ {
         "contains" : {
-          "type" : "object",
-          "description" : "Description of relationship(s) between the subject organism and other organism(s) it is associated with. E.g., parasite on species X; mutualist with species Y. The target organism is the subject of the relationship, and the other organism(s) is the object.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "observed biotic relationship", "biotic relationship" ]
-            },
-            "value" : {
-              "enum" : [ "commensal", "free living", "mutualism", "parasite", "symbiont" ]
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "The type of reproduction from the parent stock. Values for this field is specific to different taxa. For phage or virus: lytic/lysogenic/temperate/obligately lytic. For plasmids: incompatibility group. For eukaryotes: sexual/asexual. Mandatory for MIGs of eukayotes, plasmids and viruses.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "propagation" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : true
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "The method employed for collecting the sample. Can be provided in the form of a PMID, DOI, url or text.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "sample collection method", "samp_collec_method", "sample collection device or method", "sample_collec_method" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "temperature at which sample was stored, e.g. -80",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "sample storage temperature", "samp_stor_temp" ]
-            },
-            "value" : {
-              "type" : "string",
-              "pattern" : "[+-]?(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Location at which sample was stored, usually name of a specific freezer/room. Indicate the location name.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "sample storage location", "samp_stor_loc" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "soil classification from the FAO World Reference Database for Soil Resources",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "soil_taxonomic/FAO classification" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : true
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "soil classification based on local soil classification system",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "soil_taxonomic/local classification" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "reference or method used in determining the local soil classification",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "soil_taxonomic/local classification method" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Description of the soil type or classification. This field accepts terms under soil (http://purl.obolibrary.org/obo/ENVO_00001998). Multiple terms can be separated by pipes.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "soil type" ]
-            },
-            "value" : {
-              "enum" : [ "Acrisol", "Albeluvisol", "Alisol", "Andosol", "Anthrosol", "Arenosol", "Calcisol", "Cambisol", "Chernozem", "Cryosol", "Durisol", "Ferralsol", "Fluvisol", "Gleysol", "Gypsisol", "Histosol", "Kastanozem", "Leptosol", "Lixisol", "Luvisol", "Nitisol", "Phaeozem", "Planosol", "Plinthosol", "Podzol", "Regosol", "Solonchak", "Solonetz", "Stagnosol", "Technosol", "Umbrisol", "Vertisol" ]
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "reference or method used in determining soil series name or other lower-level classification",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "soil type method" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "the relative proportion of different grain sizes of mineral particles in a soil, as described using a standard system; express as % sand (50 um to 2 mm), silt (2 um to 50 um), and clay (<2 um) with textural name (e.g., silty clay loam) optional.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "soil texture measurement", "soil_text_measure", "texture" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "reference or method used in determining soil texture",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "soil texture method", "texture method", "texture_meth" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "pH measurement of the soil; e.g. 6.2",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "soil pH" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : true
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "type of facility where the sampled plant was grown",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "growth facility" ]
-            },
-            "value" : {
-              "enum" : [ "experimental garden", "field", "glasshouse", "growth chamber", "open top chamber", "other" ]
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : true
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "developmental stage at the time of sample collection; for Plant Ontology (PO) (v 20) terms, see http://purl.bioontology.org/ontology/PO, e.g. hypocotyl emergence stage (PO_0007043)",
           "properties" : {
             "tag" : {
               "enum" : [ "plant developmental stage" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
             }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 1,
-        "maxContains" : 1,
-        "recommended" : true
+          }
+        }
       }, {
         "contains" : {
-          "type" : "object",
-          "description" : "age of subject at the time of sample collection; relevant scale depends on species and study; e.g. 2 weeks old",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "sampled age" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "health status of the subject at the time of sample collection",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "sample health state" ]
-            },
-            "value" : {
-              "enum" : [ "diseased", "healthy" ]
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : true
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "measurement of wet mass at the time of sample collection; e.g. 0.23 g",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "sample wet mass" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "stage of the disease at the time of sample collection, e.g. inoculation, penetration, infection, growth and reproduction, dissemination of pathogen",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "sample disease stage" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "length of subject at the time of sampling, if different from the height; e.g. 2m",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "sample length" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "height of subject at the time of sampling, if different from the length; e.g. 0.75m",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "sample height" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "measurement of dry mass at the time of sample collection; e.g. 0.05g",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "sample dry mass" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "list of diseases with which the subject has been diagnosed at the time of sample collection; can include multiple diagnoses; the value of the field depends on subject; e.g. Charcoal rot (Macrophomina phaseolina), Late wilt (Cephalosporium maydis)",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "sample disease status" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : true
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "phenotype of the plant from which the sample was obtained, such as colour of corolla, fruit diameter, circular leaf shape; Plant Trait Ontology (TO), Phenotypic Quality Ontology (PATO), or other ontology is recommended; e.g. stem epidermis colour (TO:1000018)",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "sample phenotype" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "The ploidy level of the genome (e.g. allopolyploid, haploid, diploid, triploid, tetraploid). It has implications for the downstream study of duplicated gene and regions of the genomes (and perhaps for difficulties in assembly). For terms, please select terms listed under class ploidy (PATO:001374) of Phenotypic Quality Ontology (PATO), and for a browser of PATO (v 2018-03-27) please refer to http://purl.bioontology.org/ontology/PATO",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "ploidy" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : true
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Reports the number of replicons in a nuclear genome of eukaryotes, in the genome of a bacterium or archaea or the number of segments in a segmented virus. Always applied to the haploid chromosome count of a eukaryote. Mandatory for MIGS of eukaryotes, bacteria, archaea and segmented virus.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "number of replicons" ]
-            },
-            "value" : {
-              "type" : "string",
-              "pattern" : "[+-]?[0-9]+"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : true
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Do plasmids exist of significant phenotypic consequence (e.g. ones that determine virulence or antibiotic resistance). Megaplasmids? Other plasmids (borrelia has 15+ plasmids).",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "extrachromosomal elements" ]
-            },
-            "value" : {
-              "type" : "string",
-              "pattern" : "[+-]?[0-9]+"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "The estimated size of the genome (in bp) prior to sequencing. Of particular importance in the sequencing of (eukaryotic) genome which could remain in draft form for a long or unspecified period. Mandatory for MIGS of eukaryotes.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "estimated size" ]
-            },
-            "value" : {
-              "type" : "string",
-              "pattern" : "[+-]?[0-9]+"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : true
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "name of persons or institute who collected the specimen",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "collected_by" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "The date the sample was collected with the intention of sequencing, either as an instance (single point in time) or interval. In case no exact time is available, the date/time can be right truncated i.e. all of these are valid ISO8601 compliant times: 2008-01-23T19:23:10+00:00; 2008-01-23T19:23:10; 2008-01-23; 2008-01; 2008.",
           "properties" : {
             "tag" : {
               "enum" : [ "collection date", "Event Date/Time", "collection_date" ]
-            },
-            "value" : {
-              "type" : "string",
-              "pattern" : "(^[12][0-9]{3}(-(0[1-9]|1[0-2])(-(0[1-9]|[12][0-9]|3[01])(T[0-9]{2}:[0-9]{2}(:[0-9]{2})?Z?([+-][0-9]{1,2})?)?)?)?(/[0-9]{4}(-[0-9]{2}(-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2})?Z?([+-][0-9]{1,2})?)?)?)?)?$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)"
-            },
-            "unit" : {
-              "type" : "string"
             }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 1,
-        "maxContains" : 1,
-        "recommended" : true
+          }
+        }
       }, {
         "contains" : {
-          "type" : "object",
-          "description" : "The altitude of the sample is the vertical distance between Earth's surface above Sea Level and the sampled position in the air.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "altitude", "geographic location (altitude)" ]
-            },
-            "value" : {
-              "type" : "string",
-              "pattern" : "((0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?)|((^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$))"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "The geographical origin of where the sample was collected from, with the intention of sequencing, as defined by the country or sea name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html).",
           "properties" : {
             "tag" : {
               "enum" : [ "geographic location (country and/or sea)", "geographic location (country and/or sea)" ]
-            },
-            "value" : {
-              "enum" : [ "Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Arctic Ocean", "Argentina", "Armenia", "Aruba", "Ashmore and Cartier Islands", "Atlantic Ocean", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Baker Island", "Baltic Sea", "Bangladesh", "Barbados", "Bassas da India", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Borneo", "Bosnia and Herzegovina", "Botswana", "Bouvet Island", "Brazil", "British Virgin Islands", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Clipperton Island", "Cocos Islands", "Colombia", "Comoros", "Cook Islands", "Coral Sea Islands", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Curacao", "Cyprus", "Czechia", "Democratic Republic of the Congo", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "East Timor", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Europa Island", "Falkland Islands (Islas Malvinas)", "Faroe Islands", "Fiji", "Finland", "France", "French Guiana", "French Polynesia", "French Southern and Antarctic Lands", "Gabon", "Gambia", "Gaza Strip", "Georgia", "Germany", "Ghana", "Gibraltar", "Glorioso Islands", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard Island and McDonald Islands", "Honduras", "Hong Kong", "Howland Island", "Hungary", "Iceland", "India", "Indian Ocean", "Indonesia", "Iran", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Jan Mayen", "Japan", "Jarvis Island", "Jersey", "Johnston Atoll", "Jordan", "Juan de Nova Island", "Kazakhstan", "Kenya", "Kerguelen Archipelago", "Kingman Reef", "Kiribati", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mediterranean Sea", "Mexico", "Micronesia", "Midway Islands", "Moldova", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Navassa Island", "Nepal", "Netherlands", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "North Korea", "North Sea", "Northern Mariana Islands", "Norway", "Oman", "Pacific Ocean", "Pakistan", "Palau", "Palmyra Atoll", "Panama", "Papua New Guinea", "Paracel Islands", "Paraguay", "Peru", "Philippines", "Pitcairn Islands", "Poland", "Portugal", "Puerto Rico", "Qatar", "Republic of the Congo", "Reunion", "Romania", "Ross Sea", "Russia", "Rwanda", "Saint Helena", "Saint Kitts and Nevis", "Saint Lucia", "Saint Pierre and Miquelon", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Sint Maarten", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "South Korea", "Southern Ocean", "Spain", "Spratly Islands", "Sri Lanka", "Sudan", "Suriname", "Svalbard", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Tasman Sea", "Thailand", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tromelin Island", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "USA", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Viet Nam", "Virgin Islands", "Wake Island", "Wallis and Futuna", "West Bank", "Western Sahara", "Yemen", "Zambia", "Zimbabwe", "missing: control sample", "missing: data agreement established pre-2023", "missing: endangered species", "missing: human-identifiable", "missing: lab stock", "missing: sample group", "missing: synthetic construct", "missing: third party data", "not applicable", "not collected", "not provided", "restricted access" ]
-            },
-            "unit" : {
-              "type" : "string"
             }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 1,
-        "maxContains" : 1,
-        "recommended" : true
+          }
+        }
       }, {
         "contains" : {
-          "type" : "object",
-          "description" : "The geographical origin of the sample as defined by latitude. The values should be reported in decimal degrees and in WGS84 system",
           "properties" : {
             "tag" : {
               "enum" : [ "geographic location (latitude)" ]
-            },
-            "value" : {
-              "type" : "string",
-              "pattern" : "(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)"
-            },
-            "unit" : {
-              "type" : "string"
             }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 1,
-        "maxContains" : 1,
-        "recommended" : true
+          }
+        }
       }, {
         "contains" : {
-          "type" : "object",
-          "description" : "The geographical origin of the sample as defined by longitude. The values should be reported in decimal degrees and in WGS84 system",
           "properties" : {
             "tag" : {
               "enum" : [ "geographic location (longitude)" ]
-            },
-            "value" : {
-              "type" : "string",
-              "pattern" : "(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)"
-            },
-            "unit" : {
-              "type" : "string"
             }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 1,
-        "maxContains" : 1,
-        "recommended" : true
+          }
+        }
       }, {
         "contains" : {
-          "type" : "object",
-          "description" : "The geographical origin of the sample as defined by the specific region name followed by the locality name.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "geographic location (region and locality)" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "name of the expert who identified the specimen taxonomically",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "identified_by" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Report the major environmental system the sample or specimen came from. The system(s) identified should have a coarse spatial grain, to provide the general environmental context of where the sampling was done (e.g. in the desert or a rainforest). We recommend using subclasses of EnvO’s biome class: http://purl.obolibrary.org/obo/ENVO_00000428. EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "broad-scale environmental context", "environment (biome)" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Report the entity or entities which are in the sample or specimen’s local vicinity and which you believe have significant causal influences on your sample or specimen. We recommend using EnvO terms which are of smaller spatial grain than your entry for 'broad-scale environmental context'. Terms, such as anatomical sites, from other OBO Library ontologies which interoperate with EnvO (e.g. UBERON) are accepted in this field. EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "local environmental context", "environment (feature)" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "The elevation of the sampling site as measured by the vertical distance from mean sea level.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "elevation", "geographic location (elevation)" ]
-            },
-            "value" : {
-              "type" : "string",
-              "pattern" : "([+-]?(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?)|((^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$))"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "The total amount or size (volume (ml), mass (g) or area (m2) ) of sample collected.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "amount or size of sample collected" ]
-            },
-            "value" : {
-              "type" : "string",
-              "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Time point at which a sample or observation is made or taken from a biomaterial as measured from some reference point. Indicate the timepoint written in ISO 8601 format.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "sampling time point", "timepoint" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Reason for the sample collection.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "sample capture status" ]
-            },
-            "value" : {
-              "enum" : [ "active surveillance in response to outbreak", "active surveillance not initiated by an outbreak", "farm sample", "market sample", "other", "pet sample", "zoo sample" ]
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "common name of the subject organism, e.g. maize",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "organism common name" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : true
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "the level of genome modification; controlled vocabulary: wild, natural, semi-natural, inbred line, breeder's line, hybrid, clonal selection, mutant",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "biological status" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "characteristic shape, appearance or growth form of a plant species",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "growth habit" ]
-            },
-            "value" : {
-              "enum" : [ "erect", "prostrate", "semi-erect", "spreading" ]
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "sex of the reproductive parts on the whole plant, e.g. pistilate, staminate, monoecieous, hermaphrodite",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "plant sex" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "name of plant structure that the sample was obtained from; for Plant Ontology (PO) terms see http://purl.bioontology.org/ontology/PO, e.g. petiole epidermis (PO_0000051); if an individual flower is sampled the sex of it can be recorded here",
           "properties" : {
             "tag" : {
               "enum" : [ "plant structure" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
             }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 1,
-        "maxContains" : 1,
-        "recommended" : true
+          }
+        }
       }, {
         "contains" : {
-          "type" : "object",
-          "description" : "Duration for which the sample was stored. Indicate the duration for which the sample was stored written in ISO 8601 format.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "sample storage duration", "samp_stor_dur" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "treatment involving an exposure to a particular climate; can include multiple climates",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "climate environment" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "use of conditions with differing gaseous environments; should include the name of gaseous compound, amount administered, treatment duration, interval and total experimental duration; can include multiple gaseous environment regimens",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "gaseous environment" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "treatment involving an exposure to a particular season (e.g. winter, summer, rabi, rainy etc.)",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "seasonal environment" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "drainage classification from a standard system such as the USDA system",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "drainage classification" ]
-            },
-            "value" : {
-              "enum" : [ "excessively drained", "moderately well", "poorly", "somewhat poorly", "very poorly", "well" ]
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "A unique identifier assigned to a material sample (as defined by http://rs.tdwg.org/dwc/terms/materialSampleID, and as opposed to a particular digital record of a material sample) used for extracting nucleic acids, and subsequent sequencing. The identifier can refer either to the original material collected or to any derived sub-samples. The INSDC qualifiers /specimen_voucher, /bio_material, or /culture_collection may or may not share the same value as the source_mat_id field. For instance, the /specimen_voucher qualifier and source_mat_id may both contain 'UAM:Herps:14' , referring to both the specimen voucher and sampled tissue with the same identifier. However, the /culture_collection qualifier may refer to a value from an initial culture (e.g. ATCC:11775) while source_mat_id would refer to an identifier from some derived culture from which the nucleic acids were extracted (e.g. xatc123 or ark:/2154/R2).",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "source material identifiers" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : true
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "further information to clarify the nature of the specimen or population used that is not collected elsewhere, e.g. if source was derived from accessioned stock, describe how it links to the original material",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "source material description" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "type of perturbation, e.g. chemical administration, physical disturbance, etc., coupled with time that perturbation occurred; can include multiple perturbation types",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "perturbation" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "name or code for genotype of organism",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "genotype" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "A genetic modification of the genome of an organism which may occur naturally by spontaneous mutation, or be introduced by some experimental means. Examples of genetic modification include specification of a transgene or the gene knocked-out or details of transient transfection.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "genetic modification" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "further information about the genetic distinctness of this lineage by recording additional information i.e. variety, cultivar, ecotype, inbred line,; it can also contain alternative taxonomic information",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "subspecific genetic lineage rank" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : true
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "name of the infraspecific rank, e.g ecotype Col-0",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "subspecific genetic lineage name" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : true
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "most relevant phenotypic traits of the subject; for Phenotypic quality Ontology (PATO) (v 2013-10-28) terms, please see http://purl.bioontology.org/ontology/PATO, e.g. bifurcated (PATO_0001784); terms from Trait Ontology (TO), Plant Ontology (PO) or Crop Ontology (CO) are also accepted; include name/method/scale for each trait; can include multiple traits",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "organism phenotype" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "information about either pedigree or other description of ancestral information (e.g. parental variety in case of mutant or selection), e.g. A/3*B (meaning [(A x B) x B] x B)",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "ancestral data" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Specification of the media for growing the plants or tissue cultured samples, e.g. soil, aeroponic, hydroponic, in vitro solid culture medium, in vitro liquid culture medium. Recommended value is a specific value from EO:plant growth medium (follow this link for terms http://purl.obolibrary.org/obo/EO_0007147).",
           "properties" : {
             "tag" : {
               "enum" : [ "plant growth medium" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
             }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 1,
-        "maxContains" : 1,
-        "recommended" : true
+          }
+        }
       }, {
         "contains" : {
-          "type" : "object",
-          "description" : "relevant rooting conditions, such as field plot size, sowing density, container dimensions, number of plants per container",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "rooting conditions" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : true
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "name or reference for the hydroponic or in vitro culture rooting medium, can be a name of a commonly used medium or reference to a specific medium; e.g. Murashige and Skoog medium, if the medium has not been formally published, use the rooting medium descriptors",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "culture rooting medium" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : true
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "measurement of the culture rooting medium macronutrients (N,P, K, Ca, Mg, S); e.g. KH2PO4 (170mg/L)",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "rooting medium macronutrients" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : true
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "measurement of the culture rooting medium micronutrients (Fe, Mn, Zn, B, Cu, Mo); e.g. H3BO3 (6.2mg/L)",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "rooting medium micronutrients" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : true
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "organic supplements of the culture rooting medium, such as vitaimins, amino acids, organic acids, antibiotics activated charcoal; e.g. Nicotinic acid (0.5mg/L)",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "rooting medium organic supplements" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : true
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "source of organic carbon in the culture rooting medium; e.g. sucrose",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "rooting medium carbon" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : true
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "growth regulators in the culture rooting medium, such as cytokinins, auxins, gybberellins, abscisic acid; e.g. 0.5mg/L NAA",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "rooting medium regulators" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : true
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "specification of the solidifying agent in the culture rooting medium; e.g. agar",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "rooting medium solidifier" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : true
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "pH measurement of the culture rooting medium; e.g. 5.5",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "rooting medium pH" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : true
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Publication reference in the form of pubmed ID (pmid), digital object identifier (doi) or url for isolation and growth condition specifications of the organism/material. Mandatory for MIGS and MIMARKS Specimen.",
           "properties" : {
             "tag" : {
               "enum" : [ "isolation and growth condition" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
             }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 1,
-        "maxContains" : 1,
-        "recommended" : true
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "A brief description of any processing applied to the sample during or after retrieving the sample from environment, or a link to the relevant protocol(s) performed.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "sample material processing" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Volume (ml) or mass (g) of total collected sample processed for DNA extraction. Note: total sample collected should be entered under the term 'sample size'.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "sample volume or weight for DNA extraction", "sample weight for DNA extraction" ]
-            },
-            "value" : {
-              "type" : "string",
-              "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "The vertical distance below local surface, e.g. for sediment or soil samples depth is measured from sediment or soil surface, respectively. Depth can be reported as an interval for subsurface samples.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "depth", "Depth", "geographic location (depth)" ]
-            },
-            "value" : {
-              "type" : "string",
-              "pattern" : "((0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?)|((^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$))"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "information about treatment involving an exposure to varying temperatures; should include the temperature, treatment duration, interval and total experimental duration; can include different temperature regimens",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "air temperature regimen" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : true
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "information about treatment involving antibiotic administration; should include the name of antibiotic, amount administered, treatment duration, interval and total experimental duration; can include multiple antibiotic regimens",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "antibiotic regimen" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "treatment involving use of mutagens; should include the name of mutagen, amount administered, treatment duration, interval and total experimental duration; can include multiple mutagen regimens",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "chemical mutagen" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Type of fertilizer or amendment added to the soil or water for the purpose of improving substrate health and quality for plant growth. This field accepts terms listed under agronomic fertilizer (http://purl.obolibrary.org/obo/AGRO_00002062). Multiple terms may apply and can be separated by pipes, listing in reverse chronological order. N.B. Old ENA definition as 'fertilizer regimen': information about treatment involving the use of fertilizers; should include the name fertilizer, amount administered, treatment duration, interval and total experimental duration; can include multiple fertilizer regimens",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "fertilizer administration", "fertilizer regimen" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "information about treatment involving use of fungicides; should include the name of fungicide, amount administered, treatment duration, interval and total experimental duration; can include multiple fungicide regimens",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "fungicide regimen" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "information about treatment involving use of gravity factor to study various types of responses in presence, absence or modified levels of gravity; can include multiple treatments",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "gravity" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "information about treatment involving use of growth hormones; should include the name of growth hormone, amount administered, treatment duration, interval and total experimental duration; can include multiple growth hormone regimens",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "growth hormone regimen" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "information about treatment involving use of herbicides; information about treatment involving use of growth hormones; should include the name of herbicide, amount administered, treatment duration, interval and total experimental duration; can include multiple regimens",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "herbicide regimen" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "information about treatment involving an exposure to varying degree of humidity; information about treatment involving use of growth hormones; should include amount of humidity administered, treatment duration, interval and total experimental duration; can include multiple regimens",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "humidity regimen" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "information about treatment involving the use of mineral supplements; should include the name of mineral nutrient, amount administered, treatment duration, interval and total experimental duration; can include multiple mineral nutrient regimens",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "mineral nutrient regimen" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : true
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "information about treatment involving the exposure of plant to non-mineral nutrient such as oxygen, hydrogen or carbon; should include the name of non-mineral nutrient, amount administered, treatment duration, interval and total experimental duration; can include multiple non-mineral nutrient regimens",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "non-mineral nutrient regimen", "non_mineral_nutr_regm" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "information about treatment involving use of insecticides; should include the name of pesticide, amount administered, treatment duration, interval and total experimental duration; can include multiple pesticide regimens",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "pesticide regimen" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "information about treatment involving exposure of plants to varying levels of pH of the growth media; can include multiple regimen",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "pH regimen" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "information about treatment involving exposure of plant or a plant part to a particular radiation regimen; should include the radiation type, amount or intensity administered, treatment duration, interval and total experimental duration; can include multiple radiation regimens",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "radiation regimen" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "information about treatment involving an exposure to a given amount of rainfall; can include multiple regimens",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "rainfall regimen" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "information about treatment involving use of salts as supplement to liquid and soil growth media; should include the name of salt, amount administered, treatment duration, interval and total experimental duration; can include multiple salt regimens",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "salt regimen" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "treatment involving an exposure to standing water during a plant's life span, types can be flood water or standing water; can include multiple regimens",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "standing water regimen" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "information about treatment involving an exposure to watering frequencies; can include multiple regimens",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "watering regimen" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : true
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "information about treatment involving an exposure to water with varying degree of temperature; can include multiple regimens",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "water temperature regimen" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "ontology term(s) that describes the plant treatment or relevant environmental conditions, recommend use of Plant Environment Ontology (EO) or other ontology, such as XEML Environment Ontology (XEO) or Crop Ontology (CO), more specific fields in the treatment section can be used in addition to or in place of this field",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "plant treatment" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : true
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "information about treatment involving an exposure to light, this includes both light intensity and quality",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "light regimen" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : true
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "information about treatment involving use of biotic factors, such as bacteria, viruses or fungi",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "biotic regimen" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "information about any mechanical damage exerted on the plant; can include multiple damages and sites",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "mechanical damage" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "list of chemical compounds administered to the host or site where sampling occurred, and when (e.g. antibiotics, N fertilizer, air filter); can include multiple compounds. For Chemical Entities of Biological Interest ontology (CHEBI) (v111), please see http://purl.bioontology.org/ontology/CHEBI",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "chemical administration" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
+          }
+        }
       } ]
     },
     "links" : {

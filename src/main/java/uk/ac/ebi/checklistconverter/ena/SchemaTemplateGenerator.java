@@ -23,7 +23,7 @@ public class SchemaTemplateGenerator {
   private static final ObjectMapper mapper = new ObjectMapper();
 
   public static String getBioSamplesSchema(String schemaId, String title,
-                                           String description, List<Map<String, String>> propertyList) {
+                                           String description, List<Map<String, Object>> propertyList) {
     VelocityEngine vEngine = new VelocityEngine();
     vEngine.setProperty(RuntimeConstants.RESOURCE_LOADER, "classpath");
     vEngine.setProperty("classpath.resource.loader.class", ClasspathResourceLoader.class.getName());
@@ -34,18 +34,18 @@ public class SchemaTemplateGenerator {
     List<String> recommended = new ArrayList<>();
     StringWriter attributeWriter = new StringWriter();
     Template template = vEngine.getTemplate("templates/biosamples_property_template.json");
-    for (Map<String, String> p : propertyList) {
+    for (Map<String, Object> p : propertyList) {
       VelocityContext ctx = new VelocityContext();
       ctx.put("property", p.get("property"));
       ctx.put("property_type", p.get("property_type"));
-      ctx.put("property_description", p.get("property_description").replace("\"", "'"));
+      ctx.put("property_description", ((String)p.get("property_description")).replace("\"", "'"));
       template.merge(ctx, attributeWriter);
       attributeWriter.append(",\n");
 
-      if (p.get("requirement").equalsIgnoreCase("mandatory")) {
-        required.add(p.get("property"));
-      } else if (p.get("requirement").equalsIgnoreCase("recommended")) {
-        recommended.add(p.get("property"));
+      if (((String)p.get("requirement")).equalsIgnoreCase("mandatory")) {
+        required.add((String)p.get("property"));
+      } else if (((String)p.get("requirement")).equalsIgnoreCase("recommended")) {
+        recommended.add((String)p.get("property"));
       }
     }
     String properties = attributeWriter.toString();
@@ -67,38 +67,13 @@ public class SchemaTemplateGenerator {
   }
 
   public static String getEnaSchema(String schemaId, String title,
-                                    String description, List<Map<String, String>> propertyList) {
+                                    String description, List<Map<String, Object>> propertyList) {
     VelocityEngine vEngine = new VelocityEngine();
     vEngine.setProperty(RuntimeConstants.RESOURCE_LOADER, "classpath");
     vEngine.setProperty("classpath.resource.loader.class", ClasspathResourceLoader.class.getName());
     vEngine.init();
 
-    StringWriter attributeWriter = new StringWriter();
-    Template attributeTemplate = vEngine.getTemplate("templates/ena_attribute.vm");
-    for (Map<String, String> p : propertyList) {
-      VelocityContext ctx = new VelocityContext();
-      ctx.put("attribute_name", p.get("property"));
-      ctx.put("synonyms", p.get("synonyms"));
-      ctx.put("attribute_type", p.get("property_type"));
-      ctx.put("description", p.get("property_description").replace("\"", "'"));
 
-      if (p.get("requirement").equalsIgnoreCase("mandatory")) {
-        ctx.put("required", 1);
-        ctx.put("recommended", true);
-      } else if (p.get("requirement").equalsIgnoreCase("recommended")) {
-        ctx.put("required", 0);
-        ctx.put("recommended", true);
-      } else {
-        ctx.put("required", 0);
-        ctx.put("recommended", false);
-      }
-
-      attributeTemplate.merge(ctx, attributeWriter);
-      attributeWriter.append(",\n");
-    }
-
-    String attributeString = attributeWriter.toString();
-    attributeString = attributeString.substring(0, attributeString.length() - 2); //remove last comma
 
     // Write everything to main template
     StringWriter schemaWriter = new StringWriter();
@@ -107,7 +82,7 @@ public class SchemaTemplateGenerator {
     ctx.put("schema_id", schemaId);
     ctx.put("schema_title", title);
     ctx.put("schema_description", description);
-    ctx.put("required_attributes", attributeString);
+    ctx.put("propertyList", propertyList);
     schemaTemplate.merge(ctx, schemaWriter);
 
     return prettyPrintJson(schemaWriter.toString());
@@ -176,14 +151,14 @@ public class SchemaTemplateGenerator {
   }
 
   public static String prettyPrintJson(String jsonString) {
-    String prttyJsonString;
+    String prettyJsonString;
     try {
       Object o = mapper.readValue(jsonString, Object.class);
-      prttyJsonString = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(o);
+      prettyJsonString = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(o);
     } catch (JsonProcessingException e) {
       log.error("Failed to parse string, malformed JSON", e);
       throw new MalformedSchemaException("Failed to parse JSON, " + e.getMessage());
     }
-    return prttyJsonString;
+    return prettyJsonString;
   }
 }

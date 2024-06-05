@@ -90,7 +90,9 @@ class ChecklistConverterServiceTest {
     if (response.getBody() == null) {
       throw new TestAbortedException("Response body can not be empty");
     }
-    assertEquals("must be equal to constant", response.getBody().get(0).get("errors").get(0).asText());
+    String firstError = response.getBody().get(0).get("errors").get(0).asText();
+    assertEquals("must match exactly one schema in oneOf",
+            firstError);
   }
 
 
