@@ -126,1068 +126,1030 @@
     },
     "attributes" : {
       "type" : "array",
+      "items" : {
+        "type" : "object",
+        "properties" : {
+          "tag" : {
+            "type" : "string"
+          },
+          "value" : {
+            "type" : "string"
+          },
+          "unit" : {
+            "type" : "string"
+          }
+        },
+        "additionalProperties" : false,
+        "required" : [ "tag", "value" ],
+        "allOf" : [ {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "relationship to oxygen" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "enum" : [ "aerobe", "anaerobe", "facultative", "microaerophilic", "microanaerobe", "obligate aerobe", "obligate anaerobe" ]
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "sample collection method", "samp_collec_method", "sample collection device or method", "sample_collec_method" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string"
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "metagenomic source" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string"
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "sample derived from" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string",
+                "pattern" : "(^[ESD]R[SR]\\d{6,}(,[ESD]R[SR]\\d{6,})*$)|(^SAM[END][AG]?\\d+(,SAM[END][AG]?\\d+)*$)|(^EGA[NR]\\d{11}(,EGA[NR]\\d{11})*$)|(^[ESD]R[SR]\\d{6,}-[ESD]R[SR]\\d{6,}$)|(^SAM[END][AG]?\\d+-SAM[END][AG]?\\d+$)|(^EGA[NR]\\d{11}-EGA[NR]\\d{11}$)"
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "project name" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string"
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "multiplex identifiers" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string"
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "relevant electronic resources" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string"
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "relevant standard operating procedures" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string"
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "number of standard tRNAs extracted" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string",
+                "pattern" : "[+-]?[0-9]+"
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "16s recovered", "x 16s recovered", "x_16s_recover" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "enum" : [ "No", "Yes" ]
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "16S recovery software", "16S recovery software", "x_16s_recover_software" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string"
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "tRNA extraction software" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string"
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "completeness score" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string",
+                "pattern" : "^(\\d|[1-9]\\d|\\d\\.\\d{1,2}|[1-9]\\d\\.\\d{1,2}|100)$"
+              },
+              "unit" : {
+                "enum" : [ "%" ]
+              }
+            },
+            "required" : [ "unit" ]
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "completeness software" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string"
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "completeness approach" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string"
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "contamination score" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string",
+                "pattern" : "^(\\d|[1-9]\\d|\\d\\.\\d{1,2}|[1-9]\\d\\.\\d{1,2}|100)$"
+              },
+              "unit" : {
+                "enum" : [ "%" ]
+              }
+            },
+            "required" : [ "unit" ]
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "contamination screening input" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "enum" : [ "contigs", "reads" ]
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "contamination screening parameters" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string"
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "decontamination software" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string"
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "binning software" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string"
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "reassembly post binning" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "enum" : [ "No", "Yes" ]
+              },
+              "unit" : {
+                "enum" : [ "No", "Yes" ]
+              }
+            },
+            "required" : [ "unit" ]
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "MAG coverage software" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string"
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "assembly quality", "assembly_quality" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "enum" : [ "Many fragments with little to no review of assembly other than reporting of standard assembly statistics", "Multiple fragments where gaps span repetitive regions. Presence of the 23S, 16S, and 5S rRNA genes and at least 18 tRNAs", "Single contiguous sequence without gaps or ambiguities with a consensus error rate equivalent to Q50 or better" ]
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "investigation type" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "enum" : [ "bacteria_archaea", "eukaryote", "metagenome", "metagenome-assembled genome", "metatranscriptome", "mimarks-specimen", "mimarks-survey", "organelle", "plasmid", "single amplified genome", "uncultivated viral genomes", "virus" ]
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "binning parameters" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string"
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "taxonomic identity marker" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string"
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "isolation_source" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string"
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "collection date", "Event Date/Time", "collection_date" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string",
+                "pattern" : "(^[12][0-9]{3}(-(0[1-9]|1[0-2])(-(0[1-9]|[12][0-9]|3[01])(T[0-9]{2}:[0-9]{2}(:[0-9]{2})?Z?([+-][0-9]{1,2})?)?)?)?(/[0-9]{4}(-[0-9]{2}(-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2})?Z?([+-][0-9]{1,2})?)?)?)?)?$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)"
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "altitude", "geographic location (altitude)" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string",
+                "pattern" : "((0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?)|((^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$))"
+              },
+              "unit" : {
+                "enum" : [ "m" ]
+              }
+            },
+            "required" : [ "unit" ]
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "geographic location (country and/or sea)", "geographic location (country and/or sea)" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "enum" : [ "Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Arctic Ocean", "Argentina", "Armenia", "Aruba", "Ashmore and Cartier Islands", "Atlantic Ocean", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Baker Island", "Baltic Sea", "Bangladesh", "Barbados", "Bassas da India", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Borneo", "Bosnia and Herzegovina", "Botswana", "Bouvet Island", "Brazil", "British Virgin Islands", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Clipperton Island", "Cocos Islands", "Colombia", "Comoros", "Cook Islands", "Coral Sea Islands", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Curacao", "Cyprus", "Czechia", "Czech Republic", "Democratic Republic of the Congo", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "East Timor", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Europa Island", "Falkland Islands (Islas Malvinas)", "Faroe Islands", "Fiji", "Finland", "France", "French Guiana", "French Polynesia", "French Southern and Antarctic Lands", "Gabon", "Gambia", "Gaza Strip", "Georgia", "Germany", "Ghana", "Gibraltar", "Glorioso Islands", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard Island and McDonald Islands", "Honduras", "Hong Kong", "Howland Island", "Hungary", "Iceland", "India", "Indian Ocean", "Indonesia", "Iran", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Jan Mayen", "Japan", "Jarvis Island", "Jersey", "Johnston Atoll", "Jordan", "Juan de Nova Island", "Kazakhstan", "Kenya", "Kerguelen Archipelago", "Kingman Reef", "Kiribati", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mediterranean Sea", "Mexico", "Micronesia", "Midway Islands", "Moldova", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Navassa Island", "Nepal", "Netherlands", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "North Korea", "North Sea", "Northern Mariana Islands", "Norway", "Oman", "Pacific Ocean", "Pakistan", "Palau", "Palmyra Atoll", "Panama", "Papua New Guinea", "Paracel Islands", "Paraguay", "Peru", "Philippines", "Pitcairn Islands", "Poland", "Portugal", "Puerto Rico", "Qatar", "Republic of the Congo", "Reunion", "Romania", "Ross Sea", "Russia", "Rwanda", "Saint Helena", "Saint Kitts and Nevis", "Saint Lucia", "Saint Pierre and Miquelon", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Sint Maarten", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "South Korea", "Southern Ocean", "Spain", "Spratly Islands", "Sri Lanka", "Sudan", "Suriname", "Svalbard", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Tasman Sea", "Thailand", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tromelin Island", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "USA", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Viet Nam", "Virgin Islands", "Wake Island", "Wallis and Futuna", "West Bank", "Western Sahara", "Yemen", "Zambia", "Zimbabwe", "missing: control sample", "missing: data agreement established pre-2023", "missing: endangered species", "missing: human-identifiable", "missing: lab stock", "missing: sample group", "missing: synthetic construct", "missing: third party data", "not applicable", "not collected", "not provided", "restricted access" ]
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "geographic location (latitude)" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string",
+                "pattern" : "(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)"
+              },
+              "unit" : {
+                "enum" : [ "DD" ]
+              }
+            },
+            "required" : [ "unit" ]
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "geographic location (longitude)" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string",
+                "pattern" : "(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)"
+              },
+              "unit" : {
+                "enum" : [ "DD" ]
+              }
+            },
+            "required" : [ "unit" ]
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "broad-scale environmental context", "environment (biome)" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string"
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "local environmental context", "environment (feature)" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string"
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "environmental medium", "environment (material)" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string"
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "elevation", "geographic location (elevation)" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string",
+                "pattern" : "([+-]?(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?)|((^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$))"
+              },
+              "unit" : {
+                "enum" : [ "m" ]
+              }
+            },
+            "required" : [ "unit" ]
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "amount or size of sample collected" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string",
+                "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
+              },
+              "unit" : {
+                "enum" : [ "L", "g", "kg", "m2", "m3" ]
+              }
+            },
+            "required" : [ "unit" ]
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "size fraction selected" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string"
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "source material identifiers" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string"
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "experimental factor" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string"
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "taxonomic classification" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string"
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "reference for biomaterial" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string"
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "sample material processing" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string"
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "nucleic acid extraction" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string"
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "nucleic acid amplification" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string"
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "library size" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string",
+                "pattern" : "[+-]?[0-9]+"
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "library reads sequenced" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string",
+                "pattern" : "[+-]?[0-9]+"
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "library vector" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string"
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "library screening strategy" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string"
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "assembly software" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string"
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "adapters" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string"
+              }
+            }
+          }
+        }, {
+          "if" : {
+            "properties" : {
+              "tag" : {
+                "enum" : [ "depth", "Depth", "geographic location (depth)" ]
+              }
+            },
+            "required" : [ "tag" ]
+          },
+          "then" : {
+            "properties" : {
+              "value" : {
+                "type" : "string",
+                "pattern" : "((0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?)|((^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$))"
+              },
+              "unit" : {
+                "enum" : [ "m", "mm" ]
+              }
+            },
+            "required" : [ "unit" ]
+          }
+        } ]
+      },
       "allOf" : [ {
         "contains" : {
-          "type" : "object",
-          "description" : "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "relationship to oxygen" ]
-            },
-            "value" : {
-              "enum" : [ "aerobe", "anaerobe", "facultative", "microaerophilic", "microanaerobe", "obligate aerobe", "obligate anaerobe" ]
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "The method employed for collecting the sample. Can be provided in the form of a PMID, DOI, url or text.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "sample collection method", "samp_collec_method", "sample collection device or method", "sample_collec_method" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "The metagenomic source of the sample. This value should contain “metagenome” and be in the taxonomy database e.g. wastewater metagenome or human gut metagenome. Please note “metagenome” alone will not be accepted. Check here for more details on metagenome taxonomy: https://ena-docs.readthedocs.io/en/latest/faq_taxonomy.html#environmental-taxonomic-classifications",
           "properties" : {
             "tag" : {
               "enum" : [ "metagenomic source" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
             }
           },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 1,
-        "maxContains" : 1,
-        "recommended" : true
+          "required" : [ "tag" ]
+        }
       }, {
         "contains" : {
-          "type" : "object",
-          "description" : "Reference to parental sample(s) or original run(s) that the assembly is derived from. The referenced samples or runs should already be registered in INSDC. This should be formatted as one of the following. A single sample/run e.g. ERSxxxxxx OR a comma separated list e.g. ERSxxxxxx,ERSxxxxxx OR a range e.g. ERSxxxxxx-ERSxxxxxx",
           "properties" : {
             "tag" : {
               "enum" : [ "sample derived from" ]
-            },
-            "value" : {
-              "type" : "string",
-              "pattern" : "(^[ESD]R[SR]\\d{6,}(,[ESD]R[SR]\\d{6,})*$)|(^SAM[END][AG]?\\d+(,SAM[END][AG]?\\d+)*$)|(^EGA[NR]\\d{11}(,EGA[NR]\\d{11})*$)|(^[ESD]R[SR]\\d{6,}-[ESD]R[SR]\\d{6,}$)|(^SAM[END][AG]?\\d+-SAM[END][AG]?\\d+$)|(^EGA[NR]\\d{11}-EGA[NR]\\d{11}$)"
-            },
-            "unit" : {
-              "type" : "string"
             }
           },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 1,
-        "maxContains" : 1,
-        "recommended" : true
+          "required" : [ "tag" ]
+        }
       }, {
         "contains" : {
-          "type" : "object",
-          "description" : "Name of the project within which the sequencing was organized",
           "properties" : {
             "tag" : {
               "enum" : [ "project name" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
             }
           },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 1,
-        "maxContains" : 1,
-        "recommended" : true
+          "required" : [ "tag" ]
+        }
       }, {
         "contains" : {
-          "type" : "object",
-          "description" : "Molecular barcodes, called Multiplex Identifiers (MIDs), that are used to specifically tag unique samples in a sequencing run. Sequence should be reported in uppercase letters",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "multiplex identifiers" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "A related resource that is referenced, cited, or otherwise associated to the sequence in the format of a PMID, DOI or URL",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "relevant electronic resources" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Standard operating procedures used in assembly and/or annotation of genomes, metagenomes or environmental sequences in the format of a PMID, DOI or URL",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "relevant standard operating procedures" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "The total number of tRNAs identified from the bin, SAG or MAG",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "number of standard tRNAs extracted" ]
-            },
-            "value" : {
-              "type" : "string",
-              "pattern" : "[+-]?[0-9]+"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Can a 16S gene be recovered from the submitted bin, SAG or MAG?",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "16s recovered", "x 16s recovered", "x_16s_recover" ]
-            },
-            "value" : {
-              "enum" : [ "No", "Yes" ]
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Tools used for 16S rRNA gene extraction. Add names and versions of software(s), parameters used",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "16S recovery software", "16S recovery software", "x_16s_recover_software" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Tools used for tRNA identification. Add names and versions of software(s), parameters used",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "tRNA extraction software" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Completeness score is typically based on either the fraction of markers found as compared to a database or the percent of a genome found as compared to a closely related reference genome. Completeness score is one of 3 attributes which in combination reflect the standard quality of a MAG, see here for more information: https://ena-docs.readthedocs.io/en/latest/faq_metagenomes.html. Mandatory for all samples directly linked with SAGs or MAGs.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "completeness score" ]
-            },
-            "value" : {
-              "type" : "string",
-              "pattern" : "^(\\d|[1-9]\\d|\\d\\.\\d{1,2}|[1-9]\\d\\.\\d{1,2}|100)$"
-            },
-            "unit" : {
-              "type" : "string",
-              "enum" : [ "%" ]
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : true
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Tools used for completion estimate, i.e. checkm, anvi'o, busco. Mandatory for all samples directly linked with SAGs or MAGs.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "completeness software" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : true
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "The approach used to determine the completeness of a given bin, SAG or MAG, which would typically make use of a set of conserved marker genes or a closely related reference genome. For UViG completeness, include reference genome or group used, and contig feature suggesting a complete genome",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "completeness approach" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "The contamination score is based on the fraction of single-copy genes that are observed more than once in a query genome. Contamination score is one of 3 attributes which in combination reflect the standard quality of a MAG, see here for more information: https://ena-docs.readthedocs.io/en/latest/faq_metagenomes.html. If contamination ≥ 10% then please submit as a binned assembly. In SAGs, contamination score is mandatory for prokaryotes and optional for eukaryotes.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "contamination score" ]
-            },
-            "value" : {
-              "type" : "string",
-              "pattern" : "^(\\d|[1-9]\\d|\\d\\.\\d{1,2}|[1-9]\\d\\.\\d{1,2}|100)$"
-            },
-            "unit" : {
-              "type" : "string",
-              "enum" : [ "%" ]
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : true
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "The type of sequence data used as input",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "contamination screening input" ]
-            },
-            "value" : {
-              "enum" : [ "contigs", "reads" ]
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Specific parameters used in the decontamination sofware, such as reference database, coverage, and kmers. Combinations of these parameters may also be used, i.e. kmer and coverage, or reference database and kmer",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "contamination screening parameters" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Tool(s) used in contamination screening",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "decontamination software" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Tool(s) used for the extraction of genomes from metagenomic datasets, where possible include a product ID (PID) of the tool(s) used. E.g. MetaCluster-TA (RRID:SCR_004599) or MaxBin (biotools:maxbin)",
           "properties" : {
             "tag" : {
               "enum" : [ "binning software" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
             }
           },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 1,
-        "maxContains" : 1,
-        "recommended" : true
+          "required" : [ "tag" ]
+        }
       }, {
         "contains" : {
-          "type" : "object",
-          "description" : "Has an assembly been performed on a genome bin extracted from a metagenomic assembly?",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "reassembly post binning" ]
-            },
-            "value" : {
-              "enum" : [ "No", "Yes" ]
-            },
-            "unit" : {
-              "type" : "string",
-              "enum" : [ "No", "Yes" ]
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Tool(s) used to determine the genome coverage if coverage is used as a binning parameter in the extraction of genomes from metagenomic datasets e.g. bwa, bbmap, bowtie, other",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "MAG coverage software" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "The assembly quality category is based on sets of criteria outlined for each assembly quality category. For MISAG/MIMAG; Finished: Single, validated, contiguous sequence per replicon without gaps or ambiguities with a consensus error rate equivalent to Q50 or better. High Quality Draft:Multiple fragments where gaps span repetitive regions. Presence of the 23S, 16S and 5S rRNA genes and at least 18 tRNAs. Medium Quality Draft:Many fragments with little to no review of assembly other than reporting of standard assembly statistics. Low Quality Draft:Many fragments with little to no review of assembly other than reporting of standard assembly statistics. Assembly statistics include, but are not limited to total assembly size, number of contigs, contig N50/L50, and maximum contig length. For MIUVIG; Finished: Single, validated, contiguous sequence per replicon without gaps or ambiguities, with extensive manual review and editing to annotate putative gene functions and transcriptional units. High-quality draft genome: One or multiple fragments, totaling ≥ 90% of the expected genome or replicon sequence or predicted complete. Genome fragment(s): One or multiple fragments, totalling < 90% of the expected genome or replicon sequence, or for which no genome size could be estimated.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "assembly quality", "assembly_quality" ]
-            },
-            "value" : {
-              "enum" : [ "Many fragments with little to no review of assembly other than reporting of standard assembly statistics", "Multiple fragments where gaps span repetitive regions. Presence of the 23S, 16S, and 5S rRNA genes and at least 18 tRNAs", "Single contiguous sequence without gaps or ambiguities with a consensus error rate equivalent to Q50 or better" ]
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : true
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Nucleic Acid Sequence Report is the root element of all MIxS compliant reports as standardised by Genomic Standards Consortium",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "investigation type" ]
-            },
-            "value" : {
-              "enum" : [ "bacteria_archaea", "eukaryote", "metagenome", "metagenome-assembled genome", "metatranscriptome", "mimarks-specimen", "mimarks-survey", "organelle", "plasmid", "single amplified genome", "uncultivated viral genomes", "virus" ]
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "The parameters that have been applied during the extraction of genomes from metagenomic datasets e.g. coverage and kmer",
           "properties" : {
             "tag" : {
               "enum" : [ "binning parameters" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
             }
           },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 1,
-        "maxContains" : 1,
-        "recommended" : true
+          "required" : [ "tag" ]
+        }
       }, {
         "contains" : {
-          "type" : "object",
-          "description" : "The phylogenetic marker(s) used to assign an organism name to the bin, SAG or MAG. Examples are 16S gene, multi-marker approach or other e.g. rpoB gene. Mandatory for all samples directly linked with SAGs or MAGs.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "taxonomic identity marker" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : true
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "describes the physical, environmental and/or local geographical source of the biological sample from which the sample was derived",
           "properties" : {
             "tag" : {
               "enum" : [ "isolation_source" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
             }
           },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 1,
-        "maxContains" : 1,
-        "recommended" : true
+          "required" : [ "tag" ]
+        }
       }, {
         "contains" : {
-          "type" : "object",
-          "description" : "The date the sample was collected with the intention of sequencing, either as an instance (single point in time) or interval. In case no exact time is available, the date/time can be right truncated i.e. all of these are valid ISO8601 compliant times: 2008-01-23T19:23:10+00:00; 2008-01-23T19:23:10; 2008-01-23; 2008-01; 2008.",
           "properties" : {
             "tag" : {
               "enum" : [ "collection date", "Event Date/Time", "collection_date" ]
-            },
-            "value" : {
-              "type" : "string",
-              "pattern" : "(^[12][0-9]{3}(-(0[1-9]|1[0-2])(-(0[1-9]|[12][0-9]|3[01])(T[0-9]{2}:[0-9]{2}(:[0-9]{2})?Z?([+-][0-9]{1,2})?)?)?)?(/[0-9]{4}(-[0-9]{2}(-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2})?Z?([+-][0-9]{1,2})?)?)?)?)?$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)"
-            },
-            "unit" : {
-              "type" : "string"
             }
           },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 1,
-        "maxContains" : 1,
-        "recommended" : true
+          "required" : [ "tag" ]
+        }
       }, {
         "contains" : {
-          "type" : "object",
-          "description" : "The altitude of the sample is the vertical distance between Earth's surface above Sea Level and the sampled position in the air.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "altitude", "geographic location (altitude)" ]
-            },
-            "value" : {
-              "type" : "string",
-              "pattern" : "((0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?)|((^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$))"
-            },
-            "unit" : {
-              "type" : "string",
-              "enum" : [ "m" ]
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "The geographical origin of where the sample was collected from, with the intention of sequencing, as defined by the country or sea name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html).",
           "properties" : {
             "tag" : {
               "enum" : [ "geographic location (country and/or sea)", "geographic location (country and/or sea)" ]
-            },
-            "value" : {
-              "enum" : [ "Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Arctic Ocean", "Argentina", "Armenia", "Aruba", "Ashmore and Cartier Islands", "Atlantic Ocean", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Baker Island", "Baltic Sea", "Bangladesh", "Barbados", "Bassas da India", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Borneo", "Bosnia and Herzegovina", "Botswana", "Bouvet Island", "Brazil", "British Virgin Islands", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Clipperton Island", "Cocos Islands", "Colombia", "Comoros", "Cook Islands", "Coral Sea Islands", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Curacao", "Cyprus", "Czechia", "Czech Republic", "Democratic Republic of the Congo", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "East Timor", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Europa Island", "Falkland Islands (Islas Malvinas)", "Faroe Islands", "Fiji", "Finland", "France", "French Guiana", "French Polynesia", "French Southern and Antarctic Lands", "Gabon", "Gambia", "Gaza Strip", "Georgia", "Germany", "Ghana", "Gibraltar", "Glorioso Islands", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard Island and McDonald Islands", "Honduras", "Hong Kong", "Howland Island", "Hungary", "Iceland", "India", "Indian Ocean", "Indonesia", "Iran", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Jan Mayen", "Japan", "Jarvis Island", "Jersey", "Johnston Atoll", "Jordan", "Juan de Nova Island", "Kazakhstan", "Kenya", "Kerguelen Archipelago", "Kingman Reef", "Kiribati", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mediterranean Sea", "Mexico", "Micronesia", "Midway Islands", "Moldova", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Navassa Island", "Nepal", "Netherlands", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "North Korea", "North Sea", "Northern Mariana Islands", "Norway", "Oman", "Pacific Ocean", "Pakistan", "Palau", "Palmyra Atoll", "Panama", "Papua New Guinea", "Paracel Islands", "Paraguay", "Peru", "Philippines", "Pitcairn Islands", "Poland", "Portugal", "Puerto Rico", "Qatar", "Republic of the Congo", "Reunion", "Romania", "Ross Sea", "Russia", "Rwanda", "Saint Helena", "Saint Kitts and Nevis", "Saint Lucia", "Saint Pierre and Miquelon", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Sint Maarten", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "South Korea", "Southern Ocean", "Spain", "Spratly Islands", "Sri Lanka", "Sudan", "Suriname", "Svalbard", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Tasman Sea", "Thailand", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tromelin Island", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "USA", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Viet Nam", "Virgin Islands", "Wake Island", "Wallis and Futuna", "West Bank", "Western Sahara", "Yemen", "Zambia", "Zimbabwe", "missing: control sample", "missing: data agreement established pre-2023", "missing: endangered species", "missing: human-identifiable", "missing: lab stock", "missing: sample group", "missing: synthetic construct", "missing: third party data", "not applicable", "not collected", "not provided", "restricted access" ]
-            },
-            "unit" : {
-              "type" : "string"
             }
           },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 1,
-        "maxContains" : 1,
-        "recommended" : true
+          "required" : [ "tag" ]
+        }
       }, {
         "contains" : {
-          "type" : "object",
-          "description" : "The geographical origin of the sample as defined by latitude. The values should be reported in decimal degrees and in WGS84 system",
           "properties" : {
             "tag" : {
               "enum" : [ "geographic location (latitude)" ]
-            },
-            "value" : {
-              "type" : "string",
-              "pattern" : "(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)"
-            },
-            "unit" : {
-              "type" : "string",
-              "enum" : [ "DD" ]
             }
           },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 1,
-        "maxContains" : 1,
-        "recommended" : true
+          "required" : [ "tag" ]
+        }
       }, {
         "contains" : {
-          "type" : "object",
-          "description" : "The geographical origin of the sample as defined by longitude. The values should be reported in decimal degrees and in WGS84 system",
           "properties" : {
             "tag" : {
               "enum" : [ "geographic location (longitude)" ]
-            },
-            "value" : {
-              "type" : "string",
-              "pattern" : "(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)"
-            },
-            "unit" : {
-              "type" : "string",
-              "enum" : [ "DD" ]
             }
           },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 1,
-        "maxContains" : 1,
-        "recommended" : true
+          "required" : [ "tag" ]
+        }
       }, {
         "contains" : {
-          "type" : "object",
-          "description" : "Report the major environmental system the sample or specimen came from. The system(s) identified should have a coarse spatial grain, to provide the general environmental context of where the sampling was done (e.g. in the desert or a rainforest). We recommend using subclasses of EnvO’s biome class: http://purl.obolibrary.org/obo/ENVO_00000428. EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS.",
           "properties" : {
             "tag" : {
               "enum" : [ "broad-scale environmental context", "environment (biome)" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
             }
           },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 1,
-        "maxContains" : 1,
-        "recommended" : true
+          "required" : [ "tag" ]
+        }
       }, {
         "contains" : {
-          "type" : "object",
-          "description" : "Report the entity or entities which are in the sample or specimen’s local vicinity and which you believe have significant causal influences on your sample or specimen. We recommend using EnvO terms which are of smaller spatial grain than your entry for 'broad-scale environmental context'. Terms, such as anatomical sites, from other OBO Library ontologies which interoperate with EnvO (e.g. UBERON) are accepted in this field. EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS.",
           "properties" : {
             "tag" : {
               "enum" : [ "local environmental context", "environment (feature)" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
             }
           },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 1,
-        "maxContains" : 1,
-        "recommended" : true
+          "required" : [ "tag" ]
+        }
       }, {
         "contains" : {
-          "type" : "object",
-          "description" : "Report the environmental material(s) immediately surrounding the sample or specimen at the time of sampling. We recommend using subclasses of 'environmental material' (http://purl.obolibrary.org/obo/ENVO_00010483). EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS . Terms from other OBO ontologies are permissible as long as they reference mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities (e.g. a tree, a leaf, a table top).",
           "properties" : {
             "tag" : {
               "enum" : [ "environmental medium", "environment (material)" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
             }
           },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 1,
-        "maxContains" : 1,
-        "recommended" : true
+          "required" : [ "tag" ]
+        }
       }, {
         "contains" : {
-          "type" : "object",
-          "description" : "The elevation of the sampling site as measured by the vertical distance from mean sea level.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "elevation", "geographic location (elevation)" ]
-            },
-            "value" : {
-              "type" : "string",
-              "pattern" : "([+-]?(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?)|((^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$))"
-            },
-            "unit" : {
-              "type" : "string",
-              "enum" : [ "m" ]
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "The total amount or size (volume (ml), mass (g) or area (m2) ) of sample collected.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "amount or size of sample collected" ]
-            },
-            "value" : {
-              "type" : "string",
-              "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
-            },
-            "unit" : {
-              "type" : "string",
-              "enum" : [ "L", "g", "kg", "m2", "m3" ]
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Filtering pore size used in sample preparation e.g. 0-0.22 micrometer",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "size fraction selected" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "A unique identifier assigned to a material sample (as defined by http://rs.tdwg.org/dwc/terms/materialSampleID, and as opposed to a particular digital record of a material sample) used for extracting nucleic acids, and subsequent sequencing. The identifier can refer either to the original material collected or to any derived sub-samples. The INSDC qualifiers /specimen_voucher, /bio_material, or /culture_collection may or may not share the same value as the source_mat_id field. For instance, the /specimen_voucher qualifier and source_mat_id may both contain 'UAM:Herps:14' , referring to both the specimen voucher and sampled tissue with the same identifier. However, the /culture_collection qualifier may refer to a value from an initial culture (e.g. ATCC:11775) while source_mat_id would refer to an identifier from some derived culture from which the nucleic acids were extracted (e.g. xatc123 or ark:/2154/R2).",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "source material identifiers" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Experimental factors are essentially the variable aspects of an experiment design which can be used to describe an experiment, or set of experiments, in an increasingly detailed manner. This field accepts ontology terms from Experimental Factor Ontology (EFO) and/or Ontology for Biomedical Investigations (OBI). For a browser of EFO (v 2.95) terms, please see http://purl.bioontology.org/ontology/EFO; for a browser of OBI (v 2018-02-12) terms please see http://purl.bioontology.org/ontology/OBI. E.g. time series design [EFO:EFO_0001779]",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "experimental factor" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Method used for taxonomic classification, along with reference database used, classification rank, and thresholds used to classify new genomes. Expected values are: classification method, database name, and other parameters e.g. vConTACT vContact2 (references from NCBI RefSeq v83, genus rank classification, default parameters)",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "taxonomic classification" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Primary publication if isolated before genome publication; otherwise, primary genome report. Mandatory for MIGS of bacteria and archaea.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "reference for biomaterial" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "A brief description of any processing applied to the sample during or after retrieving the sample from environment, or a link to the relevant protocol(s) performed.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "sample material processing" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "A link to a literature reference, electronic resource or a standard operating procedure (SOP), that describes the material separation to recover the nucleic acid fraction from a sample",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "nucleic acid extraction" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "A link to a literature reference, electronic resource or a standard operating procedure (SOP), that describes the enzymatic amplification (PCR, TMA, NASBA) of specific nucleic acids",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "nucleic acid amplification" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Total number of clones in the library prepared for the project",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "library size" ]
-            },
-            "value" : {
-              "type" : "string",
-              "pattern" : "[+-]?[0-9]+"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Total number of clones sequenced from the library",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "library reads sequenced" ]
-            },
-            "value" : {
-              "type" : "string",
-              "pattern" : "[+-]?[0-9]+"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Cloning vector type(s) used in construction of libraries",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "library vector" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Specific enrichment or screening methods applied before and/or after creating clone libraries in order to select a specific group of sequences",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "library screening strategy" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Tool(s) used for assembly, including version number and parameters in the format {software};{version};{parameters} e.g. metaSPAdes;3.11.0;kmer set 21,33,55,77,99,121, default parameters otherwise",
           "properties" : {
             "tag" : {
               "enum" : [ "assembly software" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
             }
           },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 1,
-        "maxContains" : 1,
-        "recommended" : true
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "Adapters provide priming sequences for both amplification and sequencing of the sample-library fragments. Both adapters should be reported; in uppercase letters",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "adapters" ]
-            },
-            "value" : {
-              "type" : "string"
-            },
-            "unit" : {
-              "type" : "string"
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
-      }, {
-        "contains" : {
-          "type" : "object",
-          "description" : "The vertical distance below local surface, e.g. for sediment or soil samples depth is measured from sediment or soil surface, respectively. Depth can be reported as an interval for subsurface samples.",
-          "properties" : {
-            "tag" : {
-              "enum" : [ "depth", "Depth", "geographic location (depth)" ]
-            },
-            "value" : {
-              "type" : "string",
-              "pattern" : "((0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?)|((^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$))"
-            },
-            "unit" : {
-              "type" : "string",
-              "enum" : [ "m", "mm" ]
-            }
-          },
-          "required" : [ "tag", "value" ]
-        },
-        "minContains" : 0,
-        "maxContains" : 1,
-        "recommended" : false
+          "required" : [ "tag" ]
+        }
       } ]
     },
     "links" : {

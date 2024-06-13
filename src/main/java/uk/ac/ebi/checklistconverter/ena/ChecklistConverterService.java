@@ -9,9 +9,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
+import org.springframework.util.StringUtils;
 import org.springframework.web.client.ResponseErrorHandler;
 import org.springframework.web.client.RestTemplate;
 import uk.ac.ebi.checklistconverter.exception.ApplicationStateException;
+import uk.ac.ebi.checklistconverter.model.Property;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -19,7 +21,6 @@ import java.io.PrintWriter;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
@@ -44,20 +45,59 @@ public class ChecklistConverterService {
     return fieldTypeTemplate;
   }
 
+  private static String getStringRepresentationOfSynonyms(List<String> synonyms, String fieldName) {
+    List<String> names = new ArrayList<>();
+    names.add(fieldName);
+    if (!CollectionUtils.isEmpty(synonyms)) {
+      names.addAll(synonyms);
+    }
+    try {
+      return new ObjectMapper().writeValueAsString(names);
+    } catch (JsonProcessingException e) {
+      log.error("Failed to convert field_name and synonyms of the attribute: " + fieldName, e);
+      throw new RuntimeException(e);
+    }
+  }
+
+  private static String getStringRepresentationOfUnits(List<String> units) {
+    String unitsEnumField = """
+        ,
+                    "enum":
+        """;
+    try {
+      String unitEnumValue = new ObjectMapper().writeValueAsString(units);
+      return unitsEnumField + " " + unitEnumValue;
+    } catch (JsonProcessingException e) {
+      log.error("Failed to convert field_name and synonyms of the attribute: " + units, e);
+      throw new RuntimeException(e);
+    }
+  }
+
+  private static List<String> getEnumValueList(TextChoiceField enumField) {
+    List<String> values = new ArrayList<>();
+    for (TextValue textValue : enumField.getTextValue()) {
+      values.add(textValue.getValue());
+      if (textValue.getSynonyms() != null) {
+        values.addAll(textValue.getSynonyms());
+      }
+    }
+    return values;
+  }
+
   public String getChecklist(String checklistId) {
     String jsonSchema;
     String jsonSchemaEna;
     try {
       EnaChecklist enaChecklist = getEnaChecklist(checklistId);
-      List<Map<String, String>> properties = listProperties(enaChecklist);
+      List<Property> properties = listProperties(enaChecklist);
       String schemaId = getSchemaId(enaChecklist);
       String title = enaChecklist.getChecklist().getDescriptor().getName();
       String description = enaChecklist.getChecklist().getDescriptor().getDescription();
-      jsonSchema = SchemaTemplateGenerator.getBioSamplesSchema(schemaId, title, description, properties);
+//      jsonSchema = SchemaTemplateGenerator.getBioSamplesSchema(schemaId, title, description, properties);
       jsonSchemaEna = SchemaTemplateGenerator.getEnaSchema(schemaId, title, description, properties);
 
       saveSchema(checklistId + "-ENA.json", jsonSchemaEna);
-      saveSchema(checklistId + "-BSD.json", jsonSchema);
+//      saveSchema(checklistId + "-BSD.json", jsonSchema);
     } catch (Exception e) {
       log.error("Could not GET checklist: " + checklistId, e);
       throw new ApplicationStateException("Could not retrieve checklist for " + checklistId);
@@ -119,55 +159,24 @@ public class ChecklistConverterService {
     return String.format("https://www.ebi.ac.uk/biosamples/schemas/%s/%s", schemaName, schemaVersion);
   }
 
-  private List<Map<String, String>> listProperties(EnaChecklist enaChecklist) {
+  private List<Property> listProperties(EnaChecklist enaChecklist) {
     return enaChecklist.getChecklist().getDescriptor().getFieldGroups().stream().
         flatMap(group -> group.getFields().stream())
-        .map(f -> Map.of("property", f.getName(),
-                "synonyms", getStringRepresentationOfSynonyms(f.getSynonyms(), f.getName()),
-            "property_type", getTypedTemplate(f),
-            "property_description", f.getDescription() == null ? "" : f.getDescription(),
-            "units", f.getUnits() == null ? "" : getStringRepresentationOfUnits(f.getUnits()),
-            "requirement", f.getMandatory()))
+        .map(ChecklistConverterService::mapEnaFieldToProperty)
         .collect(Collectors.toList());
   }
 
-  private static String getStringRepresentationOfSynonyms(List<String> synonyms, String fieldName) {
-    List<String> names = new ArrayList<>();
-    names.add(fieldName);
-    if (!CollectionUtils.isEmpty(synonyms)) {
-      names.addAll(synonyms);
-    }
-    try {
-      return new ObjectMapper().writeValueAsString(names);
-    } catch (JsonProcessingException e) {
-      log.error("Failed to convert field_name and synonyms of the attribute: " + fieldName, e);
-      throw new RuntimeException(e);
-    }
+  private static Property mapEnaFieldToProperty(Field field) {
+    return new Property(field.getName(), field.getSynonyms(), field.getDescription(), getTypedTemplate(field),
+        field.getUnits(), getCardinality(field.getMandatory()));
   }
 
-  private static String getStringRepresentationOfUnits(List<String> units) {
-    String unitsEnumField = """
-        ,
-                    "enum":
-        """;
-    try {
-      String unitEnumValue =  new ObjectMapper().writeValueAsString(units);
-      return unitsEnumField + " " + unitEnumValue;
-    } catch (JsonProcessingException e) {
-      log.error("Failed to convert field_name and synonyms of the attribute: " + units, e);
-      throw new RuntimeException(e);
+  private static Property.AttributeCardinality getCardinality(String fieldRequirement) {
+    if (StringUtils.hasText(fieldRequirement)) {
+      return Property.AttributeCardinality.valueOf(fieldRequirement.toUpperCase());
+    } else {
+      return Property.AttributeCardinality.OPTIONAL;
     }
-  }
-
-  private static List<String> getEnumValueList(TextChoiceField enumField) {
-    List<String> values = new ArrayList<>();
-    for (TextValue textValue : enumField.getTextValue()) {
-      values.add(textValue.getValue());
-      if (textValue.getSynonyms() != null) {
-        values.addAll(textValue.getSynonyms());
-      }
-    }
-    return values;
   }
 
   static class EnaErrorHandler implements ResponseErrorHandler {

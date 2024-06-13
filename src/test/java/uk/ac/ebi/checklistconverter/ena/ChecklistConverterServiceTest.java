@@ -69,7 +69,7 @@ class ChecklistConverterServiceTest {
       ObjectNode requestNode;
       String schema = checklistConverterService.getChecklist("ERC000011");
       JsonNode schemaJson = objectMapper.readValue(schema, JsonNode.class);
-      File file = resourceLoader.getResource("classpath:samples/ERC000011/invalid.json").getFile();
+      File file = resourceLoader.getResource("classpath:samples/ERC000011/invalid_geo_location.json").getFile();
       JsonNode sampleJson = objectMapper.readValue(file, JsonNode.class);
 
       requestNode = objectMapper.createObjectNode();
@@ -90,7 +90,7 @@ class ChecklistConverterServiceTest {
     if (response.getBody() == null) {
       throw new TestAbortedException("Response body can not be empty");
     }
-    assertEquals("must be equal to constant", response.getBody().get(0).get("errors").get(0).asText());
+    assertTrue(response.getBody().get(0).get("errors").get(0).asText().contains("must be equal to one of the allowed values"));
   }
 
   @Test

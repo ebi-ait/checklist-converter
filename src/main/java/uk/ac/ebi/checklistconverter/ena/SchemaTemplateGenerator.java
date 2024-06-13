@@ -11,6 +11,7 @@ import org.apache.velocity.runtime.RuntimeConstants;
 import org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader;
 import org.json.JSONArray;
 import uk.ac.ebi.checklistconverter.exception.MalformedSchemaException;
+import uk.ac.ebi.checklistconverter.model.Property;
 
 import java.io.StringWriter;
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ public class SchemaTemplateGenerator {
   private static final ObjectMapper mapper = new ObjectMapper();
 
   public static String getBioSamplesSchema(String schemaId, String title,
-                                           String description, List<Map<String, String>> propertyList) {
+                                           String description, List<Property> propertyList) {
     VelocityEngine vEngine = new VelocityEngine();
     vEngine.setProperty(RuntimeConstants.RESOURCE_LOADER, "classpath");
     vEngine.setProperty("classpath.resource.loader.class", ClasspathResourceLoader.class.getName());
@@ -34,20 +35,20 @@ public class SchemaTemplateGenerator {
     List<String> recommended = new ArrayList<>();
     StringWriter attributeWriter = new StringWriter();
     Template template = vEngine.getTemplate("templates/biosamples_property_template.json");
-    for (Map<String, String> p : propertyList) {
-      VelocityContext ctx = new VelocityContext();
-      ctx.put("property", p.get("property"));
-      ctx.put("property_type", p.get("property_type"));
-      ctx.put("property_description", p.get("property_description").replace("\"", "'"));
-      template.merge(ctx, attributeWriter);
-      attributeWriter.append(",\n");
-
-      if (p.get("requirement").equalsIgnoreCase("mandatory")) {
-        required.add(p.get("property"));
-      } else if (p.get("requirement").equalsIgnoreCase("recommended")) {
-        recommended.add(p.get("property"));
-      }
-    }
+//    for (Map<String, String> p : propertyList) {
+//      VelocityContext ctx = new VelocityContext();
+//      ctx.put("property", p.get("property"));
+//      ctx.put("property_type", p.get("property_type"));
+//      ctx.put("property_description", p.get("property_description").replace("\"", "'"));
+//      template.merge(ctx, attributeWriter);
+//      attributeWriter.append(",\n");
+//
+//      if (p.get("requirement").equalsIgnoreCase("mandatory")) {
+//        required.add(p.get("property"));
+//      } else if (p.get("requirement").equalsIgnoreCase("recommended")) {
+//        recommended.add(p.get("property"));
+//      }
+//    }
     String properties = attributeWriter.toString();
     properties = properties.substring(0, properties.length() - 2); //remove last comma
 
@@ -67,39 +68,11 @@ public class SchemaTemplateGenerator {
   }
 
   public static String getEnaSchema(String schemaId, String title,
-                                    String description, List<Map<String, String>> propertyList) {
+                                    String description, List<Property> propertyList) {
     VelocityEngine vEngine = new VelocityEngine();
     vEngine.setProperty(RuntimeConstants.RESOURCE_LOADER, "classpath");
     vEngine.setProperty("classpath.resource.loader.class", ClasspathResourceLoader.class.getName());
     vEngine.init();
-
-    StringWriter attributeWriter = new StringWriter();
-    Template attributeTemplate = vEngine.getTemplate("templates/ena_attribute.vm");
-    for (Map<String, String> p : propertyList) {
-      VelocityContext ctx = new VelocityContext();
-      ctx.put("attribute_name", p.get("property"));
-      ctx.put("synonyms", p.get("synonyms"));
-      ctx.put("attribute_type", p.get("property_type"));
-      ctx.put("description", p.get("property_description").replace("\"", "'"));
-      ctx.put("units", p.get("units"));
-
-      if (p.get("requirement").equalsIgnoreCase("mandatory")) {
-        ctx.put("required", 1);
-        ctx.put("recommended", true);
-      } else if (p.get("requirement").equalsIgnoreCase("recommended")) {
-        ctx.put("required", 0);
-        ctx.put("recommended", true);
-      } else {
-        ctx.put("required", 0);
-        ctx.put("recommended", false);
-      }
-
-      attributeTemplate.merge(ctx, attributeWriter);
-      attributeWriter.append(",\n");
-    }
-
-    String attributeString = attributeWriter.toString();
-    attributeString = attributeString.substring(0, attributeString.length() - 2); //remove last comma
 
     // Write everything to main template
     StringWriter schemaWriter = new StringWriter();
@@ -108,7 +81,7 @@ public class SchemaTemplateGenerator {
     ctx.put("schema_id", schemaId);
     ctx.put("schema_title", title);
     ctx.put("schema_description", description);
-    ctx.put("required_attributes", attributeString);
+    ctx.put("properties", propertyList);
     schemaTemplate.merge(ctx, schemaWriter);
 
     return prettyPrintJson(schemaWriter.toString());

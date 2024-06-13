@@ -130,7 +130,7 @@
     {
       "tag": "trial timepoint",
       "value": "35",
-      "unit": "days"
+      "unit": "day"
     },
     {
       "tag": "host storage container temperature",
