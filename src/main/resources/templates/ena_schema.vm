@@ -182,31 +182,38 @@
             }#if( $foreach.hasNext ),#end
             #end
         ]
-      },
-      "allOf": [
-        #set($cardinalityPropertyCount = 0)
-        #foreach ($property in $properties)
-          #if ($property.cardinality() == "MANDATORY")
-            #if( $cardinalityPropertyCount != 0 ),#end
-            #set($cardinalityPropertyCount = $cardinalityPropertyCount + 1)
-            {
-              "contains": {
-                "properties": {
-                  "tag": {
-                    "enum": [
-                      "$property.name()"
-                      #foreach ($synonym in $property.synonyms())
-                      , "${synonym}"
-                      #end
-                    ]
-                  }
-                },
-                "required": [ "tag" ]
-              }
-            }
+      }
+    ## required attributes
+    #set ($requiredProperties = [])
+    #foreach ($property in $properties)
+      #if ($property.cardinality() == "MANDATORY")
+        #set ($void = $requiredProperties.add($property))
+      #end
+    #end
+    #if (!$requiredProperties.isEmpty())
+    ## The comma on the next line is only needed when we are adding a
+    ## section for required attributes.
+       ,
+       "allOf": [
+          #foreach ($property in $requiredProperties)
+              {
+                "contains": {
+                  "properties": {
+                    "tag": {
+                      "enum": [
+                        "$property.name()"
+                        #foreach ($synonym in $property.synonyms())
+                        , "${synonym}"
+                        #end
+                      ]
+                    }
+                  },
+                  "required": [ "tag" ]
+                }
+              }#if( $foreach.hasNext ),#end
           #end
-        #end
-      ]
+        ]
+    #end
     },
     "links": {
       "type": "array",

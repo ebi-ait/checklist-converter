@@ -2864,8 +2864,7 @@
             "required" : [ "unit" ]
           }
         } ]
-      },
-      "allOf" : [ ]
+      }
     },
     "links" : {
       "type" : "array",

@@ -99,8 +99,8 @@ public class ChecklistConverterService {
       saveSchema(checklistId + "-ENA.json", jsonSchemaEna);
 //      saveSchema(checklistId + "-BSD.json", jsonSchema);
     } catch (Exception e) {
-      log.error("Could not GET checklist: " + checklistId, e);
-      throw new ApplicationStateException("Could not retrieve checklist for " + checklistId);
+      log.error("Could not checklistId checklist: " + checklistId, e);
+      throw new ApplicationStateException("Could not retrieve checklist for " + checklistId, e);
     }
     return jsonSchemaEna;
   }
@@ -115,8 +115,7 @@ public class ChecklistConverterService {
   }
 
   public void saveSchema(String filename, String schema) {
-    String path = getClass().getClassLoader().getResource("schema").getPath() + "/";
-    path = "./schema/";
+    String path = "./schema/";
     try (PrintWriter out = new PrintWriter(path + filename)) {
       out.println(schema);
     } catch (FileNotFoundException e) {
