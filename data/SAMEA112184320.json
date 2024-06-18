@@ -1,0 +1,159 @@
+{
+  "name" : "HRS-ES10-C115",
+  "accession" : "SAMEA112184320",
+  "sraAccession" : "ERS14294211",
+  "webinSubmissionAccountId" : "Webin-54632",
+  "taxId" : 2100421,
+  "status" : "PUBLIC",
+  "release" : "2023-04-13T16:27:27Z",
+  "update" : "2024-02-23T18:25:32.677Z",
+  "submitted" : "2022-12-01T16:09:43.958Z",
+  "characteristics" : {
+    "ENA-CHECKLIST" : [ {
+      "text" : "ERC000049",
+      "tag" : "attribute"
+    } ],
+    "ENA-FIRST-PUBLIC" : [ {
+      "text" : "2023-04-13T16:27:27Z",
+      "tag" : "attribute"
+    } ],
+    "ENA-LAST-UPDATE" : [ {
+      "text" : "2023-04-13T16:27:27Z",
+      "tag" : "attribute"
+    } ],
+    "External Id" : [ {
+      "text" : "SAMEA112184320",
+      "tag" : "Namespace:BioSample"
+    } ],
+    "INSDC center name" : [ {
+      "text" : "BIOLOGY CENTRE ASCR, V.V.I., INSTITUTE OF HYDROBIO"
+    } ],
+    "INSDC first public" : [ {
+      "text" : "2023-04-13T16:27:27Z"
+    } ],
+    "INSDC last update" : [ {
+      "text" : "2023-04-13T16:27:27Z"
+    } ],
+    "INSDC status" : [ {
+      "text" : "public"
+    } ],
+    "SRA accession" : [ {
+      "text" : "ERS14294211"
+    } ],
+    "Submitter Id" : [ {
+      "text" : "HRS-ES10-C115",
+      "tag" : "Namespace:BIOLOGY CENTRE ASCR, V.V.I., INSTITUTE OF HYDROBIO"
+    } ],
+    "UViG assembly quality" : [ {
+      "text" : "One or multiple fragments, totaling ≥ 90% of the expected genome or replicon sequence or predicted complete",
+      "tag" : "attribute"
+    } ],
+    "assembly software" : [ {
+      "text" : "MEGAHIT",
+      "tag" : "attribute"
+    } ],
+    "broad-scale environmental context" : [ {
+      "text" : "Freshwater lake",
+      "tag" : "attribute"
+    } ],
+    "collection date" : [ {
+      "text" : "2018-04-25",
+      "tag" : "attribute"
+    } ],
+    "description" : [ {
+      "text" : "HRS-ES10-C115_uncultured_bacteriophage"
+    } ],
+    "detection type" : [ {
+      "text" : "independent sequence (UViG)",
+      "tag" : "attribute"
+    } ],
+    "environmental medium" : [ {
+      "text" : "environmental material",
+      "tag" : "attribute"
+    } ],
+    "geographic location (country and/or sea)" : [ {
+      "text" : "Czech Republic",
+      "tag" : "attribute"
+    } ],
+    "geographic location (latitude)" : [ {
+      "text" : "48.846361",
+      "unit" : "DD",
+      "tag" : "attribute"
+    } ],
+    "geographic location (longitude)" : [ {
+      "text" : "14.487639",
+      "unit" : "DD",
+      "tag" : "attribute"
+    } ],
+    "isolation_source" : [ {
+      "text" : "Freshwater lake",
+      "tag" : "attribute"
+    } ],
+    "local environmental context" : [ {
+      "text" : "Freshwater lake",
+      "tag" : "attribute"
+    } ],
+    "metagenomic source" : [ {
+      "text" : "freshwater metagenome",
+      "tag" : "attribute"
+    } ],
+    "organism" : [ {
+      "text" : "uncultured Caudovirales phage"
+    } ],
+    "predicted genome structure" : [ {
+      "text" : "undetermined",
+      "tag" : "attribute"
+    } ],
+    "predicted genome type" : [ {
+      "text" : "dsDNA",
+      "tag" : "attribute"
+    } ],
+    "project name" : [ {
+      "text" : "High resolution sampling of freshwater reservoir in Czech Republic (PRJEB52406)",
+      "tag" : "attribute"
+    } ],
+    "sample derived from" : [ {
+      "text" : "ERS11712862",
+      "tag" : "attribute"
+    } ],
+    "scientific_name" : [ {
+      "text" : "uncultured Caudovirales phage"
+    } ],
+    "source of UViGs" : [ {
+      "text" : "metagenome (not viral targeted)",
+      "tag" : "attribute"
+    } ],
+    "title" : [ {
+      "text" : "HRS-ES10-C115"
+    } ],
+    "viral identification software" : [ {
+      "text" : "VIBRANT; default settings",
+      "tag" : "attribute"
+    } ]
+  },
+  "externalReferences" : [ {
+    "url" : "https://www.ebi.ac.uk/ena/browser/view/SAMEA112184320",
+    "duo" : [ ]
+  } ],
+  "submittedVia" : "PIPELINE_IMPORT",
+  "create" : "2022-12-01T16:09:21.840Z",
+  "_links" : {
+    "self" : {
+      "href" : "https://www.ebi.ac.uk/biosamples/samples/SAMEA112184320"
+    },
+    "curationDomain" : {
+      "href" : "https://www.ebi.ac.uk/biosamples/samples/SAMEA112184320{?curationdomain}",
+      "templated" : true
+    },
+    "curationLinks" : {
+      "href" : "https://www.ebi.ac.uk/biosamples/samples/SAMEA112184320/curationlinks"
+    },
+    "curationLink" : {
+      "href" : "https://www.ebi.ac.uk/biosamples/samples/SAMEA112184320/curationlinks/{hash}",
+      "templated" : true
+    },
+    "structuredData" : {
+      "href" : "https://www.ebi.ac.uk/biosamples/structureddata/SAMEA112184320"
+    }
+  }
+}
