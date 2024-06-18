@@ -13,8 +13,6 @@
     },
     "characteristics" : {
       "type" : "object",
-      "required" : [ ],
-      "recommended" : [ ],
       "properties" : {
         "trophic level" : {
           "type" : "array",
@@ -1305,7 +1303,66 @@
             "required" : [ "text" ]
           }
         }
-      }
+      },
+      "allOf" : [ {
+        "oneOf" : [ {
+          "required" : [ "project name" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "collection date" ]
+        }, {
+          "required" : [ "Event Date/Time" ]
+        }, {
+          "required" : [ "collection_date" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "geographic location (country and/or sea)" ]
+        }, {
+          "required" : [ "geographic location (country and/or sea)" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "geographic location (latitude)" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "geographic location (longitude)" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "broad-scale environmental context" ]
+        }, {
+          "required" : [ "environment (biome)" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "local environmental context" ]
+        }, {
+          "required" : [ "environment (feature)" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "environmental medium" ]
+        }, {
+          "required" : [ "environment (material)" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "elevation" ]
+        }, {
+          "required" : [ "geographic location (elevation)" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "depth" ]
+        }, {
+          "required" : [ "Depth" ]
+        }, {
+          "required" : [ "geographic location (depth)" ]
+        } ]
+      } ]
     }
   },
   "required" : [ "name", "characteristics" ]

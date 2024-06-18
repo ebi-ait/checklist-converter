@@ -13,42 +13,40 @@
     },
     "characteristics" : {
       "type" : "object",
-      "required" : [ "Latitude Start", "Longitude Start", "Protocol Label", "aquaculture origin", "shellfish total weight", "shellfish soft tissue weight", "shell length", "shell width", "collection date", "geographic location (country and/or sea)", "broad-scale environmental context", "local environmental context", "environmental medium", "Sampling Campaign", "Sampling Station", "Sampling Platform", "seabed habitat", "age", "depth" ],
-      "recommended" : [ "shell markings", "Marine Region", "adductor weight", "gonad weight", "toxin burden" ],
       "properties" : {
         "Latitude Start" : {
-          "description" : "Latitude of the location where the sampling event started, e.g. each CTD cast, net tow, or bucket collection is a distinct event. Format: ##.####, Decimal degrees; North= +, South= -; Use WGS 84 for GPS data. Example: -24.6666.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string",
                 "pattern" : "[+-]?[0-9]+.?[0-9]*"
+              },
+              "unit" : {
+                "enum" : [ "DD" ]
               }
             },
             "required" : [ "text" ]
           }
         },
         "Longitude Start" : {
-          "description" : "Longitude of the location where the sampling event started, e.g. each CTD cast, net tow, or bucket collection is a distinct event. Format: ###.####, Decimal degrees; East= +, West= -; Use WGS 84 for GPS data. Example: -096.1012.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string",
                 "pattern" : "[+-]?[0-9]+.?[0-9]*"
+              },
+              "unit" : {
+                "enum" : [ "DD" ]
               }
             },
             "required" : [ "text" ]
           }
         },
         "Protocol Label" : {
-          "description" : "Identifies the protocol used to produce the sample, e.g. filtration and preservation. Example: BACT_NUC_W0.22-1.6.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -58,10 +56,8 @@
           }
         },
         "sample storage conditions" : {
-          "description" : "Conditions at which sample was stored, usually storage temperature, duration and location. In soil context: Explain how and for how long the soil sample was stored before DNA extraction (fresh/frozen/other).",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -71,10 +67,8 @@
           }
         },
         "aquaculture origin" : {
-          "description" : "Origin of stock and raised conditions",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "enum" : [ "AOAR - aquacultue origin aquaculture raised", "WOAR - wild origin aquaculture raised", "WOWR - wild origin wild raised" ]
@@ -84,79 +78,82 @@
           }
         },
         "shellfish total weight" : {
-          "description" : "Total weight of shellfish including shell at the time of sampling. Epifauna and epiphytes to be removed.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string",
                 "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
+              },
+              "unit" : {
+                "enum" : [ "g" ]
               }
             },
             "required" : [ "text" ]
           }
         },
         "shellfish soft tissue weight" : {
-          "description" : "Total weight of all soft tissue, i.e. weight of entire organism without shell, at the time of sampling",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string",
                 "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
+              },
+              "unit" : {
+                "enum" : [ "g" ]
               }
             },
             "required" : [ "text" ]
           }
         },
         "shell length" : {
-          "description" : "length of shell (perpendicular to the hinge)",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string",
                 "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
+              },
+              "unit" : {
+                "enum" : [ "g" ]
               }
             },
             "required" : [ "text" ]
           }
         },
         "shell width" : {
-          "description" : "width of shell (perpendicular angle to length)",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string",
                 "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
+              },
+              "unit" : {
+                "enum" : [ "g" ]
               }
             },
             "required" : [ "text" ]
           }
         },
         "shell markings" : {
-          "description" : "Visible markings on outer shell",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
+              },
+              "unit" : {
+                "enum" : [ "g" ]
               }
             },
             "required" : [ "text" ]
           }
         },
         "sample health state" : {
-          "description" : "health status of the subject at the time of sample collection",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "enum" : [ "diseased", "healthy" ]
@@ -166,10 +163,8 @@
           }
         },
         "sample disease status" : {
-          "description" : "list of diseases with which the subject has been diagnosed at the time of sample collection; can include multiple diagnoses; the value of the field depends on subject; e.g. Charcoal rot (Macrophomina phaseolina), Late wilt (Cephalosporium maydis)",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -179,10 +174,8 @@
           }
         },
         "collection date" : {
-          "description" : "The date the sample was collected with the intention of sequencing, either as an instance (single point in time) or interval. In case no exact time is available, the date/time can be right truncated i.e. all of these are valid ISO8601 compliant times: 2008-01-23T19:23:10+00:00; 2008-01-23T19:23:10; 2008-01-23; 2008-01; 2008.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string",
@@ -193,10 +186,8 @@
           }
         },
         "geographic location (country and/or sea)" : {
-          "description" : "The geographical origin of where the sample was collected from, with the intention of sequencing, as defined by the country or sea name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html).",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "enum" : [ "Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Arctic Ocean", "Argentina", "Armenia", "Aruba", "Ashmore and Cartier Islands", "Atlantic Ocean", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Baker Island", "Baltic Sea", "Bangladesh", "Barbados", "Bassas da India", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Borneo", "Bosnia and Herzegovina", "Botswana", "Bouvet Island", "Brazil", "British Virgin Islands", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Clipperton Island", "Cocos Islands", "Colombia", "Comoros", "Cook Islands", "Coral Sea Islands", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Curacao", "Cyprus", "Czechia", "Czech Republic", "Democratic Republic of the Congo", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "East Timor", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Europa Island", "Falkland Islands (Islas Malvinas)", "Faroe Islands", "Fiji", "Finland", "France", "French Guiana", "French Polynesia", "French Southern and Antarctic Lands", "Gabon", "Gambia", "Gaza Strip", "Georgia", "Germany", "Ghana", "Gibraltar", "Glorioso Islands", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard Island and McDonald Islands", "Honduras", "Hong Kong", "Howland Island", "Hungary", "Iceland", "India", "Indian Ocean", "Indonesia", "Iran", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Jan Mayen", "Japan", "Jarvis Island", "Jersey", "Johnston Atoll", "Jordan", "Juan de Nova Island", "Kazakhstan", "Kenya", "Kerguelen Archipelago", "Kingman Reef", "Kiribati", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mediterranean Sea", "Mexico", "Micronesia", "Midway Islands", "Moldova", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Navassa Island", "Nepal", "Netherlands", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "North Korea", "North Sea", "Northern Mariana Islands", "Norway", "Oman", "Pacific Ocean", "Pakistan", "Palau", "Palmyra Atoll", "Panama", "Papua New Guinea", "Paracel Islands", "Paraguay", "Peru", "Philippines", "Pitcairn Islands", "Poland", "Portugal", "Puerto Rico", "Qatar", "Republic of the Congo", "Reunion", "Romania", "Ross Sea", "Russia", "Rwanda", "Saint Helena", "Saint Kitts and Nevis", "Saint Lucia", "Saint Pierre and Miquelon", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Sint Maarten", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "South Korea", "Southern Ocean", "Spain", "Spratly Islands", "Sri Lanka", "Sudan", "Suriname", "Svalbard", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Tasman Sea", "Thailand", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tromelin Island", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "USA", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Viet Nam", "Virgin Islands", "Wake Island", "Wallis and Futuna", "West Bank", "Western Sahara", "Yemen", "Zambia", "Zimbabwe", "missing: control sample", "missing: data agreement established pre-2023", "missing: endangered species", "missing: human-identifiable", "missing: lab stock", "missing: sample group", "missing: synthetic construct", "missing: third party data", "not applicable", "not collected", "not provided", "restricted access" ]
@@ -206,10 +197,8 @@
           }
         },
         "broad-scale environmental context" : {
-          "description" : "Report the major environmental system the sample or specimen came from. The system(s) identified should have a coarse spatial grain, to provide the general environmental context of where the sampling was done (e.g. in the desert or a rainforest). We recommend using subclasses of EnvO’s biome class: http://purl.obolibrary.org/obo/ENVO_00000428. EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -219,10 +208,8 @@
           }
         },
         "local environmental context" : {
-          "description" : "Report the entity or entities which are in the sample or specimen’s local vicinity and which you believe have significant causal influences on your sample or specimen. We recommend using EnvO terms which are of smaller spatial grain than your entry for 'broad-scale environmental context'. Terms, such as anatomical sites, from other OBO Library ontologies which interoperate with EnvO (e.g. UBERON) are accepted in this field. EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -232,10 +219,8 @@
           }
         },
         "environmental medium" : {
-          "description" : "Report the environmental material(s) immediately surrounding the sample or specimen at the time of sampling. We recommend using subclasses of 'environmental material' (http://purl.obolibrary.org/obo/ENVO_00010483). EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS . Terms from other OBO ontologies are permissible as long as they reference mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities (e.g. a tree, a leaf, a table top).",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -245,10 +230,8 @@
           }
         },
         "Sampling Campaign" : {
-          "description" : "Refers to a finite or indefinite activity aiming at collecting data/samples, e.g. a cruise, a time series, a mesocosm experiment. Example: TARA_20110401Z.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -258,10 +241,8 @@
           }
         },
         "Sampling Station" : {
-          "description" : "Refers to the site/station where data/sample collection is performed. Example: TARA_100.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -271,10 +252,8 @@
           }
         },
         "Sampling Platform" : {
-          "description" : "Refers to the unique stage from which the sampling device has been deployed. Includes Platform category from SDN:L06, http://seadatanet.maris2.nl/v_bodc_vocab_v2/search.asp?lib=L06, and Platform name. Example: Research Vessel Tara.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -284,10 +263,8 @@
           }
         },
         "Marine Region" : {
-          "description" : "The geographical origin of the sample as defined by the marine region name chosen from the Marine Regions vocabulary at http://www.marineregions.org/. Example: Aegean Sea.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -297,10 +274,8 @@
           }
         },
         "seabed habitat" : {
-          "description" : "Classification of the seabed where the organism has been found; for European seabed habitats please use terms from http://eunis.eea.europa.eu/habitats-code-browser.jsp; example: B3.4 : Soft sea-cliffs, often vegetated",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -310,10 +285,8 @@
           }
         },
         "age" : {
-          "description" : "Age of the organism the sample was derived from.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -323,52 +296,53 @@
           }
         },
         "adductor weight" : {
-          "description" : "Total weight of striated muscle and smooth muscle",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string",
                 "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
+              },
+              "unit" : {
+                "enum" : [ "g" ]
               }
             },
             "required" : [ "text" ]
           }
         },
         "gonad weight" : {
-          "description" : "Total weight of entire gonad tissue",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string",
                 "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
+              },
+              "unit" : {
+                "enum" : [ "g" ]
               }
             },
             "required" : [ "text" ]
           }
         },
         "toxin burden" : {
-          "description" : "Concentration of toxins in the organism at the time of sampling",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string",
                 "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
+              },
+              "unit" : {
+                "enum" : [ "g", "kg", "mg" ]
               }
             },
             "required" : [ "text" ]
           }
         },
         "treatment agent" : {
-          "description" : "The name of the treatment agent used.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -378,10 +352,8 @@
           }
         },
         "chemical compound" : {
-          "description" : "A drug, solvent, chemical, etc., with a property that can be measured such as concentration (http://purl.obolibrary.org/obo/CHEBI_37577).",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -391,20 +363,116 @@
           }
         },
         "depth" : {
-          "description" : "The vertical distance below local surface, e.g. for sediment or soil samples depth is measured from sediment or soil surface, respectively. Depth can be reported as an interval for subsurface samples.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string",
                 "pattern" : "((0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?)|((^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$))"
+              },
+              "unit" : {
+                "enum" : [ "m", "mm" ]
               }
             },
             "required" : [ "text" ]
           }
         }
-      }
+      },
+      "allOf" : [ {
+        "oneOf" : [ {
+          "required" : [ "Latitude Start" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "Longitude Start" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "Protocol Label" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "aquaculture origin" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "shellfish total weight" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "shellfish soft tissue weight" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "shell length" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "shell width" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "collection date" ]
+        }, {
+          "required" : [ "Event Date/Time" ]
+        }, {
+          "required" : [ "collection_date" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "geographic location (country and/or sea)" ]
+        }, {
+          "required" : [ "geographic location (country and/or sea)" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "broad-scale environmental context" ]
+        }, {
+          "required" : [ "environment (biome)" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "local environmental context" ]
+        }, {
+          "required" : [ "environment (feature)" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "environmental medium" ]
+        }, {
+          "required" : [ "environment (material)" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "Sampling Campaign" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "Sampling Station" ]
+        }, {
+          "required" : [ "Sampling Site" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "Sampling Platform" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "seabed habitat" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "age" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "depth" ]
+        }, {
+          "required" : [ "Depth" ]
+        }, {
+          "required" : [ "geographic location (depth)" ]
+        } ]
+      } ]
     }
   },
   "required" : [ "name", "characteristics" ]

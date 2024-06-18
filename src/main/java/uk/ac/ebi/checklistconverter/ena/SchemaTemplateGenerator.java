@@ -10,6 +10,7 @@ import org.apache.velocity.app.VelocityEngine;
 import org.apache.velocity.runtime.RuntimeConstants;
 import org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader;
 import org.json.JSONArray;
+import org.springframework.util.CollectionUtils;
 import uk.ac.ebi.checklistconverter.exception.MalformedSchemaException;
 import uk.ac.ebi.checklistconverter.model.Property;
 
@@ -18,6 +19,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Slf4j
 public class SchemaTemplateGenerator {
@@ -31,8 +33,21 @@ public class SchemaTemplateGenerator {
     vEngine.init();
 
     // Collect all the attributes with requirements
-    List<String> required = new ArrayList<>();
-    List<String> recommended = new ArrayList<>();
+    List<List<String>> required = propertyList.stream()
+        .filter(p -> p.cardinality() == Property.AttributeCardinality.MANDATORY)
+        .map(p -> {
+          List<String> s = new ArrayList<>();
+          s.add(p.name());
+          if (!CollectionUtils.isEmpty(p.synonyms())) {
+            s.addAll(p.synonyms());
+          }
+          return s;
+        })
+        .collect(Collectors.toList());
+    List<List<String>> recommended = propertyList.stream()
+        .filter(p -> p.cardinality() == Property.AttributeCardinality.RECOMMENDED)
+        .map(Property::synonyms)
+        .collect(Collectors.toList());
 
     // Write everything to main template
     StringWriter schemaWriter = new StringWriter();
@@ -42,8 +57,8 @@ public class SchemaTemplateGenerator {
     ctx.put("schema_title", title);
     ctx.put("schema_description", description);
     ctx.put("properties", propertyList);
-    ctx.put("required", new JSONArray(required));
-    ctx.put("recommended", new JSONArray(recommended));
+    ctx.put("required", required);
+    ctx.put("recommended", recommended);
     template.merge(ctx, schemaWriter);
 
     return prettyPrintJson(schemaWriter.toString());

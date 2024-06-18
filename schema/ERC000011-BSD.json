@@ -13,8 +13,6 @@
     },
     "characteristics" : {
       "type" : "object",
-      "required" : [ ],
-      "recommended" : [ ],
       "properties" : {
         "cell_type" : {
           "type" : "array",
@@ -347,7 +345,22 @@
             "required" : [ "text" ]
           }
         }
-      }
+      },
+      "allOf" : [ {
+        "oneOf" : [ {
+          "required" : [ "collection date" ]
+        }, {
+          "required" : [ "Event Date/Time" ]
+        }, {
+          "required" : [ "collection_date" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "geographic location (country and/or sea)" ]
+        }, {
+          "required" : [ "geographic location (country and/or sea)" ]
+        } ]
+      } ]
     }
   },
   "required" : [ "name", "characteristics" ]
