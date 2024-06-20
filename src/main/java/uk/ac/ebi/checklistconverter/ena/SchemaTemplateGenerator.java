@@ -15,10 +15,7 @@ import uk.ac.ebi.checklistconverter.exception.MalformedSchemaException;
 import uk.ac.ebi.checklistconverter.model.Property;
 
 import java.io.StringWriter;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -33,10 +30,10 @@ public class SchemaTemplateGenerator {
     vEngine.init();
 
     // Collect all the attributes with requirements
-    List<List<String>> required = propertyList.stream()
+    List<Set<String>> required = propertyList.stream()
         .filter(p -> p.cardinality() == Property.AttributeCardinality.MANDATORY)
         .map(p -> {
-          List<String> s = new ArrayList<>();
+          Set<String> s = new HashSet<>();
           s.add(p.name());
           if (!CollectionUtils.isEmpty(p.synonyms())) {
             s.addAll(p.synonyms());

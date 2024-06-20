@@ -708,16 +708,14 @@
         } ]
       }, {
         "oneOf" : [ {
+          "required" : [ "collection_date" ]
+        }, {
           "required" : [ "collection date" ]
         }, {
           "required" : [ "Event Date/Time" ]
-        }, {
-          "required" : [ "collection_date" ]
         } ]
       }, {
         "oneOf" : [ {
-          "required" : [ "geographic location (country and/or sea)" ]
-        }, {
           "required" : [ "geographic location (country and/or sea)" ]
         } ]
       }, {
@@ -742,9 +740,9 @@
         } ]
       }, {
         "oneOf" : [ {
-          "required" : [ "environmental medium" ]
-        }, {
           "required" : [ "environment (material)" ]
+        }, {
+          "required" : [ "environmental medium" ]
         } ]
       }, {
         "oneOf" : [ {

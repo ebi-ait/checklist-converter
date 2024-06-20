@@ -1,0 +1,444 @@
+{
+  "name" : "CA03_14F1a_metaG",
+  "accession" : "SAMEA7025236",
+  "webinSubmissionAccountId" : "Webin-51990",
+  "taxId" : 506600,
+  "status" : "PUBLIC",
+  "release" : "2023-04-21T22:00:00Z",
+  "update" : "2023-04-22T09:03:21.212Z",
+  "submitted" : "2020-06-29T12:01:23Z",
+  "characteristics" : {
+    "ENA-CHECKLIST" : [ {
+      "text" : "ERC000052",
+      "tag" : "attribute"
+    } ],
+    "ENA-FIRST-PUBLIC" : [ {
+      "text" : "2022-08-02",
+      "tag" : "attribute"
+    } ],
+    "ENA-LAST-UPDATE" : [ {
+      "text" : "2022-08-02",
+      "tag" : "attribute"
+    } ],
+    "External Id" : [ {
+      "text" : "SAMEA7025236",
+      "tag" : "Namespace:BioSample"
+    } ],
+    "INSDC center alias" : [ {
+      "text" : "UNIVERSITY OF COPENHAGEN"
+    } ],
+    "INSDC center name" : [ {
+      "text" : "UNIVERSITY OF COPENHAGEN"
+    } ],
+    "INSDC first public" : [ {
+      "text" : "2022-08-02T16:46:14Z"
+    } ],
+    "INSDC last update" : [ {
+      "text" : "2022-08-02T16:46:14Z"
+    } ],
+    "INSDC status" : [ {
+      "text" : "public"
+    } ],
+    "Organism" : [ {
+      "text" : "Gallus gallus"
+    } ],
+    "SRA accession" : [ {
+      "text" : "ERS4789446"
+    } ],
+    "Submitter Id" : [ {
+      "text" : "CA03_14F1a_metaG",
+      "tag" : "Namespace:UNIVERSITY OF COPENHAGEN"
+    } ],
+    "adapters" : [ {
+      "text" : "AAGTCGGAGGCCAAGCGGTCTTAGGAAGACAA;GAACGACATGGCTACGATCCGACTT",
+      "tag" : "attribute"
+    } ],
+    "collection date" : [ {
+      "text" : "2019-03-11",
+      "tag" : "attribute"
+    } ],
+    "description" : [ {
+      "text" : "chicken MAG catalogue data from Caecum content; animal CA03.14 from cage CA03 with treatment CO"
+    } ],
+    "geographic location (country and/or sea)" : [ {
+      "text" : "Spain",
+      "tag" : "attribute"
+    } ],
+    "geographic location (latitude)" : [ {
+      "text" : "41.170047",
+      "unit" : "DD",
+      "tag" : "attribute"
+    } ],
+    "geographic location (longitude)" : [ {
+      "text" : "1.168491",
+      "unit" : "DD",
+      "tag" : "attribute"
+    } ],
+    "geographic location (region and locality)" : [ {
+      "text" : "El Morell; Tarragona",
+      "tag" : "attribute"
+    } ],
+    "host body site" : [ {
+      "text" : "Caecum content",
+      "tag" : "attribute"
+    } ],
+    "host breed" : [ {
+      "text" : "Cobb",
+      "tag" : "attribute"
+    } ],
+    "host common name" : [ {
+      "text" : "Chicken",
+      "tag" : "attribute"
+    } ],
+    "host diet treatment" : [ {
+      "text" : "Probiotic",
+      "tag" : "attribute"
+    } ],
+    "host scientific name" : [ {
+      "text" : "Gallus gallus",
+      "tag" : "attribute"
+    } ],
+    "host sex" : [ {
+      "text" : "female",
+      "tag" : "attribute"
+    } ],
+    "host storage container temperature" : [ {
+      "text" : "21",
+      "unit" : "°C",
+      "tag" : "attribute"
+    } ],
+    "host subject id" : [ {
+      "text" : "CA03.14",
+      "tag" : "attribute"
+    } ],
+    "host taxid" : [ {
+      "text" : "9031",
+      "tag" : "attribute"
+    } ],
+    "host total mass" : [ {
+      "text" : "2164.00",
+      "unit" : "g",
+      "tag" : "attribute"
+    } ],
+    "nucleic acid extraction" : [ {
+      "text" : "D-rex protocol",
+      "tag" : "attribute"
+    } ],
+    "organism" : [ {
+      "text" : "chicken gut metagenome",
+      "ontologyTerms" : [ "http://purl.obolibrary.org/obo/NCBITaxon_506600" ]
+    } ],
+    "project" : [ {
+      "text" : "HoloFood"
+    } ],
+    "project name" : [ {
+      "text" : "HoloFood Chicken - MAG Catalogue from Caecum content",
+      "tag" : "attribute"
+    } ],
+    "reference host genome for decontamination" : [ {
+      "text" : "GCA_000000000.0",
+      "tag" : "attribute"
+    } ],
+    "sample storage buffer" : [ {
+      "text" : "Shield",
+      "tag" : "attribute"
+    } ],
+    "sample storage container" : [ {
+      "text" : "E-matrix 2ml",
+      "tag" : "attribute"
+    } ],
+    "sample storage location" : [ {
+      "text" : "UCPH",
+      "tag" : "attribute"
+    } ],
+    "sample storage temperature" : [ {
+      "text" : "-20",
+      "unit" : "°C",
+      "tag" : "attribute"
+    } ],
+    "sample volume or weight for DNA extraction" : [ {
+      "text" : "0.2",
+      "unit" : "mL",
+      "tag" : "attribute"
+    } ],
+    "sequencing method" : [ {
+      "text" : "MGISEQ-2000",
+      "tag" : "attribute"
+    } ],
+    "title" : [ {
+      "text" : "CA03.14F1a"
+    } ],
+    "trial length" : [ {
+      "text" : "35",
+      "unit" : "day",
+      "tag" : "attribute"
+    } ],
+    "trial timepoint" : [ {
+      "text" : "35",
+      "unit" : "day",
+      "tag" : "attribute"
+    } ]
+  },
+  "relationships" : [ {
+    "source" : "SAMEA7025236",
+    "type" : "DERIVED_FROM",
+    "target" : "SAMEA112905113"
+  } ],
+  "externalReferences" : [ {
+    "url" : "https://www.ebi.ac.uk/ena/browser/view/SAMEA7025236",
+    "duo" : [ ]
+  } ],
+  "submittedVia" : "PIPELINE_IMPORT",
+  "create" : "2020-05-16T01:48:30.233Z",
+  "structuredData" : [ {
+    "domain" : null,
+    "webinSubmissionAccountId" : "Webin-51990",
+    "type" : "EXTERNAL LINKS",
+    "schema" : null,
+    "content" : [ ]
+  }, {
+    "domain" : null,
+    "webinSubmissionAccountId" : "Webin-51990",
+    "type" : "BIOGENIC AMINES",
+    "schema" : null,
+    "content" : [ ]
+  }, {
+    "domain" : null,
+    "webinSubmissionAccountId" : "Webin-51990",
+    "type" : "SAMPLE",
+    "schema" : null,
+    "content" : [ {
+      "marker" : {
+        "value" : "Body site",
+        "iri" : null
+      },
+      "measurement" : {
+        "value" : "caecum content",
+        "iri" : null
+      }
+    }, {
+      "marker" : {
+        "value" : "Raw sequence name",
+        "iri" : null
+      },
+      "measurement" : {
+        "value" : "F20FTSEUET0036_MICrpnR/MAG14/200310_I076_V300038545_L1_CDK153B200227005-525/V300038545_L01_525",
+        "iri" : null
+      },
+      "partner" : {
+        "value" : "UCPH",
+        "iri" : "https://www.ku.dk/english/"
+      }
+    }, {
+      "marker" : {
+        "value" : "Pool",
+        "iri" : null
+      },
+      "measurement" : {
+        "value" : "MAG14-525",
+        "iri" : null
+      },
+      "partner" : {
+        "value" : "UCPH",
+        "iri" : "https://www.ku.dk/english/"
+      }
+    }, {
+      "marker" : {
+        "value" : "Sample code",
+        "iri" : null
+      },
+      "measurement" : {
+        "value" : "CA03.14F1a",
+        "iri" : null
+      }
+    }, {
+      "marker" : {
+        "value" : "ng used for library build",
+        "iri" : null
+      },
+      "measurement" : {
+        "value" : "171",
+        "iri" : null
+      },
+      "partner" : {
+        "value" : "UCPH",
+        "iri" : "https://www.ku.dk/english/"
+      }
+    }, {
+      "marker" : {
+        "value" : "Project",
+        "iri" : null
+      },
+      "measurement" : {
+        "value" : "HoloFood",
+        "iri" : null
+      }
+    }, {
+      "marker" : {
+        "value" : "Sequencing company",
+        "iri" : null
+      },
+      "measurement" : {
+        "value" : "BGI",
+        "iri" : null
+      },
+      "partner" : {
+        "value" : "UCPH",
+        "iri" : "https://www.ku.dk/english/"
+      }
+    }, {
+      "marker" : {
+        "value" : "Index PCR cycles",
+        "iri" : null
+      },
+      "measurement" : {
+        "value" : "12",
+        "iri" : null
+      },
+      "partner" : {
+        "value" : "UCPH",
+        "iri" : "https://www.ku.dk/english/"
+      }
+    }, {
+      "marker" : {
+        "value" : "Organism",
+        "iri" : null
+      },
+      "measurement" : {
+        "value" : "Chicken",
+        "iri" : null
+      }
+    }, {
+      "marker" : {
+        "value" : "Lab Process ID",
+        "iri" : null
+      },
+      "measurement" : {
+        "value" : "LPC00231",
+        "iri" : null
+      },
+      "partner" : {
+        "value" : "UCPH",
+        "iri" : "https://www.ku.dk/english/"
+      }
+    }, {
+      "marker" : {
+        "value" : "Experiment",
+        "iri" : null
+      },
+      "measurement" : {
+        "value" : "metagenomics",
+        "iri" : null
+      }
+    } ]
+  }, {
+    "domain" : null,
+    "webinSubmissionAccountId" : "Webin-51990",
+    "type" : "TRIAL",
+    "schema" : null,
+    "content" : [ {
+      "marker" : {
+        "value" : "Trial code",
+        "iri" : null
+      },
+      "measurement" : {
+        "value" : "CA",
+        "iri" : null
+      }
+    }, {
+      "marker" : {
+        "value" : "Trial start",
+        "iri" : null
+      },
+      "measurement" : {
+        "value" : "2019-02-04",
+        "iri" : null
+      }
+    }, {
+      "marker" : {
+        "value" : "Trial end",
+        "iri" : null
+      },
+      "measurement" : {
+        "value" : "2019-03-11",
+        "iri" : null
+      }
+    }, {
+      "marker" : {
+        "value" : "Trial description",
+        "iri" : null
+      },
+      "measurement" : {
+        "value" : "Trial 1",
+        "iri" : null
+      }
+    } ]
+  }, {
+    "domain" : null,
+    "webinSubmissionAccountId" : "Webin-51990",
+    "type" : "TREATMENT",
+    "schema" : null,
+    "content" : [ {
+      "marker" : {
+        "value" : "Treatment name",
+        "iri" : null
+      },
+      "measurement" : {
+        "value" : "Probiotic",
+        "iri" : null
+      }
+    }, {
+      "marker" : {
+        "value" : "Treatment code",
+        "iri" : null
+      },
+      "measurement" : {
+        "value" : "CO",
+        "iri" : null
+      }
+    } ]
+  }, {
+    "domain" : null,
+    "webinSubmissionAccountId" : "Webin-51990",
+    "type" : "PEN",
+    "schema" : null,
+    "content" : [ ]
+  }, {
+    "domain" : null,
+    "webinSubmissionAccountId" : "Webin-51990",
+    "type" : "FATTY ACIDS",
+    "schema" : null,
+    "content" : [ ]
+  }, {
+    "domain" : null,
+    "webinSubmissionAccountId" : "Webin-51990",
+    "type" : "HISTOLOGY",
+    "schema" : null,
+    "content" : [ ]
+  }, {
+    "domain" : null,
+    "webinSubmissionAccountId" : "Webin-51990",
+    "type" : "INFLAMMATORY MARKERS",
+    "schema" : null,
+    "content" : [ ]
+  } ],
+  "_links" : {
+    "self" : {
+      "href" : "https://www.ebi.ac.uk/biosamples/samples/SAMEA7025236"
+    },
+    "curationDomain" : {
+      "href" : "https://www.ebi.ac.uk/biosamples/samples/SAMEA7025236{?curationdomain}",
+      "templated" : true
+    },
+    "curationLinks" : {
+      "href" : "https://www.ebi.ac.uk/biosamples/samples/SAMEA7025236/curationlinks"
+    },
+    "curationLink" : {
+      "href" : "https://www.ebi.ac.uk/biosamples/samples/SAMEA7025236/curationlinks/{hash}",
+      "templated" : true
+    },
+    "structuredData" : {
+      "href" : "https://www.ebi.ac.uk/biosamples/structureddata/SAMEA7025236"
+    }
+  }
+}
