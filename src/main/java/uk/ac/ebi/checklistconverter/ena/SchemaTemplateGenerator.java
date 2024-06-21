@@ -1,7 +1,6 @@
 package uk.ac.ebi.checklistconverter.ena;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.velocity.Template;
@@ -9,7 +8,6 @@ import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
 import org.apache.velocity.runtime.RuntimeConstants;
 import org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader;
-import org.json.JSONArray;
 import org.springframework.util.CollectionUtils;
 import uk.ac.ebi.checklistconverter.exception.MalformedSchemaException;
 import uk.ac.ebi.checklistconverter.model.Property;
@@ -57,26 +55,6 @@ public class SchemaTemplateGenerator {
     ctx.put("required", required);
     ctx.put("recommended", recommended);
     template.merge(ctx, schemaWriter);
-
-    return prettyPrintJson(schemaWriter.toString());
-  }
-
-  public static String getEnaSchema(String schemaId, String title,
-                                    String description, List<Property> propertyList) {
-    VelocityEngine vEngine = new VelocityEngine();
-    vEngine.setProperty(RuntimeConstants.RESOURCE_LOADER, "classpath");
-    vEngine.setProperty("classpath.resource.loader.class", ClasspathResourceLoader.class.getName());
-    vEngine.init();
-
-    // Write everything to main template
-    StringWriter schemaWriter = new StringWriter();
-    Template schemaTemplate = vEngine.getTemplate("templates/ena_schema.vm");
-    VelocityContext ctx = new VelocityContext();
-    ctx.put("schema_id", schemaId);
-    ctx.put("schema_title", title);
-    ctx.put("schema_description", description);
-    ctx.put("properties", propertyList);
-    schemaTemplate.merge(ctx, schemaWriter);
 
     return prettyPrintJson(schemaWriter.toString());
   }
@@ -130,17 +108,6 @@ public class SchemaTemplateGenerator {
       throw new MalformedSchemaException("Failed to write JSON string, " + e.getMessage());
     }
     return template;
-  }
-
-  public static JsonNode getJson(String s) {
-    JsonNode jsonNode;
-    try {
-      jsonNode = mapper.readValue(s, JsonNode.class);
-    } catch (JsonProcessingException e) {
-      log.error("Failed to write string to JSON, " + e.getMessage());
-      throw new MalformedSchemaException("Failed to write string to JSON, " + e.getMessage());
-    }
-    return jsonNode;
   }
 
   public static String prettyPrintJson(String jsonString) {

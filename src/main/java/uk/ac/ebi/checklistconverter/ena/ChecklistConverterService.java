@@ -1,14 +1,11 @@
 package uk.ac.ebi.checklistconverter.ena;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.stereotype.Service;
-import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.web.client.ResponseErrorHandler;
 import org.springframework.web.client.RestTemplate;
@@ -45,34 +42,6 @@ public class ChecklistConverterService {
     return fieldTypeTemplate;
   }
 
-  private static String getStringRepresentationOfSynonyms(List<String> synonyms, String fieldName) {
-    List<String> names = new ArrayList<>();
-    names.add(fieldName);
-    if (!CollectionUtils.isEmpty(synonyms)) {
-      names.addAll(synonyms);
-    }
-    try {
-      return new ObjectMapper().writeValueAsString(names);
-    } catch (JsonProcessingException e) {
-      log.error("Failed to convert field_name and synonyms of the attribute: " + fieldName, e);
-      throw new RuntimeException(e);
-    }
-  }
-
-  private static String getStringRepresentationOfUnits(List<String> units) {
-    String unitsEnumField = """
-        ,
-                    "enum":
-        """;
-    try {
-      String unitEnumValue = new ObjectMapper().writeValueAsString(units);
-      return unitsEnumField + " " + unitEnumValue;
-    } catch (JsonProcessingException e) {
-      log.error("Failed to convert field_name and synonyms of the attribute: " + units, e);
-      throw new RuntimeException(e);
-    }
-  }
-
   private static List<String> getEnumValueList(TextChoiceField enumField) {
     List<String> values = new ArrayList<>();
     for (TextValue textValue : enumField.getTextValue()) {
@@ -84,9 +53,21 @@ public class ChecklistConverterService {
     return values;
   }
 
+  private static Property mapEnaFieldToProperty(Field field) {
+    return new Property(field.getName(), field.getSynonyms(), field.getDescription(), getTypedTemplate(field),
+        field.getUnits(), getCardinality(field.getMandatory()));
+  }
+
+  private static Property.AttributeCardinality getCardinality(String fieldRequirement) {
+    if (StringUtils.hasText(fieldRequirement)) {
+      return Property.AttributeCardinality.valueOf(fieldRequirement.toUpperCase());
+    } else {
+      return Property.AttributeCardinality.OPTIONAL;
+    }
+  }
+
   public String getChecklist(String checklistId) {
     String jsonSchema;
-    String jsonSchemaEna;
     try {
       EnaChecklist enaChecklist = getEnaChecklist(checklistId);
       List<Property> properties = listProperties(enaChecklist);
@@ -94,9 +75,7 @@ public class ChecklistConverterService {
       String title = enaChecklist.getChecklist().getDescriptor().getName();
       String description = enaChecklist.getChecklist().getDescriptor().getDescription();
       jsonSchema = SchemaTemplateGenerator.getBioSamplesSchema(schemaId, title, description, properties);
-//      jsonSchemaEna = SchemaTemplateGenerator.getEnaSchema(schemaId, title, description, properties);
 
-//      saveSchema(checklistId + "-ENA.json", jsonSchemaEna);
       saveSchema(checklistId + "-BSD.json", jsonSchema);
     } catch (Exception e) {
       log.error("Could not checklistId checklist: " + checklistId, e);
@@ -163,19 +142,6 @@ public class ChecklistConverterService {
         flatMap(group -> group.getFields().stream())
         .map(ChecklistConverterService::mapEnaFieldToProperty)
         .collect(Collectors.toList());
-  }
-
-  private static Property mapEnaFieldToProperty(Field field) {
-    return new Property(field.getName(), field.getSynonyms(), field.getDescription(), getTypedTemplate(field),
-        field.getUnits(), getCardinality(field.getMandatory()));
-  }
-
-  private static Property.AttributeCardinality getCardinality(String fieldRequirement) {
-    if (StringUtils.hasText(fieldRequirement)) {
-      return Property.AttributeCardinality.valueOf(fieldRequirement.toUpperCase());
-    } else {
-      return Property.AttributeCardinality.OPTIONAL;
-    }
   }
 
   static class EnaErrorHandler implements ResponseErrorHandler {
