@@ -13,14 +13,10 @@
     },
     "characteristics" : {
       "type" : "object",
-      "required" : [ "collection date", "geographic location (country and/or sea)", "host common name", "host subject id", "host health state", "host sex", "host scientific name", "influenza test method", "influenza test result", "other pathogens tested", "other pathogens test result", "collector name", "collecting institution" ],
-      "recommended" : [ "geographic location (latitude)", "geographic location (longitude)", "geographic location (region and locality)", "sample capture status", "host disease outcome", "host age", "influenza virus type", "virus identifier", "receipt date", "definition for seropositive sample", "serotype (required for a seropositive sample)", "host habitat", "isolation source host-associated", "host behaviour", "isolation source non-host-associated" ],
       "properties" : {
         "number of inoculated individuals" : {
-          "description" : "Number of host individuals inoculated for the experiment.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -30,10 +26,8 @@
           }
         },
         "inoculation route" : {
-          "description" : "Brief description of the protocol inoculation route.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -43,10 +37,8 @@
           }
         },
         "inoculation dose" : {
-          "description" : "Dose used for the inoculoation experiment.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -56,10 +48,8 @@
           }
         },
         "inoculation stock availability" : {
-          "description" : "Is the virus stock used for the inoculation available?",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "enum" : [ "no", "yes" ]
@@ -69,10 +59,8 @@
           }
         },
         "sample storage conditions" : {
-          "description" : "Conditions at which sample was stored, usually storage temperature, duration and location. In soil context: Explain how and for how long the soil sample was stored before DNA extraction (fresh/frozen/other).",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -82,10 +70,8 @@
           }
         },
         "subject exposure" : {
-          "description" : "Exposure of the subject to infected human or animals, such as poultry, wild bird or swine. If multiple exposures are applicable, please state them separated by semicolon. Example: poultry; wild bird",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -95,10 +81,8 @@
           }
         },
         "type exposure" : {
-          "description" : "Setting within which the subject is exposed to animals, such as farm, slaughterhouse, food preparation. If multiple exposures are applicable, please state their type in the same order in which you reported the exposure in the field 'subject exposure'. Example: backyard flock; confined animal feeding operation",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -108,10 +92,8 @@
           }
         },
         "personal protective equipment" : {
-          "description" : "Use of personal protective equipment, such as gloves, gowns, during any type of exposure. Example: mask",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -121,10 +103,8 @@
           }
         },
         "hospitalisation" : {
-          "description" : "Was the subject confined to a hospital as a result of virus infection or problems occurring secondary to virus infection?",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "enum" : [ "no", "yes" ]
@@ -134,10 +114,8 @@
           }
         },
         "antiviral treatment" : {
-          "description" : "Antiviral treatment used for this subject, such as Zanamavir Oseltamivir, Amantadine. Example: Rimantadine",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -147,10 +125,8 @@
           }
         },
         "antiviral treatment initiation" : {
-          "description" : "Initiation of antiviral treatment after onset of clinical symptoms in days. Example: 2.5",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -160,10 +136,8 @@
           }
         },
         "antiviral treatment dosage" : {
-          "description" : "Dosage of the treatment taken by the subject. Example: 0.05 mg",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -173,10 +147,8 @@
           }
         },
         "antiviral treatment duration" : {
-          "description" : "Duration of antiviral treatment after onset of clinical symptoms in days.Example: 5",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -186,10 +158,8 @@
           }
         },
         "influenza vaccination type" : {
-          "description" : "Influenza vaccinations that have been administered to the subject over the last year. Example: 2009 H1N1 Flumist",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -199,10 +169,8 @@
           }
         },
         "influenza vaccination date" : {
-          "description" : "Date that the influenza vaccination was administered to the subject over the past year. Format: YYYY-MM-DD. Example: 2007-05-12",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string",
@@ -213,10 +181,8 @@
           }
         },
         "source of vaccination information" : {
-          "description" : "Designation of information related to vaccination history as self reported or documented.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "enum" : [ "documented", "self reported" ]
@@ -226,10 +192,8 @@
           }
         },
         "vaccine lot number" : {
-          "description" : "Lot number of the vaccine.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -239,10 +203,8 @@
           }
         },
         "vaccine manufacturer" : {
-          "description" : "Manufacturer of the vaccine.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -252,10 +214,8 @@
           }
         },
         "vaccine dosage" : {
-          "description" : "Dosage of the vaccine taken by the subject. Example: 0.05 mL",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -265,10 +225,8 @@
           }
         },
         "influenza-like illness at the time of sample collection" : {
-          "description" : "Is the subject at the time of sample collection considered to have influenza like illness?",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "enum" : [ "no", "yes" ]
@@ -278,10 +236,8 @@
           }
         },
         "illness onset date" : {
-          "description" : "Date the subject showed an onset of symptoms. Format: YYYY-MM-DD. Example: 2011-10-20",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string",
@@ -292,10 +248,8 @@
           }
         },
         "illness duration" : {
-          "description" : "The number of days the illness lasted. Example: 4",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -305,10 +259,8 @@
           }
         },
         "illness symptoms" : {
-          "description" : "The symptoms that have been reported in relation to the illness, such as cough, diarrhea, fever, headache, malaise, myalgia, nausea, runny_nose, shortness_of_breath, sore_throat. If multiple exposures are applicable, please state them separated by semicolon.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -318,10 +270,8 @@
           }
         },
         "collection date" : {
-          "description" : "The date the sample was collected with the intention of sequencing, either as an instance (single point in time) or interval. In case no exact time is available, the date/time can be right truncated i.e. all of these are valid ISO8601 compliant times: 2008-01-23T19:23:10+00:00; 2008-01-23T19:23:10; 2008-01-23; 2008-01; 2008.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string",
@@ -332,10 +282,8 @@
           }
         },
         "geographic location (country and/or sea)" : {
-          "description" : "The geographical origin of where the sample was collected from, with the intention of sequencing, as defined by the country or sea name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html).",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "enum" : [ "Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Arctic Ocean", "Argentina", "Armenia", "Aruba", "Ashmore and Cartier Islands", "Atlantic Ocean", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Baker Island", "Baltic Sea", "Bangladesh", "Barbados", "Bassas da India", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Borneo", "Bosnia and Herzegovina", "Botswana", "Bouvet Island", "Brazil", "British Virgin Islands", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Clipperton Island", "Cocos Islands", "Colombia", "Comoros", "Cook Islands", "Coral Sea Islands", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Curacao", "Cyprus", "Czechia", "Czech Republic", "Democratic Republic of the Congo", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "East Timor", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Europa Island", "Falkland Islands (Islas Malvinas)", "Faroe Islands", "Fiji", "Finland", "France", "French Guiana", "French Polynesia", "French Southern and Antarctic Lands", "Gabon", "Gambia", "Gaza Strip", "Georgia", "Germany", "Ghana", "Gibraltar", "Glorioso Islands", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard Island and McDonald Islands", "Honduras", "Hong Kong", "Howland Island", "Hungary", "Iceland", "India", "Indian Ocean", "Indonesia", "Iran", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Jan Mayen", "Japan", "Jarvis Island", "Jersey", "Johnston Atoll", "Jordan", "Juan de Nova Island", "Kazakhstan", "Kenya", "Kerguelen Archipelago", "Kingman Reef", "Kiribati", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mediterranean Sea", "Mexico", "Micronesia", "Midway Islands", "Moldova", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Navassa Island", "Nepal", "Netherlands", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "North Korea", "North Sea", "Northern Mariana Islands", "Norway", "Oman", "Pacific Ocean", "Pakistan", "Palau", "Palmyra Atoll", "Panama", "Papua New Guinea", "Paracel Islands", "Paraguay", "Peru", "Philippines", "Pitcairn Islands", "Poland", "Portugal", "Puerto Rico", "Qatar", "Republic of the Congo", "Reunion", "Romania", "Ross Sea", "Russia", "Rwanda", "Saint Helena", "Saint Kitts and Nevis", "Saint Lucia", "Saint Pierre and Miquelon", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Sint Maarten", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "South Korea", "Southern Ocean", "Spain", "Spratly Islands", "Sri Lanka", "Sudan", "Suriname", "Svalbard", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Tasman Sea", "Thailand", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tromelin Island", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "USA", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Viet Nam", "Virgin Islands", "Wake Island", "Wallis and Futuna", "West Bank", "Western Sahara", "Yemen", "Zambia", "Zimbabwe", "missing: control sample", "missing: data agreement established pre-2023", "missing: endangered species", "missing: human-identifiable", "missing: lab stock", "missing: sample group", "missing: synthetic construct", "missing: third party data", "not applicable", "not collected", "not provided", "restricted access" ]
@@ -345,38 +293,38 @@
           }
         },
         "geographic location (latitude)" : {
-          "description" : "The geographical origin of the sample as defined by latitude. The values should be reported in decimal degrees and in WGS84 system",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string",
                 "pattern" : "(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)"
+              },
+              "unit" : {
+                "enum" : [ "DD" ]
               }
             },
             "required" : [ "text" ]
           }
         },
         "geographic location (longitude)" : {
-          "description" : "The geographical origin of the sample as defined by longitude. The values should be reported in decimal degrees and in WGS84 system",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string",
                 "pattern" : "(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)"
+              },
+              "unit" : {
+                "enum" : [ "DD" ]
               }
             },
             "required" : [ "text" ]
           }
         },
         "geographic location (region and locality)" : {
-          "description" : "The geographical origin of the sample as defined by the specific region name followed by the locality name.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -386,23 +334,22 @@
           }
         },
         "subject exposure duration" : {
-          "description" : "Duration of the exposure of the subject to an infected human or animal. If multiple exposures are applicable, please state their duration in the same order in which you reported the exposure in the field 'subject exposure'. Example: 1 day; 0.33 days",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
+              },
+              "unit" : {
+                "enum" : [ "day", "month", "week", "year" ]
               }
             },
             "required" : [ "text" ]
           }
         },
         "sample capture status" : {
-          "description" : "Reason for the sample collection.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "enum" : [ "active surveillance in response to outbreak", "active surveillance not initiated by an outbreak", "farm sample", "market sample", "other", "pet sample", "zoo sample" ]
@@ -412,10 +359,8 @@
           }
         },
         "host disease outcome" : {
-          "description" : "Disease outcome in the host.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "enum" : [ "dead", "recovered", "recovered with sequelae" ]
@@ -425,10 +370,8 @@
           }
         },
         "host common name" : {
-          "description" : "common name of the host, e.g. human",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -438,10 +381,8 @@
           }
         },
         "host subject id" : {
-          "description" : "a unique identifier by which each subject can be referred to, de-identified, e.g. #131",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -451,24 +392,23 @@
           }
         },
         "host age" : {
-          "description" : "age of host at the time of sampling; relevant scale depends on species and study, e.g. could be seconds for amoebae or centuries for trees",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string",
                 "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
+              },
+              "unit" : {
+                "enum" : [ "centuries", "days", "decades", "hours", "minutes", "months", "seconds", "weeks", "years" ]
               }
             },
             "required" : [ "text" ]
           }
         },
         "host health state" : {
-          "description" : "Health status of the host at the time of sample collection.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "enum" : [ "diseased", "healthy", "missing: control sample", "missing: data agreement established pre-2023", "missing: endangered species", "missing: human-identifiable", "missing: lab stock", "missing: sample group", "missing: synthetic construct", "missing: third party data", "not applicable", "not collected", "not provided", "restricted access" ]
@@ -478,10 +418,8 @@
           }
         },
         "host sex" : {
-          "description" : "Gender or sex of the host.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "enum" : [ "female", "hermaphrodite", "male", "missing: control sample", "missing: data agreement established pre-2023", "missing: endangered species", "missing: human-identifiable", "missing: lab stock", "missing: sample group", "missing: synthetic construct", "missing: third party data", "neuter", "not applicable", "not collected", "not provided", "other", "restricted access" ]
@@ -491,10 +429,8 @@
           }
         },
         "host scientific name" : {
-          "description" : "Scientific name of the natural (as opposed to laboratory) host to the organism from which sample was obtained.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -504,10 +440,8 @@
           }
         },
         "influenza test method" : {
-          "description" : "Method by which the current assessment of a sample as flu positive/negative is made. If multiple test were performed, please state them separated by semicolon. Example: RT-PCR; antigen ELISA",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -517,10 +451,8 @@
           }
         },
         "influenza test result" : {
-          "description" : "Classification of a sample as flu positive or negative based on the test performed and reported. If multiple tests were performed, please state the results in the same order in which you reported the tests in the field 'influenza test method'. Format: P(ositive)/N(egative). Example: P; P",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -530,10 +462,8 @@
           }
         },
         "other pathogens tested" : {
-          "description" : "Classification of pathogenic organisms other than influenza virus tested in the current assessment of a sample. If multiple tests were performed, please state them separated by semicolon. If no other pathogens test was performed, please state 'none'. Example: Newcastle",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -543,10 +473,8 @@
           }
         },
         "other pathogens test result" : {
-          "description" : "Classification of a sample as positive or negative based on the test performed and reported. If tests for multiple pathogenic organisms were performed, please state the results in the same order in which you reported the tests in the field 'other pathogens tested'. Format: P(ositive)/N(egative)/not applicable. Example: N",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -556,10 +484,8 @@
           }
         },
         "influenza virus type" : {
-          "description" : "One of the three influenza virus classification types.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "enum" : [ "A", "B", "C" ]
@@ -569,10 +495,8 @@
           }
         },
         "virus identifier" : {
-          "description" : "Unique laboratory identifier assigned to the virus by the investigator. Strain name is not sufficient since it might not be unique due to various passsages of the same virus. Format: up to 50 alphanumeric characters",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -582,10 +506,8 @@
           }
         },
         "influenza strain unique number" : {
-          "description" : "Unique number of the strain which is reported as a part of the influenza strain name, such as A/chicken/Fujian/411/2002(HxN1). Format: integer number, Example: 411",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string",
@@ -596,10 +518,8 @@
           }
         },
         "WHO/OIE/FAO clade (required for HPAI H5N1 viruses)" : {
-          "description" : "WHO/OIE/FAO clade should be included for highly pathogenic H5N1 viruses. Example: 2.2",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -609,10 +529,8 @@
           }
         },
         "lineage:swl (required for H1N1 viruses)" : {
-          "description" : "Does the H1N1 influenza virus originate from a swine-like outbreak (as opposed to a seasonal flu)?",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "enum" : [ "no", "yes" ]
@@ -622,10 +540,8 @@
           }
         },
         "collector name" : {
-          "description" : "Name of the person who collected the specimen. Example: John Smith",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -635,10 +551,8 @@
           }
         },
         "collecting institution" : {
-          "description" : "Name of the institution to which the person collecting the specimen belongs. Format: Institute Name, Institute Address",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -648,10 +562,8 @@
           }
         },
         "receipt date" : {
-          "description" : "Date on which the sample was received. Format:YYYY-MM-DD. Please provide the highest precision possible. If the sample was received by the institution and not collected, the 'receipt date' must be provided instead. Either the 'collection date' or 'receipt date' must be provided. If available, provide both dates.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string",
@@ -662,10 +574,8 @@
           }
         },
         "definition for seropositive sample" : {
-          "description" : "The cut off value used by an investigatior in determining that a sample was seropositive.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -675,10 +585,8 @@
           }
         },
         "meaning of cut off value" : {
-          "description" : "Description helping to explain what the cut off value means.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -688,10 +596,8 @@
           }
         },
         "serotype (required for a seropositive sample)" : {
-          "description" : "Serological variety of a species characterised by its antigenic properties. For Influenza, HA subtype should be the letter H followed by a number between 1-16 unless novel subtype is identified and the NA subtype should be the letter N followed by a number between 1-9 unless novel subtype is identified. If only one of the subtypes have been tested then use the format H5Nx or HxN1. Example: H1N1",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -701,10 +607,8 @@
           }
         },
         "strain" : {
-          "description" : "Name of the strain from which the sample was obtained.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -714,10 +618,8 @@
           }
         },
         "host habitat" : {
-          "description" : "Natural habitat of the avian or mammalian host.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "enum" : [ "domestic:free-range farm", "domestic:indoor farm", "domestic:live market", "domestic:semi-enclosed housing", "other", "wild:migratory", "wild:resident" ]
@@ -727,10 +629,8 @@
           }
         },
         "isolation source host-associated" : {
-          "description" : "Name of host tissue or organ sampled for analysis. Example: tracheal tissue",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -740,10 +640,8 @@
           }
         },
         "host description" : {
-          "description" : "Other descriptive information relating to the host.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -753,10 +651,8 @@
           }
         },
         "gravidity" : {
-          "description" : "Whether or not the subject is gravid. If so, report date due or date post-conception and specify which of these two dates is being reported.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -766,10 +662,8 @@
           }
         },
         "host behaviour" : {
-          "description" : "Natural behaviour of the host.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "enum" : [ "captive-wild (e.g. at zoo)", "domestic", "other", "wild" ]
@@ -779,10 +673,8 @@
           }
         },
         "isolation source non-host-associated" : {
-          "description" : "Describes the physical, environmental and/or local geographical source of the biological sample from which the sample was derived. Example: soil",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -791,7 +683,66 @@
             "required" : [ "text" ]
           }
         }
-      }
+      },
+      "allOf" : [ {
+        "oneOf" : [ {
+          "required" : [ "collection_date" ]
+        }, {
+          "required" : [ "collection date" ]
+        }, {
+          "required" : [ "Event Date/Time" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "geographic location (country and/or sea)" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "host common name" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "host subject id" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "host health state" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "host sex" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "host scientific name" ]
+        }, {
+          "required" : [ "specific host" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "influenza test method" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "influenza test result" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "other pathogens tested" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "other pathogens test result" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "collector name" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "collecting institution" ]
+        } ]
+      } ]
     }
   },
   "required" : [ "name", "characteristics" ]

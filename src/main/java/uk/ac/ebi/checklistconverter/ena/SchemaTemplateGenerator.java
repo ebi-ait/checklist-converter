@@ -10,14 +10,13 @@ import org.apache.velocity.app.VelocityEngine;
 import org.apache.velocity.runtime.RuntimeConstants;
 import org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader;
 import org.json.JSONArray;
+import org.springframework.util.CollectionUtils;
 import uk.ac.ebi.checklistconverter.exception.MalformedSchemaException;
 import uk.ac.ebi.checklistconverter.model.Property;
 
 import java.io.StringWriter;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Slf4j
 public class SchemaTemplateGenerator {
@@ -31,37 +30,32 @@ public class SchemaTemplateGenerator {
     vEngine.init();
 
     // Collect all the attributes with requirements
-    List<String> required = new ArrayList<>();
-    List<String> recommended = new ArrayList<>();
-    StringWriter attributeWriter = new StringWriter();
-    Template template = vEngine.getTemplate("templates/biosamples_property_template.json");
-//    for (Map<String, String> p : propertyList) {
-//      VelocityContext ctx = new VelocityContext();
-//      ctx.put("property", p.get("property"));
-//      ctx.put("property_type", p.get("property_type"));
-//      ctx.put("property_description", p.get("property_description").replace("\"", "'"));
-//      template.merge(ctx, attributeWriter);
-//      attributeWriter.append(",\n");
-//
-//      if (p.get("requirement").equalsIgnoreCase("mandatory")) {
-//        required.add(p.get("property"));
-//      } else if (p.get("requirement").equalsIgnoreCase("recommended")) {
-//        recommended.add(p.get("property"));
-//      }
-//    }
-    String properties = attributeWriter.toString();
-    properties = properties.substring(0, properties.length() - 2); //remove last comma
+    List<Set<String>> required = propertyList.stream()
+        .filter(p -> p.cardinality() == Property.AttributeCardinality.MANDATORY)
+        .map(p -> {
+          Set<String> s = new HashSet<>();
+          s.add(p.name());
+          if (!CollectionUtils.isEmpty(p.synonyms())) {
+            s.addAll(p.synonyms());
+          }
+          return s;
+        })
+        .collect(Collectors.toList());
+    List<List<String>> recommended = propertyList.stream()
+        .filter(p -> p.cardinality() == Property.AttributeCardinality.RECOMMENDED)
+        .map(Property::synonyms)
+        .collect(Collectors.toList());
 
     // Write everything to main template
     StringWriter schemaWriter = new StringWriter();
-    template = vEngine.getTemplate("templates/biosamples_template.vm");
+    Template template = vEngine.getTemplate("templates/biosamples_template.vm");
     VelocityContext ctx = new VelocityContext();
     ctx.put("schema_id", schemaId);
     ctx.put("schema_title", title);
     ctx.put("schema_description", description);
-    ctx.put("properties", properties);
-    ctx.put("required", new JSONArray(required));
-    ctx.put("recommended", new JSONArray(recommended));
+    ctx.put("properties", propertyList);
+    ctx.put("required", required);
+    ctx.put("recommended", recommended);
     template.merge(ctx, schemaWriter);
 
     return prettyPrintJson(schemaWriter.toString());

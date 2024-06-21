@@ -13,28 +13,25 @@
     },
     "characteristics" : {
       "type" : "object",
-      "required" : [ "project name", "reference host genome for decontamination", "collection date", "geographic location (country and/or sea)", "trial timepoint", "host common name", "host subject id", "host taxid", "host body site", "host diet treatment", "sample volume or weight for DNA extraction" ],
-      "recommended" : [ "sample storage temperature", "sample storage buffer", "sample storage device", "trial length", "host disease status", "host total mass", "host scientific name", "host breed", "host diet", "host storage container temperature", "adapters" ],
       "properties" : {
         "sample storage temperature" : {
-          "description" : "temperature at which sample was stored, e.g. -80",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string",
                 "pattern" : "[+-]?(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
+              },
+              "unit" : {
+                "enum" : [ "°C" ]
               }
             },
             "required" : [ "text" ]
           }
         },
         "sample storage buffer" : {
-          "description" : "buffer used for sample storage (e.g. RNAlater)",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -44,10 +41,8 @@
           }
         },
         "sample storage device" : {
-          "description" : "The container used to store the sample. This field accepts terms listed under container (http://purl.obolibrary.org/obo/NCIT_C43186). If the proper descriptor is not listed please use text to describe the storage device.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -57,10 +52,8 @@
           }
         },
         "sample storage location" : {
-          "description" : "Location at which sample was stored, usually name of a specific freezer/room. Indicate the location name.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -70,10 +63,8 @@
           }
         },
         "project name" : {
-          "description" : "Name of the project within which the sequencing was organized",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -83,10 +74,8 @@
           }
         },
         "reference host genome for decontamination" : {
-          "description" : "Reference host genome that was mapped against for host decontamination (in the form of a valid assembly accession - e.g. in the format GCA_xxxxxxx.x)",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string",
@@ -97,10 +86,8 @@
           }
         },
         "collection date" : {
-          "description" : "The date the sample was collected with the intention of sequencing, either as an instance (single point in time) or interval. In case no exact time is available, the date/time can be right truncated i.e. all of these are valid ISO8601 compliant times: 2008-01-23T19:23:10+00:00; 2008-01-23T19:23:10; 2008-01-23; 2008-01; 2008.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string",
@@ -111,10 +98,8 @@
           }
         },
         "geographic location (country and/or sea)" : {
-          "description" : "The geographical origin of where the sample was collected from, with the intention of sequencing, as defined by the country or sea name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html).",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "enum" : [ "Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Arctic Ocean", "Argentina", "Armenia", "Aruba", "Ashmore and Cartier Islands", "Atlantic Ocean", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Baker Island", "Baltic Sea", "Bangladesh", "Barbados", "Bassas da India", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Borneo", "Bosnia and Herzegovina", "Botswana", "Bouvet Island", "Brazil", "British Virgin Islands", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Clipperton Island", "Cocos Islands", "Colombia", "Comoros", "Cook Islands", "Coral Sea Islands", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Curacao", "Cyprus", "Czechia", "Czech Republic", "Democratic Republic of the Congo", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "East Timor", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Europa Island", "Falkland Islands (Islas Malvinas)", "Faroe Islands", "Fiji", "Finland", "France", "French Guiana", "French Polynesia", "French Southern and Antarctic Lands", "Gabon", "Gambia", "Gaza Strip", "Georgia", "Germany", "Ghana", "Gibraltar", "Glorioso Islands", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard Island and McDonald Islands", "Honduras", "Hong Kong", "Howland Island", "Hungary", "Iceland", "India", "Indian Ocean", "Indonesia", "Iran", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Jan Mayen", "Japan", "Jarvis Island", "Jersey", "Johnston Atoll", "Jordan", "Juan de Nova Island", "Kazakhstan", "Kenya", "Kerguelen Archipelago", "Kingman Reef", "Kiribati", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mediterranean Sea", "Mexico", "Micronesia", "Midway Islands", "Moldova", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Navassa Island", "Nepal", "Netherlands", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "North Korea", "North Sea", "Northern Mariana Islands", "Norway", "Oman", "Pacific Ocean", "Pakistan", "Palau", "Palmyra Atoll", "Panama", "Papua New Guinea", "Paracel Islands", "Paraguay", "Peru", "Philippines", "Pitcairn Islands", "Poland", "Portugal", "Puerto Rico", "Qatar", "Republic of the Congo", "Reunion", "Romania", "Ross Sea", "Russia", "Rwanda", "Saint Helena", "Saint Kitts and Nevis", "Saint Lucia", "Saint Pierre and Miquelon", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Sint Maarten", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "South Korea", "Southern Ocean", "Spain", "Spratly Islands", "Sri Lanka", "Sudan", "Suriname", "Svalbard", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Tasman Sea", "Thailand", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tromelin Island", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "USA", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Viet Nam", "Virgin Islands", "Wake Island", "Wallis and Futuna", "West Bank", "Western Sahara", "Yemen", "Zambia", "Zimbabwe", "missing: control sample", "missing: data agreement established pre-2023", "missing: endangered species", "missing: human-identifiable", "missing: lab stock", "missing: sample group", "missing: synthetic construct", "missing: third party data", "not applicable", "not collected", "not provided", "restricted access" ]
@@ -124,38 +109,38 @@
           }
         },
         "geographic location (latitude)" : {
-          "description" : "The geographical origin of the sample as defined by latitude. The values should be reported in decimal degrees and in WGS84 system",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string",
                 "pattern" : "(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)"
+              },
+              "unit" : {
+                "enum" : [ "DD" ]
               }
             },
             "required" : [ "text" ]
           }
         },
         "geographic location (longitude)" : {
-          "description" : "The geographical origin of the sample as defined by longitude. The values should be reported in decimal degrees and in WGS84 system",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string",
                 "pattern" : "(^[+-]?[0-9]+.?[0-9]{0,8}$)|(^not collected$)|(^not provided$)|(^restricted access$)|(^missing: control sample$)|(^missing: sample group$)|(^missing: synthetic construct$)|(^missing: lab stock$)|(^missing: third party data$)|(^missing: data agreement established pre-2023$)|(^missing: endangered species$)|(^missing: human-identifiable$)"
+              },
+              "unit" : {
+                "enum" : [ "DD" ]
               }
             },
             "required" : [ "text" ]
           }
         },
         "geographic location (region and locality)" : {
-          "description" : "The geographical origin of the sample as defined by the specific region name followed by the locality name.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -165,38 +150,38 @@
           }
         },
         "trial length" : {
-          "description" : "Length of time from the beginning of the trial until the end of the trial",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string",
                 "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
+              },
+              "unit" : {
+                "enum" : [ "days", "hours", "minutes", "weeks", "years" ]
               }
             },
             "required" : [ "text" ]
           }
         },
         "trial timepoint" : {
-          "description" : "Timepoint of the trial when the sample was collected - length of time after the beginning of the trial",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string",
                 "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
+              },
+              "unit" : {
+                "enum" : [ "days", "hours", "minutes", "weeks", "years" ]
               }
             },
             "required" : [ "text" ]
           }
         },
         "host disease status" : {
-          "description" : "list of diseases with which the host has been diagnosed; can include multiple diagnoses. The value of the field depends on host; for humans the terms should be chosen from DO (Disease Ontology) at http://www.disease-ontology.org, other hosts are free text",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -206,10 +191,8 @@
           }
         },
         "host common name" : {
-          "description" : "common name of the host, e.g. human",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -219,10 +202,8 @@
           }
         },
         "host subject id" : {
-          "description" : "a unique identifier by which each subject can be referred to, de-identified, e.g. #131",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -232,10 +213,8 @@
           }
         },
         "host taxid" : {
-          "description" : "NCBI taxon id of the host, e.g. 9606",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string",
@@ -246,10 +225,8 @@
           }
         },
         "host body site" : {
-          "description" : "name of body site where the sample was obtained from, such as a specific organ or tissue (tongue, lung etc...). For Foundational Model of Anatomy Ontology (FMA) (v 3.1) terms, please see http://purl.bioontology.org/ontology/FMA",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -259,38 +236,38 @@
           }
         },
         "host length" : {
-          "description" : "the length of subject",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string",
                 "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
+              },
+              "unit" : {
+                "enum" : [ "cm", "m", "mm" ]
               }
             },
             "required" : [ "text" ]
           }
         },
         "host total mass" : {
-          "description" : "total mass of the host at collection, the unit depends on host",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string",
                 "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
+              },
+              "unit" : {
+                "enum" : [ "g", "kg" ]
               }
             },
             "required" : [ "text" ]
           }
         },
         "host sex" : {
-          "description" : "Gender or sex of the host.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "enum" : [ "female", "hermaphrodite", "male", "missing: control sample", "missing: data agreement established pre-2023", "missing: endangered species", "missing: human-identifiable", "missing: lab stock", "missing: sample group", "missing: synthetic construct", "missing: third party data", "neuter", "not applicable", "not collected", "not provided", "other", "restricted access" ]
@@ -300,10 +277,8 @@
           }
         },
         "host scientific name" : {
-          "description" : "Scientific name of the natural (as opposed to laboratory) host to the organism from which sample was obtained.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -313,10 +288,8 @@
           }
         },
         "host breed" : {
-          "description" : "Breed of the host (e.g. COBB-500)",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -326,24 +299,23 @@
           }
         },
         "host gutted mass" : {
-          "description" : "total mass of the host after gutting, the unit depends on host",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string",
                 "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
+              },
+              "unit" : {
+                "enum" : [ "g", "kg" ]
               }
             },
             "required" : [ "text" ]
           }
         },
         "host diet" : {
-          "description" : "type of diet depending on the host, for animals omnivore, herbivore etc., for humans high-fat, Mediterranean etc.; can include multiple diet types",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -353,10 +325,8 @@
           }
         },
         "host diet treatment" : {
-          "description" : "Experimental diet treatment/additive to normal host feed e.g. Probiotic (GalliPro EPB5)",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -366,24 +336,23 @@
           }
         },
         "host diet treatment concentration" : {
-          "description" : "Concentration of experimental diet treatment/additive to normal host feed as a percentage of the mass of the feed (e.g. 20%)",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string",
                 "pattern" : "^(\\d|[1-9]\\d|\\d\\.\\d{1,2}|[1-9]\\d\\.\\d{1,2}|100)$"
+              },
+              "unit" : {
+                "enum" : [ "% mass" ]
               }
             },
             "required" : [ "text" ]
           }
         },
         "host storage container" : {
-          "description" : "storage container that the host organism is kept in before sampling (e.g. cage, water tank, pen) including details of size and type",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -393,10 +362,8 @@
           }
         },
         "host storage container pH" : {
-          "description" : "pH of the medium in which the host organism is kept before sampling (e.g. pH of water in tank)",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string",
@@ -407,38 +374,38 @@
           }
         },
         "host storage container temperature" : {
-          "description" : "temperature at which the host is kept before sampling",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string",
                 "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
+              },
+              "unit" : {
+                "enum" : [ "°C" ]
               }
             },
             "required" : [ "text" ]
           }
         },
         "sample volume or weight for DNA extraction" : {
-          "description" : "Volume (ml) or mass (g) of total collected sample processed for DNA extraction. Note: total sample collected should be entered under the term 'sample size'.",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string",
                 "pattern" : "(0|((0\\.)|([1-9][0-9]*\\.?))[0-9]*)([Ee][+-]?[0-9]+)?"
+              },
+              "unit" : {
+                "enum" : [ "g", "mL", "mg", "ng" ]
               }
             },
             "required" : [ "text" ]
           }
         },
         "nucleic acid extraction" : {
-          "description" : "A link to a literature reference, electronic resource or a standard operating procedure (SOP), that describes the material separation to recover the nucleic acid fraction from a sample",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -448,10 +415,8 @@
           }
         },
         "pcr primers" : {
-          "description" : "PCR primers that were used to amplify the sequence of the targeted gene, locus or subfragment. This field should contain all the primers used for a single PCR reaction if multiple forward or reverse primers are present in a single PCR reaction. The primer sequence should be reported in uppercase letters",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -461,10 +426,8 @@
           }
         },
         "adapters" : {
-          "description" : "Adapters provide priming sequences for both amplification and sequencing of the sample-library fragments. Both adapters should be reported; in uppercase letters",
           "type" : "array",
           "items" : {
-            "type" : "object",
             "properties" : {
               "text" : {
                 "type" : "string"
@@ -473,7 +436,60 @@
             "required" : [ "text" ]
           }
         }
-      }
+      },
+      "allOf" : [ {
+        "oneOf" : [ {
+          "required" : [ "project name" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "reference host genome for decontamination" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "collection_date" ]
+        }, {
+          "required" : [ "collection date" ]
+        }, {
+          "required" : [ "Event Date/Time" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "geographic location (country and/or sea)" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "trial timepoint" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "host common name" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "host subject id" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "host taxid" ]
+        }, {
+          "required" : [ "host of the symbiotic host taxon id" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "host body site" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "host diet treatment" ]
+        } ]
+      }, {
+        "oneOf" : [ {
+          "required" : [ "sample volume or weight for DNA extraction" ]
+        }, {
+          "required" : [ "sample weight for DNA extraction" ]
+        } ]
+      } ]
     }
   },
   "required" : [ "name", "characteristics" ]

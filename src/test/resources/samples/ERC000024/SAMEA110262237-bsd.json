@@ -1,0 +1,179 @@
+{
+  "name" : "65830:740a55dc-9ca4-4daa-b5da-027174b81efb",
+  "accession" : "SAMEA110262237",
+  "webinSubmissionAccountId" : "Webin-40945",
+  "taxId" : 1561972,
+  "status" : "PUBLIC",
+  "release" : "2022-07-11T00:21:05Z",
+  "update" : "2022-07-30T11:02:48.972Z",
+  "submitted" : "2022-07-06T12:44:32Z",
+  "characteristics" : {
+    "ENA first public" : [ {
+      "text" : "2022-07-11",
+      "tag" : "attribute"
+    } ],
+    "ENA last update" : [ {
+      "text" : "2022-07-11",
+      "tag" : "attribute"
+    } ],
+    "ENA-CHECKLIST" : [ {
+      "text" : "ERC000024",
+      "tag" : "attribute"
+    } ],
+    "External Id" : [ {
+      "text" : "SAMEA110262237",
+      "tag" : "Namespace:BioSample"
+    } ],
+    "INSDC center alias" : [ {
+      "text" : "Alfred Wegener Institute Helmholtz Centre for Polar and Marine Research"
+    } ],
+    "INSDC center name" : [ {
+      "text" : "Alfred Wegener Institute Helmholtz Centre for Polar and Marine Research"
+    } ],
+    "INSDC first public" : [ {
+      "text" : "2022-07-11T00:21:05Z"
+    } ],
+    "INSDC last update" : [ {
+      "text" : "2022-07-11T00:21:05Z"
+    } ],
+    "INSDC status" : [ {
+      "text" : "public"
+    } ],
+    "SRA accession" : [ {
+      "text" : "ERS12359854"
+    } ],
+    "Submitter Id" : [ {
+      "text" : "65830:740a55dc-9ca4-4daa-b5da-027174b81efb",
+      "tag" : "Namespace:Alfred Wegener Institute Helmholtz Centre for Polar and Marine Research"
+    } ],
+    "broker name" : [ {
+      "text" : "German Federation for Biological Data (GFBio)"
+    } ],
+    "collection date" : [ {
+      "text" : "2019-07-27",
+      "tag" : "attribute"
+    } ],
+    "description" : [ {
+      "text" : "FRAM mooring EGC-5: microbial annual cycle 2018-19"
+    } ],
+    "environment (biome)" : [ {
+      "text" : "marine biome [ENVO:00000447]",
+      "tag" : "attribute"
+    } ],
+    "environment (feature)" : [ {
+      "text" : "microbial community [PCO:1000004]",
+      "tag" : "attribute"
+    } ],
+    "environment (material)" : [ {
+      "text" : "sea water [ENVO:00002149]",
+      "tag" : "attribute"
+    } ],
+    "environmental package" : [ {
+      "text" : "water",
+      "tag" : "attribute"
+    } ],
+    "geographic location (country and/or sea)" : [ {
+      "text" : "Arctic Ocean",
+      "tag" : "attribute"
+    } ],
+    "geographic location (depth)" : [ {
+      "text" : "71.88",
+      "unit" : "m",
+      "tag" : "attribute"
+    } ],
+    "geographic location (latitude)" : [ {
+      "text" : "78.99999",
+      "unit" : "DD",
+      "tag" : "attribute"
+    } ],
+    "geographic location (longitude)" : [ {
+      "text" : "-5.3952",
+      "unit" : "DD",
+      "tag" : "attribute"
+    } ],
+    "geographic location (region and locality)" : [ {
+      "text" : "Fram Strait",
+      "tag" : "attribute"
+    } ],
+    "investigation type" : [ {
+      "text" : "mimarks-survey",
+      "tag" : "attribute"
+    } ],
+    "locus_tag" : [ {
+      "text" : "16S",
+      "tag" : "attribute"
+    } ],
+    "nucleic acid extraction" : [ {
+      "text" : "PowerWater",
+      "tag" : "attribute"
+    } ],
+    "organism" : [ {
+      "text" : "seawater metagenome",
+      "ontologyTerms" : [ "http://purl.obolibrary.org/obo/NCBITaxon_1561972" ]
+    } ],
+    "pcr primers" : [ {
+      "text" : "FWD:GTGYCAGCMGCCGCGGTAA REV:CCGYCAATTYMTTTRAGTTT; 515F-926R",
+      "tag" : "attribute"
+    } ],
+    "project name" : [ {
+      "text" : "FRAM",
+      "tag" : "attribute"
+    } ],
+    "sample collection device or method" : [ {
+      "text" : "Remote Access Sampler",
+      "tag" : "attribute"
+    } ],
+    "sample description" : [ {
+      "text" : "FRAM mooring EGC-5: microbial annual cycle 2018-19",
+      "tag" : "attribute"
+    } ],
+    "sample material processing" : [ {
+      "text" : "Sterivex_0.2um",
+      "tag" : "attribute"
+    } ],
+    "sequencing method" : [ {
+      "text" : "Illumina MiSeq",
+      "tag" : "attribute"
+    } ],
+    "submitted to INSDC" : [ {
+      "text" : "true",
+      "tag" : "attribute"
+    } ],
+    "target subfragment" : [ {
+      "text" : "V4-V5",
+      "tag" : "attribute"
+    } ],
+    "title" : [ {
+      "text" : "RAS_EGC_07_1819_4"
+    } ],
+    "water environmental package" : [ {
+      "text" : "water",
+      "tag" : "attribute"
+    } ]
+  },
+  "externalReferences" : [ {
+    "url" : "https://www.ebi.ac.uk/ena/browser/view/SAMEA110262237",
+    "duo" : [ ]
+  } ],
+  "submittedVia" : "PIPELINE_IMPORT",
+  "create" : "2022-07-06T11:44:31.652Z",
+  "_links" : {
+    "self" : {
+      "href" : "https://www.ebi.ac.uk/biosamples/samples/SAMEA110262237"
+    },
+    "curationDomain" : {
+      "href" : "https://www.ebi.ac.uk/biosamples/samples/SAMEA110262237{?curationdomain}",
+      "templated" : true
+    },
+    "curationLinks" : {
+      "href" : "https://www.ebi.ac.uk/biosamples/samples/SAMEA110262237/curationlinks"
+    },
+    "curationLink" : {
+      "href" : "https://www.ebi.ac.uk/biosamples/samples/SAMEA110262237/curationlinks/{hash}",
+      "templated" : true
+    },
+    "structuredData" : {
+      "href" : "https://www.ebi.ac.uk/biosamples/structureddata/SAMEA110262237"
+    }
+  }
+}

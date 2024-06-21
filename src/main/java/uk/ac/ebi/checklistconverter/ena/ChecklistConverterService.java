@@ -93,16 +93,16 @@ public class ChecklistConverterService {
       String schemaId = getSchemaId(enaChecklist);
       String title = enaChecklist.getChecklist().getDescriptor().getName();
       String description = enaChecklist.getChecklist().getDescriptor().getDescription();
-//      jsonSchema = SchemaTemplateGenerator.getBioSamplesSchema(schemaId, title, description, properties);
-      jsonSchemaEna = SchemaTemplateGenerator.getEnaSchema(schemaId, title, description, properties);
+      jsonSchema = SchemaTemplateGenerator.getBioSamplesSchema(schemaId, title, description, properties);
+//      jsonSchemaEna = SchemaTemplateGenerator.getEnaSchema(schemaId, title, description, properties);
 
-      saveSchema(checklistId + "-ENA.json", jsonSchemaEna);
-//      saveSchema(checklistId + "-BSD.json", jsonSchema);
+//      saveSchema(checklistId + "-ENA.json", jsonSchemaEna);
+      saveSchema(checklistId + "-BSD.json", jsonSchema);
     } catch (Exception e) {
       log.error("Could not checklistId checklist: " + checklistId, e);
       throw new ApplicationStateException("Could not retrieve checklist for " + checklistId, e);
     }
-    return jsonSchemaEna;
+    return jsonSchema;
   }
 
   public String getChecklists() {
