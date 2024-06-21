@@ -3411,8 +3411,7 @@
             "required" : [ "text" ]
           }
         }
-      },
-      "allOf" : [ ]
+      }
     }
   },
   "required" : [ "name", "characteristics" ]

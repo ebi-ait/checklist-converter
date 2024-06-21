@@ -52,7 +52,6 @@ def write_document(output_path, content):
 def main(accessions, output_path):
     for accession in accessions:
         document = get_document(accession)
-        checklist = document['characteristics'].get('ENA-CHECKLIST', [{"text": 'checklistNotFound'}])[0]['text']
         if not isdir(output_path):
             mkdir(output_path)
 

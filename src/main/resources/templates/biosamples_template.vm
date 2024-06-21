@@ -36,22 +36,25 @@
           }
         }#if( $foreach.hasNext ),#end
       #end
-      },
-      "allOf": [
-      #foreach ($synonyms in $required)
-        {
-          "oneOf": [
-          #foreach ($synonym in $synonyms)
-            {
-              "required": [
-                "$synonym"
-              ]
-            }#if( $foreach.hasNext ),#end
-          #end
-          ]
-        }#if( $foreach.hasNext ),#end
+      }
+      #if($required.size() > 0)
+        ,
+        "allOf": [
+        #foreach ($synonyms in $required)
+          {
+            "oneOf": [
+            #foreach ($synonym in $synonyms)
+              {
+                "required": [
+                  "$synonym"
+                ]
+              }#if( $foreach.hasNext ),#end
+            #end
+            ]
+          }#if( $foreach.hasNext ),#end
+        #end
+        ]
       #end
-      ]
     }
   },
   "required": [
