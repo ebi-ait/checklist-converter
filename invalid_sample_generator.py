@@ -5,6 +5,9 @@ import json
 import random
 
 
+biosample_field_vals = {
+    "collection date":"collection_date"
+}
 def parse_csv_to_dict(file_path):
     result_dict = {}
     with open(file_path, mode='r') as file:
@@ -47,7 +50,10 @@ def add_mandatory_element_error(checklist_xml_str, biosample_json, biosample_id)
         name = field.find('NAME')
 
         if mandatory is not None and name is not None and mandatory.text == 'mandatory':
-            mandatory_fields.append(name.text)
+            field_text = name.text
+            if field_text in biosample_field_vals:
+                field_text= biosample_field_vals.get(field_text)
+            mandatory_fields.append(field_text)
     print('Mandatory fields:',mandatory_fields)
 
     #now remove mandatory any of the mandatory field from json randomly and write to file
