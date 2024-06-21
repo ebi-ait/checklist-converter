@@ -56,7 +56,7 @@ def main(accessions, output_path):
         if not isdir(output_path):
             mkdir(output_path)
 
-        output_file_path = join(output_path, f"{accession}")
+        output_file_path = join(output_path, f"{accession}", '.json')
         write_document(output_file_path, document)
 
 
