@@ -1,0 +1,84 @@
+{
+  "name" : "lodBeiA",
+  "accession" : "SAMEA115394517",
+  "sraAccession" : "ERS18415086",
+  "webinSubmissionAccountId" : "Webin-47017",
+  "taxId" : 1775926,
+  "status" : "PUBLIC",
+  "release" : "2024-03-13T18:23:02.833Z",
+  "update" : "2024-05-13T18:23:03.709Z",
+  "submitted" : "2024-03-08T12:12:47.977Z",
+  "characteristics" : {
+    "ENA first public" : [ {
+      "text" : "2024-03-13"
+    } ],
+    "ENA-CHECKLIST" : [ {
+      "text" : "ERC000011",
+      "tag" : "attribute"
+    } ],
+    "INSDC center name" : [ {
+      "text" : "Comenius University, Faculty of Mathematics, Physics and Informatics"
+    } ],
+    "INSDC status" : [ {
+      "text" : "public"
+    } ],
+    "SRA accession" : [ {
+      "text" : "ERS18415086"
+    } ],
+    "Submitter Id" : [ {
+      "text" : "lodBeiA"
+    } ],
+    "collection date" : [ {
+      "tag" : "attribute"
+    } ],
+    "description" : [ {
+      "text" : "Lodderomyces beijingensis strain CBS 14171"
+    } ],
+    "geographic location (country and/or sea)" : [ {
+      "text" : "China",
+      "tag" : "attribute"
+    } ],
+    "isolation_source" : [ {
+      "text" : "gut of a scarab beetle Anomala sieversi (Rutelidae) in Central China, Liu et al 2016",
+      "tag" : "attribute"
+    } ],
+    "organism" : [ {
+      "text" : "Lodderomyces beijingensis"
+    } ],
+    "scientific_name" : [ {
+      "text" : "Lodderomyces beijingensis"
+    } ],
+    "strain" : [ {
+      "text" : "CBS 14171",
+      "tag" : "attribute"
+    } ],
+    "title" : [ {
+      "text" : "Lodderomyces beijingensis strain CBS 14171"
+    } ]
+  },
+  "externalReferences" : [ {
+    "url" : "https://www.ebi.ac.uk/ena/browser/view/SAMEA115394517",
+    "duo" : [ ]
+  } ],
+  "submittedVia" : "WEBIN_SERVICES",
+  "create" : "2024-03-08T12:12:47.977Z",
+  "_links" : {
+    "self" : {
+      "href" : "https://www.ebi.ac.uk/biosamples/samples/SAMEA115394517"
+    },
+    "curationDomain" : {
+      "href" : "https://www.ebi.ac.uk/biosamples/samples/SAMEA115394517{?curationdomain}",
+      "templated" : true
+    },
+    "curationLinks" : {
+      "href" : "https://www.ebi.ac.uk/biosamples/samples/SAMEA115394517/curationlinks"
+    },
+    "curationLink" : {
+      "href" : "https://www.ebi.ac.uk/biosamples/samples/SAMEA115394517/curationlinks/{hash}",
+      "templated" : true
+    },
+    "structuredData" : {
+      "href" : "https://www.ebi.ac.uk/biosamples/structureddata/SAMEA115394517"
+    }
+  }
+}
