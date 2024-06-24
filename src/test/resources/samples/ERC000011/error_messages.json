@@ -5,6 +5,7 @@ must match pattern "(^[12][0-9]{3}(-(0[1-9]|1[0-2])(-(0[1-9]|[12][0-9]|3[01])(T[
 ```
 
 
+
 2. Enum Error
 ```
 characteristics/geographic location (country and~1or sea)/0/text
@@ -20,5 +21,4 @@ must have required property 'text'
 4. JSON error
 ```
 Unable to parse the JSON in the input fields.
-
 ```
