@@ -9,6 +9,9 @@ import os
 biosample_field_vals = {
     "collection date":"collection_date"
 }
+
+mandatory_error_file_extension = '_mandatory.json'
+enum_error_file_extension = '_enum.json'
 def parse_csv_to_dict(file_path):
     result_dict = {}
     with open(file_path, mode='r') as file:
@@ -42,6 +45,15 @@ def get_ena_checklist(checklist_id):
     tree = ET.parse('./data/ena_checklists/'+checklist_id+'.xml')
     return tree
 
+def get_biosample_json_from_file(file_name):
+    with open('./data/invalid/'+file_name, "r") as file:
+        content = json.load(file)
+    return content
+def get_checklist_json_schema(file_path) :
+    with open(file_path, "r") as file:
+        content = json.load(file)
+    return content
+
 def get_biosample(biosample_id):
     url = 'https://www.ebi.ac.uk/biosamples/samples/'+biosample_id
 
@@ -52,6 +64,18 @@ def get_biosample(biosample_id):
     response = requests.get(url, headers=headers)
     response.raise_for_status()
     return response.json()
+def add_enum_value_error( biosample_json_obj, biosample_id, output_directory):
+    location_list = biosample_json_obj.get("characteristics", {}).get("geographic location (country and/or sea)", [])
+
+    if location_list:
+        for location in location_list:
+            location['text'] = 'interstellar or beyond'
+    else:
+        raise ValueError('mandatory field geographic location (country and/or sea) country name  Not present in biosample'
+                         +biosample_id)
+    write_invalid_biosample(output_directory , biosample_id + enum_error_file_extension)
+
+
 
 def add_mandatory_element_error(checklist_xml_str, biosample_json, biosample_id, output_directory):
     root = checklist_xml_str.getroot()
@@ -76,16 +100,54 @@ def add_mandatory_element_error(checklist_xml_str, biosample_json, biosample_id,
             del biosample_json['characteristics'][element_to_remove]
         else:
             raise ValueError('Element' + element_to_remove +' Not present in biosample')
-        os.makedirs(output_directory, exist_ok=True)
-        with open(output_directory+biosample_id+'_mandatory.json', 'w') as file:
-            json.dump(biosample_json, file, indent=4)
+        write_invalid_biosample(output_directory , biosample_id + mandatory_error_file_extension)
 
+def write_invalid_biosample(output_directory, file_name):
+    os.makedirs(output_directory, exist_ok=True)
+    with open(output_directory+file_name , 'w') as file:
+        json.dump(biosample_json, file, indent=4)
+def validate_and_write_result_to_file(biosample_schema, biosample_json_data, file_path):
+    url = 'http://localhost:3020/validate'
 
+    headers = {
+        'Accept': '*/*',
+        'Content-Type': 'application/json'
+    }
+
+    body ={
+        "schema":biosample_schema,
+        "data":biosample_json_data
+    }
+
+    response = requests.post(url, headers=headers, json=body)
+    response.raise_for_status()
+    with open(file_path, "w") as file:
+        print(response.text,'writing to file',file_path)
+        file.write(response.text)
+
+# prerequisite: run bio validator docker compose up
+# to run the script: python invalid_sample_generator.py
+# input ./data/accessions.csv add or edit this file to change input
+# this script will
+# 1) pull the biosample json and
+#       i)remove a mandatory field randomly
+#       ii)add invalid value for enum constant
+#      and write the invalid  file into ./data/invalid directory with filename in the format accession_error_type.json
+# 2) validate invalid documents using biovalidator and write output to directory ./data/invalid/validation_result/
 if __name__ == '__main__':
     accession_checklist_id_dict = parse_csv_to_dict('./data/accessions.csv')
     for accession, checklist in accession_checklist_id_dict.items():
-        print(accession+' <-acc,checklist-> '+checklist)
+        print(accession + ' <-acc,checklist-> ' + checklist)
         ena_checklist_xml = get_ena_checklist(checklist)
         biosample_json = get_biosample(accession)
-        add_mandatory_element_error(ena_checklist_xml, biosample_json, accession,'./data/invalid/')
+        add_mandatory_element_error(ena_checklist_xml, biosample_json, accession, './data/invalid/')
+        add_enum_value_error( get_biosample(accession), accession, './data/invalid/')
+
+    for accession, checklist in accession_checklist_id_dict.items():
+        invalid_biosample_json = get_biosample_json_from_file(accession + mandatory_error_file_extension)
+        biosample_json_schema = get_checklist_json_schema('./schema/'+checklist+'-BSD.json')
+        validate_and_write_result_to_file(biosample_json_schema, invalid_biosample_json, './data/invalid/validation_result/'+accession + mandatory_error_file_extension)
+
+        invalid_biosample_json = get_biosample_json_from_file(accession + enum_error_file_extension)
+        validate_and_write_result_to_file(biosample_json_schema, invalid_biosample_json, './data/invalid/validation_result/'+accession + enum_error_file_extension)
 
