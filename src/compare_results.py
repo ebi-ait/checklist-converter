@@ -31,6 +31,8 @@ def main(json_validation_dir, xml_validation_dir, output_dir):
         r['MATCH'] = r['JSON_VALID'] == r['XML_VALID']
         if not r['MATCH']:
             print('Mismatching validation results for checklist: ' + r['CHECKLIST'] + ', accession: ' + r['ACCESSION'])
+            r['SAMPLE_LINK'] = 'https://www.ebi.ac.uk/biosamples/samples/' + r['ACCESSION']
+            r['ENA_VALIDATION_RESULT'] = read_file_content_to_string(os.path.join(xml_validation_dir, r['CHECKLIST'], 'valid' if r['XML_VALID'] else 'invalid', r['ACCESSION'] + '.xml'))
 
     write_to_file(output_dir, results)
 
@@ -44,6 +46,14 @@ def get_json_validation_result(file_path):
         print(f"Error reading file {file_path}: {e}")
         sys.exit(1)
 
+
+def read_file_content_to_string(file_path):
+    try:
+        with open(file_path, 'r') as file:
+            return str(file.readlines())
+    except Exception as e:
+        print(f"Error reading file {file_path}: {e}")
+        sys.exit(1)
 
 def write_to_file(output_dir, content):
     dataframe = pd.DataFrame(content)
