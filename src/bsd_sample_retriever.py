@@ -38,7 +38,7 @@ def parse_arguments() -> argparse.Namespace:
 
 
 def get_document(accession: str) -> dict:
-    url = f"https://www.ebi.ac.uk/biosamples/samples/{accession}"
+    url = f"https://www.ebi.ac.uk/biosamples/samples/{accession}?curationdomain="
     response = requests.get(url)
     response.raise_for_status()
     return response.json()
