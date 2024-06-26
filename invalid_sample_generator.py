@@ -4,6 +4,7 @@ import xml.etree.ElementTree as ET
 import json
 import random
 import os
+import argparse
 
 
 biosample_field_vals = {
@@ -21,6 +22,13 @@ def parse_csv_to_dict(file_path):
             value = row['checklist']
             result_dict[key] = value
     return result_dict
+
+def get_biovalidator_url():
+    value = os.getenv('BIOVALIDATOR_SERVICE')
+    print('BIOVALIDATOR_SERVICE:'+value)
+    if value is None:
+        raise ValueError(f"Environment variable BIOVALIDATOR_SERVICE not found.")
+    return value
 
 def download_ena_checklists():
     with open('./data/checklists.txt', 'r') as file:
@@ -70,10 +78,7 @@ def add_enum_value_error( biosample_json_obj, biosample_id, output_directory):
     if location_list:
         for location in location_list:
             location['text'] = 'interstellar or beyond'
-    else:
-        raise ValueError('mandatory field geographic location (country and/or sea) country name  Not present in biosample'
-                         +biosample_id)
-    write_invalid_biosample(output_directory , biosample_id + enum_error_file_extension)
+            write_invalid_biosample(output_directory , biosample_id + enum_error_file_extension)
 
 
 
@@ -98,16 +103,13 @@ def add_mandatory_element_error(checklist_xml_str, biosample_json, biosample_id,
         element_to_remove = mandatory_fields[random.randint(0, len(mandatory_fields)-1)]
         if element_to_remove in biosample_json['characteristics']:
             del biosample_json['characteristics'][element_to_remove]
-        else:
-            raise ValueError('Element' + element_to_remove +' Not present in biosample')
-        write_invalid_biosample(output_directory , biosample_id + mandatory_error_file_extension)
+            write_invalid_biosample(output_directory , biosample_id + mandatory_error_file_extension)
 
 def write_invalid_biosample(output_directory, file_name):
     os.makedirs(output_directory, exist_ok=True)
     with open(output_directory+file_name , 'w') as file:
         json.dump(biosample_json, file, indent=4)
-def validate_and_write_result_to_file(biosample_schema, biosample_json_data, file_path):
-    url = 'http://localhost:3020/validate'
+def validate_and_write_result_to_file(biovalidator_service, biosample_schema, biosample_json_data, file_path):
 
     headers = {
         'Accept': '*/*',
@@ -119,7 +121,7 @@ def validate_and_write_result_to_file(biosample_schema, biosample_json_data, fil
         "data":biosample_json_data
     }
 
-    response = requests.post(url, headers=headers, json=body)
+    response = requests.post(biovalidator_service , headers=headers, json=body)
     response.raise_for_status()
     with open(file_path, "w") as file:
         print(response.text,'writing to file',file_path)
@@ -135,19 +137,28 @@ def validate_and_write_result_to_file(biosample_schema, biosample_json_data, fil
 #      and write the invalid  file into ./data/invalid directory with filename in the format accession_error_type.json
 # 2) validate invalid documents using biovalidator and write output to directory ./data/invalid/validation_result/
 if __name__ == '__main__':
+    biovalidator_url = get_biovalidator_url()
     accession_checklist_id_dict = parse_csv_to_dict('./data/accessions.csv')
-    for accession, checklist in accession_checklist_id_dict.items():
-        print(accession + ' <-acc,checklist-> ' + checklist)
-        ena_checklist_xml = get_ena_checklist(checklist)
-        biosample_json = get_biosample(accession)
-        add_mandatory_element_error(ena_checklist_xml, biosample_json, accession, './data/invalid/')
-        add_enum_value_error( get_biosample(accession), accession, './data/invalid/')
 
-    for accession, checklist in accession_checklist_id_dict.items():
-        invalid_biosample_json = get_biosample_json_from_file(accession + mandatory_error_file_extension)
-        biosample_json_schema = get_checklist_json_schema('./schema/'+checklist+'-BSD.json')
-        validate_and_write_result_to_file(biosample_json_schema, invalid_biosample_json, './data/invalid/validation_result/'+accession + mandatory_error_file_extension)
+    parser = argparse.ArgumentParser(description='make invalid biosample json and validate using biovalidator')
 
-        invalid_biosample_json = get_biosample_json_from_file(accession + enum_error_file_extension)
-        validate_and_write_result_to_file(biosample_json_schema, invalid_biosample_json, './data/invalid/validation_result/'+accession + enum_error_file_extension)
+    parser.add_argument('--action', type=str, required=True, help='generate : generate invalid documents or validate: validate invalid documents using biovalidator')
+    args = parser.parse_args()
+    if args.action == 'generate':
+        for accession, checklist in accession_checklist_id_dict.items():
+            print(accession + ' <-acc,checklist-> ' + checklist)
+            ena_checklist_xml = get_ena_checklist(checklist)
+            biosample_json = get_biosample(accession)
+            add_mandatory_element_error(ena_checklist_xml, biosample_json, accession, './data/invalid/')
+            add_enum_value_error( get_biosample(accession), accession, './data/invalid/')
+    else:
+        for accession, checklist in accession_checklist_id_dict.items():
+            try:
+                invalid_biosample_json = get_biosample_json_from_file(accession + mandatory_error_file_extension)
+                biosample_json_schema = get_checklist_json_schema('./schema/'+checklist+'-BSD.json')
+                validate_and_write_result_to_file(biovalidator_url, biosample_json_schema, invalid_biosample_json, './data/invalid/validation_result/'+accession + mandatory_error_file_extension)
 
+                invalid_biosample_json = get_biosample_json_from_file(accession + enum_error_file_extension)
+                validate_and_write_result_to_file(biovalidator_url, biosample_json_schema, invalid_biosample_json, './data/invalid/validation_result/'+accession + enum_error_file_extension)
+            except Exception as e:
+                print(accession+'<-->'+checklist+'failed to validate, some fails may not be available')
