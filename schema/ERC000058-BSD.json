@@ -91,7 +91,7 @@
                 "enum" : [ "cm2", "ha", "km2", "m2" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "sample collection device" : {
@@ -128,7 +128,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "sample storage location" : {
@@ -165,7 +165,7 @@
                 "enum" : [ "km", "m", "mm" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "corrosion rate at sample location" : {
@@ -202,7 +202,7 @@
                 "enum" : [ "m" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "oxygenation status of sample" : {
@@ -228,7 +228,7 @@
                 "enum" : [ "g/m3" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "sample well name" : {
@@ -399,7 +399,7 @@
                 "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "water cut" : {
@@ -413,7 +413,7 @@
                 "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "production rate" : {
@@ -427,7 +427,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "field name" : {
@@ -465,7 +465,7 @@
                 "enum" : [ "m" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "geographic location (country and/or sea)" : {
@@ -491,7 +491,7 @@
                 "enum" : [ "DD" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "geographic location (longitude)" : {
@@ -506,7 +506,7 @@
                 "enum" : [ "DD" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "geographic location (region and locality)" : {
@@ -565,7 +565,7 @@
                 "enum" : [ "m" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "secondary and tertiary recovery methods and start date" : {
@@ -591,7 +591,7 @@
                 "enum" : [ "L", "g", "kg", "m2", "m3" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "organism count" : {
@@ -616,7 +616,7 @@
                 "enum" : [ "century", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "hydrocarbon type produced" : {
@@ -630,7 +630,7 @@
                 "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "api gravity" : {
@@ -644,7 +644,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "sample storage duration" : {
@@ -692,7 +692,7 @@
                 "enum" : [ "atm", "bar" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "temperature" : {
@@ -707,7 +707,7 @@
                 "enum" : [ "ºC" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "pH" : {
@@ -744,7 +744,7 @@
                 "enum" : [ "km", "m", "mm" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "oil water contact depth" : {
@@ -759,7 +759,7 @@
                 "enum" : [ "m" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "hydrocarbon resource original pressure" : {
@@ -774,7 +774,7 @@
                 "enum" : [ "N/m2", "Pa" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "source rock geological age" : {
@@ -788,7 +788,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "ammonium" : {
@@ -803,7 +803,7 @@
                 "enum" : [ "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "sample salinity" : {
@@ -818,7 +818,7 @@
                 "enum" : [ "psu" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "calcium" : {
@@ -833,7 +833,7 @@
                 "enum" : [ "mg/L", "parts/million", "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "chloride" : {
@@ -848,7 +848,7 @@
                 "enum" : [ "mg/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "suspended solids" : {
@@ -863,7 +863,7 @@
                 "enum" : [ "g/L", "mol/L", "parts/million" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "dissolved carbon dioxide" : {
@@ -878,7 +878,7 @@
                 "enum" : [ "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "dissolved inorganic carbon" : {
@@ -893,7 +893,7 @@
                 "enum" : [ "µg/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "dissolved inorganic phosphorus" : {
@@ -908,7 +908,7 @@
                 "enum" : [ "µg/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "dissolved organic carbon" : {
@@ -923,7 +923,7 @@
                 "enum" : [ "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "magnesium" : {
@@ -938,7 +938,7 @@
                 "enum" : [ "mg/L", "mol/L", "parts/million" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "nitrate" : {
@@ -953,7 +953,7 @@
                 "enum" : [ "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "nitrite" : {
@@ -968,7 +968,7 @@
                 "enum" : [ "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "total nitrogen concentration" : {
@@ -983,7 +983,7 @@
                 "enum" : [ "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "potassium" : {
@@ -998,7 +998,7 @@
                 "enum" : [ "parts/million", "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "salinity" : {
@@ -1013,7 +1013,7 @@
                 "enum" : [ "psu" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "sodium" : {
@@ -1028,7 +1028,7 @@
                 "enum" : [ "parts/million", "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "sulfate" : {
@@ -1043,7 +1043,7 @@
                 "enum" : [ "mg/L", "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "sulfide" : {
@@ -1058,7 +1058,7 @@
                 "enum" : [ "mg/L", "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "total phosphorus" : {
@@ -1073,7 +1073,7 @@
                 "enum" : [ "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "total iron" : {
@@ -1112,7 +1112,7 @@
                 "enum" : [ "mg/L", "µl/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "resins wt%" : {
@@ -1138,7 +1138,7 @@
                 "enum" : [ "mg/L", "µg/L", "µmol/L", "µmol/kg" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "total sulfur" : {
@@ -1153,7 +1153,7 @@
                 "enum" : [ "mg/L", "µg/L", "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "injection water fraction" : {
@@ -1168,7 +1168,7 @@
                 "enum" : [ "%" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "ethylbenzene" : {
@@ -1183,7 +1183,7 @@
                 "enum" : [ "mg/L", "µg/L", "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "vfa in formation water" : {
@@ -1209,7 +1209,7 @@
                 "enum" : [ "hour", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "sulfate in formation water" : {
@@ -1223,7 +1223,7 @@
                 "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "toluene" : {
@@ -1237,7 +1237,7 @@
                 "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "asphaltenes wt%" : {
@@ -1252,7 +1252,7 @@
                 "enum" : [ "%" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "xylene" : {
@@ -1266,7 +1266,7 @@
                 "enum" : [ "m2" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "alkalinity method" : {
@@ -1280,7 +1280,7 @@
                 "enum" : [ "m2" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "benzene" : {
@@ -1294,7 +1294,7 @@
                 "enum" : [ "m2" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "alkalinity" : {
@@ -1309,7 +1309,7 @@
                 "enum" : [ "mEq/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "source material identifiers" : {
@@ -1334,7 +1334,7 @@
                 "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "sample material type" : {
@@ -1392,7 +1392,7 @@
                 "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "chemical treatment method" : {
@@ -1406,7 +1406,7 @@
                 "enum" : [ "Cth", "J/K" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "negative control type" : {
@@ -1519,7 +1519,7 @@
                 "enum" : [ "m2" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "preservative added to sample" : {
@@ -1578,7 +1578,7 @@
                 "enum" : [ "g", "mL", "mg", "ng" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "nucleic acid extraction" : {
@@ -1693,7 +1693,7 @@
                 "enum" : [ "m" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "aromatics wt%" : {
@@ -1708,7 +1708,7 @@
                 "enum" : [ "%" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "saturates wt%" : {
@@ -1723,7 +1723,7 @@
                 "enum" : [ "%" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "porosity" : {
@@ -1750,7 +1750,7 @@
                 "enum" : [ "mg/L", "ppm" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "basin name" : {
@@ -1764,7 +1764,7 @@
                 "enum" : [ "%", "g/m3" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "pour point" : {
@@ -1779,7 +1779,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "reservoir name" : {
@@ -1793,7 +1793,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "hydrocarbon resource geological age" : {
@@ -1818,7 +1818,7 @@
                 "enum" : [ "m" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "source rock kerogen type" : {
@@ -1832,7 +1832,7 @@
                 "enum" : [ "hour", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "hydrocarbon resource type" : {
@@ -1846,7 +1846,7 @@
                 "enum" : [ "hour", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "water production rate" : {
@@ -1861,7 +1861,7 @@
                 "enum" : [ "m3/day" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "lithology" : {
@@ -1875,7 +1875,7 @@
                 "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "hydrocarbon resource original temperature" : {
@@ -1890,7 +1890,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "depth" : {
@@ -1905,7 +1905,7 @@
                 "enum" : [ "m", "mm" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "injection water breakthrough date of specific well" : {
@@ -1919,7 +1919,7 @@
                 "enum" : [ "%" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         }
       }

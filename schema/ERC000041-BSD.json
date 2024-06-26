@@ -37,7 +37,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "sample transportation time" : {
@@ -63,7 +63,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "sample storage location" : {
@@ -110,7 +110,7 @@
                 "enum" : [ "ng/µl" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "isolation_source" : {
@@ -170,7 +170,7 @@
                 "enum" : [ "L", "g", "kg", "m2", "m3" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "sampling time point" : {

@@ -103,7 +103,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "sample storage location" : {
@@ -287,7 +287,7 @@
                 "enum" : [ "m" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "geographic location (country and/or sea)" : {
@@ -313,7 +313,7 @@
                 "enum" : [ "DD" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "geographic location (longitude)" : {
@@ -328,7 +328,7 @@
                 "enum" : [ "DD" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "geographic location (region and locality)" : {
@@ -387,7 +387,7 @@
                 "enum" : [ "m" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "ventilation rate" : {
@@ -402,7 +402,7 @@
                 "enum" : [ "L/sec", "m3/min" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "ventilation type" : {
@@ -428,7 +428,7 @@
                 "enum" : [ "L", "g", "kg", "m2", "m3" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "organism count" : {
@@ -487,7 +487,7 @@
                 "enum" : [ "Torr", "in. Hg", "millibar(hPa)", "mm Hg" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "humidity" : {
@@ -502,7 +502,7 @@
                 "enum" : [ "%", "g/m3" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "pollutants" : {
@@ -516,7 +516,7 @@
                 "enum" : [ "M/L", "g", "mg/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "solar irradiance" : {
@@ -531,7 +531,7 @@
                 "enum" : [ "W/m2" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "wind direction" : {
@@ -557,7 +557,7 @@
                 "enum" : [ "km/h", "m/s" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "temperature" : {
@@ -572,7 +572,7 @@
                 "enum" : [ "ºC" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "carbon dioxide" : {
@@ -587,7 +587,7 @@
                 "enum" : [ "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "carbon monoxide" : {
@@ -602,7 +602,7 @@
                 "enum" : [ "µM/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "oxygen" : {
@@ -617,7 +617,7 @@
                 "enum" : [ "mg/L", "parts/million" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "air particulate matter concentration" : {
@@ -632,7 +632,7 @@
                 "enum" : [ "µg/m3" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "volatile organic compounds" : {
@@ -646,7 +646,7 @@
                 "enum" : [ "parts/million", "µg/m3" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "methane" : {
@@ -661,7 +661,7 @@
                 "enum" : [ "µM/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "salinity" : {
@@ -676,7 +676,7 @@
                 "enum" : [ "psu" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "source material identifiers" : {
@@ -823,7 +823,7 @@
                 "enum" : [ "g", "mL", "mg", "ng" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "nucleic acid extraction" : {

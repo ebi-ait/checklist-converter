@@ -272,7 +272,7 @@
                 "enum" : [ "m" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "geographic location (country and/or sea)" : {
@@ -298,7 +298,7 @@
                 "enum" : [ "DD" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "geographic location (longitude)" : {
@@ -313,7 +313,7 @@
                 "enum" : [ "DD" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "geographic location (region and locality)" : {
@@ -372,7 +372,7 @@
                 "enum" : [ "m" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "sampling time outside" : {
@@ -398,7 +398,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "train station collection location" : {
@@ -774,7 +774,7 @@
                 "enum" : [ "W/m2", "kg s−3" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "exposed ductwork" : {
@@ -788,7 +788,7 @@
                 "enum" : [ "W/m2", "kg s−3" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "door material" : {
@@ -802,7 +802,7 @@
                 "enum" : [ "W/m2", "kg s−3" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "adjacent rooms" : {
@@ -828,7 +828,7 @@
                 "enum" : [ "Cth", "J/K", "J/°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "ceiling signs of water/mold" : {
@@ -842,7 +842,7 @@
                 "enum" : [ "Cth", "J/K", "J/°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "window status" : {
@@ -856,7 +856,7 @@
                 "enum" : [ "%" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "door location" : {
@@ -870,7 +870,7 @@
                 "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "window signs of water/mold" : {
@@ -884,7 +884,7 @@
                 "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "window type" : {
@@ -898,7 +898,7 @@
                 "enum" : [ "mg/L", "ppm" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "window material" : {
@@ -912,7 +912,7 @@
                 "enum" : [ "%", "g/m3" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "window horizontal position" : {
@@ -937,7 +937,7 @@
                 "enum" : [ "km", "m", "mm" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "window area/size" : {
@@ -951,7 +951,7 @@
                 "enum" : [ "km", "m", "mm" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "sampling floor" : {
@@ -965,7 +965,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "room count" : {
@@ -992,7 +992,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "floor condition" : {
@@ -1006,7 +1006,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "door type, wood" : {
@@ -1020,7 +1020,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "door condition" : {
@@ -1078,7 +1078,7 @@
                 "enum" : [ "m" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "wall texture" : {
@@ -1092,7 +1092,7 @@
                 "enum" : [ "m" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "floor thermal mass" : {
@@ -1107,7 +1107,7 @@
                 "enum" : [ "J/°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "room air exchange rate" : {
@@ -1121,7 +1121,7 @@
                 "enum" : [ "hour", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "bathroom count" : {
@@ -1136,7 +1136,7 @@
                 "enum" : [ "hour", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "shading device signs of water/mold" : {
@@ -1150,7 +1150,7 @@
                 "enum" : [ "hour", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "window covering" : {
@@ -1164,7 +1164,7 @@
                 "enum" : [ "hour", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "ceiling texture" : {
@@ -1178,7 +1178,7 @@
                 "enum" : [ "hour", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "maximum occupancy" : {
@@ -1193,7 +1193,7 @@
                 "enum" : [ "hour", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "gender of restroom" : {
@@ -1207,7 +1207,7 @@
                 "enum" : [ "hour", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "ceiling condition" : {
@@ -1221,7 +1221,7 @@
                 "enum" : [ "hour", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "floor structure" : {
@@ -1235,7 +1235,7 @@
                 "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "rooms that share a wall with sampling room" : {
@@ -1249,7 +1249,7 @@
                 "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "wall finish material" : {
@@ -1263,7 +1263,7 @@
                 "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "room occupancy" : {
@@ -1278,7 +1278,7 @@
                 "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "room location in building" : {
@@ -1292,7 +1292,7 @@
                 "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "floor finish material" : {
@@ -1306,7 +1306,7 @@
                 "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "room window count" : {
@@ -1321,7 +1321,7 @@
                 "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "sampling room id or name" : {
@@ -1335,7 +1335,7 @@
                 "enum" : [ "day", "hour", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "height carpet fiber mat" : {
@@ -1350,7 +1350,7 @@
                 "enum" : [ "cm", "mm" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "ceiling area" : {
@@ -1365,7 +1365,7 @@
                 "enum" : [ "m2" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "heating system delivery method" : {
@@ -1379,7 +1379,7 @@
                 "enum" : [ "m2" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "room sampling position" : {
@@ -1393,7 +1393,7 @@
                 "enum" : [ "m2" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "room moisture damage or mold history" : {
@@ -1407,7 +1407,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "door signs of water/mold" : {
@@ -1421,7 +1421,7 @@
                 "enum" : [ "%", "minute" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "room net area" : {
@@ -1436,7 +1436,7 @@
                 "enum" : [ "m2" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "ceiling thermal mass" : {
@@ -1451,7 +1451,7 @@
                 "enum" : [ "Cth", "J/K", "J/°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "rooms that share a door with sampling room" : {
@@ -1465,7 +1465,7 @@
                 "enum" : [ "day", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "orientations of exterior window" : {
@@ -1479,7 +1479,7 @@
                 "enum" : [ "day", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "wall location" : {
@@ -1493,7 +1493,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "room volume" : {
@@ -1508,7 +1508,7 @@
                 "enum" : [ "m2" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "door type, composite" : {
@@ -1522,7 +1522,7 @@
                 "enum" : [ "m2" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "bedroom count" : {
@@ -1537,7 +1537,7 @@
                 "enum" : [ "m2" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "wall construction type" : {
@@ -1551,7 +1551,7 @@
                 "enum" : [ "m2" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "wall signs of water/mold" : {
@@ -1565,7 +1565,7 @@
                 "enum" : [ "m2" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "window condition" : {
@@ -1579,7 +1579,7 @@
                 "enum" : [ "m2" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "escalator count" : {
@@ -1594,7 +1594,7 @@
                 "enum" : [ "m2" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "cooling system identifier" : {
@@ -1608,7 +1608,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "quadrant position" : {
@@ -1622,7 +1622,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "number of pets" : {
@@ -1637,7 +1637,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "window vertical position" : {
@@ -1651,7 +1651,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "fireplace type" : {
@@ -1665,7 +1665,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "heating delivery locations" : {
@@ -1679,7 +1679,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "ceiling finish material" : {
@@ -1693,7 +1693,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "door type" : {
@@ -1707,7 +1707,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "number of houseplants" : {
@@ -1722,7 +1722,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "floor age" : {
@@ -1737,7 +1737,7 @@
                 "enum" : [ "century", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "rooms connected by a doorway" : {
@@ -1751,7 +1751,7 @@
                 "enum" : [ "century", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "specifications" : {
@@ -1777,7 +1777,7 @@
                 "enum" : [ "g/m3" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "window open frequency" : {
@@ -1791,7 +1791,7 @@
                 "enum" : [ "m" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "room dimensions" : {
@@ -1817,7 +1817,7 @@
                 "enum" : [ "cm2", "ha", "km2", "m2" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "amount or size of sample collected" : {
@@ -1832,7 +1832,7 @@
                 "enum" : [ "L", "g", "kg", "m2", "m3" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "sample size sorting method" : {
@@ -1879,7 +1879,7 @@
                 "enum" : [ "hour", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "host disease status" : {
@@ -1916,7 +1916,7 @@
                 "enum" : [ "%" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "absolute air humidity" : {
@@ -1931,7 +1931,7 @@
                 "enum" : [ "kg" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "surface humidity" : {
@@ -1946,7 +1946,7 @@
                 "enum" : [ "%" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "air temperature" : {
@@ -1961,7 +1961,7 @@
                 "enum" : [ "ºC" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "surface temperature" : {
@@ -1976,7 +1976,7 @@
                 "enum" : [ "ºC" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "surface moisture" : {
@@ -1991,7 +1991,7 @@
                 "enum" : [ "g/m2", "g/m3", "parts/million" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "surface moisture pH" : {
@@ -2018,7 +2018,7 @@
                 "enum" : [ "ºC" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "temperature" : {
@@ -2033,7 +2033,7 @@
                 "enum" : [ "ºC" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "last time swept/mopped/vacuumed" : {
@@ -2059,7 +2059,7 @@
                 "enum" : [ "m" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "average dew point" : {
@@ -2074,7 +2074,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "frequency of cleaning" : {
@@ -2088,7 +2088,7 @@
                 "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "carbon dioxide" : {
@@ -2103,7 +2103,7 @@
                 "enum" : [ "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "source material identifiers" : {
@@ -2128,7 +2128,7 @@
                 "enum" : [ "century", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "season" : {
@@ -2298,7 +2298,7 @@
                 "enum" : [ "g", "mL", "mg", "ng" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "nucleic acid extraction" : {
@@ -2435,7 +2435,7 @@
                 "enum" : [ "%", "g/m3" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "amount of light" : {
@@ -2450,7 +2450,7 @@
                 "enum" : [ "W/m2" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "train line" : {
@@ -2464,7 +2464,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "outside relative humidity" : {
@@ -2479,7 +2479,7 @@
                 "enum" : [ "%", "g/m3" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "depth" : {
@@ -2494,7 +2494,7 @@
                 "enum" : [ "m", "mm" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "door area or size" : {
@@ -2541,7 +2541,7 @@
                 "enum" : [ "m" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "exterior door count" : {
@@ -2556,7 +2556,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "design, construction, and operation documents" : {
@@ -2570,7 +2570,7 @@
                 "enum" : [ "hour", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "shading device condition" : {
@@ -2584,7 +2584,7 @@
                 "enum" : [ "hour", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "occupancy documentation" : {
@@ -2598,7 +2598,7 @@
                 "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "floor count" : {
@@ -2613,7 +2613,7 @@
                 "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "shading device material" : {
@@ -2627,7 +2627,7 @@
                 "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "built structure age" : {
@@ -2642,7 +2642,7 @@
                 "enum" : [ "day", "hour", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "hallway/corridor count" : {
@@ -2657,7 +2657,7 @@
                 "enum" : [ "%", "g/m3" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "architectural structure" : {
@@ -2671,7 +2671,7 @@
                 "enum" : [ "m2" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "shading device type" : {
@@ -2685,7 +2685,7 @@
                 "enum" : [ "m2" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "shading device location" : {
@@ -2699,7 +2699,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "drawings" : {
@@ -2713,7 +2713,7 @@
                 "enum" : [ "century", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "address" : {

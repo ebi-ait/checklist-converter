@@ -26,7 +26,7 @@
                 "enum" : [ "DD" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "Longitude Start" : {
@@ -41,7 +41,7 @@
                 "enum" : [ "DD" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "Latitude End" : {
@@ -56,7 +56,7 @@
                 "enum" : [ "DD" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "Longitude End" : {
@@ -71,7 +71,7 @@
                 "enum" : [ "DD" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "Protocol Label" : {
@@ -163,7 +163,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "sample storage location" : {
@@ -200,7 +200,7 @@
                 "enum" : [ "g/m3" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "project name" : {
@@ -461,7 +461,7 @@
                 "enum" : [ "L", "g", "kg", "m2", "m3" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "biomass" : {
@@ -475,7 +475,7 @@
                 "enum" : [ "g", "kg", "t" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "organism count" : {
@@ -512,7 +512,7 @@
                 "enum" : [ "ºC" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "sample storage duration" : {
@@ -571,7 +571,7 @@
                 "enum" : [ "mS/cm" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "water current" : {
@@ -586,7 +586,7 @@
                 "enum" : [ "knot", "m3/s" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "fluorescence" : {
@@ -601,7 +601,7 @@
                 "enum" : [ "V", "mg Chla/m3" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "light intensity" : {
@@ -616,7 +616,7 @@
                 "enum" : [ "lux" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "mean friction velocity" : {
@@ -631,7 +631,7 @@
                 "enum" : [ "m/s" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "mean peak friction velocity" : {
@@ -646,7 +646,7 @@
                 "enum" : [ "m/s" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "downward PAR" : {
@@ -661,7 +661,7 @@
                 "enum" : [ "µE/m2/s" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "photon flux" : {
@@ -676,7 +676,7 @@
                 "enum" : [ "µmol/m2/s" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "pressure" : {
@@ -691,7 +691,7 @@
                 "enum" : [ "atm", "bar" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "tidal stage" : {
@@ -717,7 +717,7 @@
                 "enum" : [ "FTU", "NTU" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "pH" : {
@@ -744,7 +744,7 @@
                 "enum" : [ "m" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "alkyl diethers" : {
@@ -759,7 +759,7 @@
                 "enum" : [ "M/L", "µg/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "aminopeptidase activity" : {
@@ -774,7 +774,7 @@
                 "enum" : [ "mol/L/h" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "ammonium" : {
@@ -789,7 +789,7 @@
                 "enum" : [ "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "bacterial carbon production" : {
@@ -804,7 +804,7 @@
                 "enum" : [ "ng/h" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "bacterial production" : {
@@ -819,7 +819,7 @@
                 "enum" : [ "mg/m3/d" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "bacterial respiration" : {
@@ -834,7 +834,7 @@
                 "enum" : [ "mg/m3/d" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "bishomohopanol" : {
@@ -849,7 +849,7 @@
                 "enum" : [ "µg/L", "µg/g" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "bromide" : {
@@ -864,7 +864,7 @@
                 "enum" : [ "parts/million", "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "calcium" : {
@@ -879,7 +879,7 @@
                 "enum" : [ "mg/L", "parts/million", "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "carbon/nitrogen ratio" : {
@@ -906,7 +906,7 @@
                 "enum" : [ "mg/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "chlorophyll" : {
@@ -921,7 +921,7 @@
                 "enum" : [ "mg/m3", "µg/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "diether lipids" : {
@@ -936,7 +936,7 @@
                 "enum" : [ "ng/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "dissolved carbon dioxide" : {
@@ -951,7 +951,7 @@
                 "enum" : [ "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "dissolved hydrogen" : {
@@ -966,7 +966,7 @@
                 "enum" : [ "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "dissolved inorganic carbon" : {
@@ -981,7 +981,7 @@
                 "enum" : [ "µg/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "dissolved inorganic nitrogen" : {
@@ -996,7 +996,7 @@
                 "enum" : [ "µg/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "dissolved inorganic phosphorus" : {
@@ -1011,7 +1011,7 @@
                 "enum" : [ "µg/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "dissolved organic carbon" : {
@@ -1026,7 +1026,7 @@
                 "enum" : [ "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "dissolved organic nitrogen" : {
@@ -1041,7 +1041,7 @@
                 "enum" : [ "mg/L", "µg/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "dissolved oxygen" : {
@@ -1056,7 +1056,7 @@
                 "enum" : [ "µmol/kg" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "glucosidase activity" : {
@@ -1071,7 +1071,7 @@
                 "enum" : [ "mol/L/h" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "magnesium" : {
@@ -1086,7 +1086,7 @@
                 "enum" : [ "mg/L", "mol/L", "parts/million" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "n-alkanes" : {
@@ -1101,7 +1101,7 @@
                 "enum" : [ "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "nitrate" : {
@@ -1116,7 +1116,7 @@
                 "enum" : [ "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "nitrite" : {
@@ -1131,7 +1131,7 @@
                 "enum" : [ "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "total nitrogen concentration" : {
@@ -1146,7 +1146,7 @@
                 "enum" : [ "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "organic carbon" : {
@@ -1161,7 +1161,7 @@
                 "enum" : [ "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "organic matter" : {
@@ -1176,7 +1176,7 @@
                 "enum" : [ "µg/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "organic nitrogen" : {
@@ -1191,7 +1191,7 @@
                 "enum" : [ "µg/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "particulate organic carbon" : {
@@ -1206,7 +1206,7 @@
                 "enum" : [ "µg/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "particulate organic nitrogen" : {
@@ -1221,7 +1221,7 @@
                 "enum" : [ "µg/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "petroleum hydrocarbon" : {
@@ -1236,7 +1236,7 @@
                 "enum" : [ "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "phaeopigments" : {
@@ -1251,7 +1251,7 @@
                 "enum" : [ "mg/m3", "µg/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "phosphate" : {
@@ -1266,7 +1266,7 @@
                 "enum" : [ "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "phospholipid fatty acid" : {
@@ -1281,7 +1281,7 @@
                 "enum" : [ "mol/L", "mol/g" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "potassium" : {
@@ -1296,7 +1296,7 @@
                 "enum" : [ "parts/million", "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "primary production" : {
@@ -1311,7 +1311,7 @@
                 "enum" : [ "g/m2/day", "mg/m3/day" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "redox potential" : {
@@ -1326,7 +1326,7 @@
                 "enum" : [ "mV" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "salinity" : {
@@ -1341,7 +1341,7 @@
                 "enum" : [ "psu" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "silicate" : {
@@ -1356,7 +1356,7 @@
                 "enum" : [ "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "sodium" : {
@@ -1371,7 +1371,7 @@
                 "enum" : [ "parts/million", "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "soluble reactive phosphorus" : {
@@ -1386,7 +1386,7 @@
                 "enum" : [ "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "sulfate" : {
@@ -1401,7 +1401,7 @@
                 "enum" : [ "mg/L", "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "sulfide" : {
@@ -1416,7 +1416,7 @@
                 "enum" : [ "mg/L", "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "suspended particulate matter" : {
@@ -1431,7 +1431,7 @@
                 "enum" : [ "mg/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "total dissolved nitrogen" : {
@@ -1446,7 +1446,7 @@
                 "enum" : [ "µg/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "total inorganic nitrogen" : {
@@ -1461,7 +1461,7 @@
                 "enum" : [ "µg/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "total nitrogen content" : {
@@ -1476,7 +1476,7 @@
                 "enum" : [ "µg/L", "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "total particulate carbon" : {
@@ -1491,7 +1491,7 @@
                 "enum" : [ "µg/L", "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "total phosphorus" : {
@@ -1506,7 +1506,7 @@
                 "enum" : [ "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "alkalinity" : {
@@ -1521,7 +1521,7 @@
                 "enum" : [ "mEq/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "source material identifiers" : {
@@ -1646,7 +1646,7 @@
                 "enum" : [ "g", "mL", "mg", "ng" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "nucleic acid extraction" : {
@@ -1773,7 +1773,7 @@
                 "enum" : [ "m", "mm" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "chemical administration" : {

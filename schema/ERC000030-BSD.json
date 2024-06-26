@@ -61,7 +61,7 @@
                 "enum" : [ "DD" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "Longitude Start" : {
@@ -76,7 +76,7 @@
                 "enum" : [ "DD" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "Latitude End" : {
@@ -91,7 +91,7 @@
                 "enum" : [ "DD" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "Longitude End" : {
@@ -106,7 +106,7 @@
                 "enum" : [ "DD" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "Protocol Label" : {
@@ -176,7 +176,7 @@
                 "enum" : [ "mm", "nm", "µm" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "size-fraction upper threshold" : {
@@ -191,7 +191,7 @@
                 "enum" : [ "mm", "nm", "µm" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "project name" : {
@@ -328,7 +328,7 @@
                 "enum" : [ "psu" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "Oxygen Sensor" : {
@@ -343,7 +343,7 @@
                 "enum" : [ "µmol/kg" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "Nitrate Sensor" : {
@@ -358,7 +358,7 @@
                 "enum" : [ "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "water temperature" : {
@@ -373,7 +373,7 @@
                 "enum" : [ "ºC" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "Chlorophyll Sensor" : {
@@ -388,7 +388,7 @@
                 "enum" : [ "mg Chl/m3" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "Citation" : {
@@ -425,7 +425,7 @@
                 "enum" : [ "m", "mm" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         }
       },

@@ -37,7 +37,7 @@
                 "enum" : [ "mm", "nm", "µm" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "size-fraction upper threshold" : {
@@ -52,7 +52,7 @@
                 "enum" : [ "mm", "nm", "µm" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "target gene" : {
@@ -123,7 +123,7 @@
                 "enum" : [ "m" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "geographic location (country and/or sea)" : {
@@ -149,7 +149,7 @@
                 "enum" : [ "DD" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "geographic location (longitude)" : {
@@ -164,7 +164,7 @@
                 "enum" : [ "DD" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "geographic location (region and locality)" : {
@@ -234,7 +234,7 @@
                 "enum" : [ "psu" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "Further Details" : {
@@ -271,7 +271,7 @@
                 "enum" : [ "m", "mm" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         }
       },

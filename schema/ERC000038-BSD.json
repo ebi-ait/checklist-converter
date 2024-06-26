@@ -26,7 +26,7 @@
                 "enum" : [ "DD" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "Longitude Start" : {
@@ -41,7 +41,7 @@
                 "enum" : [ "DD" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "Protocol Label" : {
@@ -89,7 +89,7 @@
                 "enum" : [ "g" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "shellfish soft tissue weight" : {
@@ -104,7 +104,7 @@
                 "enum" : [ "g" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "shell length" : {
@@ -119,7 +119,7 @@
                 "enum" : [ "g" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "shell width" : {
@@ -134,7 +134,7 @@
                 "enum" : [ "g" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "shell markings" : {
@@ -148,7 +148,7 @@
                 "enum" : [ "g" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "sample health state" : {
@@ -307,7 +307,7 @@
                 "enum" : [ "g" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "gonad weight" : {
@@ -322,7 +322,7 @@
                 "enum" : [ "g" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "toxin burden" : {
@@ -337,7 +337,7 @@
                 "enum" : [ "g", "kg", "mg" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "treatment agent" : {
@@ -374,7 +374,7 @@
                 "enum" : [ "m", "mm" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         }
       },

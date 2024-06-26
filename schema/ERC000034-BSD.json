@@ -136,7 +136,7 @@
                 "enum" : [ "femtomolar", "micromolar", "millimolar", "molar", "nanomolar", "picomolar" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "treatment date" : {

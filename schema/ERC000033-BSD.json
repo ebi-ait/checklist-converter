@@ -126,7 +126,7 @@
                 "enum" : [ "DD" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "geographic location (longitude)" : {
@@ -141,7 +141,7 @@
                 "enum" : [ "DD" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "geographic location (region and locality)" : {
@@ -166,7 +166,7 @@
                 "enum" : [ "day", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "sample capture status" : {
@@ -225,7 +225,7 @@
                 "enum" : [ "centuries", "days", "decades", "hours", "minutes", "months", "seconds", "weeks", "years" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "host health state" : {

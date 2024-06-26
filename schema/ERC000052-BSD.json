@@ -26,7 +26,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "sample storage buffer" : {
@@ -120,7 +120,7 @@
                 "enum" : [ "DD" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "geographic location (longitude)" : {
@@ -135,7 +135,7 @@
                 "enum" : [ "DD" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "geographic location (region and locality)" : {
@@ -161,7 +161,7 @@
                 "enum" : [ "days", "hours", "minutes", "weeks", "years" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "trial timepoint" : {
@@ -176,7 +176,7 @@
                 "enum" : [ "days", "hours", "minutes", "weeks", "years" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "host disease status" : {
@@ -247,7 +247,7 @@
                 "enum" : [ "cm", "m", "mm" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "host total mass" : {
@@ -262,7 +262,7 @@
                 "enum" : [ "g", "kg" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "host sex" : {
@@ -310,7 +310,7 @@
                 "enum" : [ "g", "kg" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "host diet" : {
@@ -347,7 +347,7 @@
                 "enum" : [ "% mass" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "host storage container" : {
@@ -385,7 +385,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "sample volume or weight for DNA extraction" : {
@@ -400,7 +400,7 @@
                 "enum" : [ "g", "mL", "mg", "ng" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "nucleic acid extraction" : {

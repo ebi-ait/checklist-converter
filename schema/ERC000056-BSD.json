@@ -36,7 +36,7 @@
                 "enum" : [ "m2" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "culture target microbial analyte" : {
@@ -61,7 +61,7 @@
                 "enum" : [ "century", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "technical sample replicate" : {
@@ -152,7 +152,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "sample transport container" : {
@@ -166,7 +166,7 @@
                 "enum" : [ "Cth", "J/K", "J/°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "sample transport duration" : {
@@ -181,7 +181,7 @@
                 "enum" : [ "hour", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "sample collection device" : {
@@ -218,7 +218,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "sample storage device" : {
@@ -255,7 +255,7 @@
                 "enum" : [ "mm", "nm", "µm" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "size-fraction upper threshold" : {
@@ -270,7 +270,7 @@
                 "enum" : [ "mm", "nm", "µm" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "soil type" : {
@@ -339,7 +339,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "soil sediment porosity" : {
@@ -386,7 +386,7 @@
                 "enum" : [ "cm2", "ha", "km2", "m2" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "area sampled size" : {
@@ -401,7 +401,7 @@
                 "enum" : [ "g", "m2", "ml" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "sample name" : {
@@ -426,7 +426,7 @@
                 "enum" : [ "W/m2", "kg s−3" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "project name" : {
@@ -484,7 +484,7 @@
                 "enum" : [ "m2" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "farm watering water source" : {
@@ -564,7 +564,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "food animal group size" : {
@@ -579,7 +579,7 @@
                 "enum" : [ "hour", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "fertilizer administration date" : {
@@ -806,7 +806,7 @@
                 "enum" : [ "%" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "completeness software" : {
@@ -877,7 +877,7 @@
                 "enum" : [ "m" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "geographic location (country and/or sea)" : {
@@ -903,7 +903,7 @@
                 "enum" : [ "DD" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "geographic location (longitude)" : {
@@ -918,7 +918,7 @@
                 "enum" : [ "DD" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "geographic location (region and locality)" : {
@@ -977,7 +977,7 @@
                 "enum" : [ "m" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "culture isolation date" : {
@@ -1003,7 +1003,7 @@
                 "enum" : [ "day", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "number of samples collected" : {
@@ -1041,7 +1041,7 @@
                 "enum" : [ "L/sec", "m3/min" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "indoor surface" : {
@@ -1088,7 +1088,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "average daily occupancy" : {
@@ -1103,7 +1103,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "sample surface moisture" : {
@@ -1117,7 +1117,7 @@
                 "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "sampling room id or name" : {
@@ -1131,7 +1131,7 @@
                 "enum" : [ "day", "hour", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "fermentation relative humidity" : {
@@ -1146,7 +1146,7 @@
                 "enum" : [ "%", "g/m3" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "room dimensions" : {
@@ -1172,7 +1172,7 @@
                 "enum" : [ "L", "g", "kg", "m2", "m3" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "organism count" : {
@@ -1253,7 +1253,7 @@
                 "enum" : [ "centuries", "days", "decades", "hours", "minutes", "months", "seconds", "weeks", "years" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "host taxid" : {
@@ -1280,7 +1280,7 @@
                 "enum" : [ "cm", "m", "mm" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "host length" : {
@@ -1295,7 +1295,7 @@
                 "enum" : [ "cm", "m", "mm" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "host total mass" : {
@@ -1310,7 +1310,7 @@
                 "enum" : [ "g", "kg" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "host phenotype" : {
@@ -1369,7 +1369,7 @@
                 "enum" : [ "%", "g/m3" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "conductivity" : {
@@ -1384,7 +1384,7 @@
                 "enum" : [ "mS/cm" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "solar irradiance" : {
@@ -1399,7 +1399,7 @@
                 "enum" : [ "W/m2" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "wind direction" : {
@@ -1425,7 +1425,7 @@
                 "enum" : [ "km/h", "m/s" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "temperature" : {
@@ -1440,7 +1440,7 @@
                 "enum" : [ "ºC" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "turbidity" : {
@@ -1455,7 +1455,7 @@
                 "enum" : [ "FTU", "NTU" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "pH" : {
@@ -1503,7 +1503,7 @@
                 "enum" : [ "m2" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "frequency of cleaning" : {
@@ -1517,7 +1517,7 @@
                 "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "total organic carbon method" : {
@@ -1543,7 +1543,7 @@
                 "enum" : [ "µg/m3" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "total nitrogen content method" : {
@@ -1569,7 +1569,7 @@
                 "enum" : [ "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "salinity" : {
@@ -1584,7 +1584,7 @@
                 "enum" : [ "psu" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "total carbon" : {
@@ -1599,7 +1599,7 @@
                 "enum" : [ "µg/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "total organic carbon" : {
@@ -1614,7 +1614,7 @@
                 "enum" : [ "g/kg" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "total nitrogen content" : {
@@ -1629,7 +1629,7 @@
                 "enum" : [ "µg/L", "µmol/L" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "water pH" : {
@@ -1667,7 +1667,7 @@
                 "enum" : [ "%", "g/m3" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "salinity method" : {
@@ -1759,7 +1759,7 @@
                 "enum" : [ "%", "g/m3" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "mean seasonal temperature" : {
@@ -1774,7 +1774,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "mean seasonal precipitation" : {
@@ -1789,7 +1789,7 @@
                 "enum" : [ "mm" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "extreme weather date" : {
@@ -1803,7 +1803,7 @@
                 "enum" : [ "J/°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "extreme weather event" : {
@@ -1817,7 +1817,7 @@
                 "enum" : [ "m" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "season" : {
@@ -1865,7 +1865,7 @@
                 "enum" : [ "g", "kg", "mg" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "host prediction approach" : {
@@ -1912,7 +1912,7 @@
                 "enum" : [ "Cth", "J/K", "J/°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "fermentation chemical additives percentage" : {
@@ -1927,7 +1927,7 @@
                 "enum" : [ "%" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "study treatment" : {
@@ -1941,7 +1941,7 @@
                 "enum" : [ "%" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "spike-in organism" : {
@@ -1955,7 +1955,7 @@
                 "enum" : [ "%", "g/m3" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "spike-in organism count" : {
@@ -1969,7 +1969,7 @@
                 "enum" : [ "km", "m", "mm" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "fermentation temperature" : {
@@ -1984,7 +1984,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "spike-in with heavy metals" : {
@@ -1998,7 +1998,7 @@
                 "enum" : [ "hour", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "microbial starter inoculation" : {
@@ -2012,7 +2012,7 @@
                 "enum" : [ "m3/day" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "microbial starter source" : {
@@ -2026,7 +2026,7 @@
                 "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "microbial starter preparation" : {
@@ -2040,7 +2040,7 @@
                 "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "spike-in bacterial serovar or serotype" : {
@@ -2054,7 +2054,7 @@
                 "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "antimicrobial phenotype of spike-in bacteria" : {
@@ -2080,7 +2080,7 @@
                 "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "microbial starter organism count" : {
@@ -2095,7 +2095,7 @@
                 "enum" : [ "m2" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "spike-in with antibiotics" : {
@@ -2109,7 +2109,7 @@
                 "enum" : [ "m2" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "study incubation temperature" : {
@@ -2124,7 +2124,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "perturbation" : {
@@ -2150,7 +2150,7 @@
                 "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "biocide" : {
@@ -2164,7 +2164,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "negative control type" : {
@@ -2332,7 +2332,7 @@
                 "enum" : [ "N/m2", "Pa" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "spike-in growth medium" : {
@@ -2346,7 +2346,7 @@
                 "enum" : [ "W/m2" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "fermentation medium" : {
@@ -2360,7 +2360,7 @@
                 "enum" : [ "m" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "growth medium" : {
@@ -2374,7 +2374,7 @@
                 "enum" : [ "century", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "isolation and growth condition" : {
@@ -2443,7 +2443,7 @@
                 "enum" : [ "%" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "nucleic acid extraction kit" : {
@@ -2457,7 +2457,7 @@
                 "enum" : [ "mg/L", "ppm" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "sample pooling" : {
@@ -2482,7 +2482,7 @@
                 "enum" : [ "%" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "single cell or viral particle lysis approach" : {
@@ -2542,7 +2542,7 @@
                 "enum" : [ "g", "mL", "mg", "ng" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "nucleic acid extraction" : {
@@ -2756,7 +2756,7 @@
                 "enum" : [ "m" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "hygienic food production area" : {
@@ -2770,7 +2770,7 @@
                 "enum" : [ "W/m2", "kg s−3" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "food contact surface" : {
@@ -2784,7 +2784,7 @@
                 "enum" : [ "Cth", "J/K", "J/°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "food cooking process" : {
@@ -2798,7 +2798,7 @@
                 "enum" : [ "%" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "food product by quality" : {
@@ -2812,7 +2812,7 @@
                 "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "food animal antimicrobial route of administration" : {
@@ -2826,7 +2826,7 @@
                 "enum" : [ "cm2", "ha", "km2", "m2" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "food allergen labeling" : {
@@ -2840,7 +2840,7 @@
                 "enum" : [ "W/m2" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "food product type" : {
@@ -2865,7 +2865,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "animal intrusion near sample source" : {
@@ -2879,7 +2879,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "food packing medium integrity" : {
@@ -2893,7 +2893,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "microbial starter" : {
@@ -2907,7 +2907,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "food treatment process" : {
@@ -2932,7 +2932,7 @@
                 "enum" : [ "J/°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "microbial starter ncbi taxonomy id" : {
@@ -2990,7 +2990,7 @@
                 "enum" : [ "hour", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "food stored by consumer (storage duration)" : {
@@ -3005,7 +3005,7 @@
                 "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "food animal antimicrobial duration" : {
@@ -3020,7 +3020,7 @@
                 "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "part of plant or animal" : {
@@ -3034,7 +3034,7 @@
                 "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "hazard analysis critical control points (haccp) guide food safety term" : {
@@ -3048,7 +3048,7 @@
                 "enum" : [ "day", "hour", "minute", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "dietary claim or use" : {
@@ -3073,7 +3073,7 @@
                 "enum" : [ "day", "hour", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "food production environmental monitoring zone" : {
@@ -3109,7 +3109,7 @@
                 "enum" : [ "cm", "mm" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "food animal antimicrobial frequency" : {
@@ -3123,7 +3123,7 @@
                 "enum" : [ "m2" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "intended consumer" : {
@@ -3137,7 +3137,7 @@
                 "enum" : [ "m2" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "quantity purchased" : {
@@ -3162,7 +3162,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "food additive" : {
@@ -3176,7 +3176,7 @@
                 "enum" : [ "%", "g/m3" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "food source age" : {
@@ -3191,7 +3191,7 @@
                 "enum" : [ "day", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "food animal antimicrobial intended use" : {
@@ -3205,7 +3205,7 @@
                 "enum" : [ "day", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "food packing medium" : {
@@ -3219,7 +3219,7 @@
                 "enum" : [ "m2" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "specific intended consumer" : {
@@ -3233,7 +3233,7 @@
                 "enum" : [ "m2" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "purchase date" : {
@@ -3247,7 +3247,7 @@
                 "enum" : [ "m2" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "food stored by consumer (storage temperature)" : {
@@ -3262,7 +3262,7 @@
                 "enum" : [ "°C" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "food package capacity" : {
@@ -3277,7 +3277,7 @@
                 "enum" : [ "century", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "food distribution point geographic location (city)" : {
@@ -3302,7 +3302,7 @@
                 "enum" : [ "m" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "food distribution point geographic location" : {
@@ -3316,7 +3316,7 @@
                 "enum" : [ "m" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "production labeling claims" : {
@@ -3353,7 +3353,7 @@
                 "enum" : [ "m", "mm" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "environment adjacent to site" : {

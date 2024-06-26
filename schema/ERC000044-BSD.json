@@ -114,7 +114,7 @@
                 "enum" : [ "day", "month", "week", "year" ]
               }
             },
-            "required" : [ "text" ]
+            "required" : [ "text", "unit" ]
           }
         },
         "host disease status" : {
