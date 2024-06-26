@@ -152,13 +152,15 @@ if __name__ == '__main__':
             add_mandatory_element_error(ena_checklist_xml, biosample_json, accession, './data/invalid/')
             add_enum_value_error( get_biosample(accession), accession, './data/invalid/')
     else:
+        result_dir='./data/invalid/validation_result/'
+        os.makedirs(result_dir, exist_ok=True)
         for accession, checklist in accession_checklist_id_dict.items():
             try:
                 invalid_biosample_json = get_biosample_json_from_file(accession + mandatory_error_file_extension)
                 biosample_json_schema = get_checklist_json_schema('./schema/'+checklist+'-BSD.json')
-                validate_and_write_result_to_file(biovalidator_url, biosample_json_schema, invalid_biosample_json, './data/invalid/validation_result/'+accession + mandatory_error_file_extension)
+                validate_and_write_result_to_file(biovalidator_url, biosample_json_schema, invalid_biosample_json, result_dir+accession + mandatory_error_file_extension)
 
                 invalid_biosample_json = get_biosample_json_from_file(accession + enum_error_file_extension)
-                validate_and_write_result_to_file(biovalidator_url, biosample_json_schema, invalid_biosample_json, './data/invalid/validation_result/'+accession + enum_error_file_extension)
+                validate_and_write_result_to_file(biovalidator_url, biosample_json_schema, invalid_biosample_json, result_dir+accession + enum_error_file_extension)
             except Exception as e:
                 print(accession+'<-->'+checklist+'failed to validate, some fails may not be available')
