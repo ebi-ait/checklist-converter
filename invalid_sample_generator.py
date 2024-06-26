@@ -74,11 +74,11 @@ def get_biosample(biosample_id):
     return response.json()
 def add_enum_value_error( biosample_json_obj, biosample_id, output_directory):
     location_list = biosample_json_obj.get("characteristics", {}).get("geographic location (country and/or sea)", [])
-
+    print('location_list:',location_list)
     if location_list:
         for location in location_list:
             location['text'] = 'interstellar or beyond'
-            write_invalid_biosample(output_directory , biosample_id + enum_error_file_extension)
+            write_invalid_biosample(output_directory , biosample_id + enum_error_file_extension, biosample_json_obj)
 
 
 
@@ -103,12 +103,12 @@ def add_mandatory_element_error(checklist_xml_str, biosample_json, biosample_id,
         element_to_remove = mandatory_fields[random.randint(0, len(mandatory_fields)-1)]
         if element_to_remove in biosample_json['characteristics']:
             del biosample_json['characteristics'][element_to_remove]
-            write_invalid_biosample(output_directory , biosample_id + mandatory_error_file_extension)
+            write_invalid_biosample(output_directory , biosample_id + mandatory_error_file_extension, biosample_json)
 
-def write_invalid_biosample(output_directory, file_name):
+def write_invalid_biosample(output_directory, file_name, data):
     os.makedirs(output_directory, exist_ok=True)
     with open(output_directory+file_name , 'w') as file:
-        json.dump(biosample_json, file, indent=4)
+        json.dump(data, file, indent=4)
 def validate_and_write_result_to_file(biovalidator_service, biosample_schema, biosample_json_data, file_path):
 
     headers = {
@@ -148,8 +148,7 @@ if __name__ == '__main__':
         for accession, checklist in accession_checklist_id_dict.items():
             print(accession + ' <-acc,checklist-> ' + checklist)
             ena_checklist_xml = get_ena_checklist(checklist)
-            biosample_json = get_biosample(accession)
-            add_mandatory_element_error(ena_checklist_xml, biosample_json, accession, './data/invalid/')
+            add_mandatory_element_error(ena_checklist_xml, get_biosample(accession), accession, './data/invalid/')
             add_enum_value_error( get_biosample(accession), accession, './data/invalid/')
     else:
         result_dir='./data/invalid/validation_result/'
@@ -163,4 +162,5 @@ if __name__ == '__main__':
                 invalid_biosample_json = get_biosample_json_from_file(accession + enum_error_file_extension)
                 validate_and_write_result_to_file(biovalidator_url, biosample_json_schema, invalid_biosample_json, result_dir+accession + enum_error_file_extension)
             except Exception as e:
+                #let it silently fail, FileNotFound expected, best is to just iterate files in invalid directory instead of accession.csv
                 print(accession+'<-->'+checklist+'failed to validate, some fails may not be available')
