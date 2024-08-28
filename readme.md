@@ -1,3 +1,8 @@
+# THis repository is archived now. Please use [json-schema-store](https://github.com/EBIBioSamples/json-schema-store) repository for checklist conversion code/documentation. 
+
+
+--------------------------------------------------------------------------------------------------------
+
 https://www.ebi.ac.uk/biosamples/samples?filter=attr:ENA-CHECKLIST:ERC000023
 https://www.ebi.ac.uk/ena/submit/webin-v2/swagger-ui/index.html#/retrieveAPI/getSample
 
